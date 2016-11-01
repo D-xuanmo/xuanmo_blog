@@ -1,0 +1,96 @@
+// 公共样式
+.block(){
+  display: block;
+}
+.w(@w:0){
+  width: @w;
+}
+.h(@h:0){
+  height: @h;
+}
+.bg(@bg:#fff){
+  background: @bg;
+}
+.m (@m){
+  margin: @m;
+}
+.pd(@p){
+  padding: @p;
+}
+.fl(){
+  float: left;
+}
+.fr(){
+  float: right;
+}
+.box-sizing(){
+  box-sizing: border-box;
+}
+@img: '../images/';
+.posi(@p){
+  position: @p;
+}
+.c(@c){
+  color: @c;
+}
+.cur(){
+  cursor: pointer;
+}
+header{
+  .position(relative);
+  .bg(#282828);
+  nav ul.nav ul.sub-menu{
+    .bg(#282828);
+  }
+}
+section{
+  margin-top: 150px;
+}
+article{
+  .w(900px);
+  .breadcrumbs{
+    .c(#b7b7b7);
+  }
+  .header{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    h2{
+      .m(10px 0);
+    }
+    text-align: center;
+  }
+  .content{
+    .box-sizing;
+    .pd(10px 20px);
+  }
+  .like{
+    margin: 20px 0;
+    text-align: center;
+    a{
+      display: inline-block;
+      padding: 10px 20px;
+      .bg(#27c5d5);
+      .c(#fff);
+      &,span{
+        font-size: 16px;
+      }
+    }
+  }
+  // 分享
+  .share{
+    text-align: center;
+    a{
+      font-size: 20px;
+    }
+  }
+  .tab-article{
+    margin-top: 50px;
+    .tab-left,
+    .tab-right{
+      .w(50%);
+    }
+    .tab-right{
+      text-align: right;
+    }
+  }
+}

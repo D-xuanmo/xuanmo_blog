@@ -1,0 +1,241 @@
+header {
+  background: #282828;
+}
+header nav ul.menu ul.sub-menu {
+  background: #282828;
+}
+article {
+  box-sizing: border-box;
+  width: 70%;
+  padding: 0 15px;
+}
+article .breadcrumbs {
+  color: #b7b7b7;
+}
+article .header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+article .header h2 {
+  margin: 10px 0;
+}
+article .header span{
+  color: #b7b7b7;
+}
+article .header span.iconfont{
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+article .content {
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+article .content img{
+  max-width: 100%;
+}
+/*评论区域表单*/
+#respond form > p{
+  padding: 5px 0;
+}
+#respond form textarea{
+  box-sizing: border-box;
+  resize: none;
+  width: 100%;
+  padding:5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#respond form p label{
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  color: #9a9a9a;
+  cursor: pointer;
+}
+#respond form input[type="text"]{
+  height: 30px;
+  padding-left: 5px;
+  border: 1px solid #7e7e7e;
+  border-radius: 5px;
+}
+#respond form input[type="submit"]{
+  padding: 10px 15px;
+  background: #16c0f8;
+  color: #fff;
+}
+/*评论区域评论列表*/
+#comments{
+  position: relative;
+  padding-top: 40px;
+}
+/*#comments p.form-submit{
+  position: absolute;
+  top: 191px;
+  left: 0;
+}*/
+#comments ol.comment-list li{
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/*评论作者*/
+#comments ol.comment-list li .comment-author img{
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+#comments ol.comment-list li .comment-author cite{
+  font-size: 18px;
+  font-weight: 600;
+}
+/*评论时间*/
+#comments ol.comment-list li .comment-meta a{
+  font-size: 12px;
+}
+/*评论内容*/
+#comments ol.comment-list li p{
+  padding: 20px 0;
+  font-size: 18px;
+}
+/*回复按钮*/
+#comments ol.comment-list .reply a{
+  display: block;
+  width: 60px;
+  margin-bottom: 5px;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+#comments ol.comment-list .reply a:hover{
+  border-color: #27c5d5;
+}
+/*子回复*/
+#comments ol.comment-list li.comment,
+#comments ol.comment-list ol.children{
+  padding: 10px;
+}
+article .like {
+  margin: 20px 0;
+  text-align: center;
+}
+article .like a {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #27c5d5;
+  color: #ffffff;
+}
+article .like a,
+article .like a span {
+  font-size: 16px;
+}
+article .share {
+  text-align: center;
+}
+article .share a {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../images/share.png);
+}
+article .tab-article {
+  margin-top: 50px;
+}
+article .share a:nth-of-type(1){
+  background-position: 0 -98px;
+}
+article .share a:nth-of-type(2){
+  background-position: 0 -65px;
+}
+article .share a:nth-of-type(3){
+  position: relative;
+  background-position: 0 -32px;
+}
+article .share a:nth-of-type(4){
+  background-position: 0 0;
+}
+article .share a:nth-of-type(5){
+  background-position: 0 -291px;
+}
+article .share a:hover{
+  background-position-X: -24px;
+}
+article .tab-article .tab-left,
+article .tab-article .tab-right {
+  width: 50%;
+}
+article .tab-article .tab-right {
+  text-align: right;
+}
+/*微信二维码生成*/
+#qrcode{
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  width: 180px;
+  height: 260px;
+  margin-left: -108px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #000;
+}
+#qrcode .icon-close1{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+#qrcode img{
+  display: block;
+  margin: 5px auto;
+}
+#qrcode:after{
+  content: "";
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  margin-left: 2.5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #ccc transparent;
+}
+p.mark{
+  padding: 15px 0;
+  text-align: center;
+}
+p.mark strong{
+  padding-right: 5px;
+  font-size: 20px;
+}
+p.mark a{
+  padding: 8px 2px;
+}
+/*表情*/
+/*#comments .smile{
+  position: absolute;
+  top: 198px;
+  left: 90px;
+}
+#comments .smile .smile-more{
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 208px;
+  text-align: left;
+}
+#comments .smile a{
+  display: inline-block;
+  margin: 5px;
+}
+#comments .smile .icon-grin{
+  font-size: 26px;
+  color: #000;
+}
+#comments .smile a img{
+
+}*/

@@ -1,0 +1,164 @@
+.contact .pc-none{
+  display: none;
+}
+/*响应式*/
+@media (max-width:1150px) {
+  header{
+    position: fixed;
+  }
+}
+@media(min-width: 1090px){
+  nav{
+    width: 48%;
+  }
+  ul.menu{
+    height: 50px;
+    text-align: justify;
+  }
+  ul.menu:after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+  ul.menu > li {
+    float: none;
+    display: inline-block;
+  }
+}
+@media(max-width: 1090px) and (min-width: 720px){
+  header{
+    padding-bottom: 10px;
+  }
+  nav{
+    opacity: 0;
+    position: absolute;
+    top: 159px;
+    right: 0;
+    width: 300px;
+    padding-left: 10px;
+    background: rgba(40, 40, 40, 0.7);
+    transition: .7s;
+    transform: translateX(365px);
+  }
+  ul.menu > li{
+    float: none;
+  }
+  ul.menu > li ul.sub-menu {
+    display: none;
+    position: static;
+    width: 150px;
+    margin-left: 30px;
+    padding: 0;
+    background: none;
+    transform: scale(1);
+    transition: 0s;
+  }
+  ul.menu > li ul.sub-menu.bg282828{
+    background: none;
+  }
+  .contact .pc-none{
+    display: inline-block;
+  }
+}
+@media(max-width: 1024px){
+  header {
+    background: rgba(40, 40, 40, 0.7);
+  }
+  header nav ul.menu ul.sub-menu {
+    background: none;
+  }
+  /*需要隐藏的元素*/
+  .mobile-hide{
+    display: none;
+  }
+  .main{
+    padding: 70px 10px 30px;
+  }
+  /*文章变成双栏*/
+  .main .mobile-article-lg,
+  section .mobile-article-lg{
+    width: calc(100% / 2 - 35px);
+    height: 350px;
+    padding-bottom: 15px;
+  }
+  section .right{
+    float: none;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .single-article{
+    width: 100%;
+  }
+}
+@media(max-width: 720px){
+  nav{
+    opacity: 0;
+    position: absolute;
+    top: 159px;
+    right: 0;
+    width: 300px;
+    padding-left: 10px;
+    background: rgba(40, 40, 40, 0.7);
+    transition: .7s;
+    transform: translateX(365px);
+  }
+  ul.menu > li{
+    float: none;
+  }
+  ul.menu > li ul.sub-menu {
+    display: none;
+    position: static;
+    width: 150px;
+    margin-left: 30px;
+    padding: 0;
+    background: none;
+    transform: scale(1);
+    transition: 0s;
+  }
+  ul.menu > li ul.sub-menu.bg282828{
+    background: none;
+  }
+  div.head strong.logo,
+  .contact{
+    margin: 20px 0 10px;
+  }
+  div.contact .mobile-hide{
+    display: none;
+  }
+  .contact .pc-none{
+    display: inline-block;
+  }
+  /*文章变成一栏*/
+  .main .mobile-article-lg,
+  section .mobile-article-lg{
+    width: calc(100% / 1 - 35px);
+    height: auto;
+  }
+  footer > div .introduce,
+  footer > div .link{
+    float: none;
+    width: 100%;
+    margin: 20px 0;
+  }
+}
+@media(max-width: 724px) and (min-width: 424px ){
+	.main article .article-img img,
+	.right article a img{
+		width: auto;
+		max-width: 300px;
+    height: 1;
+		border-radius: 0;
+	}
+}
+@media(max-width: 320px){
+  div.head{
+    max-width: 85%;
+  }
+}
+@media(min-width: 1050px){
+  .right article .more,
+  .main article .article-more{
+    bottom: 30px;
+    right: 40px;
+  }
+}
