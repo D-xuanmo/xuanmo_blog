@@ -45,6 +45,8 @@ article .content img{
   resize: none;
   width: 100%;
   padding:5px;
+  background: url(../images/text-bg.png) no-repeat 0 -65px;
+  background-size: 100% 100%;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
