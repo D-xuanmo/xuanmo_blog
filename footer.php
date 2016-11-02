@@ -8,9 +8,7 @@
         <?php echo get_option('x_links'); ?>
       </div>
     </div>
-    <p class="copyright"><?php echo get_option('x_copyright'); ?>
-      <script src="https://s4.cnzz.com/z_stat.php?id=1260526121&web_id=1260526121" language="JavaScript"></script>
-    </p>
+    <p class="copyright"><?php echo get_option('x_copyright'); ?></p>
   </div>
 </footer>
 <!-- footer end -->
