@@ -1,4 +1,6 @@
 <?php
+	add_filter('automatic_updater_disabled', '__return_true');	// 彻底关闭自动更新
+	
 	remove_filter('the_content', 'wptexturize');
 	/*
 	*注册菜单

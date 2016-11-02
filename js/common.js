@@ -8,12 +8,6 @@ $(function(){
     // 删除head里的style
     $('head style[media="screen"],head style[media="print"]').remove();
     $('.comment-author .says' , $comment).remove();
-    // 删除评论框的label
-    $('label' , $respond).remove();
-    $('textarea' , $respond).attr({
-      'rows' : 8,
-      'cols' : 70
-    });
     $('article .article-img').each(function(){
       random = Math.floor( Math.random() * arrImg.length );
       if( $(this).children('img').length == 0 ){
