@@ -72,15 +72,15 @@
       <!-- 联系我 -->
       <div class="fr contact">
         <a href="javascript:;" class="iconfont icon-search"></a>
-        <a <?php echo get_option('x_github'); ?> class="mobile-hide iconfont icon-github1"></a>
-        <a <?php echo get_option('x_t_qq'); ?> class="mobile-hide iconfont icon-qq"></a>
+        <a href="<?php echo stripslashes(get_option('x_github')); ?>" class="mobile-hide iconfont icon-github1"></a>
+        <a href="<?php echo stripslashes(get_option('x_t_qq')); ?>" class="mobile-hide iconfont icon-qq"></a>
         <a href="javascript:;" class="mobile-hide iconfont icon-wechat">
           <span>
-            <img src="<?php echo get_option('x_wechats'); ?>" alt="扫一扫 加博主微信" />
+            <img src="<?php echo stripslashes(get_option('x_wechats')); ?>" alt="扫一扫 加博主微信" />
           </span>
         </a>
-        <a <?php echo get_option('x_sinas'); ?> class="mobile-hide iconfont icon-sina"></a>
-        <a href="mailto:<?php echo get_option('x_email'); ?>?subject=Hello <?php echo bloginfo('name'); ?>" class="mobile-hide iconfont icon-email2"></a>
+        <a href="<?php echo stripslashes(get_option('x_sinas')); ?>" class="mobile-hide iconfont icon-sina"></a>
+        <a href="mailto:<?php echo stripslashes(get_option('x_email')); ?>?subject=Hello <?php echo bloginfo('name'); ?>" class="mobile-hide iconfont icon-email2"></a>
         <a href="javascript:;" class="pc-none iconfont icon-menu-list2"></a>
       </div>
       <nav class="fl clearfix">

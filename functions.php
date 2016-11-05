@@ -1,6 +1,12 @@
 <?php
 	add_filter('automatic_updater_disabled', '__return_true');	// 彻底关闭自动更新
-	
+	//七牛缓存gravatar头像
+	function dw_get_avatar($avatar) {
+		$avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),"gravatar.xuanmomo.com",$avatar);
+		return $avatar;
+	}
+	add_filter( 'get_avatar', 'dw_get_avatar', 10, 3 );
+
 	remove_filter('the_content', 'wptexturize');
 	/*
 	*注册菜单
@@ -195,30 +201,30 @@
 				<input type="hidden" name="update_themeoptions" value="true" />
 				<p>
 					电子邮箱：<br />
-					<textarea name="x_mail" id="x_mail" class="large-text code" rows="2" cols="40"><?php echo get_option('x_email'); ?></textarea>
+					<textarea name="x_mail" id="x_mail" class="large-text code" rows="2" cols="40"><?php echo stripslashes ( get_option('x_email') ); ?></textarea>
 				</p>
 				<p>
 					qq链接：<br />
-					<textarea name="x_qq" id="x_qq" class="large-text code" rows="2" cols="40"><?php echo get_option('x_t_qq'); ?></textarea>
+					<textarea name="x_qq" id="x_qq" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_t_qq') ); ?></textarea>
 				</p>
 				<p>
 					github链接：<br />
-					<textarea name="x_git" id="x_git" class="large-text code" rows="2" cols="40"><?php echo get_option('x_github'); ?></textarea>
+					<textarea name="x_git" id="x_git" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_github') ); ?></textarea>
 				</p>
 				<p>
 					新浪微博链接：<br />
-					<textarea name="x_sina" id="x_sina" class="large-text code" rows="2" cols="40"><?php echo get_option('x_sinas'); ?></textarea>
+					<textarea name="x_sina" id="x_sina" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_sinas') ); ?></textarea>
 				</p>
 				<!-- <p>
 					<input type="file" name="x_file" value="<?php echo get_option('x_files'); ?>">
 				</p> -->
 				<p>
 					微信图片地址：<br />
-					<textarea name="x_wechat" id="x_wechat" class="large-text code" rows="2" cols="40"><?php echo get_option('x_wechats'); ?></textarea>
+					<textarea name="x_wechat" id="x_wechat" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_wechats') ); ?></textarea>
 				</p>
 				<p>
 					网站关键字（keywords）：<br />
-					<textarea name="x_key" id="x_key" class="large-text code" rows="2" cols="40"><?php echo get_option('x_keywords'); ?></textarea>
+					<textarea name="x_key" id="x_key" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_keywords') ); ?></textarea>
 				</p>
 				<p>
 					网站描述（description）：<br />
@@ -226,19 +232,19 @@
 				</p>
 				<p>
 					网站底部一句话（word）：<br />
-					<textarea name="x_word" id="x_word" class="large-text code" rows="8" cols="40"><?php echo get_option('x_words'); ?></textarea>
+					<textarea name="x_word" id="x_word" class="large-text code" rows="8" cols="40"><?php echo stripslashes ( get_option('x_words') ); ?></textarea>
 				</p>
 				<p>
 					友情链接（link）：<br />
-					<textarea name="x_link" id="x_link" class="large-text code" rows="8" cols="40"><?php echo get_option('x_links'); ?></textarea>
+					<textarea name="x_link" id="x_link" class="large-text code" rows="8" cols="40"><?php echo stripslashes( get_option('x_links') ); ?></textarea>
 				</p>
 				<p>
 					版权信息（copyright）：<br />
-					<textarea name="x_copy" id="x_copy" class="large-text code" rows="8" cols="40"><?php echo get_option('x_copyright'); ?></textarea>
+					<textarea name="x_copy" id="x_copy" class="large-text code" rows="8" cols="40"><?php echo stripslashes( get_option('x_copyright') ); ?></textarea>
 				</p>
 				<p>
 					尾部自定义JavaScript代码：<br />
-					<textarea name="x_js" id="x_js" class="large-text code" rows="8" cols="40"><?php echo get_option('x_javascript'); ?></textarea>
+					<textarea name="x_js" id="x_js" class="large-text code" rows="8" cols="40"><?php echo stripslashes( get_option('x_javascript') ); ?></textarea>
 				</p>
 				<p>
 					<input type="submit" name="bcn_admin_options" value="保存更改"/>
@@ -262,6 +268,14 @@
 		update_option('x_links', $_POST['x_link']);
 		update_option('x_copyright', $_POST['x_copy']);
 		update_option('x_javascript', $_POST['x_js']);
+		$str=$_POST['x_git'];//读取str的内容赋值给$str变量
+
+if(get_magic_quotes_gpc())//如果get_magic_quotes_gpc()是打开的
+
+{
+$str=stripslashes($str);//将字符串进行处理
+
+}
 	}
 	add_action('admin_menu', 'themeoptions_admin_menu');
 
