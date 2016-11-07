@@ -36,6 +36,38 @@ article .content {
 article .content img{
   max-width: 100%;
 }
+article .content h2{
+  padding-left: 10px;
+  background: #f5f5f5;
+  border-left: 5px solid #0cf;
+  line-height: 40px;
+  color: #292929;
+}
+article .content .download{
+  display: block;
+  width: 150px;
+  padding: 6px 18px;
+  background-color: #5cb85c;
+  border: 1px solid #4cae4c;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  text-align: center;
+  color: #fff;
+}
+article .content .case-show{
+  display: block;
+  width: 150px;
+  margin: 20px auto;
+  padding: 6px 18px;
+  background-color: #5cb85c;
+  border: 1px solid #4cae4c;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  text-align: center;
+  color: #fff;
+}
 /*评论区域表单*/
 #respond form > p{
   padding: 5px 0;
