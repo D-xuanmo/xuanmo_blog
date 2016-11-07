@@ -52,7 +52,8 @@
             </span>
           </a>
           <a href="http://service.weibo.com/share/share.php?url=<?php echo home_url('/'); ?>%3Fp%3D<?php the_ID(); ?>%230-tsina-1-21107-397232819ff9a47a7b7e80a40613cfe1&title=【<?php the_title(); ?> | <?php bloginfo('name'); ?>】&appkey=1343713053&searchPic=true#_loginLayer_1473259217614" class="sina" target="blank" title="分享到新浪微博"></a>
-          <a href="http://tieba.baidu.com/f/commit/share/openShareApi?url=<?php echo home_url('/'); ?>%3Fp%3D<?php the_ID(); ?>&desc=<?php the_title(); ?> | <?php bloginfo('name'); ?>&comment=" class="baidu" target="blank" title="分享到百度贴吧"></a>
+          <a href="http://tieba.baidu.com/f/commit/share/openShareApi?url=<?php echo home_url('/'); ?><?php the_ID(); ?>.html&title=<?php the_title(); ?> | <?php bloginfo('name'); ?>&desc=&comment=" class="baidu" target="blank" title="分享到百度贴吧"></a>
+          <!-- http://tieba.baidu.com/f/commit/share/openShareApi?url=http%3A%2F%2Fshare.baidu.com%2Fcode%230-tieba-1-54499-7eff13ea8df1a334a227e1223f8d0dd3&title=%E5%88%86%E4%BA%AB%E6%8C%89%E9%92%AE-%E7%99%BE%E5%BA%A6%E5%88%86%E4%BA%AB&desc=&comment= -->
         </p>
         <?php endwhile; ?>
       	<p class="mark">

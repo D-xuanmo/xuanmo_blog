@@ -37,9 +37,11 @@ article .content img{
   max-width: 100%;
 }
 article .content h2{
+  margin: 20px 0;
   padding-left: 10px;
   background: #f5f5f5;
   border-left: 5px solid #0cf;
+  font-size: 18px;
   line-height: 40px;
   color: #292929;
 }
