@@ -5,7 +5,7 @@
       <?php get_sidebar(); ?>
     </div>
       <div class="fr right">
-        <div class="right-ar clearfix">
+        <div class="right-article clearfix">
             <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
             <article class="mobile-article-lg">
               <i class="line-top"></i>

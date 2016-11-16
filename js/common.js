@@ -47,8 +47,7 @@ $(function(){
     });
     function menu(){
       var bMark = true;
-      if( $(this).width() < 1090 ) {
-        // ellipsis($('.new-article li a') , 12);
+      if( $(this).width() < 981 ) {
         $('a.icon-menu-list2').click(function(e){
           e.stopPropagation();
           if( bMark ){
@@ -59,7 +58,7 @@ $(function(){
           }else{
             $nav.css({
               'opacity' : '0',
-              'transform' : 'translateX(300px)'
+              'transform' : 'translateX(100%)'
             });
           }
           bMark = !bMark;
@@ -67,7 +66,7 @@ $(function(){
         $('body').click(function(){
           $nav.css({
             'opacity' : '0',
-            'transform' : 'translateX(300px)'
+            'transform' : 'translateX(100%)'
           });
           bMark = !bMark;
         });
@@ -78,24 +77,11 @@ $(function(){
         });
         $menu.click(function(e){
           e.stopPropagation();
-          $(this).children('ul').slideDown().parent().siblings().children('ul').slideUp();
+          $(this).children('ul').slideToggle().parent().siblings().children('ul').slideUp();
         });
       }
     }
   })();
-  // 文字超出显示省略号
-  // ellipsis($('.new-article li a') , 16);
-  function ellipsis( obj , length ){
-    var str = '';
-    obj.each(function(){
-      if( $(this).text().length > length ){
-        str = $(this).text().substring(0,length) + '...';
-        $(this).html(function(){
-          return str;
-        });
-      }
-    });
-  }
   // 返回顶部动画
   var $backTop = $('div.icon-backtop');
   $window.on('scroll' , function(){
