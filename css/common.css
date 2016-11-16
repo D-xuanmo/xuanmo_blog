@@ -277,7 +277,7 @@ ul.menu > li {
 /*二级菜单*/
 ul.menu > li ul.sub-menu {
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 50%;
   width: 150px;
   margin-left: -90px;
