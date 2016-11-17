@@ -3,7 +3,7 @@
   $search_query =& new WP_Query("s=$s & showposts=-1");
   include('header-search.php');
 ?>
-<section class="main" style="padding: 130px 0 20px;">
+<section class="main">
   <div class="wrap clearfix">
     <p style="text-indent: 30px;">
       <?php
