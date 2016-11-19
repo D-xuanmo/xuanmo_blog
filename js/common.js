@@ -8,6 +8,7 @@ $(function(){
     // 删除head里的style
     $('head style[media="screen"],head style[media="print"]').remove();
     $('.comment-author .says' , $comment).remove();
+    // 为没有缩略图的img添加别的图片
     $('article .article-img').each(function(){
       random = Math.floor( Math.random() * arrImg.length );
       if( $(this).children('img').length == 0 ){
@@ -19,6 +20,12 @@ $(function(){
       $(this).removeAttr('height');
     });
   })();
+  // $('.wp-post-image').each(function(){
+  //   $(this).attr('data-src' , $(this).attr('src')).attr('src' , 'http://xuanmomo.com/puff.svg');
+  //   if( $(this).complete || $(this).redayState == 'complete' || $(this).redayState == 'loading' ){
+  //     $(this).attr('src' , $(this).attr('data-src'));
+  //   }
+  // });
   // 搜索框动画
   var bMark = true;
   var $header = $('header');
@@ -40,7 +47,6 @@ $(function(){
   (function(){
     var $nav = $('nav');
     var $menu = $('ul.menu > li');
-    // 手机导航判断有ul子元素禁止a跳转
     menu();
     $window.resize(function(){
       menu();
@@ -70,11 +76,13 @@ $(function(){
           });
           bMark = !bMark;
         });
+        // 手机导航判断有ul子元素禁止a跳转
         $menu.each(function(){
           if( $(this).children('ul').length >= 1 ){
             $(this).children('li > a').attr('href','javascript:;')
           }
         });
+        // 菜单打开与闭合
         $menu.click(function(e){
           e.stopPropagation();
           $(this).children('ul').slideToggle().parent().siblings().children('ul').slideUp();
