@@ -138,7 +138,9 @@
     </form>
     <!-- 导航区 -->
     <div class="head clearfix">
-      <strong class="fl logo"><a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>">Xuanmo Blog</a></strong>
+      <strong class="fl logo">
+        <a href="<?php bloginfo('url'); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a>
+      </strong>
       <!-- 联系我 -->
       <div class="fr contact">
         <a href="javascript:;" class="iconfont icon-search"></a>

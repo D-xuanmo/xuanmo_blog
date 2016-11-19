@@ -314,7 +314,6 @@ ul.menu > li:hover ul.sub-menu {
 }
 /*翻页功能*/
 div.wp-pagenavi {
-  margin-top: 50px;
   padding: 25px 0;
   text-align: center;
 }

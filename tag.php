@@ -42,7 +42,9 @@
       <?php _e('您要搜索的内容不存在'); ?>
     </p>
     <?php endif; ?>
-    <?php wp_pagenavi(); ?>
+  </div>
+  <div class="wp-pagenavi">
+    <?php par_pagenavi(5); ?>
   </div>
 </section>
 <?php get_footer(); ?>

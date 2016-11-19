@@ -51,7 +51,9 @@
             </p>
           <?php endif; ?>
         </div>
-        <?php wp_pagenavi(); ?>
+        <div class="wp-pagenavi">
+          <?php par_pagenavi(5); ?>
+        </div>
     </div>
   </div>
 </section>
