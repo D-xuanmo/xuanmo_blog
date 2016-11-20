@@ -178,6 +178,13 @@ header {
   width: 100%;
   padding-bottom: 10px;
   transition: 1s;
+  transform: translateY(-120px);
+  animation: header_move .5s forwards;
+}
+@keyframes header_move{
+  to{
+    transform: transLateY(0px);
+  }
 }
 header.on {
   position: fixed;
@@ -188,7 +195,7 @@ header a {
   color: #e2e2e2;
 }
 header a:hover {
-  color: #ffffff;
+  color: #fff;
 }
 /*搜索框*/
 form.search {
@@ -454,6 +461,7 @@ footer a:hover{
 footer > div .introduce {
   width: 30%;
   min-height: 80px;
+  text-indent: 16px;
   line-height: 26px;
 }
 footer > div .link {

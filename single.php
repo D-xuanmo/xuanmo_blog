@@ -57,7 +57,7 @@
         </p>
         <?php endwhile; ?>
       	<p class="mark">
-      		<?php the_tags('<strong class="iconfont icon-tag"></strong>', ' '); ?>
+      		<?php the_tags('<strong class="iconfont icon-tag"></strong> ', ' '); ?>
       	</p>
         <?php comments_template(); ?>
         <div class="tab-article clearfix">

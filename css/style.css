@@ -35,6 +35,7 @@ div.first-screen .banner li:nth-child(1):before {
   height: 100%;
   background: rgba(255, 255, 255, 0.1);
 }
+/*首页文字*/
 div.first-screen div.txt {
   position: absolute;
   top: 50%;
@@ -44,17 +45,21 @@ div.first-screen div.txt {
   height: 400px;
   margin: -180px 0 0 -450px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
 }
 div.first-screen div.txt p {
+  opacity: 0;
   margin-top: 20px;
 }
 div.first-screen div.txt h1{
+  opacity: 0;
   width: 270px;
   height: 60px;
   margin: 50px auto;
   text-indent: -3000px;
   color: transparent;
+  transform: translateX(150px);
+  animation: text_move .7s forwards;
 }
 div.first-screen div.txt h1 span{
   display: block;
@@ -62,14 +67,54 @@ div.first-screen div.txt h1 span{
   height: 60px;
   background: url(../images/blog-logo.png) no-repeat;
 }
-div.first-screen div.txt .more {
-  display: block;
-  width: 100px;
-  margin: 150px auto 0;
-  padding: 20px;
-  border: 1px solid #fff;
-  font-size: 20px;
+div.first-screen div.txt .move-left{
+  transform: translateX(-150px);
+  animation: text_move .7s forwards;
+}
+div.first-screen div.txt .move-right{
+  transform: translateX(150px);
+  animation: text_move 1s forwards;
+}
+@keyframes text_move{
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+/*首页箭头动画*/
+div.first-screen i.icon-menu-up {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -20px;
+  font-size: 40px;
   color: #fff;
+  animation: arrow_move .5s infinite alternate;
+}
+@-webkit-keyframes arrow_move{
+  to{
+    bottom: 60px;
+  }
+}
+@-moz-keyframes arrow_move{
+  to{
+    bottom: 60px;
+  }
+}
+@-ms-keyframes arrow_move{
+  to{
+    bottom: 60px;
+  }
+}
+@-o-keyframes arrow_move{
+  to{
+    bottom: 60px;
+  }
+}
+@keyframes arrow_move{
+  to{
+    bottom: 60px;
+  }
 }
 /*文章区*/
 .main {
@@ -142,7 +187,14 @@ div.first-screen div.txt .more {
 .main article div.con {
   padding: 10px 20px;
 }
+.main article div.con p{
+  height: 75px;
+}
 .main article .article-title a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 16px;
   line-height: 24px;
 }
@@ -151,9 +203,7 @@ div.first-screen div.txt .more {
   color: #999999;
 }
 .main article .article-more {
-  position: absolute;
-  bottom: 6px;
-  right: 10px;
+  display: block;
   margin-top: 20px;
   text-align: right;
   color: #5fcfed;

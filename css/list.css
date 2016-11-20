@@ -64,13 +64,11 @@ section article div.con {
   padding: 5px;
 }
 .right article p {
+  height: 80px;
   padding: 5px;
   text-indent: 16px;
 }
 .right article .more {
-  position: absolute;
-  bottom: 6px;
-  right: 10px;
   text-align: right;
   color: #5fcfed;
 }
