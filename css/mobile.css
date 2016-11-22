@@ -87,6 +87,10 @@
     width: calc(100% / 1 - 35px);
     height: auto;
   }
+  .main article div.con p,
+  .right article p{
+    height: auto;
+  }
   .main article .article-img img,
 	.right article a img{
 		width: auto;

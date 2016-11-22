@@ -274,10 +274,6 @@
 					<textarea name="x_copy" id="x_copy" class="large-text code" rows="8" cols="40"><?php echo stripslashes( get_option('x_copyright') ); ?></textarea>
 				</p>
 				<p>
-					尾部自定义JavaScript代码：<br />
-					<textarea name="x_js" id="x_js" class="large-text code" rows="8" cols="40"><?php echo stripslashes( get_option('x_javascript') ); ?></textarea>
-				</p>
-				<p>
 					<input type="submit" name="bcn_admin_options" value="保存更改"/>
 				</p>
 			</form>
@@ -299,14 +295,6 @@
 		update_option('x_links', $_POST['x_link']);
 		update_option('x_copyright', $_POST['x_copy']);
 		update_option('x_javascript', $_POST['x_js']);
-		$str=$_POST['x_git'];//读取str的内容赋值给$str变量
-
-if(get_magic_quotes_gpc())//如果get_magic_quotes_gpc()是打开的
-
-{
-$str=stripslashes($str);//将字符串进行处理
-
-}
 	}
 	add_action('admin_menu', 'themeoptions_admin_menu');
 
@@ -395,4 +383,5 @@ $str=stripslashes($str);//将字符串进行处理
     }
     die;
 	}
+	
 ?>

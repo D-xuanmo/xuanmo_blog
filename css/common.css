@@ -178,13 +178,6 @@ header {
   width: 100%;
   padding-bottom: 10px;
   transition: 1s;
-  transform: translateY(-120px);
-  animation: header_move .5s forwards;
-}
-@keyframes header_move{
-  to{
-    transform: transLateY(0px);
-  }
 }
 header.on {
   position: fixed;
@@ -241,7 +234,7 @@ div.head {
 }
 div.head strong {
   min-width: 15%;
-  margin: 20px 20px 0 0;
+  margin: 25px 20px 0 0;
 }
 div.head strong a {
   padding: 5px;
@@ -332,10 +325,10 @@ div.wp-pagenavi .extend {
   padding: 10px 15px;
   background: #5fcfed;
   border: none;
-  color: #ffffff;
+  color: #fff;
 }
 div.wp-pagenavi .current {
-  background: #387ae9;
+  background: #10abd4;
 }
 /*侧边栏*/
 .aside-fr{
@@ -442,6 +435,7 @@ aside.tag-cloud a{
   border: 1px solid #c1c1c1;
   border-radius: 5px;
   box-shadow: 1px 1px 3px #c1c1c1;
+  color: #404040;
 }
 /*页尾*/
 footer {

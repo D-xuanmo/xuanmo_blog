@@ -16,16 +16,9 @@ $(function(){
       }
     });
     $('.content img').each(function(){
-      $(this).removeAttr('width');
-      $(this).removeAttr('height');
+      $(this).removeAttr('width').removeAttr('height');
     });
   })();
-  // $('.wp-post-image').each(function(){
-  //   $(this).attr('data-src' , $(this).attr('src')).attr('src' , 'http://xuanmomo.com/puff.svg');
-  //   if( $(this).complete || $(this).redayState == 'complete' || $(this).redayState == 'loading' ){
-  //     $(this).attr('src' , $(this).attr('data-src'));
-  //   }
-  // });
   // 搜索框动画
   var bMark = true;
   var $header = $('header');
@@ -67,13 +60,6 @@ $(function(){
               'transform' : 'translateX(100%)'
             });
           }
-          bMark = !bMark;
-        });
-        $('body').click(function(){
-          $nav.css({
-            'opacity' : '0',
-            'transform' : 'translateX(100%)'
-          });
           bMark = !bMark;
         });
         // 手机导航判断有ul子元素禁止a跳转
@@ -155,6 +141,15 @@ $(function(){
     $('.cover-hide').click(function(){
       $('.cover').hide();
       $('.cover-img').children().remove();
+    });
+  })();
+  // 标签云
+  (function(){
+    $('.tag-cloud a').each(function(){
+      $(this).contents().filter(function(){
+        return this.nodeType
+      })
+      .before('<i class="iconfont icon-tag1"></i> ');
     });
   })();
 });
