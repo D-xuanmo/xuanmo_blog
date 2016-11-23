@@ -95,6 +95,9 @@ a:hover{
   max-width: 1180px;
   margin: 0 auto;
 }
+.pc-none{
+  display: none;
+}
 ::selection{
   background: #16C0F8;
   color: #fff;

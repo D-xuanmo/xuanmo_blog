@@ -13,6 +13,7 @@
 </footer>
 <!-- footer end -->
 <div class="iconfont icon-backtop"></div>
+<script src="<?php bloginfo('template_url'); ?>/js/xuan_fullPage.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
 <script type="text/javascript">
   //xuanmomo.com Baidu tongji analytics

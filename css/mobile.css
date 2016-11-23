@@ -57,6 +57,49 @@
   ul.menu > li ul.sub-menu{
     margin: 0 auto;
   }
+  /*手机端轮播*/
+  .mobile-banner{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    height: 320px;
+    margin: 100px auto 0;
+  }
+  .mobile-banner .roll-banner{
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+  .mobile-banner .roll-banner li{
+    float: left;
+    height: 100%;
+  }
+  .mobile-banner .roll-banner li img{
+    width: 100%;
+    height: 100%;
+  }
+  .mobile-banner .plugin-banner-btn{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    padding: 3px 5px;
+    background: rgba(222, 222, 222, 0.7);
+    border-radius: 15px;
+    line-height: 10px;
+  }
+  .mobile-banner .plugin-banner-btn li{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 3px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .mobile-banner .plugin-banner-btn li.on{
+    background: #0cf;
+  }
   /*文章变成双栏*/
   .main .mobile-article-lg,
   section .mobile-article-lg{
@@ -81,6 +124,9 @@
   }
 }
 @media (max-width:550px){
+  .mobile-banner{
+    height: 200px;
+  }
   /*文章变成一栏*/
   .main .mobile-article-lg,
   section .mobile-article-lg{

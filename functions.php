@@ -7,6 +7,11 @@
 	}
 	add_filter( 'get_avatar', 'dw_get_avatar', 10, 3 );
 
+	//找回上传设置
+	if(get_option('upload_path')=='wp-content/uploads' || get_option('upload_path')==null) {
+		update_option('upload_path',WP_CONTENT_DIR.'/uploads');
+	}
+
 	/**
 	* 分页代码
 	* ===========================================================================
@@ -246,8 +251,9 @@
 					新浪微博链接：<br />
 					<textarea name="x_sina" id="x_sina" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_sinas') ); ?></textarea>
 				</p>
+
 				<!-- <p>
-					<input type="file" name="x_file" value="<?php echo get_option('x_files'); ?>">
+					<input type="file" name="x_file" value="<?php echo get_option('x_file'); ?>">
 				</p> -->
 				<p>
 					微信图片地址：<br />
@@ -383,5 +389,5 @@
     }
     die;
 	}
-	
+
 ?>
