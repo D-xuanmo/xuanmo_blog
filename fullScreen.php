@@ -11,8 +11,8 @@
 </div>
 <div class="mobile-banner pc-none">
   <ul class="roll-banner clearfix">
+    <li><img src="http://file.xuanmomo.com/flower2_1.jpg" alt=""></li>
     <li><img src="http://file.xuanmomo.com/T1-lg.jpg" alt=""></li>
-    <li><img src="http://file.xuanmomo.com/T2-lg.jpg" alt=""></li>
     <li><img src="http://file.xuanmomo.com/TT.jpg" alt=""></li>
   </ul>
   <ul class="plugin-banner-btn"></ul>

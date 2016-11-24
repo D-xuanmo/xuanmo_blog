@@ -39,6 +39,9 @@
   }
 }
 @media (max-width:780px){
+  .main{
+    padding: 10px 10px;
+  }
   .mobile-hide{
     display: none;
   }
@@ -62,7 +65,7 @@
     display: block;
     position: relative;
     overflow: hidden;
-    width: 90%;
+    width: 95%;
     height: 320px;
     margin: 100px auto 0;
   }
@@ -81,7 +84,7 @@
   }
   .mobile-banner .plugin-banner-btn{
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     padding: 3px 5px;
     background: rgba(222, 222, 222, 0.7);
@@ -90,8 +93,8 @@
   }
   .mobile-banner .plugin-banner-btn li{
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 8px;
+    height: 8px;
     margin: 0 3px;
     background: #fff;
     border-radius: 50%;
@@ -142,7 +145,7 @@
 		width: auto;
 		max-width: 100%;
     height: 1;
-		border-radius: 0;
+		border-radius: 10px 10px 0 0;
 	}
   footer > div .introduce,
   footer > div .link{

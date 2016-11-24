@@ -271,7 +271,7 @@ div.cover .cover-hide{
 }
 div.cover .cover-img{
   width: 90%;
-  height: 80%;
+  height: 90%;
 }
 div.cover .cover-hide{
   width: 100%;
@@ -312,4 +312,13 @@ div.cover i.icon-menu-left{
 }
 div.cover i.icon-menu-right{
   right: 30px;
+}
+div.cover em{
+  position: absolute;
+  z-index: 99;
+  top: 10%;
+  right: 30px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
 }

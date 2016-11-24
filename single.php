@@ -97,6 +97,7 @@
     <div class="cover-hide"></div>
     <i class="iconfont icon-menu-left"></i>
     <i class="iconfont icon-menu-right"></i>
+    <em class="iconfont icon-close1"></em>
     <p>已经没有了！</p>
   </div>
 </section>

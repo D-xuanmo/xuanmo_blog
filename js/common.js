@@ -95,12 +95,14 @@ $(function(){
           cut( $bannerBox , $li_btn.eq(i - 1) , 1000 );
         }
       }else{
-        i--;
-        if( i < 0 ){
-          i = $bannerLength - 3;
-          $bannerBox.css( 'left' , ($bannerLength - 2) * -$bannerLi.width() );
+        if( !$bannerBox.is(':animated') ){
+          i--;
+          if( i < 0 ){
+            i = $bannerLength - 3;
+            $bannerBox.css( 'left' , ($bannerLength - 2) * -$bannerLi.width() );
+          }
+          cut( $bannerBox , $li_btn.eq(i - 1) , 1000 );
         }
-        cut( $bannerBox , $li_btn.eq(i - 1) , 1000 );
       }
     });
     function cut( obj_box , obj_btn , time ){
@@ -210,7 +212,7 @@ $(function(){
         });
       },1500);
     }
-    $('.cover-hide').click(function(){
+    $('.cover-hide , .icon-close1').click(function(){
       $('.cover').hide();
       $('.cover-img').children().remove();
     });
