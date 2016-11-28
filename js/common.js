@@ -114,40 +114,34 @@ $(function(){
   (function(){
     var $nav = $('nav');
     var $menu = $('ul.menu > li');
-    menu();
-    $window.resize(function(){
-      menu();
-    });
-    function menu(){
-      var bMark = true;
-      if( $(this).width() < 981 ) {
-        $('a.icon-menu-list2').click(function(e){
-          e.stopPropagation();
-          if( bMark ){
-            $nav.css({
-              'opacity' : '1',
-              'transform' : 'translateX(0)'
-            });
-          }else{
-            $nav.css({
-              'opacity' : '0',
-              'transform' : 'translateX(100%)'
-            });
-          }
-          bMark = !bMark;
-        });
-        // 手机导航判断有ul子元素禁止a跳转
-        $menu.each(function(){
-          if( $(this).children('ul').length >= 1 ){
-            $(this).children('li > a').attr('href','javascript:;')
-          }
-        });
-        // 菜单打开与闭合
-        $menu.click(function(e){
-          e.stopPropagation();
-          $(this).children('ul').slideToggle().parent().siblings().children('ul').slideUp();
-        });
-      }
+    var bMark = true;
+    if( $(this).width() < 981 ) {
+      $('a.icon-menu-list2').click(function(e){
+        e.stopPropagation();
+        if( bMark ){
+          $nav.css({
+            'opacity' : '1',
+            'transform' : 'translateX(0)'
+          });
+        }else{
+          $nav.css({
+            'opacity' : '0',
+            'transform' : 'translateX(100%)'
+          });
+        }
+        bMark = !bMark;
+      });
+      // 手机导航判断有ul子元素禁止a跳转
+      $menu.each(function(){
+        if( $(this).children('ul').length >= 1 ){
+          $(this).children('li > a').attr('href','javascript:;')
+        }
+      });
+      // 菜单打开与闭合
+      $menu.click(function(e){
+        e.stopPropagation();
+        $(this).children('ul').slideToggle().parent().siblings().children('ul').slideUp();
+      });
     }
   })();
   // 返回顶部动画
