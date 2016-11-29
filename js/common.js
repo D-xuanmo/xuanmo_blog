@@ -241,13 +241,4 @@ $(function(){
       $(this).parent('span').hide();
     });
   });
-  // 标签云
-  (function(){
-    $('.tag-cloud a').each(function(){
-      $(this).contents().filter(function(){
-        return this.nodeType
-      })
-      .before('<i class="iconfont icon-tag1"></i> ');
-    });
-  })();
 });

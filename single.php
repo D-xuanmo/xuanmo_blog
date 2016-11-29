@@ -61,7 +61,7 @@
           <p><?php echo get_option('x_author_txt'); ?></p>
           <p class="share-btn">
             <a href="<?php bloginfo('home') ;?>"><i class="iconfont icon-home2"></i>博客</a>
-            <a href="<?php echo stripslashes(get_option('x_t_qq')); ?>"><i class="iconfont icon-qq"></i>QQ</a>
+            <a href="<?php echo stripslashes(get_option('x_t_qq')); ?>" target="_blank"><i class="iconfont icon-qq"></i>QQ</a>
             <a href="javascript:;">
               <i class="iconfont icon-wechat"></i>微信
               <span class="wechat-num">
@@ -70,7 +70,7 @@
                 <i class="iconfont icon-close1"></i>
               </span>
             </a>
-            <a href="<?php echo stripslashes(get_option('x_sinas')); ?>"><i class="iconfont icon-sina"></i>微博</a>
+            <a href="<?php echo stripslashes(get_option('x_sinas')); ?>" target="_blank"><i class="iconfont icon-sina"></i>微博</a>
             <a href="mailto:<?php echo stripslashes(get_option('x_email')); ?>?subject=Hello <?php echo bloginfo('name'); ?>"><i class="iconfont icon-email2"></i>邮箱</a>
           </p>
         </div>
@@ -104,7 +104,7 @@
         </div>
       </article>
     <?php endif; ?>
-    <div class=" mobile-hide aside-fr fr">
+    <div class="mobile-hide aside-fr fr">
       <?php get_sidebar(); ?>
     </div>
   </div>
