@@ -169,7 +169,7 @@ section{
   padding: 5px;
   color: #ccc;
 }
-/*导航*/
+/*头部*/
 header {
   position: absolute;
   top: -120px;
@@ -226,7 +226,7 @@ form.search span {
   color: #ffffff;
   cursor: pointer;
 }
-/*头部盒子*/
+/*头部导航，logo盒子*/
 div.head {
   box-sizing: border-box;
   max-width: 85%;
@@ -477,4 +477,15 @@ div.icon-backtop {
   transition: .7s;
   color: #16c0f8;
   cursor: pointer;
+}
+/*article滚动显示*/
+.main article,
+.right article{
+  opacity: 0;
+  transform: translateY(-20px);
+}
+.main article.on,
+.right article.on{
+  opacity: 1;
+  transform: translateY(0);
 }

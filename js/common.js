@@ -36,7 +36,27 @@ $(function(){
     $header.css('top','-120px');
     bMark = !bMark;
   });
-  // 无缝滚动
+  // 滚动显示
+  (function(){
+    var windowH = $window.height() , scrollT = $window.scrollTop();
+    $window.resize(function(){
+      windowH = $window.height();
+    });
+    $window.scroll(function(){
+      scrollT = $window.scrollTop();
+      $('.main article , .right article').each(function(){
+        if( ( $(this).offset().top - scrollT ) < ( windowH - $(this).height() / 2 ) ){
+          $(this).addClass('on');
+        }
+      });
+    });
+    $('.main article , .right article').each(function(){
+      if( ( $(this).offset().top - scrollT ) < ( windowH - $(this).height() / 2 ) ){
+        $(this).addClass('on');
+      }
+    });
+  })();
+  // 手机端无缝滚动
   (function(){
     var i = 1;
     var timer = null;
