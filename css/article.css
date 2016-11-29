@@ -70,86 +70,6 @@ article .content .case-show{
   text-align: center;
   color: #fff;
 }
-/*评论区域表单*/
-#respond form > p{
-  padding: 5px 0;
-}
-#respond form textarea{
-  box-sizing: border-box;
-  resize: none;
-  width: 100%;
-  padding:5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-#respond form p label{
-  display: inline-block;
-  width: 100px;
-  text-align: right;
-  color: #9a9a9a;
-  cursor: pointer;
-}
-#respond form input[type="text"]{
-  height: 30px;
-  padding-left: 5px;
-  border: 1px solid #7e7e7e;
-  border-radius: 5px;
-}
-#respond form input[type="submit"]{
-  padding: 10px 15px;
-  background: #16c0f8;
-  border-radius: 5px;
-  color: #fff;
-}
-/*评论区域评论列表*/
-#comments{
-  position: relative;
-  padding-top: 40px;
-}
-#comments ol.comment-list li{
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-/*评论作者*/
-#comments ol.comment-list li .comment-author img{
-  float: left;
-  width: 40px;
-  height: 40px;
-  margin-right: 15px;
-  border-radius: 50%;
-}
-#comments ol.comment-list li .comment-author cite{
-  font-size: 18px;
-  font-weight: 600;
-}
-/*评论时间*/
-#comments ol.comment-list li .comment-meta a{
-  font-size: 12px;
-}
-/*评论内容*/
-#comments ol.comment-list li p{
-  padding: 20px 0;
-  font-size: 18px;
-}
-/*回复按钮*/
-#comments ol.comment-list .reply a{
-  display: block;
-  width: 60px;
-  margin-bottom: 5px;
-  padding: 8px 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-}
-#comments ol.comment-list .reply a:hover{
-  border-color: #27c5d5;
-}
-/*子回复*/
-#comments ol.comment-list li.comment,
-#comments ol.comment-list ol.children{
-  padding: 10px 10px 10px 25px;
-}
 article .like {
   margin: 20px 0;
   text-align: center;
@@ -247,6 +167,143 @@ p.mark strong{
 }
 p.mark a{
   padding: 8px 2px;
+}
+/*文章页关于作者*/
+.article-about-author{
+  margin: 20px 0;
+}
+.article-about-author > img{
+  float: left;
+  width: 90px;
+  height: 90px;
+  margin-right: 10px;
+}
+.article-about-author h2{
+  font-size: 16px;
+}
+.article-about-author .share-btn a{
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+.article-about-author .share-btn a:nth-of-type(1){
+  background: #fc8bd2;
+}
+.article-about-author .share-btn a:nth-of-type(2){
+  background: #b663ff;
+}
+.article-about-author .share-btn a:nth-of-type(3){
+  background: #4cc6fa;
+}
+.article-about-author .share-btn a:nth-of-type(3) span{
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+  height: 170px;
+  padding: 20px 10px 10px;
+  margin: auto;
+  background: #b7b7b7;
+}
+.article-about-author .share-btn a:nth-of-type(3) span i{
+  position: absolute;
+  top: 2px;
+  right: 0;
+  font-size: 24px;
+  cursor: pointer;
+}
+.article-about-author .share-btn a:nth-of-type(4){
+  background: #ffb332;
+}
+.article-about-author .share-btn a:nth-of-type(5){
+  background: #49cc5b;
+}
+
+/*评论区域表单*/
+#respond form > p{
+  padding: 5px 0;
+}
+#respond form textarea{
+  box-sizing: border-box;
+  resize: none;
+  width: 100%;
+  padding:5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#respond form p label{
+  display: inline-block;
+  width: 100px;
+  text-align: right;
+  color: #9a9a9a;
+  cursor: pointer;
+}
+#respond form input[type="text"]{
+  height: 30px;
+  padding-left: 5px;
+  border: 1px solid #7e7e7e;
+  border-radius: 5px;
+}
+#respond form input[type="submit"]{
+  padding: 10px 15px;
+  background: #16c0f8;
+  border-radius: 5px;
+  color: #fff;
+}
+/*评论区域评论列表*/
+#comments{
+  position: relative;
+  padding-top: 40px;
+}
+#comments ol.comment-list li{
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/*评论作者*/
+#comments ol.comment-list li .comment-author img{
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%;
+}
+#comments ol.comment-list li .comment-author cite{
+  font-size: 18px;
+  font-weight: 600;
+}
+/*评论时间*/
+#comments ol.comment-list li .comment-meta a{
+  font-size: 12px;
+}
+/*评论内容*/
+#comments ol.comment-list li p{
+  padding: 20px 0;
+  font-size: 18px;
+}
+/*回复按钮*/
+#comments ol.comment-list .reply a{
+  display: block;
+  width: 60px;
+  margin-bottom: 5px;
+  padding: 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+#comments ol.comment-list .reply a:hover{
+  border-color: #27c5d5;
+}
+/*子回复*/
+#comments ol.comment-list li.comment,
+#comments ol.comment-list ol.children{
+  padding: 10px 10px 10px 25px;
 }
 /*图片放大*/
 div.cover{

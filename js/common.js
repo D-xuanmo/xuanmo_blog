@@ -19,6 +19,7 @@ $(function(){
       $(this).removeAttr('width').removeAttr('height');
     });
   })();
+  $('body').animate({scrollTop : 0}, 0);
   // 搜索框动画
   var bMark = true;
   var $header = $('header');
@@ -180,13 +181,12 @@ $(function(){
     }
   });
   $backTop.click(function(){
-    $('body,html').animate({scrollTop : 0},800);
+    $('body').animate({scrollTop : 0},800);
   });
   // 放大图片预览
   (function(){
     var $content = $('.content');
-    var $img;
-    var i = 0;
+    var $img , i = 0;
     $('.content img').each(function(n){
       $(this).click(function(){
         i = n;
@@ -226,11 +226,21 @@ $(function(){
         });
       },1500);
     }
-    $('.cover-hide , .icon-close1').click(function(){
+    $('.cover-hide , .cover .icon-close1').click(function(){
       $('.cover').hide();
       $('.cover-img').children().remove();
     });
   })();
+  // 文章页微信显示与关闭
+  $('.article-about-author .share-btn a:nth-of-type(3)').click(function(){
+    // 微信盒子显示
+    $(this).children('span').show()
+    // 关闭按钮隐藏span
+    .children('i').click(function(e){
+      e.stopPropagation();
+      $(this).parent('span').hide();
+    });
+  });
   // 标签云
   (function(){
     $('.tag-cloud a').each(function(){

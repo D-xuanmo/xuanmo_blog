@@ -53,12 +53,28 @@
           </a>
           <a href="http://service.weibo.com/share/share.php?url=<?php echo home_url('/'); ?>%3Fp%3D<?php the_ID(); ?>%230-tsina-1-21107-397232819ff9a47a7b7e80a40613cfe1&title=【<?php the_title(); ?> | <?php bloginfo('name'); ?>】&appkey=1343713053&searchPic=true#_loginLayer_1473259217614" class="sina" target="blank" title="分享到新浪微博"></a>
           <a href="http://tieba.baidu.com/f/commit/share/openShareApi?url=<?php echo home_url('/'); ?><?php the_ID(); ?>.html&title=<?php the_title(); ?> | <?php bloginfo('name'); ?>&desc=&comment=" class="baidu" target="blank" title="分享到百度贴吧"></a>
-          <!-- http://tieba.baidu.com/f/commit/share/openShareApi?url=http%3A%2F%2Fshare.baidu.com%2Fcode%230-tieba-1-54499-7eff13ea8df1a334a227e1223f8d0dd3&title=%E5%88%86%E4%BA%AB%E6%8C%89%E9%92%AE-%E7%99%BE%E5%BA%A6%E5%88%86%E4%BA%AB&desc=&comment= -->
         </p>
+        <p class="mark"><?php the_tags('<strong class="iconfont icon-tag"></strong> ', ' '); ?></p>
+        <div class="article-about-author">
+          <?php echo get_avatar( get_the_author_email(), '60' );?>
+          <h2>作者专栏：<?php the_author(); ?></h2>
+          <p><?php echo get_option('x_author_txt'); ?></p>
+          <p class="share-btn">
+            <a href="<?php bloginfo('home') ;?>"><i class="iconfont icon-home2"></i>博客</a>
+            <a href="<?php echo stripslashes(get_option('x_t_qq')); ?>"><i class="iconfont icon-qq"></i>QQ</a>
+            <a href="javascript:;">
+              <i class="iconfont icon-wechat"></i>微信
+              <span class="wechat-num">
+                微信号：<?php echo get_option('x_wechats_number'); ?>
+                <img src="<?php echo stripslashes(get_option('x_wechats')); ?>" width="100%" alt="<?php the_author(); ?>微信" />
+                <i class="iconfont icon-close1"></i>
+              </span>
+            </a>
+            <a href="<?php echo stripslashes(get_option('x_sinas')); ?>"><i class="iconfont icon-sina"></i>微博</a>
+            <a href="mailto:<?php echo stripslashes(get_option('x_email')); ?>?subject=Hello <?php echo bloginfo('name'); ?>"><i class="iconfont icon-email2"></i>邮箱</a>
+          </p>
+        </div>
         <?php endwhile; ?>
-      	<p class="mark">
-      		<?php the_tags('<strong class="iconfont icon-tag"></strong> ', ' '); ?>
-      	</p>
         <?php comments_template(); ?>
         <div class="tab-article clearfix">
           <div class="fl tab-left">

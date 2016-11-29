@@ -236,6 +236,10 @@
 			<form method="POST" action="">
 				<input type="hidden" name="update_themeoptions" value="true" />
 				<p>
+					作者简介：<br />
+					<textarea name="x_author" id="x_author" class="large-text code" rows="2" cols="40"><?php echo stripslashes ( get_option('x_author_txt') ); ?></textarea>
+				</p>
+				<p>
 					电子邮箱：<br />
 					<textarea name="x_mail" id="x_mail" class="large-text code" rows="2" cols="40"><?php echo stripslashes ( get_option('x_email') ); ?></textarea>
 				</p>
@@ -251,10 +255,10 @@
 					新浪微博链接：<br />
 					<textarea name="x_sina" id="x_sina" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_sinas') ); ?></textarea>
 				</p>
-
-				<!-- <p>
-					<input type="file" name="x_file" value="<?php echo get_option('x_file'); ?>">
-				</p> -->
+				<p>
+					微信号：<br />
+					<textarea name="x_wechat_num" id="x_wechat_num" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_wechats_number') ); ?></textarea>
+				</p>
 				<p>
 					微信图片地址：<br />
 					<textarea name="x_wechat" id="x_wechat" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_wechats') ); ?></textarea>
@@ -289,12 +293,13 @@
 	function themeoptions_update()
 	{
 		// 数据更新验证
+		update_option('x_author_txt', $_POST['x_author']);
 		update_option('x_email', $_POST['x_mail']);
 		update_option('x_t_qq', $_POST['x_qq']);
 		update_option('x_github', $_POST['x_git']);
 		update_option('x_sinas', $_POST['x_sina']);
+		update_option('x_wechats_number', $_POST['x_wechat_num']);
 		update_option('x_wechats', $_POST['x_wechat']);
-		// update_option('x_files', $_POST['x_file']);
 		update_option('x_keywords', $_POST['x_key']);
 		update_option('x_description', $_POST['x_des']);
 		update_option('x_words', $_POST['x_word']);

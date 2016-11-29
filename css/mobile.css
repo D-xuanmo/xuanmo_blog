@@ -38,9 +38,6 @@
   }
 }
 @media (max-width:780px){
-  .main{
-    padding: 10px 10px;
-  }
   .mobile-hide{
     display: none;
   }
