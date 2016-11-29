@@ -32,7 +32,6 @@ html{
 }
 body{
   overflow-x: hidden;
-  min-width: 330px;
   font: 14px/20px "Consolas",Microsoft Yahei;
   background: #fff;
 }
@@ -44,7 +43,6 @@ input{
   -webkit-appearance: none;
   border: none;
   box-sizing: border-box;
-  border-radius: 0;
   font-family: "Consolas",Microsoft Yahei;
 }
 input[type="button"],
