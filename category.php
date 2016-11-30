@@ -1,4 +1,4 @@
-<?php include('header-list.php'); ?>
+<?php get_header(); ?>
 <section>
   <div class="wrap clearfix">
     <div class="mobile-hide fl left">

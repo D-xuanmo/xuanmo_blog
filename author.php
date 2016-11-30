@@ -1,7 +1,4 @@
-<?php
-  // 検索结果用
-  include('header-search.php');
-?>
+<?php get_header(); ?>
 <section class="main">
   <div class="wrap clearfix">
     <p style="text-indent: 30px;">

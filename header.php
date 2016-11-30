@@ -7,22 +7,56 @@
   <meta name="description" content="<?php echo get_option('x_description'); ?>" >
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>
-  <link rel="stylesheet" href="http://xuanmomo.com/iconfont.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/common.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
-  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/mobile.css">
-  <?php wp_head(); ?>
-  <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.1.4.min.js"></script>
-  <script>
-    var isIE = !!window.ActiveXObject;
-    var isIE6 = isIE &&! window.XMLHttpRequest;
-    var isIE8 = isIE &&!! document.documentMode;
-    var isIE7 = isIE &&! isIE6 &&! isIE8;
-    if (isIE){
-      if (isIE6 || isIE7 || isIE8){
-        alert('您当前浏览器版本太低，请更换浏览器！');
+  <script type="text/javascript">
+    if(navigator.appName == "Microsoft Internet Explorer" ) {
+      if( (navigator.appVersion.match(/MSIE 8/g) == "MSIE 8") || (navigator.appVersion.match(/MSIE 7/g) == "MSIE 7") ){
+        setInterval(function(){
+          alert("您当前浏览器版本太低，请您更换浏览器！");
+        },1000);
       }
     }
+  </script>
+  <?php wp_head(); ?>
+  <link rel="stylesheet" href="http://xuanmomo.com/iconfont.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/common.css">
+  <?php
+    if( is_home() ){
+  ?>
+      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
+      <style>
+        ul.menu > li ul.sub-menu{ background: rgba(210, 210, 210, 0.6); }
+      </style>
+  <?php
+    }else if( is_category() ){
+  ?>
+      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/list.css">
+  <?php
+    }else if( is_single() ){
+  ?>
+      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/article.css">
+  <?php
+    }else if( is_search() || is_author() || is_tag() || is_404() ){
+  ?>
+      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
+      <style>
+        header { background: rgba(40, 40, 40, 0.7); }
+      </style>
+  <?php
+    }else if( is_page() ){
+  ?>
+      <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
+      <style>
+        header { background: rgba(40, 40, 40, 0.7); }
+        h2{ padding: 10px 0; }
+        a{ display: inline-block; padding: 0 5px; }
+        a img{ display: block; width: 32px; height: 32px; margin: 3px auto; border-radius: 8px; }
+      </style>
+  <?php
+    }
+  ?>
+  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/mobile.css">
+  <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.1.4.min.js"></script>
+  <script>
     // 点赞功能
     $(document).ready(function() {
     	$.fn.postLike = function() {
@@ -50,10 +84,6 @@
     	});
     });
   </script>
-  <style>
-    ul.menu > li ul.sub-menu{ background: rgba(210, 210, 210, 0.6); }
-  </style>
-
 </head>
 <body>
   <!-- header start -->

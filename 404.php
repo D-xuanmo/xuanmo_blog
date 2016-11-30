@@ -1,4 +1,4 @@
-<?php include('header-search.php'); ?>
+<?php get_header(); ?>
 <section>
   <div class="wrap clearfix">
     <div class="fl">

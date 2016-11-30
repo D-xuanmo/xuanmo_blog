@@ -1,4 +1,4 @@
-<?php include('header-article.php'); ?>
+<?php get_header(); ?>
 <section>
   <div class="wrap clearfix">
     <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>

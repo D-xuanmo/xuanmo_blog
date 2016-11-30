@@ -118,6 +118,9 @@
   .contact .mobile-hide{
     display: none;
   }
+  .main{
+    padding: 10px;
+  }
   .main article div.con{
     padding: 10px;
   }

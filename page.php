@@ -1,9 +1,6 @@
-<?php include('header-page.php'); ?>
+<?php get_header(); ?>
 <section style="background:#fff">
   <div class="wrap clearfix">
-    <!-- <div class="mobile-hide fl" style="width: 25%;">
-      <?php //get_sidebar(); ?>
-    </div> -->
     <div class="mobile-article-lg fr right" style="width: 100%; padding-top: 14px;">
       <?php
         $page_id = 297;
