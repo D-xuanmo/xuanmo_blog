@@ -1,491 +1,491 @@
 /*公共样式*/
 @charset "utf-8";
 article,aside,dialog,footer,header,section,footer,nav,figure,menu{
-  display: block;
+    display: block;
 }
 body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article,
 aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,blockquote{
-  margin: 0;
-  padding:0;
+    margin: 0;
+    padding:0;
 }
 blockquote{
-  padding: 10px;
-  border-radius: 5px;
-  background: #3b3b3b;
-  color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    background: #3b3b3b;
+    color: #fff;
 }
 input:focus,
 button:focus,
 select:focus,
 textarea:focus{
-  outline: none;
+    outline: none;
 }
 @font-face{
-  font-family: yapi;
-  src: url(../font/yapi.otf);
+    font-family: yapi;
+    src: url(../font/yapi.otf);
 }
 html{
-  -webkit-text-size-adjust: none;
-  -ms-text-size-adjust: none;
-  width: 100%;
-  height: 100%;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    width: 100%;
+    height: 100%;
 }
 body{
-  overflow-x: hidden;
-  font: 14px/20px "Consolas",Microsoft Yahei;
-  background: #fff;
+    overflow-x: hidden;
+    font: 14px/20px "Consolas",Microsoft Yahei;
+    background: #fff;
 }
 article{
-  background: #fff;
+    background: #fff;
 }
 input{
-  /*去掉苹果默认样式*/
-  -webkit-appearance: none;
-  border: none;
-  box-sizing: border-box;
-  font-family: "Consolas",Microsoft Yahei;
+    /*去掉苹果默认样式*/
+    -webkit-appearance: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Consolas",Microsoft Yahei;
 }
 input[type="button"],
 input[type="submit"]{
-  cursor: pointer;
+    cursor: pointer;
 }
 img{
-  vertical-align: top;
-  border: none;
+    vertical-align: top;
+    border: none;
 }
 em,
 i{
-  font-style: normal;
+    font-style: normal;
 }
 li{
-  list-style: none;
+    list-style: none;
 }
 p{
-  word-break: break-all;
+    word-break: break-all;
 }
 a{
-  text-decoration: none;
-  color: #000;
-  transition: .7s;
+    text-decoration: none;
+    color: #000;
+    transition: .7s;
 }
 a:hover{
-  color: #0cf;
+    color: #0cf;
 }
 .fl{
-  float: left;
+    float: left;
 }
 .fr{
-  float: right;
+    float: right;
 }
 .clearfix:after{
-  content: "";
-  display: block;
-  height: 0;
-  clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
 }
 .inline-block{
-  display: inline-block;
+    display: inline-block;
 }
 .block{
-  display: block;
+    display: block;
 }
 .wrap{
-  max-width: 1180px;
-  margin: 0 auto;
+    max-width: 1180px;
+    margin: 0 auto;
 }
 .pc-none{
-  display: none;
+    display: none;
 }
 ::selection{
-  background: #16C0F8;
-  color: #fff;
+    background: #16C0F8;
+    color: #fff;
 }
 /*颜色*/
 .ccc{
-  color: #ccc;
+    color: #ccc;
 }
 .bg282828{
-  background: #282828;
+    background: #282828;
 }
 .cur{
-  cursor: pointer;
+    cursor: pointer;
 }
 p.description{
-  min-height: 35px;
+    min-height: 35px;
 }
 .font-size-16{
-  font-size: 16px;
+    font-size: 16px;
 }
 /*微信图片*/
 a.icon-wechat{
-  position: relative;
+    position: relative;
 }
 a.icon-wechat span{
-  position: absolute;
-  top: 35px;
-  left: 50%;
-  transform: scale(0);
-  margin-left: -115px;
-  transition: .5s;
-  transform-origin: top;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: scale(0);
+    margin-left: -115px;
+    transition: .5s;
+    transform-origin: top;
 }
 a.icon-wechat span img{
-  width: 230px;
-  height: 230px;
+    width: 230px;
+    height: 230px;
 }
 a.icon-wechat span:after{
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #fff transparent;
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
 }
 a.icon-wechat:hover span{
-  transform: scale(1);
+    transform: scale(1);
 }
 /*文章的标题标签*/
 .content h1,
 .content h2,
 .content h3,
 .content h4{
-  margin: 10px 0;
+    margin: 10px 0;
 }
 .content{
-  line-height: 26px;
+    line-height: 26px;
 }
 section{
-  overflow: hidden;
-  min-height: 490px;
-  padding: 100px 15px 20px;
-  background: #f5f5f5;
+    overflow: hidden;
+    min-height: 490px;
+    padding: 100px 15px 20px;
+    background: #f5f5f5;
 }
 .article-img{
-  text-align: center;
+    text-align: center;
 }
 /*显示时间 阅读数*/
 .time{
-  padding: 5px;
-  color: #ccc;
+    padding: 5px;
+    color: #ccc;
 }
 /*头部*/
 header {
-  position: absolute;
-  top: -120px;
-  left: 0;
-  z-index: 99;
-  box-sizing: border-box;
-  width: 100%;
-  padding-bottom: 10px;
-  transition: 1s;
+    position: absolute;
+    top: -120px;
+    left: 0;
+    z-index: 99;
+    box-sizing: border-box;
+    width: 100%;
+    padding-bottom: 10px;
+    transition: 1s;
 }
 header.on {
-  position: fixed;
-  top: -125px;
-  background: rgba(40, 40, 40, 0.6);
+    position: fixed;
+    top: -125px;
+    background: rgba(40, 40, 40, 0.6);
 }
 header a {
-  color: #e2e2e2;
+    color: #e2e2e2;
 }
 header a:hover {
-  color: #fff;
+    color: #fff;
 }
 /*搜索框*/
 form.search {
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-  height: 120px;
-  border-top: 1px solid transparent;
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    height: 120px;
+    border-top: 1px solid transparent;
 }
 form.search .search-box {
-  width: 50%;
-  margin: 40px auto 0;
+    width: 50%;
+    margin: 40px auto 0;
 }
 form.search .search-box:after{
-  content: "输入文字并回车搜索";
-  display: block;
-  padding: 5px 0 0 10px;
-  vertical-align: bottom;
-  color: #fff;
+    content: "输入文字并回车搜索";
+    display: block;
+    padding: 5px 0 0 10px;
+    vertical-align: bottom;
+    color: #fff;
 }
 form.search .search-box .search-txt {
-  width: 100%;
-  height: 40px;
-  padding-left: 10px;
-  background: none;
-  border-bottom: 1px solid #fff;
-  color: #ffffff;
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    background: none;
+    border-bottom: 1px solid #fff;
+    color: #ffffff;
 }
 form.search span {
-  position: absolute;
-  top: 10px;
-  right: 50px;
-  font-size: 30px;
-  color: #ffffff;
-  cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    font-size: 30px;
+    color: #ffffff;
+    cursor: pointer;
 }
 /*头部导航，logo盒子*/
 div.head {
-  box-sizing: border-box;
-  max-width: 85%;
-  margin: 0 auto;
-  border-top: 1px solid transparent;
+    box-sizing: border-box;
+    max-width: 85%;
+    margin: 0 auto;
+    border-top: 1px solid transparent;
 }
 div.head strong {
-  min-width: 15%;
-  margin: 25px 20px 0 0;
+    min-width: 15%;
+    margin: 25px 20px 0 0;
 }
 div.head strong a {
-  padding: 5px;
-  font-size: 24px;
-  color: #ffffff;
+    padding: 5px;
+    font-size: 24px;
+    color: #ffffff;
 }
 /*一级菜单*/
 nav {
-  width: 45%;
-  margin-top: 20px;
+    width: 45%;
+    margin-top: 20px;
 }
 /*当前选中的菜单*/
 nav .current-post-ancestor > a,
 nav .current-menu-item > a,
 nav .current-menu-parent > a{
-  color: #0cf;
+    color: #0cf;
 }
 nav .menu-item-type-custom a{
-  color: #e2e2e2;
+    color: #e2e2e2;
 }
 nav > div{
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 ul.menu{
-  height: 50px;
-  text-align: justify;
+    height: 50px;
+    text-align: justify;
 }
 ul.menu:after{
-  content: "";
-  display: inline-block;
-  width: 100%;
+    content: "";
+    display: inline-block;
+    width: 100%;
 }
 ul.menu > li {
-  display: inline-block;
-  position: relative;
-  line-height: 40px;
-  padding-bottom: 10px;
+    display: inline-block;
+    position: relative;
+    line-height: 40px;
+    padding-bottom: 10px;
 }
 /*二级菜单*/
 ul.menu > li ul.sub-menu {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  width: 150px;
-  margin-left: -90px;
-  padding: 15px;
-  background: rgba(40, 40, 40, 0.7);
-  border-radius: 0 0 5px 5px;
-  transition: .5s;
-  transform: scale(0);
-  transform-origin: top;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    width: 150px;
+    margin-left: -90px;
+    padding: 15px;
+    background: rgba(40, 40, 40, 0.7);
+    border-radius: 0 0 5px 5px;
+    transition: .5s;
+    transform: scale(0);
+    transform-origin: top;
 }
 ul.menu > li ul.sub-menu li {
-  line-height: 30px;
-  transition: .7s;
+    line-height: 30px;
+    transition: .7s;
 }
 ul.menu > li ul.sub-menu li:hover {
-  margin-left: 8px;
+    margin-left: 8px;
 }
 ul.menu > li:hover ul.sub-menu {
-  transform: scale(1);
+    transform: scale(1);
 }
 /*联系我*/
 .contact {
-  min-width: 22%;
-  margin-top: 20px;
-  padding: 5px 5px 0;
+    min-width: 22%;
+    margin-top: 20px;
+    padding: 5px 5px 0;
 }
 .contact a {
-  display: inline-block;
-  margin-right: 15px;
-  font-size: 24px;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 24px;
 }
 .contact .pc-none{
-  display: none;
+    display: none;
 }
 /*翻页功能*/
 div.wp-pagenavi {
-  padding: 25px 0;
-  text-align: center;
+    padding: 25px 0;
+    text-align: center;
 }
 div.wp-pagenavi a,
 div.wp-pagenavi .current,
 div.wp-pagenavi .extend {
-  display: inline-block;
-  margin-left: 5px;
-  padding: 10px 15px;
-  background: #5fcfed;
-  border: none;
-  color: #fff;
+    display: inline-block;
+    margin-left: 5px;
+    padding: 10px 15px;
+    background: #5fcfed;
+    border: none;
+    color: #fff;
 }
 div.wp-pagenavi .current {
-  background: #10abd4;
+    background: #10abd4;
 }
 /*侧边栏*/
 .aside-fr{
-  position: relative;
-  width: 27%;
+    position: relative;
+    width: 27%;
 }
 aside {
-  margin-bottom: 30px;
-  padding: 8px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 1px 1px 5px #bdbdbd;
+    margin-bottom: 30px;
+    padding: 8px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #bdbdbd;
 }
 .new-article{
-  position: relative;
-  top: 0;
-  right: 0;
-  transition: .7s;
+    position: relative;
+    top: 0;
+    right: 0;
+    transition: .7s;
 }
 .new-article.on{
-  position: fixed;
-  top: 75px;
-  right: 110px;
-  width: 23%;
+    position: fixed;
+    top: 75px;
+    right: 110px;
+    width: 23%;
 }
 aside ul {
-  width: 100%;
+    width: 100%;
 }
 aside ul li {
-  width: 100%;
-  height: 30px;
-  margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
 }
 aside ul li:nth-of-type(1) {
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #ccc;
-  text-indent: 16px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    text-indent: 16px;
 }
 aside ul li a {
-  display: block;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  height: 100%;
+    display: block;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    height: 100%;
 }
 aside ul li a strong {
-  line-height: 30px;
+    line-height: 30px;
 }
 aside ul .aside-com-img{
-  padding-bottom: 20px;
+    padding-bottom: 20px;
 }
 aside ul .aside-com-img img{
-  float: left;
-  padding-right: 5px;
-  transition: .7s;
+    float: left;
+    padding-right: 5px;
+    transition: .7s;
 }
 aside ul .aside-com-img:hover img{
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 aside .aside-content + p{
-  padding-top: 5px;
+    padding-top: 5px;
 }
 aside .list-article-title{
-  counter-reset: count 0;
+    counter-reset: count 0;
 }
 aside .list-article-title li a:before{
-  content: counter( count );
-  counter-increment: count 1;
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  line-height: 25px;
-  text-align: center;
+    content: counter( count );
+    counter-increment: count 1;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    line-height: 25px;
+    text-align: center;
 }
 aside .list-article-title li:nth-child(2) a{
-  color: #f74257;
+    color: #f74257;
 }
 aside .list-article-title li:nth-child(3) a{
-  color: #17a6e8;
+    color: #17a6e8;
 }
 aside .list-article-title li:nth-child(4) a{
-  color: #ed9248;
+    color: #ed9248;
 }
 aside .list-article-title li:nth-child(2) a:before{
-  border-color: #f74257;
-  color: #f74257;
+    border-color: #f74257;
+    color: #f74257;
 }
 aside .list-article-title li:nth-child(3) a:before{
-  border-color: #17a6e8;
-  color: #17a6e8;
+    border-color: #17a6e8;
+    color: #17a6e8;
 }
 aside .list-article-title li:nth-child(4) a:before{
-  border-color: #ed9248;
-  color: #ed9248;
+    border-color: #ed9248;
+    color: #ed9248;
 }
 aside.tag-cloud a{
-  display: inline-block;
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid #c1c1c1;
-  border-radius: 5px;
-  box-shadow: 1px 1px 3px #c1c1c1;
-  color: #404040;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #c1c1c1;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #c1c1c1;
+    color: #404040;
 }
 /*页尾*/
 footer {
-  box-sizing: border-box;
-  width: 100%;
-  min-height: 160px;
-  padding: 20px 10px 10px;
-  background: #282828;
-  color: #929292;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 160px;
+    padding: 20px 10px 10px;
+    background: #282828;
+    color: #929292;
 }
 footer a{
-  color: #929292;
+    color: #929292;
 }
 footer a:hover{
-  color: #fff;
+    color: #fff;
 }
 footer > div .introduce {
-  width: 30%;
-  min-height: 80px;
-  text-indent: 16px;
-  line-height: 26px;
+    width: 30%;
+    min-height: 80px;
+    text-indent: 16px;
+    line-height: 26px;
 }
 footer > div .link {
-  width: 65%;
+    width: 65%;
 }
 footer > div .link a{
-  display: inline-block;
-  padding: 8px;
+    display: inline-block;
+    padding: 8px;
 }
 footer > div .copyright {
-  padding-top: 30px;
+    padding-top: 30px;
 }
 div.icon-backtop {
-  position: fixed;
-  bottom: 30px;
-  right: -50px;
-  font-size: 40px;
-  transition: .7s;
-  color: #16c0f8;
-  cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: -50px;
+    font-size: 40px;
+    transition: .7s;
+    color: #16c0f8;
+    cursor: pointer;
 }
 /*article滚动显示*/
 .main article,
 .right article{
-  opacity: 0;
-  transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
 }
 .main article.on,
 .right article.on{
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }

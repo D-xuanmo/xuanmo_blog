@@ -1,74 +1,74 @@
 header {
-  background: rgba(40, 40, 40, 0.7);
+    background: rgba(40, 40, 40, 0.7);
 }
 section .left {
-  width: 25%;
+    width: 25%;
 }
 section .right {
-  width: 74%;
-  box-sizing: border-box;
+    width: 74%;
+    box-sizing: border-box;
 }
 section article {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 section article div.con {
-  padding: 5px;
+    padding: 5px;
 }
 .right article {
-  float: left;
-  position: relative;
-  width: calc(100% / 3 - 20px);
-  height: 400px;
-  margin: 10px;
-  border: 1px solid #efefef;
-  border-radius: 5px;
+    float: left;
+    position: relative;
+    width: calc(100% / 3 - 20px);
+    height: 400px;
+    margin: 10px;
+    border: 1px solid #efefef;
+    border-radius: 5px;
 }
 .right article i {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  transition: 1s;
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    transition: 1s;
 }
 .right article i.line-top,
 .right article iline-left {
-  top: 0;
-  left: 0;
+    top: 0;
+    left: 0;
 }
 .right article i.line-right,
 .right article i.line-bottom {
-  bottom: 0;
-  right: 0;
+    bottom: 0;
+    right: 0;
 }
 .right article:hover i.line-top,
 .right article:hover i.line-bottom {
-  width: 100%;
-  height: 3px;
-  background: #17a6e8;
+    width: 100%;
+    height: 3px;
+    background: #17a6e8;
 }
 .right article:hover i.line-right,
 .right article:hover i.line-left {
-  width: 3px;
-  height: 100%;
-  background: #17a6e8;
+    width: 3px;
+    height: 100%;
+    background: #17a6e8;
 }
 .right article a {
-  display: block;
+    display: block;
 }
 .right article a img{
-  width: 100%;
-  height: 175px;
-  border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 175px;
+    border-radius: 5px 5px 0 0;
 }
 .right article .ar-title {
-  padding: 5px;
+    padding: 5px;
 }
 .right article p {
-  height: 80px;
-  padding: 5px;
-  text-indent: 16px;
+    height: 80px;
+    padding: 5px;
+    text-indent: 16px;
 }
 .right article .more {
-  text-align: right;
-  color: #5fcfed;
+    text-align: right;
+    color: #5fcfed;
 }

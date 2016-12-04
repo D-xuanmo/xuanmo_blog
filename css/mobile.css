@@ -1,228 +1,225 @@
 @media (max-width:980px){
-  .contact .pc-none{
-    display: inline-block;
-  }
-  nav{
-    position: absolute;
-    top: 180px;
-    right: 0;
-    width: 300px;
-    margin: 0;
-    background: rgba(40, 40, 40, 0.6);
-    transition: .7s;
-    transform: translateX(100%);
-  }
-  nav ul.menu{
-    height: auto;
-  }
-  nav ul.menu > li{
-    display: block;
-    padding: 0;
-  }
-  ul.menu > li ul.sub-menu {
-    display: none;
-    position: static;
-    width: 150px;
-    margin-left: 30px;
-    padding: 0;
-    background: none;
-    transform: scale(1);
-    transition: 0s;
-  }
-  ul.menu > li ul.sub-menu.bg282828{
-    background: none;
-  }
-  .right-article article{
-    width: calc(100% / 2 - 35px);
-    padding-bottom: 15px;
-  }
+    .contact .pc-none{
+        display: inline-block;
+    }
+    nav{
+        position: absolute;
+        top: 180px;
+        right: 0;
+        width: 300px;
+        margin: 0;
+        background: rgba(40, 40, 40, 0.6);
+        transition: .7s;
+        transform: translateX(100%);
+    }
+    nav ul.menu{
+        height: auto;
+    }
+    nav ul.menu > li{
+        display: block;
+        padding: 0;
+    }
+    ul.menu > li ul.sub-menu {
+        display: none;
+        position: static;
+        width: 150px;
+        margin-left: 30px;
+        padding: 0;
+        background: none;
+        transform: scale(1);
+        transition: 0s;
+    }
+    ul.menu > li ul.sub-menu.bg282828{
+        background: none;
+    }
+    .right-article article{
+        width: calc(100% / 2 - 35px);
+        padding-bottom: 15px;
+    }
 }
 @media (max-width:780px){
-  .mobile-hide{
-    display: none;
-  }
-  header {
-    background: rgba(40, 40, 40, 0.6);
-  }
-  header nav ul.menu ul.sub-menu {
-    background: none;
-  }
-  nav{
-    width: 100%;
-  }
-  nav ul.menu > li{
-    text-align: center;
-  }
-  ul.menu > li ul.sub-menu{
-    margin: 0 auto;
-  }
-  /*手机端轮播*/
-  .mobile-banner{
-    display: block;
-    position: relative;
-    overflow: hidden;
-    width: 95%;
-    height: 320px;
-    margin: 100px auto 0;
-  }
-  .mobile-banner .roll-banner{
-    position: absolute;
-    top: 0;
-    height: 100%;
-  }
-  .mobile-banner .roll-banner li{
-    float: left;
-    height: 100%;
-  }
-  .mobile-banner .roll-banner li img{
-    width: 100%;
-    height: 100%;
-  }
-  .mobile-banner .plugin-banner-btn{
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    padding: 3px 5px;
-    background: rgba(222, 222, 222, 0.7);
-    border-radius: 15px;
-    line-height: 10px;
-  }
-  .mobile-banner .plugin-banner-btn li{
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin: 0 3px;
-    background: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .mobile-banner .plugin-banner-btn li.on{
-    background: #0cf;
-  }
-  /*文章变成双栏*/
-  .main .mobile-article-lg,
-  section .mobile-article-lg{
-    width: calc(100% / 2 - 35px);
-    padding-bottom: 15px;
-  }
-  section .right{
-    float: none;
-    width: 90%;
-    margin: 0 auto;
-  }
-  .single-article{
-    width: 100%;
-  }
+    .mobile-hide{
+        display: none;
+    }
+    header {
+        background: rgba(40, 40, 40, 0.6);
+    }
+    header nav ul.menu ul.sub-menu {
+        background: none;
+    }
+    nav{
+        width: 100%;
+    }
+    nav ul.menu > li{
+        text-align: center;
+    }
+    ul.menu > li ul.sub-menu{
+        margin: 0 auto;
+    }
+    /*手机端轮播*/
+    .mobile-banner{
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: 95%;
+        height: 320px;
+        margin: 100px auto 0;
+    }
+    .mobile-banner .roll-banner{
+        position: absolute;
+        top: 0;
+        height: 100%;
+    }
+    .mobile-banner .roll-banner li{
+        float: left;
+        height: 100%;
+    }
+    .mobile-banner .roll-banner li img{
+        width: 100%;
+        height: 100%;
+    }
+    .mobile-banner .plugin-banner-btn{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        padding: 3px 5px;
+        background: rgba(222, 222, 222, 0.7);
+        border-radius: 15px;
+        line-height: 10px;
+    }
+    .mobile-banner .plugin-banner-btn li{
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        margin: 0 3px;
+        background: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .mobile-banner .plugin-banner-btn li.on{
+        background: #0cf;
+    }
+    /*文章变成双栏*/
+    .main .mobile-article-lg,
+    section .mobile-article-lg{
+        width: calc(100% / 2 - 35px);
+        padding-bottom: 15px;
+    }
+    section .right{
+        float: none;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .single-article{
+        width: 100%;
+    }
 }
 @media (max-width:600px){
-  .contact .mobile-hide{
-    display: none;
-  }
-  .main{
-    padding: 10px;
-  }
-  .main article div.con{
-    padding: 10px;
-  }
-  #respond form p label{
-    text-align: left;
-  }
-  #respond form input[type="text"],
-  #respond form input[type="submit"]{
-    width: 100%;
-  }
+    .contact .mobile-hide{
+        display: none;
+    }
+    .main article div.con{
+        padding: 10px;
+    }
+    #respond form p label{
+        text-align: left;
+    }
+    #respond form input[type="text"],
+    #respond form input[type="submit"]{
+        width: 100%;
+    }
 }
 @media (max-width:550px){
-  .mobile-banner{
-    height: 200px;
-  }
-  /*文章变成一栏*/
-  .main .mobile-article-lg,
-  section .mobile-article-lg{
-    width: calc(100% / 1 - 35px);
-    height: auto;
-  }
-  .main article div.con p,
-  .right article p{
-    height: auto;
-  }
-  .main article .article-img img,
-	.right article a img{
-		width: auto;
-		max-width: 100%;
+    .mobile-banner{
+        height: 200px;
+    }
+    /*文章变成一栏*/
+    .main .mobile-article-lg,
+    section .mobile-article-lg{
+        width: calc(100% / 1 - 35px);
+        height: auto;
+    }
+    .main article div.con p,
+    .right article p{
+        height: auto;
+    }
+    .main article .article-img img,
+    .right article a img{
+    	width: auto;
+    	max-width: 100%;
     height: 1;
-		border-radius: 10px 10px 0 0;
-	}
-  footer > div .introduce,
-  footer > div .link{
-    float: none;
-    width: 100%;
-    margin: 20px 0;
-  }
+    	border-radius: 10px 10px 0 0;
+    }
+    footer > div .introduce,
+    footer > div .link{
+        float: none;
+        width: 100%;
+        margin: 20px 0;
+    }
 }
 @media(max-width: 320px){
-  div.head{
-    max-width: 95%;
-  }
+    div.head{
+        max-width: 95%;
+    }
 }
 /*手持设备横屏*/
 @media (orientation:landscape) and (max-width:720px){
-  .mobile-banner{
-    display: none;
-  }
-  header{
-    padding: 0;
-  }
-  div.head{
-    max-width: 96%;
-  }
-  div.head strong{
-    margin: 25px 10px 0 0;
-  }
-  /*手机端菜单按钮*/
-  .contact .mobile-hide{
-    display: inline-block;
-  }
-  .contact .pc-none{
-    display: none;
-  }
-  nav {
-    position: static;
-    width: 100%;
-    margin-top: 0;
-    background: none;
-    transform: translateX(0);
-  }
-  nav ul.menu{
-    height: 40px;
-    text-align: justify;
-  }
-  nav ul.menu:after{
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
-  nav ul.menu > li {
-    display: inline-block;
-    position: relative;
-    line-height: 40px;
-    padding-bottom: 10px;
-  }
-  nav ul.menu > li ul.sub-menu {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    width: 150px;
-    margin-left: -75px;
-    padding: 0;
-    background: rgba(40, 40, 40, 0.6);
-    transform: scale(1);
-    transition: 0s;
-  }
-  nav ul.menu > li ul.sub-menu.bg282828{
-    background: rgba(40, 40, 40, 0.6);
-  }
-  .main{
-    padding-top: 80px;
-  }
+    .mobile-banner{
+        display: none;
+    }
+    header{
+        padding: 0;
+    }
+    div.head{
+        max-width: 96%;
+    }
+    div.head strong{
+        margin: 25px 10px 0 0;
+    }
+    /*手机端菜单按钮*/
+    .contact .mobile-hide{
+        display: inline-block;
+    }
+    .contact .pc-none{
+        display: none;
+    }
+    nav {
+        position: static;
+        width: 100%;
+        margin-top: 0;
+        background: none;
+        transform: translateX(0);
+    }
+    nav ul.menu{
+        height: 40px;
+        text-align: justify;
+    }
+    nav ul.menu:after{
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+    nav ul.menu > li {
+        display: inline-block;
+        position: relative;
+        line-height: 40px;
+        padding-bottom: 10px;
+    }
+    nav ul.menu > li ul.sub-menu {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        width: 150px;
+        margin-left: -75px;
+        padding: 0;
+        background: rgba(40, 40, 40, 0.6);
+        transform: scale(1);
+        transition: 0s;
+    }
+    nav ul.menu > li ul.sub-menu.bg282828{
+        background: rgba(40, 40, 40, 0.6);
+    }
+    .main{
+        padding-top: 80px;
+    }
 }

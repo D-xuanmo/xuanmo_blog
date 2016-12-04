@@ -1,385 +1,389 @@
 header {
-  background: rgba(40, 40, 40, 0.7);
+    background: rgba(40, 40, 40, 0.7);
 }
 header nav ul.menu ul.sub-menu {
-  background: rgba(40, 40, 40, 0.7);
+    background: rgba(40, 40, 40, 0.7);
 }
 article {
-  box-sizing: border-box;
-  width: 70%;
-  padding: 10px 15px;
-  border-radius: 10px;
-  box-shadow: 1px 1px 5px #bdbdbd;
+    box-sizing: border-box;
+    width: 70%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #bdbdbd;
 }
 article .breadcrumbs {
-  color: #b7b7b7;
+    color: #b7b7b7;
 }
 article .header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ccc;
-  text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
 }
 article .header h2 {
-  margin: 10px 0;
+    margin: 10px 0;
 }
 article .header span{
-  color: #b7b7b7;
+    color: #b7b7b7;
 }
 article .header span.iconfont{
-  letter-spacing: 2px;
-  font-size: 16px;
+    letter-spacing: 2px;
+    font-size: 16px;
 }
 article .content {
-  box-sizing: border-box;
-  padding: 10px 0;
+    box-sizing: border-box;
+    padding: 10px 0;
 }
 article .content img{
-  max-width: 100%;
+    max-width: 100%;
 }
 article .content h2{
-  margin: 20px 0;
-  padding-left: 10px;
-  background: #f5f5f5;
-  border-left: 5px solid #0cf;
-  font-size: 18px;
-  line-height: 40px;
-  color: #292929;
+    margin: 20px 0;
+    padding-left: 10px;
+    background: #f5f5f5;
+    border-left: 5px solid #0cf;
+    font-size: 18px;
+    line-height: 40px;
+    color: #292929;
 }
 article .content .download{
-  display: block;
-  width: 150px;
-  padding: 6px 18px;
-  background-color: #5cb85c;
-  border: 1px solid #4cae4c;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  text-align: center;
-  color: #fff;
+    display: block;
+    width: 150px;
+    padding: 6px 18px;
+    background-color: #5cb85c;
+    border: 1px solid #4cae4c;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    color: #fff;
 }
 article .content .case-show{
-  display: block;
-  width: 150px;
-  margin: 20px auto;
-  padding: 6px 18px;
-  background-color: #5cb85c;
-  border: 1px solid #4cae4c;
-  border-radius: 4px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  text-align: center;
-  color: #fff;
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 6px 18px;
+    background-color: #5cb85c;
+    border: 1px solid #4cae4c;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    text-align: center;
+    color: #fff;
 }
 article .like {
-  margin: 20px 0;
-  text-align: center;
+    margin: 20px 0;
+    text-align: center;
 }
 article .like a {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #27c5d5;
-  border-radius: 5px;
-  color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    background: #27c5d5;
+    border-radius: 5px;
+    color: #fff;
 }
 article .like a,
 article .like a span {
-  font-size: 16px;
+    font-size: 16px;
 }
 article .share {
-  text-align: center;
+    text-align: center;
 }
 article .share a {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background-image: url(../images/share.png);
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/share.png);
 }
 article .tab-article {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 article .share a:nth-of-type(1){
-  background-position: 0 -98px;
+    background-position: 0 -98px;
 }
 article .share a:nth-of-type(2){
-  background-position: 0 -65px;
+    background-position: 0 -65px;
 }
 article .share a:nth-of-type(3){
-  position: relative;
-  background-position: 0 -32px;
+    position: relative;
+    background-position: 0 -32px;
 }
 article .share a:nth-of-type(4){
-  background-position: 0 0;
+    background-position: 0 0;
 }
-article .share a:nth-of-type(5){
-  background-position: 0 -291px;
+article .share a:nth-of-type(    5){
+background-position: 0 -291px;
 }
 article .share a:hover{
-  background-position-X: -24px;
+    background-position-X: -24px;
 }
 article .tab-article .tab-left,
 article .tab-article .tab-right {
-  width: 50%;
+    width: 50%;
 }
-article .tab-article .tab-right {
-  text-align: right;
+article .tab-article .tab-righ    t {
+text-align: right;
 }
 /*微信二维码生成*/
 #qrcode{
-  display: none;
-  position: absolute;
-  z-index: 99;
-  top: 30px;
-  left: 50%;
-  width: 180px;
-  height: 260px;
-  margin-left: -108px;
-  padding: 10px;
-  background: #fff;
-  border: 1px solid #ccc;
-  color: #000;
+    display: none;
+    position: absolute;
+    z-index: 99;
+    top: 30px;
+    left: 50%;
+    width: 180px;
+    height: 260px;
+    margin-left: -108px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #000;
 }
 #qrcode .icon-close1{
-  position: absolute;
-  top: 8px;
-  right: 8px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
 }
 #qrcode img{
-  display: block;
-  margin: 5px auto;
+    display: block;
+    margin: 5px auto;
 }
 #qrcode:after{
-  content: "";
-  position: absolute;
-  top: -11px;
-  left: 50%;
-  margin-left: 2.5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent transparent #ccc transparent;
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: 50%;
+    margin-left: 2.5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #ccc transparent;
 }
 p.mark{
-  padding: 15px 0;
-  text-align: center;
+    padding: 15px 0;
+    text-align: center;
 }
 p.mark strong{
-  padding-right: 5px;
-  font-size: 20px;
+    padding-right: 5px;
+    font-size: 20px;
 }
 p.mark a{
-  padding: 8px 2px;
+    padding: 8px 2px;
 }
 /*文章页关于作者*/
 .article-about-author{
-  margin: 20px 0;
+    margin: 20px 0;
 }
 .article-about-author > img{
-  float: left;
-  width: 90px;
-  height: 90px;
-  margin-right: 10px;
+    float: left;
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
 }
 .article-about-author h2{
-  font-size: 16px;
+    font-size: 16px;
+}
+.article-about-author p:last-of-type{
+    margin-top: 10px;
 }
 .article-about-author .share-btn a{
-  display: inline-block;
-  margin-top: 5px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: #fff;
-}.article-about-author .share-btn a > i{
-  margin-right: 3px;
-  font-size: 18px;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+}
+.article-about-author .share-btn a > i{
+    margin-right: 3px;
+    font-size: 18px;
 }
 .article-about-author .share-btn a:nth-of-type(1){
-  background: #fc8bd2;
+    background: #fc8bd2;
 }
 .article-about-author .share-btn a:nth-of-type(2){
-  background: #b663ff;
+    background: #b663ff;
 }
 .article-about-author .share-btn a:nth-of-type(3){
-  background: #4cc6fa;
+    background: #4cc6fa;
 }
 .article-about-author .share-btn a:nth-of-type(3) span{
-  display: none;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 150px;
-  height: 170px;
-  padding: 20px 10px 10px;
-  margin: auto;
-  background: #b7b7b7;
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 170px;
+    padding: 20px 10px 10px;
+    margin: auto;
+    background: #b7b7b7;
 }
 .article-about-author .share-btn a:nth-of-type(3) span i{
-  position: absolute;
-  top: 2px;
-  right: 0;
-  font-size: 24px;
-  cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    font-size: 24px;
+    cursor: pointer;
 }
 .article-about-author .share-btn a:nth-of-type(4){
-  background: #ffb332;
+    background: #ffb332;
 }
 .article-about-author .share-btn a:nth-of-type(5){
-  background: #49cc5b;
+    background: #49cc5b;
 }
 
 /*评论区域表单*/
 #respond form > p{
-  padding: 5px 0;
+    padding: 5px 0;
 }
 #respond form textarea{
-  box-sizing: border-box;
-  resize: none;
-  width: 100%;
-  padding:5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
+    padding:5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 #respond form p label{
-  display: inline-block;
-  width: 100px;
-  text-align: right;
-  color: #9a9a9a;
-  cursor: pointer;
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    color: #9a9a9a;
+    cursor: pointer;
 }
 #respond form input[type="text"]{
-  height: 30px;
-  padding-left: 5px;
-  border: 1px solid #7e7e7e;
-  border-radius: 5px;
+    height: 30px;
+    padding-left: 5px;
+    border: 1px solid #7e7e7e;
+    border-radius: 5px;
 }
 #respond form input[type="submit"]{
-  padding: 10px 15px;
-  background: #16c0f8;
-  border-radius: 5px;
-  color: #fff;
+    padding: 10px 15px;
+    background: #16c0f8;
+    border-radius: 5px;
+    color: #fff;
 }
 /*评论区域评论列表*/
 #comments{
-  position: relative;
-  padding-top: 40px;
+    position: relative;
+    padding-top: 40px;
 }
 #comments ol.comment-list li{
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 /*评论作者*/
 #comments ol.comment-list li .comment-author img{
-  float: left;
-  width: 40px;
-  height: 40px;
-  margin-right: 15px;
-  border-radius: 50%;
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
 }
 #comments ol.comment-list li .comment-author cite{
-  font-size: 18px;
-  font-weight: 600;
+    font-size: 18px;
+    font-weight: 600;
 }
 /*评论时间*/
 #comments ol.comment-list li .comment-meta a{
-  font-size: 12px;
+    font-size: 12px;
 }
 /*评论内容*/
 #comments ol.comment-list li p{
-  padding: 20px 0;
-  font-size: 18px;
+    padding: 20px 0;
+    font-size: 18px;
 }
 /*回复按钮*/
 #comments ol.comment-list .reply a{
-  display: block;
-  width: 60px;
-  margin-bottom: 5px;
-  padding: 8px 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
+    display: block;
+    width: 60px;
+    margin-bottom: 5px;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
 }
 #comments ol.comment-list .reply a:hover{
-  border-color: #27c5d5;
+    border-color: #27c5d5;
 }
 /*子回复*/
 #comments ol.comment-list li.comment,
 #comments ol.comment-list ol.children{
-  padding: 10px 10px 10px 25px;
+    padding: 10px 10px 10px 25px;
 }
 /*图片放大*/
 div.cover{
-  display: none;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
 }
 div.cover .cover-img,
 div.cover .cover-img img,
 div.cover p,
 div.cover .cover-hide{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 }
 div.cover .cover-img{
-  width: 90%;
-  height: 90%;
+    width: 90%;
+    height: 90%;
 }
 div.cover .cover-hide{
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }
 div.cover .cover-img img{
-  display: none;
-  max-width: 100%;
-  max-height: 100%;
+    display: none;
+    max-width: 100%;
+    max-height: 100%;
 }
 div.cover p{
-  opacity: 0;
-  z-index: 99;
-  transition: .5s;
-  transform: translateY(-30px);
-  width: 110px;
-  height: 30px;
-  padding: 5px;
-  background: rgba(152, 152, 152, 0.7);
-  border-radius: 5px;
-  text-align: center;
-  line-height: 30px;
-  color: #fff;
+    opacity: 0;
+    z-index: 99;
+    transition: .5s;
+    transform: translateY(-30px);
+    width: 110px;
+    height: 30px;
+    padding: 5px;
+    background: rgba(152, 152, 152, 0.7);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
 }
 div.cover i{
-  position: absolute;
-  top: 50%;
-  width: 40px;
-  height: 60px;
-  background: rgba(22, 117, 197, 0.3);
-  line-height: 60px;
-  font-size: 40px;
-  color: #fff;
-  cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 60px;
+    background: rgba(22, 117, 197, 0.3);
+    line-height: 60px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
 }
 div.cover i.icon-menu-left{
-  left: 30px;
+    left: 30px;
 }
 div.cover i.icon-menu-right{
-  right: 30px;
+    right: 30px;
 }
 div.cover em{
-  position: absolute;
-  z-index: 99;
-  top: 10%;
-  right: 30px;
-  font-size: 30px;
-  color: #fff;
-  cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    top: 10%;
+    right: 30px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
 }
