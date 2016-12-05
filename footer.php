@@ -13,7 +13,7 @@
     </footer>
     <!-- footer end -->
     <div class="iconfont icon-backtop"></div>
-    <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/common.js" async="async"></script>
     <!-- <script type="text/javascript">
     //xuanmomo.com Baidu tongji analytics
     // var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");

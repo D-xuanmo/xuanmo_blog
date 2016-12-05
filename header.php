@@ -6,7 +6,17 @@
     <meta name="keywords" content="<?php echo get_option('x_keywords'); ?>">
     <meta name="description" content="<?php echo get_option('x_description'); ?>" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>
+    <?php
+        if( is_single() ){
+    ?>
+            <title><?php the_title(); ?> | <?php bloginfo('name'); ?></title>
+    <?php
+        }else{
+    ?>
+            <title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>
+    <?php
+        }
+    ?>
     <script type="text/javascript">
         if(navigator.appName == "Microsoft Internet Explorer" ) {
             if( (navigator.appVersion.match(/MSIE 8/g) == "MSIE 8") || (navigator.appVersion.match(/MSIE 7/g) == "MSIE 7") ){
@@ -146,14 +156,14 @@
             <!-- 联系我 -->
             <div class="fr contact">
                 <a href="javascript:;" class="iconfont icon-search"></a>
-                <a href="<?php echo stripslashes(get_option('x_github')); ?>" class="mobile-hide iconfont icon-github1"></a>
-                <a href="<?php echo stripslashes(get_option('x_t_qq')); ?>" class="mobile-hide iconfont icon-qq"></a>
+                <a href="<?php echo stripslashes(get_option('x_github')); ?>" class="mobile-hide iconfont icon-github1" target="_blank"></a>
+                <a href="<?php echo stripslashes(get_option('x_t_qq')); ?>" class="mobile-hide iconfont icon-qq" target="_blank"></a>
                 <a href="javascript:;" class="mobile-hide iconfont icon-wechat">
                     <span>
                         <img src="<?php echo stripslashes(get_option('x_wechats')); ?>" alt="扫一扫 加博主微信" />
                     </span>
                 </a>
-                <a href="<?php echo stripslashes(get_option('x_sinas')); ?>" class="mobile-hide iconfont icon-sina"></a>
+                <a href="<?php echo stripslashes(get_option('x_sinas')); ?>" class="mobile-hide iconfont icon-sina" target="_blank"></a>
                 <a href="mailto:<?php echo stripslashes(get_option('x_email')); ?>?subject=Hello <?php echo bloginfo('name'); ?>" class="mobile-hide iconfont icon-email2"></a>
                 <a href="javascript:;" class="pc-none iconfont icon-menu-list2"></a>
             </div>
