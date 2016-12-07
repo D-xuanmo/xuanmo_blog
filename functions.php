@@ -237,51 +237,51 @@
 				<input type="hidden" name="update_themeoptions" value="true" />
 				<p>
 					作者简介：<br />
-					<textarea name="x_author" id="x_author" class="large-text code" rows="2" cols="40"><?php echo stripslashes ( get_option('x_author_txt') ); ?></textarea>
+					<textarea name="x_author" id="x_author" class="large-text code" rows="2" cols="40"><?php echo stripslashes(get_option('x_author_txt')); ?></textarea>
 				</p>
 				<p>
 					电子邮箱：<br />
-					<textarea name="x_mail" id="x_mail" class="large-text code" rows="2" cols="40"><?php echo stripslashes ( get_option('x_email') ); ?></textarea>
+					<textarea name="x_mail" id="x_mail" class="large-text code" rows="2" cols="40"><?php echo stripslashes(get_option('x_email')); ?></textarea>
 				</p>
 				<p>
 					qq链接：<br />
-					<textarea name="x_qq" id="x_qq" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_t_qq') ); ?></textarea>
+					<textarea name="x_qq" id="x_qq" class="large-text code" rows="2" cols="40"><?php echo stripslashes(get_option('x_t_qq')); ?></textarea>
 				</p>
 				<p>
 					github链接：<br />
-					<textarea name="x_git" id="x_git" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_github') ); ?></textarea>
+					<textarea name="x_git" id="x_git" class="large-text code" rows="2" cols="40"><?php echo stripslashes(get_option('x_github')); ?></textarea>
 				</p>
 				<p>
 					新浪微博链接：<br />
-					<textarea name="x_sina" id="x_sina" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_sinas') ); ?></textarea>
+					<textarea name="x_sina" id="x_sina" class="large-text code" rows="2" cols="40"><?php echo stripslashes(get_option('x_sinas')); ?></textarea>
 				</p>
 				<p>
 					微信号：<br />
-					<textarea name="x_wechat_num" id="x_wechat_num" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_wechats_number') ); ?></textarea>
+					<textarea name="x_wechat_num" id="x_wechat_num" class="large-text code" rows="2" cols="40"><?php echo stripslashes(get_option('x_wechats_number')); ?></textarea>
 				</p>
 				<p>
 					微信图片地址：<br />
-					<textarea name="x_wechat" id="x_wechat" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_wechats') ); ?></textarea>
+					<textarea name="x_wechat" id="x_wechat" class="large-text code" rows="2" cols="40"><?php echo stripslashes(get_option('x_wechats')); ?></textarea>
 				</p>
 				<p>
 					网站关键字（keywords）：<br />
-					<textarea name="x_key" id="x_key" class="large-text code" rows="2" cols="40"><?php echo stripslashes( get_option('x_keywords') ); ?></textarea>
+					<textarea name="x_key" id="x_key" class="large-text code" rows="2" cols="40"><?php echo stripslashes(get_option('x_keywords')); ?></textarea>
 				</p>
 				<p>
 					网站描述（description）：<br />
-					<textarea name="x_des" id="x_des" class="large-text code" rows="8" cols="40"><?php echo get_option('x_description'); ?></textarea>
+					<textarea name="x_des" id="x_des" class="large-text code" rows="8" cols="40"><?php echo stripslashes(get_option('x_description')); ?></textarea>
 				</p>
 				<p>
 					网站底部一句话（word）：<br />
-					<textarea name="x_word" id="x_word" class="large-text code" rows="8" cols="40"><?php echo stripslashes ( get_option('x_words') ); ?></textarea>
+					<textarea name="x_word" id="x_word" class="large-text code" rows="8" cols="40"><?php echo stripslashes(get_option('x_words')); ?></textarea>
 				</p>
 				<p>
 					友情链接（link）：<br />
-					<textarea name="x_link" id="x_link" class="large-text code" rows="8" cols="40"><?php echo stripslashes( get_option('x_links') ); ?></textarea>
+					<textarea name="x_link" id="x_link" class="large-text code" rows="8" cols="40"><?php echo stripslashes(get_option('x_links')); ?></textarea>
 				</p>
 				<p>
 					版权信息（copyright）：<br />
-					<textarea name="x_copy" id="x_copy" class="large-text code" rows="8" cols="40"><?php echo stripslashes( get_option('x_copyright') ); ?></textarea>
+					<textarea name="x_copy" id="x_copy" class="large-text code" rows="8" cols="40"><?php echo stripslashes(get_option('x_copyright')); ?></textarea>
 				</p>
 				<p>
 					<input type="submit" name="bcn_admin_options" value="保存更改"/>

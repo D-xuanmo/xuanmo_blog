@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section style="background:#fff">
+<section>
     <div class="wrap clearfix">
         <div class="mobile-article-lg fr right" style="width: 100%; padding-top: 14px;">
         <?php

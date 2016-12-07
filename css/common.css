@@ -20,10 +20,6 @@ select:focus,
 textarea:focus{
     outline: none;
 }
-@font-face{
-    font-family: yapi;
-    src: url(../font/yapi.otf);
-}
 html{
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: none;
@@ -33,7 +29,7 @@ html{
 body{
     overflow-x: hidden;
     font: 14px/20px "Consolas",Microsoft Yahei;
-    background: #fff;
+    background: #f1f1f1;
 }
 article{
     background: #fff;
@@ -438,6 +434,29 @@ aside.tag-cloud a{
     box-shadow: 1px 1px 3px #c1c1c1;
     color: #404040;
 }
+/*友情链接*/
+div.footer-link {
+    padding: 20px 0;
+}
+div.footer-link a{
+    display: inline-block;
+    transition: transform .5s;
+    width: calc(100% / 5 - 12px);
+    margin: 0 5px 10px;
+    padding: 10px 0;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    background: #fff;
+    color: #000;
+    white-space: nowrap;
+    text-align: center;
+}
+div.footer-link a:hover{
+    transform: scale(.9);
+    border: 1px solid transparent;
+    background: #5fcfed;
+    color: #fff;
+}
 /*页尾*/
 footer {
     box-sizing: border-box;
@@ -448,26 +467,40 @@ footer {
     color: #929292;
 }
 footer a{
+    text-align: center;
     color: #929292;
 }
-footer a:hover{
-    color: #fff;
+footer .footer-left{
+    width: 60%;
 }
-footer > div .introduce {
-    width: 30%;
+footer .footer-left  h2{
+    margin-right: 10px;
+    padding-right: 10px;
+    font-size: 30px;
+    line-height: 80px;
+}
+footer .footer-left .introduce {
+    width: 70%;
     min-height: 80px;
-    text-indent: 16px;
     line-height: 26px;
 }
-footer > div .link {
-    width: 65%;
+footer .footer-right{
+    width: 38%;
+    height: 80px;
+    text-align: right;
 }
-footer > div .link a{
+footer .footer-right a{
     display: inline-block;
-    padding: 8px;
+    margin-right: 10px;
 }
-footer > div .copyright {
+footer .footer-right a img{
+    display: block;
+    margin: 0 auto;
+}
+footer .copyright-wrap{
     padding-top: 30px;
+}
+footer .copyright-wrap .copyright {
 }
 div.icon-backtop {
     position: fixed;

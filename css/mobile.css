@@ -1,4 +1,4 @@
-@media (max-width:980px){
+@media (max-width:1000px){
     .contact .pc-none{
         display: inline-block;
     }
@@ -113,6 +113,12 @@
     .single-article{
         width: 100%;
     }
+    div.footer-link a{
+        width: calc(100% / 4 - 12px);
+    }
+    footer .footer-left  h2{
+        border: none;
+    }
 }
 @media (max-width:600px){
     .contact .mobile-hide{
@@ -156,10 +162,26 @@
         width: 100%;
         margin: 20px 0;
     }
+    div.footer-link a{
+        width: calc(100% / 3 - 12px);
+    }
+    footer .footer-left,
+    footer .footer-left h2,
+    footer .footer-left .introduce,
+    footer .footer-right{
+        float: none;
+        width: 100%;
+    }
+    footer .footer-right{
+        text-align: left;
+    }
 }
 @media(max-width: 320px){
     div.head{
         max-width: 95%;
+    }
+    div.footer-link a{
+        display: none;
     }
 }
 /*手持设备横屏*/

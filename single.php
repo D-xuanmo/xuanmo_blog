@@ -45,10 +45,7 @@
                     <span id="qrcode">
                         <i class="iconfont icon-close1"></i>
                         <strong>分享到朋友圈</strong>
-                        <i>
-                            打开微信，点击底部的“发现”，<br />
-                            使用“扫一扫”即可将网页分享至朋友圈。
-                        </i>
+                        <i>打开微信，使用“扫一扫”即可将网页分享至朋友圈。</i>
                     </span>
                 </a>
                 <a href="http://service.weibo.com/share/share.php?url=<?php echo home_url('/'); ?>%3Fp%3D<?php the_ID(); ?>%230-tsina-1-21107-397232819ff9a47a7b7e80a40613cfe1&title=【<?php the_title(); ?> | <?php bloginfo('name'); ?>】&appkey=1343713053&searchPic=true#_loginLayer_1473259217614" class="sina" target="blank" title="分享到新浪微博"></a>

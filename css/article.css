@@ -131,7 +131,6 @@ text-align: right;
     top: 30px;
     left: 50%;
     width: 180px;
-    height: 260px;
     margin-left: -108px;
     padding: 10px;
     background: #fff;
@@ -202,21 +201,28 @@ p.mark a{
     background: #b663ff;
 }
 .article-about-author .share-btn a:nth-of-type(3){
+    position: relative;
     background: #4cc6fa;
 }
 .article-about-author .share-btn a:nth-of-type(3) span{
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 100;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top:-80px;
+    left: -177px;
     width: 150px;
     height: 170px;
     padding: 20px 10px 10px;
-    margin: auto;
     background: #b7b7b7;
+}
+.article-about-author .share-btn a:nth-of-type(3) span:after{
+    content: "";
+    position: absolute;
+    top: 90px;
+    right: -10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #b7b7b7;
 }
 .article-about-author .share-btn a:nth-of-type(3) span i{
     position: absolute;
@@ -310,7 +316,7 @@ p.mark a{
 /*子回复*/
 #comments ol.comment-list li.comment,
 #comments ol.comment-list ol.children{
-    padding: 10px 10px 10px 25px;
+    padding: 10px;
 }
 /*图片放大*/
 div.cover{
