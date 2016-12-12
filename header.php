@@ -69,15 +69,24 @@
             <script src="<?php bloginfo('template_url'); ?>/js/qrcode.js"></script>
             <script>
                 $(document).ready(function(){
+                    var keywordsArr = [];
+                    // 表情移动到form标签里面
+                    $('p.smiley').insertAfter($('p.comment-notes'));
+                    // 删除评论框
+                    $('#respond form p.comment-form-comment label').remove();
+                    // 文章二维码
                     var $qrcode = $('#qrcode');
                     var qrcode = new QRCode(document.getElementById('qrcode') , {
                         'width' : 150,
                         'height' : 150
                     });
-                    <?php if(have_posts()) :  while(have_posts()) : the_post(); ?>
-                        qrcode.makeCode('<?php the_permalink(); ?>');
-                    <?php endwhile; ?>
-                    <?php endif; ?>
+    <?php
+        if(have_posts()) :  while(have_posts()) : the_post();
+    ?>
+                    qrcode.makeCode('<?php the_permalink(); ?>');
+    <?php
+        endwhile; endif;
+    ?>
                     $('#qrcode img').after($('#qrcode i'));
                     $('.wechat').click(function(){
                         $qrcode.css('display','block');
@@ -86,18 +95,9 @@
                         e.stopPropagation();
                         $qrcode.css('display','none');
                     });
-                    $(window).on('scroll' , function(){
-                        var $this = $(this);
-                        var $scroll = $(this).scrollTop();
-                        $scroll > 800 ? $('.new-article').addClass('on') : $('.new-article').removeClass('on');
-                    });
-                    $('p.mark a').each(function(i){
-                        var $this = $(this);
-                        $('meta[name="keywords"]').attr({
-                            "content" : function(){
-                                return $this.text() + ',' + $this.siblings('a').text() || '' + ',';
-                            }
-                        });
+                    $('p.mark a').each(function(){
+                        keywordsArr.push( $(this).text() );
+                        $('meta[name="keywords"]').attr('content' , keywordsArr.join(','));
                     });
                     $('meta[name="description"]').attr({
                         "content" : function(){
@@ -105,6 +105,12 @@
                         }
                     });
                 });
+                // 输入表情
+                function grin( str ){
+                    $('#comment').val(function(){
+                        return $(this).val() + ' ' + str + ' ';
+                    });
+                }
             </script>
     <?php
         }

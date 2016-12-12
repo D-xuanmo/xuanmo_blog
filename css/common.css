@@ -345,12 +345,6 @@ aside {
     right: 0;
     transition: .7s;
 }
-.new-article.on{
-    position: fixed;
-    top: 75px;
-    right: 110px;
-    width: 23%;
-}
 aside ul {
     width: 100%;
 }
