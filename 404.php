@@ -1,12 +1,5 @@
 <?php get_header(); ?>
 <section>
-    <div class="wrap clearfix">
-        <div class="fl">
-            <?php get_sidebar(); ?>
-        </div>
-        <div class="fr">
-            <h2>您要找的页面不见了<img style="vertical-align: bottom;" src="http://www.xuanmomo.com/wp-content/uploads/2016/09/4042.jpg" /></h2>
-        </div>
-    </div>
+    <img style="display: block; margin: 0 auto;" src="<?php bloginfo('template_url'); ?>/images/404.gif" />
 </section>
 <?php get_footer(); ?>

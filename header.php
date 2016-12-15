@@ -71,7 +71,7 @@
                 $(document).ready(function(){
                     var keywordsArr = [];
                     // 表情移动到form标签里面
-                    $('p.smiley').insertAfter($('p.comment-notes'));
+                    $('p.smiley').insertBefore($('p.comment-form-comment'));
                     // 删除评论框
                     $('#respond form p.comment-form-comment label').remove();
                     // 文章二维码
