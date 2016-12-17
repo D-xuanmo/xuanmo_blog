@@ -52,10 +52,13 @@ section article div.con {
     height: 100%;
     background: #17a6e8;
 }
-.right article a {
+.right article a{
     display: block;
 }
-.right article a img{
+.right article .article-img {
+    line-height: 174px;
+}
+.right article .article-img img{
     width: 100%;
     height: 175px;
     border-radius: 5px 5px 0 0;

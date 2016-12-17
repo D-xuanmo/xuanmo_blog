@@ -175,11 +175,11 @@ div.first-screen i.icon-menu-up {
 .main article .article-img {
     display: block;
     margin-bottom: 10px;
-    line-height: 200px;
+    line-height: 198px;
 }
 .main article .article-img img {
     width: 100%;
-    vertical-align: middle;
+    height: 200px;
     border-radius: 10px 10px 0 0;
 }
 .main article:hover{

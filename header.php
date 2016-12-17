@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+　　 へ　　　　　／|
+　　/＼7　　∠＿/
+　 /　│　　 ／　／
+　│　Z ＿,＜　／　　 /`ヽ
+　│　　　　　ヽ　　 /　　〉
+　 Y　　　　　`　 /　　/
+　ｲ●　､　●　　⊂⊃〈　　/
+　()　 へ　　　　|　＼〈
+　　>ｰ ､_　 ィ　 │ ／／
+　 / へ　　 /　ﾉ＜| ＼＼
+　 ヽ_ﾉ　　(_／　 │／／
+　　7　　　　　　　|／
+　　＞―r￣￣`ｰ―＿
+皮卡丘,对偷看者使用十万伏特
+-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
@@ -53,9 +69,10 @@
             <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
             <style>
                 header { background: rgba(40, 40, 40, 0.7); }
-                h2{ padding: 10px 0; }
                 a{ display: inline-block; padding: 0 5px; }
                 a img{ display: block; width: 32px; height: 32px; margin: 3px auto; border-radius: 8px; }
+                section{ background: #fff; }
+                section h2{ margin: 20px 0; padding-left: 10px; background: #f5f5f5; border-left: 5px solid #0cf; font-size: 18px; line-height: 40px; color: #292929; }
             </style>
     <?php
         }

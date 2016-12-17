@@ -11,8 +11,14 @@ $(function(){
         // 为没有缩略图的img添加别的图片
         $('article .article-img').each(function(){
             random = Math.floor( Math.random() * arrImg.length );
-            if( $(this).children('img').length == 0 ){
+            var $thisImg = $(this).children('img');
+            if( $thisImg.length == 0 ){
                 $(this).append(arrImg[random]);
+            }else if( Number( $thisImg.attr('height') ) < 150 ){
+                $thisImg.css({
+                    'height' : $thisImg.attr('height'),
+                    'vertical-align' : 'middle'
+                });
             }
         });
         $('.content img').each(function(){
