@@ -9,6 +9,7 @@ aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,blockquote
     padding:0;
 }
 blockquote{
+    margin: 10px 0;
     padding: 10px;
     border-radius: 5px;
     background: #3b3b3b;
@@ -28,7 +29,7 @@ html{
 }
 body{
     overflow-x: hidden;
-    font: 14px/20px "Consolas",Microsoft Yahei;
+    font: 14px "Consolas",Microsoft Yahei;
     background: #f1f1f1;
 }
 article{

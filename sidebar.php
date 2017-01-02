@@ -32,6 +32,6 @@
     <li>
         <h3>标签云</h3>
     </li>
-        <?php wp_tag_cloud('smallest=10&largest=10&number=30'); ?>
+        <?php wp_tag_cloud('smallest=10&largest=10&number=20'); ?>
     </ul>
 </aside>

@@ -91,6 +91,32 @@
                     $('p.smiley').insertBefore($('p.comment-form-comment'));
                     // 删除评论框
                     $('#respond form p.comment-form-comment label').remove();
+                    $('.form-submit input:eq(0)')
+                    // 插入验证码的输入框
+                    .before('\
+                        <label for="number-verification">输入验证码：</label>\
+                        <input type="text" value="" class="num-verification" disabled> +\
+                        <input type="text" value="" class="num-verification" disabled> =\
+                        <input type="text" value="" id="number-verification" class="num-verification">\
+                        ')
+                    .siblings('.num-verification').css({
+                        'width' : '40px',
+                        'margin-bottom' : '10px',
+                        'text-align' : 'center'
+                    })
+                    .siblings('input[type="submit"]').attr('disabled','disabled');
+                    var $verification = $('.num-verification');
+                    $verification.eq(0).val( Math.floor( Math.random() * 15 + 1 ) );
+                    $verification.eq(1).val( Math.floor( Math.random() * 15 + 1 ) );
+                    $verification.eq(2).blur(function(){
+                        if( Number( $(this).val() ) == Number( $verification.eq(0).val() ) + Number( $verification.eq(1).val() ) ){
+                            $(this).css('border-color','#32e4af')
+                            $('.form-submit input[type="submit"]').removeAttr('disabled');
+                        }else{
+                            $(this).css('border-color','#f00');
+                            $('.form-submit input[type="submit"]').attr('disabled','disabled');
+                        }
+                    });
                     // 文章二维码
                     var $qrcode = $('#qrcode');
                     var qrcode = new QRCode(document.getElementById('qrcode') , {
