@@ -1,4 +1,14 @@
-<aside class="new-article">
+<?php
+    if( is_single() ){
+?>
+        <aside class="new-article single-page">
+<?php
+    }else{
+?>
+        <aside class="new-article">
+<?php
+    }
+?>
     <ul class="list-article-title">
         <li>
             <h3>最新文章</h3>

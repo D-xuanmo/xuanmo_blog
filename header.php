@@ -108,7 +108,7 @@
                     var $verification = $('.num-verification');
                     $verification.eq(0).val( Math.floor( Math.random() * 15 + 1 ) );
                     $verification.eq(1).val( Math.floor( Math.random() * 15 + 1 ) );
-                    $verification.eq(2).blur(function(){
+                    $verification.eq(2).keyup(function(){
                         if( Number( $(this).val() ) == Number( $verification.eq(0).val() ) + Number( $verification.eq(1).val() ) ){
                             $(this).css('border-color','#32e4af')
                             $('.form-submit input[type="submit"]').removeAttr('disabled');

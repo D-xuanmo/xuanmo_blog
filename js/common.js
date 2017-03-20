@@ -1,5 +1,6 @@
 $(function(){
     $window = $(window);
+    var $header = $('header');
     (function(){
         var $comment = $('#comments ol.comment-list li');
         var $respond = $('#respond .comment-form-comment');
@@ -26,23 +27,24 @@ $(function(){
         });
     })();
     $('body').animate({scrollTop : 0}, 0);
-    // 搜索框动画
-    var bMark = true;
-    var $header = $('header');
-    $('.search-txt').blur(function(e){
-        e.stopPropagation();
-        $(this).val('');
-        $header.css('top','-120px');
-        bMark = !bMark;
-    });
-    $('.contact .icon-search').click(function(){
-        bMark ? $header.css('top','0') : $header.css('top','-120px');
-        bMark = !bMark;
-    });
-    $('form .icon-close1').click(function(){
-        $header.css('top','-120px');
-        bMark = !bMark;
-    });
+    (function(){
+        // 搜索框动画
+        var bMark = true;
+        $('.search-txt').blur(function(e){
+            e.stopPropagation();
+            $(this).val('');
+            $header.css('top','-120px');
+            bMark = !bMark;
+        });
+        $('.contact .icon-search').click(function(){
+            bMark ? $header.css('top','0') : $header.css('top','-120px');
+            bMark = !bMark;
+        });
+        $('form .icon-close1').click(function(){
+            $header.css('top','-120px');
+            bMark = !bMark;
+        });
+    })();
     // 滚动显示
     (function(){
         var windowH = $window.height() , scrollT = $window.scrollTop();
@@ -170,24 +172,33 @@ $(function(){
             });
         }
     })();
-    // 返回顶部动画
-    var $backTop = $('div.icon-backtop');
-    $window.on('scroll' , function(){
-        var $this = $(this);
-        var $scroll = $(this).scrollTop();
-        if( $scroll > 100 ){
-            $header.addClass('on');
-            $('ul.sub-menu' , $header).addClass('bg282828');
-            $backTop.css('right','30px');
-        }else if( $scroll < 100 ){
-            $header.removeClass('on');
-            $('ul.sub-menu' , $header).removeClass('bg282828');
-            $backTop.css('right','-50px');
-        }
-    });
-    $backTop.click(function(){
-        $('body').animate({scrollTop : 0},800);
-    });
+    (function(){
+        // 返回顶部动画
+        var $scroll;
+        var $backTop = $('div.icon-backtop');
+        var $newArticle = $('.new-article.single-page');
+        $window.on('scroll' , function(){
+            var $this = $(this);
+            $scroll = $(this).scrollTop();
+            if( $scroll > 300 ){
+                $header.addClass('on');
+                $('ul.sub-menu' , $header).addClass('bg282828');
+                $newArticle.addClass('on').css('left', $('.single-article').offset().left + $('.single-article').width() + 60 + 'px');
+                $backTop.css('right','30px');
+            }else if( $scroll < 300 ){
+                $header.removeClass('on');
+                $('ul.sub-menu' , $header).removeClass('bg282828');
+                $newArticle.removeClass('on');
+                $backTop.css('right','-50px');
+            }
+        })
+        .on('resize', function(){
+            if( $scroll > 300 ) $newArticle.addClass('on').css('left', $('.single-article').offset().left + $('.single-article').width() + 50 + 'px');
+        });
+        $backTop.click(function(){
+            $('body').animate({scrollTop : 0},800);
+        });
+    })();
     // 放大图片预览
     (function(){
         var $content = $('.content');

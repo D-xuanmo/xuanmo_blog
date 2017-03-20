@@ -340,11 +340,10 @@ aside {
     border-radius: 10px;
     box-shadow: 1px 1px 5px #bdbdbd;
 }
-.new-article{
-    position: relative;
-    top: 0;
-    right: 0;
-    transition: .7s;
+.new-article.on{
+    position: fixed;
+    top: 100px;
+    width: 260px;
 }
 aside ul {
     width: 100%;
