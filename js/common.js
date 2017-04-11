@@ -176,27 +176,21 @@ $(function(){
         // 返回顶部动画
         var $scroll;
         var $backTop = $('div.icon-backtop');
-        var $newArticle = $('.new-article.single-page');
         $window.on('scroll' , function(){
             var $this = $(this);
             $scroll = $(this).scrollTop();
             if( $scroll > 300 ){
                 $header.addClass('on');
                 $('ul.sub-menu' , $header).addClass('bg282828');
-                $newArticle.addClass('on').css('left', $('.single-article').offset().left + $('.single-article').width() + 60 + 'px');
                 $backTop.css('right','30px');
             }else if( $scroll < 300 ){
                 $header.removeClass('on');
                 $('ul.sub-menu' , $header).removeClass('bg282828');
-                $newArticle.removeClass('on');
                 $backTop.css('right','-50px');
             }
-        })
-        .on('resize', function(){
-            if( $scroll > 300 ) $newArticle.addClass('on').css('left', $('.single-article').offset().left + $('.single-article').width() + 50 + 'px');
         });
         $backTop.click(function(){
-            $('body').animate({scrollTop : 0},800);
+            $('html,body').animate({scrollTop : 0},800);
         });
     })();
     // 放大图片预览
