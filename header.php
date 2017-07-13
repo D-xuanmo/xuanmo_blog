@@ -22,6 +22,7 @@
     <meta name="keywords" content="<?php echo get_option('x_keywords'); ?>">
     <meta name="description" content="<?php echo get_option('x_description'); ?>" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="/favicon.ico">
     <?php
         if( is_single() ){
     ?>
@@ -43,7 +44,7 @@
         }
     </script>
     <?php wp_head(); ?>
-    <link rel="stylesheet" href="http://xuanmomo.com/iconfont.css">
+    <link rel="stylesheet" href="/iconfont.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/common.css">
     <?php
         if( is_home() ){

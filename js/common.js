@@ -4,7 +4,7 @@ $(function(){
     (function(){
         var $comment = $('#comments ol.comment-list li');
         var $respond = $('#respond .comment-form-comment');
-        var arrImg = [ '<img src="http://xuanmomo.com/bg1.jpg">' , '<img src="http://xuanmomo.com/bg2.jpg">' , '<img src="http://xuanmomo.com/bg3.jpg">' , '<img src="http://xuanmomo.com/bg4.jpg">' , '<img src="http://xuanmomo.com/bg5.jpg">' ];
+        var arrImg = [ '<img src="/bg1.jpg">' , '<img src="/bg2.jpg">' , '<img src="/bg3.jpg">' , '<img src="/bg4.jpg">' , '<img src="/bg5.jpg">' ];
         var random = 0;
         // 删除head里的style
         $('head style[media="screen"],head style[media="print"]').remove();

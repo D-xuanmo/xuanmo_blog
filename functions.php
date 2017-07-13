@@ -232,7 +232,7 @@
 		?>
 		<div>
 			<div id="icon-themes"><br /></div>
-			<h2>主题设置</h2>
+			<h2>主题设置 <span style="font-size: 14px; color: #f00;">所有输入框不要输入引号！</span></h2>
 			<form method="POST" action="">
 				<input type="hidden" name="update_themeoptions" value="true" />
 				<p>
@@ -282,6 +282,10 @@
 				<p>
 					版权信息（copyright）：<br />
 					<textarea name="x_copy" id="x_copy" class="large-text code" rows="8" cols="40"><?php echo stripslashes(get_option('x_copyright')); ?></textarea>
+				</p>
+				<p>
+					网站底部JavaScript代码：<br />
+					<textarea name="x_js" id="x_js" class="large-text code" rows="8" cols="40"><?php echo stripslashes(get_option('x_javascript')); ?></textarea>
 				</p>
 				<p>
 					<input type="submit" name="bcn_admin_options" value="保存更改"/>
@@ -394,5 +398,13 @@
     }
     die;
 	}
+	/* 替换图片链接为 https */
+	// function my_content_manipulator($content){
+	//     if( is_ssl() ){
+	//         $content = str_replace('http://www.xuanmomo.com/wp-content/uploads', 'https://www.xuanmomo.com/wp-content/uploads', $content);
+	//     }
+	//     return $content;
+	// }
+	// add_filter('the_content', 'my_content_manipulator');
 
 ?>

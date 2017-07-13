@@ -8,7 +8,7 @@
             <h4>最新文章</h4>
         </div>
         <div class="article-box clearfix">
-            <?php $posts = query_posts($query_string . '&orderby=date&showposts=5'); ?>
+            <?php $posts = query_posts($query_string . '&orderby=date&showposts=4'); ?>
             <?php if(have_posts()) : while (have_posts()) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">
                 <a href="<?php the_permalink(); ?>" class="article-img"><?php the_post_thumbnail(); ?></a>
