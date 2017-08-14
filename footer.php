@@ -1,5 +1,5 @@
     <div class="wrap footer-link">
-        <?php echo get_option('x_links'); ?>
+        <?php echo get_option('xm_options')['link']; ?>
     </div>
     <!-- footer start -->
     <footer>
@@ -7,7 +7,7 @@
             <div class="clearfix">
                 <div class="fl footer-left clearfix">
                     <h2 class="fl footer-blog-name"><?php echo bloginfo('name'); ?></h2>
-                    <p class="fl introduce"><?php echo stripslashes(get_option('x_words')); ?></p>
+                    <div class="fl introduce"><?php echo get_option('xm_options')['footer_text']; ?></div>
                 </div>
                 <div class="fr footer-right">
                     <a href="http//cn.wordpress.org/">
@@ -29,14 +29,16 @@
                 </div>
             </div>
             <div class="copyright-wrap clearfix">
-                <p class="fl copyright"><?php echo stripslashes(get_option('x_copyright')); ?></p>
+                <div class="fl copyright"><?php echo get_option('xm_options')['footer_copyright']; ?></div>
                 <p class="fr">Theme by <a href="https://www.xuanmo.xin">Xuanmo</a></p>
             </div>
         </div>
     </footer>
     <!-- footer end -->
     <div class="iconfont icon-backtop"></div>
-    <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
-    <script><?php echo stripslashes(get_option('x_javascript')); ?></script>
+    <?php
+    $js_code = get_option('xm_options')['footer_js'];
+    if (!empty($js_code)) echo '<script>' . $js_code . '</script>';
+    ?>
 </body>
 </html>

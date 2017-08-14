@@ -1,13 +1,14 @@
 $(function(){
     $window = $(window);
     var $header = $('header');
+
     (function(){
         var $comment = $('#comments ol.comment-list li');
         var $respond = $('#respond .comment-form-comment');
         var arrImg = [ '<img src="/bg1.jpg">' , '<img src="/bg2.jpg">' , '<img src="/bg3.jpg">' , '<img src="/bg4.jpg">' , '<img src="/bg5.jpg">' ];
         var random = 0;
         // 删除head里的style
-        $('head style[media="screen"],head style[media="print"]').remove();
+        $('head style[media="screen"], head style[media="print"]').remove();
         $('.comment-author .says' , $comment).remove();
         // 为没有缩略图的img添加别的图片
         $('article .article-img').each(function(){
@@ -26,7 +27,7 @@ $(function(){
             $(this).removeAttr('width').removeAttr('height');
         });
     })();
-    $('body').animate({scrollTop : 0}, 0);
+
     (function(){
         // 搜索框动画
         var bMark = true;
@@ -45,9 +46,10 @@ $(function(){
             bMark = !bMark;
         });
     })();
+
     // 滚动显示
     (function(){
-        var windowH = $window.height() , scrollT = $window.scrollTop();
+        var windowH = $window.height(), scrollT = $window.scrollTop();
         $window.resize(function(){
             windowH = $window.height();
         });
@@ -65,6 +67,7 @@ $(function(){
             }
         });
     })();
+
     // 手机端无缝滚动
     (function(){
         var i = 1;
@@ -138,6 +141,7 @@ $(function(){
             obj_box.animate({ 'left' : i * -$bannerLi.width() + 'px' },time);
         }
     })();
+
     // 显示导航菜单
     (function(){
         var $nav = $('nav');
@@ -172,6 +176,7 @@ $(function(){
             });
         }
     })();
+
     (function(){
         // 返回顶部动画
         var $scroll;
@@ -193,6 +198,7 @@ $(function(){
             $('html,body').animate({scrollTop : 0},800);
         });
     })();
+
     // 放大图片预览
     (function(){
         var $content = $('.content');
@@ -241,6 +247,7 @@ $(function(){
             $('.cover-img').children().remove();
         });
     })();
+
     // 文章页微信显示与关闭
     $('.article-about-author .share-btn a:nth-of-type(3)').click(function(){
         // 微信盒子显示
@@ -251,4 +258,17 @@ $(function(){
             $(this).parent('span').hide();
         });
     });
+
+    // 输入表情
+    $('p.smiley')
+        .insertBefore($('p.comment-form-comment'))
+        .children().click(function() {
+            var str = $(this).attr('title');
+            $('#comment').val(function() {
+                return $(this).val() + ' ' + str + ' ';
+            });
+        });
+
+    // 删除评论框
+    $('#respond form p.comment-form-comment label').remove();
 });

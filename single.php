@@ -3,6 +3,7 @@
     <div class="wrap clearfix">
         <?php  while(have_posts()) : the_post(); ?>
         <?php setPostViews(get_the_ID());//记录阅读 ?>
+        <span id="article-link" class="hide"><?php the_permalink(); ?></span>
         <article class="fl single-article">
             <div class="breadcrumbs">
                 <span>当前位置：</span>
@@ -10,7 +11,7 @@
                 <span>正文</span>
             </div>
             <div class="header">
-                <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+                <h2><?php the_title(); ?></h2>
                 <?php the_author_posts_link(); ?>
                 <span>发布于</span>
                 <time><?php the_time('Y-m-d H:i'); ?></time>
@@ -24,12 +25,12 @@
                 <?php the_content(); ?>
             </div>
             <p class="like">
-                    <a href="javascript:;" data-action="ding" data-id="<?php the_ID(); ?>" class="favorite<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
+                    <a href="javascript:;" data-action="ding" data-id="<?php the_ID(); ?>" class="link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
                     <i class="iconfont icon-thumbs-up2"></i>赞
                     <span class="count">
                         <?php
-                            if( get_post_meta($post->ID,'bigfa_ding',true) ){
-                                echo get_post_meta($post->ID,'bigfa_ding',true);
+                            if( get_post_meta($post->ID, 'bigfa_ding', true) ){
+                                echo get_post_meta($post->ID, 'bigfa_ding', true);
                             } else {
                                 echo '0';
                             }
@@ -61,20 +62,20 @@
                 <?php echo get_avatar( get_the_author_email(), '60' );?>
                 <h2>作者专栏：<?php the_author(); ?></h2>
                 <!-- 作者名字 -->
-                <p><?php echo get_option('x_author_txt'); ?></p>
+                <p><?php echo get_option('xm_options')['author_des']; ?></p>
                 <p class="share-btn">
                     <a href="<?php bloginfo('home') ;?>"><i class="iconfont icon-home2"></i>博客</a>
-                    <a href="<?php echo stripslashes(get_option('x_t_qq')); ?>" target="_blank"><i class="iconfont icon-qq"></i>QQ</a>
+                    <a href="<?php echo get_option('xm_options')['qq_url']; ?>" target="_blank"><i class="iconfont icon-qq"></i>QQ</a>
                     <a href="javascript:;">
                         <i class="iconfont icon-wechat"></i>微信
                         <span class="wechat-num">
-                            微信号：<?php echo get_option('x_wechats_number'); ?>
-                            <img src="<?php echo stripslashes(get_option('x_wechats')); ?>" width="100%" alt="<?php the_author(); ?>微信" />
+                            微信号：<?php echo get_option('xm_options')['wechat_num']; ?>
+                            <img src="<?php echo get_option('xm_options')['wechat_img']; ?>" width="100%" alt="<?php the_author(); ?>微信" />
                             <i class="iconfont icon-close1"></i>
                         </span>
                     </a>
-                    <a href="<?php echo stripslashes(get_option('x_sinas')); ?>" target="_blank"><i class="iconfont icon-sina"></i>微博</a>
-                    <a href="mailto:<?php echo stripslashes(get_option('x_email')); ?>?subject=Hello <?php echo bloginfo('name'); ?>"><i class="iconfont icon-email2"></i>邮箱</a>
+                    <a href="<?php echo get_option('xm_options')['sina_url']; ?>" target="_blank"><i class="iconfont icon-sina"></i>微博</a>
+                    <a href="mailto:<?php echo get_option('xm_options')['email']; ?>?subject=Hello <?php echo bloginfo('name'); ?>"><i class="iconfont icon-email2"></i>邮箱</a>
                 </p>
             </div>
             <!-- 作者简介结束 -->
@@ -121,4 +122,46 @@
         <p>已经没有了！</p>
     </div>
 </section>
+<script>
+    $(function() {
+        // 文章二维码
+        var $qrcode = $('#qrcode');
+        var oQRCode = new QRCode(document.getElementById('qrcode') , {
+            'width' : 150,
+            'height' : 150
+        });
+        oQRCode.makeCode( $('#article-link').text() );
+        $('#qrcode img').after($('#qrcode i'));
+        $('.wechat').click(function(){
+            $qrcode.css('display','block');
+        });
+        $('#qrcode .icon-close1').click(function(e){
+            e.stopPropagation();
+            $qrcode.css('display','none');
+        });
+
+        // 点赞提交
+        $('.link-btn').click(function() {
+            if ($(this).hasClass('done')) {
+                alert('^_^您已赞过此文章了');
+            } else {
+                var $this = $(this);
+                $this.addClass('done');
+                document.cookie = 'bigfa_ding_' + $(this).data('id') + '=' + $(this).data('id');
+                $.ajax({
+                    url: '<?php bloginfo('url'); ?>/wp-admin/admin-ajax.php',
+                    type: 'POST',
+                    data: {
+                        action: "bigfa_like",
+                        um_id: $(this).data("id"),
+                        um_action: $(this).data('action')
+                    },
+                    success: function(data) {
+                        $this.children('.count').text(data);
+                    }
+                });
+            }
+        });
+    });
+</script>
 <?php get_footer(); ?>

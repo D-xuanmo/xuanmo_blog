@@ -1,5 +1,27 @@
 <?php get_header(); ?>
-<?php include(TEMPLATEPATH .'/fullScreen.php'); ?>
+<!-- 首屏 start -->
+<div class="first-screen mobile-hide" style="background-image: url(<?php echo get_option('xm_options')['home_banner'][0]['big_img']; ?>);">
+    <div class="txt">
+        <p class="move-left"><?php echo get_option('xm_options')['home_banner'][0]['cn_title_0']; ?></p>
+        <p class="move-left"><?php echo get_option('xm_options')['home_banner'][0]['cn_title_1']; ?></p>
+        <h1>
+            <span class="img-title" style="background-image: url(<?php echo get_option('xm_options')['home_banner'][0]['img_title']; ?>);"></span>
+            <?php echo get_option('xm_options')['title']; ?>
+        </h1>
+        <p class="move-right"><?php echo get_option('xm_options')['home_banner'][0]['en_title_0']; ?></p>
+        <p class="move-right"><?php echo get_option('xm_options')['home_banner'][0]['en_title_1']; ?></p>
+    </div>
+    <i class="iconfont icon-menu-up"></i>
+</div>
+<div class="mobile-banner pc-none">
+    <ul class="roll-banner clearfix">
+        <li><img src="images/flower2_1.jpg" alt=""></li>
+        <li><img src="images/T1-lg.jpg" alt=""></li>
+        <li><img src="images/TT.jpg" alt=""></li>
+    </ul>
+    <ul class="plugin-banner-btn"></ul>
+</div>
+<!-- 首屏 end -->
 <section class="main">
     <!-- 最新文章 -->
     <div class="wrap clearfix">
@@ -113,7 +135,7 @@
                 if(have_posts()) : while (have_posts()) : the_post();
             ?>
             <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">
-            <a href="<?php the_permalink(); ?>" class="article-img"><?php the_post_thumbnail(); ?></a>
+                <a href="<?php the_permalink(); ?>" class="article-img"><?php the_post_thumbnail(); ?></a>
                 <div class="con">
                     <h2 class="article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                     <div class="time">
