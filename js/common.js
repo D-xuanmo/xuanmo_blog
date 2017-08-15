@@ -5,7 +5,7 @@ $(function(){
     (function(){
         var $comment = $('#comments ol.comment-list li');
         var $respond = $('#respond .comment-form-comment');
-        var arrImg = [ '<img src="/bg1.jpg">' , '<img src="/bg2.jpg">' , '<img src="/bg3.jpg">' , '<img src="/bg4.jpg">' , '<img src="/bg5.jpg">' ];
+        var arrImg = ['<img src="https://www.xuanmo.xin/bg1.jpg">', '<img src="https://www.xuanmo.xin/bg2.jpg">', '<img src="https://www.xuanmo.xin/bg3.jpg">', '<img src="https://www.xuanmo.xin/bg4.jpg">', '<img src="https://www.xuanmo.xin/bg5.jpg">'];
         var random = 0;
         // 删除head里的style
         $('head style[media="screen"], head style[media="print"]').remove();
@@ -49,23 +49,16 @@ $(function(){
 
     // 滚动显示
     (function(){
-        var windowH = $window.height(), scrollT = $window.scrollTop();
-        $window.resize(function(){
-            windowH = $window.height();
-        });
-        $window.scroll(function(){
-            scrollT = $window.scrollTop();
-            $('.main article , .right article').each(function(){
-                if( ( $(this).offset().top - scrollT ) < ( windowH - $(this).height() / 2 ) ){
-                    $(this).addClass('on');
-                }
+        scrollAnimate($('.main article , .right article'));
+        function scrollAnimate(obj) {
+            var y;
+            $(window).on('scroll', function () {
+                y = $(this).scrollTop();
+                obj.each(function () {
+                    if (y > $(this).offset().top - $(window).height() / 2) $(this).addClass('on');
+                });
             });
-        });
-        $('.main article , .right article').each(function(){
-            if( ( $(this).offset().top - scrollT ) < ( windowH - $(this).height() / 2 ) ){
-                $(this).addClass('on');
-            }
-        });
+        }
     })();
 
     // 手机端无缝滚动

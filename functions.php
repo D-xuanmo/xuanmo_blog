@@ -1,6 +1,45 @@
 <?php
 /*
  ****************************************
+ * 彻底关闭自动更新                         
+ ****************************************
+ */
+add_filter('automatic_updater_disabled', '__return_true');
+
+/*
+ ****************************************
+ * 七牛缓存gravatar头像                              
+ ****************************************
+ */
+function dw_get_avatar($avatar) {
+    $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "gravatar.xuanmomo.com", $avatar);
+    return $avatar;
+}
+add_filter('get_avatar', 'dw_get_avatar', 10, 3);
+
+/*
+ ****************************************
+ * 删除谷歌字体                           
+ ****************************************
+ */
+if (!function_exists('remove_wp_open_sans')) :
+    function remove_wp_open_sans() {
+        wp_deregister_style('open-sans');
+        wp_register_style('open-sans', false);
+    }
+    add_action('wp_enqueue_scripts', 'remove_wp_open_sans');
+        // Uncomment below to remove from admin
+        // add_action('admin_enqueue_scripts', 'remove_wp_open_sans');
+endif;
+function remove_open_sans() {
+    wp_deregister_style('open-sans');
+    wp_register_style('open-sans', false);
+    wp_enqueue_style('open-sans', '');
+}
+add_action('init', 'remove_open_sans');
+
+/*
+ ****************************************
  * 注册菜单                              
  ****************************************
  */
@@ -41,6 +80,70 @@ function get_post_excerpt($post, $excerpt_length) {
 
 /*
  ****************************************
+ * 侧边栏获取评论                         
+ ****************************************
+ */
+function get_recent_comments(){
+		// 不显示pingback的type=comment,不显示自己的,user_id=0.(此两个参数可有可无)
+    $comments = get_comments(array('number' => 10, 'status' => 'approve', 'type' => 'comment', 'user_id' => 0));
+    $output = '';
+    foreach ($comments as $comment) {
+        $random = mt_rand(1, 10);
+			//去除评论内容中的标签
+        $comment_content = strip_tags($comment->comment_content);
+			//评论可能很长,所以考虑截断评论内容,只显示10个字
+        $short_comment_content = trim(mb_substr($comment_content, 0, 10, "UTF-8"));
+			//先获取头像 get_avatar( $comment->comment_author_email, 50 )
+        $output .= '<li class="aside-com-img" class="clearfix"><p>' . get_avatar($comment->comment_author_email, 50) . '</p> ';
+			//获取作者
+        $output .= '<strong class="aside-content">' . $comment->comment_author . ':</strong><p><a href="';
+			//评论内容和链接
+        $output .= get_permalink($comment->comment_post_ID) . '" title="查看 ' . get_post($comment->comment_post_ID)->post_title . '">';
+        $output .= $short_comment_content . '...</a></p></li>';
+    }
+		//输出
+    echo $output;
+}
+
+/*
+ ****************************************
+ * 邮件回复功能                       
+ ****************************************
+ */
+function ludou_comment_mail_notify($comment_id, $comment_status) {
+	  // 评论必须经过审核才会发送通知邮件
+    if ($comment_status !== 'approve' && $comment_status !== 1)
+        return;
+    $comment = get_comment($comment_id);
+    if ($comment->comment_parent != '0') {
+        $parent_comment = get_comment($comment->comment_parent);
+	    // 邮件接收者email
+        $to = trim($parent_comment->comment_author_email);
+	    // 邮件标题
+        $subject = '您在[' . get_option("blogname") . ']的留言有了新的回复';
+	    // 邮件内容，自行修改，支持HTML
+        $message = '
+	      <p>Hi, ' . $parent_comment->comment_author . '</p>
+	      <p>您之前在《' . get_the_title($comment->comment_post_ID) . '》的留言：<br />'
+            . $parent_comment->comment_content . '</p>
+	      <p>' . $comment->comment_author . ' 给您回复:<br />'
+            . $comment->comment_content . '<br /><br /></p>
+	      <p>您可以 <a href="' . htmlspecialchars(get_comment_link($comment->comment_parent)) . '">点此查看回复完整內容</a></p>
+	      <p>欢迎再度光临 <a href="' . home_url() . '">' . get_option('blogname') . '</a></p>
+	      <p>（此邮件由系统自动发送，请勿回复）</p>';
+        $message_headers = "Content-Type: text/html; charset=\"" . get_option('blog_charset') . "\"\n";
+	    // 不用给不填email的评论者和管理员发提醒邮件
+        if ($to != '' && $to != get_bloginfo('admin_email'))
+            @wp_mail($to, $subject, $message, $message_headers);
+    }
+}
+	// 编辑和管理员的回复直接发送提醒邮件，因为编辑和管理员的评论不需要审核
+add_action('comment_post', 'ludou_comment_mail_notify', 20, 2);
+	// 普通访客发表的评论，等博主审核后再发送提醒邮件
+add_action('wp_set_comment_status', 'ludou_comment_mail_notify', 20, 2);
+
+/*
+ ****************************************
  * 设置文章列表翻页                        
  ****************************************
  */
@@ -57,8 +160,8 @@ function wp_pagenavi() {
         'type' => 'plain',
         'end_size' => '1', //在最后面和最前面至少显示多少个数，
         'mid_size' => '3', //在当前页码的前后至少显示多少个页码数
-        'prev_text' => '上一页',
-        'next_text' => '下一页'
+        'prev_text' => '&lt;',
+        'next_text' => '&gt;'
     );
     if ($wp_rewrite->using_permalinks())
         $pagination['base'] = user_trailingslashit(trailingslashit(remove_query_arg('s', get_pagenum_link(1))) . 'page/%#%/', 'paged');
@@ -225,5 +328,33 @@ if (get_magic_quotes_gpc()) {
     $_POST = array_map('stripslashes_deep', $_POST);
     $_GET = array_map('stripslashes_deep', $_GET);
     $_COOKIE = array_map('stripslashes_deep', $_COOKIE);
+}
+
+/*
+ ****************************************
+ * 点赞功能                   
+ ****************************************
+ */
+add_action('wp_ajax_nopriv_bigfa_like', 'bigfa_like');
+add_action('wp_ajax_bigfa_like', 'bigfa_like');
+function bigfa_like()
+{
+    global $wpdb, $post;
+    $id = $_POST["um_id"];
+    $action = $_POST["um_action"];
+    if ($action == 'ding') {
+        $bigfa_raters = get_post_meta($id, 'bigfa_ding', true);
+        $expire = time() + 99999999;
+        $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false;
+        setcookie('bigfa_ding_' . $id, $id, $expire, '/', $domain, false);
+        if (!$bigfa_raters || !is_numeric($bigfa_raters)) {
+            update_post_meta($id, 'bigfa_ding', 1);
+        }
+        else {
+            update_post_meta($id, 'bigfa_ding', ($bigfa_raters + 1));
+        }
+        echo get_post_meta($id, 'bigfa_ding', true);
+    }
+    die;
 }
 ?>

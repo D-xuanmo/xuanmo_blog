@@ -38,7 +38,6 @@
     <link rel="icon" href="<?php echo get_option('xm_options')['favicon']; ?>">
     <link rel="stylesheet" href="https://www.xuanmo.xin/iconfont.css">
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/mobile.css">
     <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.1.4.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
     <?php 
@@ -51,21 +50,33 @@
             </style>
             ';
     } else if(is_category() ) {
-        echo '<link rel="stylesheet" href="' . $templateUrl . '/css/list.css">';
+        echo '
+            <link rel="stylesheet" href="' . $templateUrl . '/css/list.css">
+            <script>
+                $(function() {
+                    $(".mobile-article-lg:eq(0), .mobile-article-lg:eq(1), .mobile-article-lg:eq(2)").addClass("on");
+                });
+            </script>
+        ';
     } else if(is_search() || is_author() || is_tag() || is_404()) {
         echo '
             <link rel="stylesheet" href="' . $templateUrl . '/css/index.css">
             <style>
                 header { background: rgba(40, 40, 40, 0.7); }
             </style>
+            <script>
+                $(function() {
+                    $(".mobile-article-lg:eq(0), .mobile-article-lg:eq(1), .mobile-article-lg:eq(2)").addClass("on");
+                });
+            </script>
         ';
     } else if(is_page()) {
         echo '
             <link rel="stylesheet" href="' . $templateUrl . '/css/index.css">
             <style>
                 header { background: rgba(40, 40, 40, 0.7); }
-                a{ display: inline-block; padding: 0 5px; }
-                a img{ display: block; width: 32px; height: 32px; margin: 3px auto; border-radius: 8px; }
+                .mobile-article-lg a{ display: inline-block; padding: 0 5px; }
+                .mobile-article-lg a img{ display: block; width: 32px; height: 32px; margin: 3px auto; border-radius: 8px; }
                 section{ background: #fff; }
                 section h2{ margin: 20px 0; padding-left: 10px; background: #f5f5f5; border-left: 5px solid #0cf; font-size: 18px; line-height: 40px; color: #292929; }
             </style>
@@ -77,6 +88,7 @@
         ';
     }
     ?>
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/mobile.css">
 </head>
 <body>
     <!-- header start -->

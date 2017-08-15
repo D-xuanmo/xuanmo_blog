@@ -6,7 +6,7 @@
         <p class="move-left"><?php echo get_option('xm_options')['home_banner'][0]['cn_title_1']; ?></p>
         <h1>
             <span class="img-title" style="background-image: url(<?php echo get_option('xm_options')['home_banner'][0]['img_title']; ?>);"></span>
-            <?php echo get_option('xm_options')['title']; ?>
+            <i class="hide"><?php echo get_option('xm_options')['title']; ?></i>
         </h1>
         <p class="move-right"><?php echo get_option('xm_options')['home_banner'][0]['en_title_0']; ?></p>
         <p class="move-right"><?php echo get_option('xm_options')['home_banner'][0]['en_title_1']; ?></p>

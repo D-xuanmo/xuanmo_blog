@@ -41,7 +41,7 @@
         <?php endif; ?>
     </div>
     <div class="wp-pagenavi">
-    <?php par_pagenavi(5); ?>
+        <?php wp_pagenavi(); ?>
     </div>
 </section>
 <?php get_footer(); ?>

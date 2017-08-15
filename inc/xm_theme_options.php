@@ -143,7 +143,7 @@
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="author-des">作者简介（文章详情页用）：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="author-des" name="author-des" value="<?php echo $a_options['author_des']; ?>">
+                                <textarea rows="5" cols="100" id="author-des" name="author-des"><?php echo $a_options['author_des']; ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="email">电子邮箱：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="email" name="email" value="<?php echo $a_options['email']; ?>">
+                                <textarea rows="5" cols="100" id="email" name="email"><?php echo $a_options['email']; ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -159,7 +159,7 @@
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="qq-url">QQ链接：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="qq-url" name="qq-url" value="<?php echo $a_options['qq_url']; ?>">
+                                <textarea rows="5" cols="100" id="qq-url" name="qq-url"><?php echo $a_options['qq_url']; ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="github-url">Github链接：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="github-url" name="github-url" value="<?php echo $a_options['github_url']; ?>">
+                                <textarea rows="5" cols="100" id="github-url" name="github-url"><?php echo $a_options['github_url']; ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="sina-url">新浪微博链接：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="sina-url" name="sina-url" value="<?php echo $a_options['sina_url']; ?>">
+                                <textarea rows="5" cols="100" id="sina-url" name="sina-url"><?php echo $a_options['sina_url']; ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="wechat-num">微信号：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="wechat-num" name="wechat-num" value="<?php echo $a_options['wechat_num']; ?>">
+                                <textarea rows="5" cols="100" id="wechat-num" name="wechat-num"><?php echo $a_options['wechat_num']; ?></textarea>
                             </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
             'author_des'         => $_POST['author-des'],
             'email'              => $_POST['email'],
             'qq_url'             => $_POST['qq-url'],
-            'github_url'         => $_POST['github_url'],
+            'github_url'         => $_POST['github-url'],
             'sina_url'           => $_POST['sina-url'],
             'wechat_num'         => $_POST['wechat-num'],
             'wechat_img'         => $_POST['wechat-img'],

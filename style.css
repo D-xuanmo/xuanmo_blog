@@ -4,7 +4,7 @@ Theme URI:
 Author: Xuanmo
 Author URI: https://www.xuanmo.xin
 Description: 
-Version: 1.0
+Version: 1.0.1
 Tags:
 */
 /*公共样式*/
@@ -149,6 +149,9 @@ a.icon-wechat span:after{
 }
 a.icon-wechat:hover span{
     transform: scale(1);
+}
+.hide{
+    display: none;
 }
 /*文章的标题标签*/
 .content h1,
