@@ -259,7 +259,7 @@ nav {
 nav .current-post-ancestor > a,
 nav .current-menu-item > a,
 nav .current-menu-parent > a{
-    color: #0cf;
+    color: #0cf !important;
 }
 nav .menu-item-type-custom a{
     color: #e2e2e2;

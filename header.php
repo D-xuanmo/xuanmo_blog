@@ -21,6 +21,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
     <title>
+        <?php bloginfo('name'); ?>
+        | 
         <?php 
         if (is_single()) {
             the_title();
@@ -30,7 +32,6 @@
             bloginfo('description');
         }
         ?>
-        | <?php bloginfo('name'); ?>
     </title>
     <meta name="keywords" content="<?php echo get_option('xm_options')['keywords']; ?>">
     <meta name="description" content="<?php echo get_option('xm_options')['description']; ?>" >
@@ -48,6 +49,15 @@
             <style>
                 ul.menu > li ul.sub-menu{ background: rgba(210, 210, 210, 0.6); }
             </style>
+            <script src="' . $templateUrl . '/js/jquery.seamlessBanner.js"></script>
+            <script>
+                $(function() {
+                    $(".roll-banner").seamlessBanner({
+                        autoBanner: false,
+                        bannerBtnWrap: $(".plugin-banner-btn")
+                    });
+                });
+            </script>
             ';
     } else if(is_category() ) {
         echo '
@@ -84,7 +94,9 @@
     } else if(is_single()) {
         echo '
             <link rel="stylesheet" href="' . $templateUrl . '/css/article.css">
+            <link rel="stylesheet" href="' . $templateUrl . '/css/prism.css">
             <script src="' . $templateUrl . '/js/qrcode.js"></script>
+            <script src="' . $templateUrl . '/js/prism.js"></script>
         ';
     }
     ?>

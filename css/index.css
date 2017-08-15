@@ -111,7 +111,7 @@ div.first-screen i.icon-menu-up {
 .main {
     box-sizing: border-box;
     width: 100%;
-    padding: 60px 10px;
+    padding: 20px 10px 60px;
     background: #f1f1f1;
 }
 .main div.wrap {

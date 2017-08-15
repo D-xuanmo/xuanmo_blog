@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="main">
+<section class="main page">
     <div class="wrap clearfix">
         <p style="text-indent: 30px;">
             <?php the_author(); ?>发布的文章：

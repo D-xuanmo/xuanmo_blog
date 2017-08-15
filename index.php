@@ -15,14 +15,17 @@
 </div>
 <div class="mobile-banner pc-none">
     <ul class="roll-banner clearfix">
-        <li><img src="images/flower2_1.jpg" alt=""></li>
-        <li><img src="images/T1-lg.jpg" alt=""></li>
-        <li><img src="images/TT.jpg" alt=""></li>
+        <?php
+            $arr_img = get_option('xm_options')['mobile_banner'];
+            foreach($arr_img as $value) {
+                if($value) echo '<li><img src="' . $value . '" alt=""></li>';
+            };
+        ?>
     </ul>
     <ul class="plugin-banner-btn"></ul>
 </div>
 <!-- 首屏 end -->
-<section class="main">
+<section class="main home">
     <!-- 最新文章 -->
     <div class="wrap clearfix">
         <div class="demo-title">

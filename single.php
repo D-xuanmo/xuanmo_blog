@@ -7,8 +7,7 @@
         <article class="fl single-article">
             <div class="breadcrumbs">
                 <span>当前位置：</span>
-                    <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
-                <span>正文</span>
+                <?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
             </div>
             <div class="header">
                 <h2><?php the_title(); ?></h2>
@@ -38,6 +37,7 @@
                     </span>
                 </a>
             </p>
+            <?php endwhile; ?>
             <p class="share">
                 分享到：
                 <a href="http://connect.qq.com/widget/shareqq/index.html?url=<?php echo home_url('/'); ?>%3Fp%3D<?php the_ID(); ?>&title=【<?php the_title(); ?> | <?php bloginfo('name'); ?>】&summary=" class="qq" target="blank" title="分享到QQ好友"></a>
@@ -79,7 +79,6 @@
                 </p>
             </div>
             <!-- 作者简介结束 -->
-            <?php endwhile; ?>
             <?php include(TEMPLATEPATH . '/smiley.php'); ?>
             <?php comments_template(); ?>
             <div class="tab-article clearfix">

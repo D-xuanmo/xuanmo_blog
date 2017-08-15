@@ -357,4 +357,43 @@ function bigfa_like()
     }
     die;
 }
+
+/*
+ ****************************************
+ * 发文增加按钮                
+ ****************************************
+ */
+function add_editor_buttons($buttons) {
+    $buttons = ['fontselect', 'fontsizeselect', 'copy', 'paste', 'cut', 'backcolor'];
+    return $buttons;
+}
+add_filter("mce_buttons_3", "add_editor_buttons");
+
+/*
+ ****************************************
+ * 添加自定义编辑器按钮            
+ ****************************************
+ */
+function appthemes_add_quicktags() {
+?>
+    <script>
+        var aLanguage = ['html', 'css', 'sass', 'scss', 'less', 'javascript', 'php', 'json', 'git'];
+        for( var i = 0, length = aLanguage.length; i < length; i++ ) {
+            QTags.addButton(aLanguage[i], aLanguage[i], '\n<pre class="line-numbers language-' + aLanguage[i] + '"><code class="language-' + aLanguage[i] + '">\n', '\n</code></pre>\n');
+        }
+    </script>
+<?php
+}
+add_action('admin_print_footer_scripts', 'appthemes_add_quicktags');
+
+/*
+ ****************************************
+ * 添加html转义功能           
+ ****************************************
+ */
+function add_my_media_button(){
+    echo '<a href="javascript:;" id="insert-my-media" class="button html-transform">html转义</a>';
+    wp_enqueue_script('media_button', get_template_directory_uri() . '/inc/js/set.js', array('jquery'), '1.0', true);
+}
+add_action('media_buttons', 'add_my_media_button');
 ?>

@@ -1,67 +1,19 @@
-@media (max-width:1000px){
-    .contact .pc-none{
-        display: inline-block;
-    }
-    nav{
-        opacity: 0;
-        position: absolute;
-        top: 186px;
-        right: 0;
-        width: 300px;
-        margin: 0;
-        background: rgba(40, 40, 40, 0.6);
-        transition: .7s;
-        transform: translateX(100%);
-    }
-    nav ul.menu{
-        height: auto;
-    }
-    nav ul.menu > li{
-        display: block;
-        padding: 0;
-    }
-    ul.menu > li ul.sub-menu {
-        display: none;
-        position: static;
-        width: 150px;
-        margin-left: 30px;
-        padding: 0;
-        background: none;
-        transform: scale(1);
-        transition: 0s;
-    }
-    ul.menu > li ul.sub-menu.bg282828{
-        background: none;
-    }
-    .right-article article{
-        width: calc(100% / 2 - 35px);
-        padding-bottom: 15px;
-    }
-}
-@media (max-width:780px){
+@media (max-width:1100px){
     .mobile-hide{
-        display: none;
+        display: none !important;
     }
     header {
         background: rgba(40, 40, 40, 0.6);
     }
-    header nav ul.menu ul.sub-menu {
-        background: none;
+    nav {
+        width: 70%;
     }
-    .main{
-        padding-top: 20px;
+    .contact{
+        min-width: auto;
     }
-    .main div.wrap{
-        margin-top: 0;
-    }
-    nav{
-        width: 100%;
-    }
-    nav ul.menu > li{
-        text-align: center;
-    }
-    ul.menu > li ul.sub-menu{
-        margin: 0 auto;
+    .right-article article{
+        width: calc(100% / 2 - 35px);
+        padding-bottom: 15px;
     }
     /*手机端轮播*/
     .mobile-banner{
@@ -70,13 +22,7 @@
         overflow: hidden;
         width: 95%;
         height: 320px;
-        margin: 100px auto 0;
-    }
-    .mobile-banner .roll-banner{
-        position: absolute;
-        top: 0;
-        /*left: 0;*/
-        height: 100%;
+        margin: 80px auto 0;
     }
     .mobile-banner .roll-banner li{
         float: left;
@@ -106,6 +52,64 @@
     }
     .mobile-banner .plugin-banner-btn li.on{
         background: #0cf;
+    }
+}
+@media (max-width:780px){
+    div.head strong,
+    .contact{
+        margin-top: 15px;
+        padding: 0;
+    }
+    nav{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        z-index: 9999;
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        background: rgba(255, 255, 255, 0.7);
+        transition: .7s;
+    }
+    nav .menu{
+        width: 90%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9);
+    }
+    nav ul.menu > li{
+        box-sizing: border-box;
+        width: 100%;
+        padding-top: 15px;
+        text-indent: 28px;
+    }
+    nav ul.menu > li a{
+        color: #333;
+    }
+    ul.menu > li ul.sub-menu{
+        display: none;
+        box-sizing: border-box;
+        position: static;
+        width: 100%;
+        margin: 0;
+        padding: 0 20px;
+        background: none !important;
+        transition: 0s;
+        transform: scale(1);
+    }
+    ul.menu > li ul.sub-menu li{
+        line-height: 40px;
+    }
+    form.search .search-box{
+        width: 90%;
+    }
+    .main.page{
+        padding-top: 70px;
+    }
+    .main div.wrap{
+        margin-top: 0;
+    }
+    .contact .pc-none{
+        display: inline-block;
     }
     /*文章变成双栏*/
     .main .mobile-article-lg,
@@ -193,7 +197,7 @@
     }
 }
 /*手持设备横屏*/
-@media (orientation:landscape) and (max-width:720px){
+/* @media (orientation:landscape) and (max-width:720px){
     .mobile-banner{
         display: none;
     }
@@ -205,9 +209,9 @@
     }
     div.head strong{
         margin: 25px 10px 0 0;
-    }
+    } */
     /*手机端菜单按钮*/
-    .contact .mobile-hide{
+    /* .contact .mobile-hide{
         display: inline-block;
     }
     .contact .pc-none{
@@ -253,4 +257,4 @@
     .main{
         padding-top: 80px;
     }
-}
+} */

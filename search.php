@@ -3,7 +3,7 @@
     // 検索结果用
     $search_query =& new WP_Query("s=$s & showposts=-1");
 ?>
-<section class="main">
+<section class="main page">
     <div class="wrap clearfix">
         <p style="text-indent: 30px;">
             <?php

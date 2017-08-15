@@ -136,9 +136,32 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                    for($i = 0; $i < 3; $i++) {
+                    ?>
+                    <div class="row">
+                        <div class="margin-top-15 clearfix">
+                            <label class="fl left-wrap" for="">移动端banner<?php echo $i + 1; ?>：</label>
+                            <div class="fr right-wrap">
+                                <input type="text" class="url-inp" name="banner-img-<?php echo $i; ?>" value="<?php echo $a_options['mobile_banner']['img_' . $i]; ?>">
+                                <input type="button" name="img-upload" value="选择文件">
+                            </div>
+                        </div>
+                        <div class="margin-top-15 clearfix">
+                            <div class="fl left-wrap">
+                                图片预览：
+                            </div>
+                            <div class="fr right-wrap">
+                                <img src="<?php echo $a_options['mobile_banner']['img_' . $i]; ?>" class="preview-img" width="300" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <!-- 内容四 社交 -->
-                <div class="content-wrap content5">
+                <div class="content-wrap content4">
                     <div class="row">
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="author-des">作者简介（文章详情页用）：</label>
@@ -212,7 +235,7 @@
                     </div>
                 </div>
                 <!-- 内容五 自定义代码 -->
-                <div class="content-wrap content6">
+                <div class="content-wrap content5">
                     <div class="row">
                         <label for="footer-js">底部js代码：</label>
                         <textarea id="footer-js" name="footer-js" rows="8" cols="100"><?php echo $a_options['footer_js']; ?></textarea>
@@ -253,6 +276,11 @@
                     'en_title_0' => $_POST['banner-en-title-0'],
                     'en_title_1' => $_POST['banner-en-title-1']
                 )
+            ),
+            'mobile_banner' => array(
+                'img_0' => $_POST['banner-img-0'],
+                'img_1' => $_POST['banner-img-1'],
+                'img_2' => $_POST['banner-img-2']
             )
         );
         update_option('xm_options', stripslashes_deep($options));
