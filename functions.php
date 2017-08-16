@@ -389,7 +389,7 @@ add_action('admin_print_footer_scripts', 'appthemes_add_quicktags');
 
 /*
  ****************************************
- * 自定义表情路径和名称
+ * 自定义表情路径和名称 
  ****************************************
  */
 function custom_smilies_src($src, $img){
