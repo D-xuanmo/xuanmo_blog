@@ -52,10 +52,10 @@ $(function(){
         scrollAnimate($('.main article , .right article'));
         function scrollAnimate(obj) {
             var y;
-            $(window).on('scroll', function () {
+            $window.on('scroll', function () {
                 y = $(this).scrollTop();
                 obj.each(function () {
-                    if (y > $(this).offset().top - $(window).height() / 2) $(this).addClass('on');
+                    if (y > $(this).offset().top - $window.height() / 2) $(this).addClass('on');
                 });
             });
         }
@@ -67,24 +67,41 @@ $(function(){
             $menuList = $('ul.menu > li'),
             y = 0,
             _y = 0;
-        $menuList.each(function() {
-            if ($(this).children('.sub-menu').length) $(this).children('a').attr('href', 'javascript:;');
-        });
+       
         $('.icon-menu-list2').bind('touchstart', function () {
             $nav.css('left', 0);
         });
-        $nav.bind('touchstart', function(e) {
-            y = e.originalEvent.touches[0].pageX;
-        })
-        .bind('touchmove', function(e) {
-            _y = e.originalEvent.touches[0].pageX;
-            if( y -_y > 20 ) $(this).css('left', '-100%');
-        });
-        $menuList.bind('touchstart', function() {
+        $nav.bind('touchstart', function (e) {
+                y = e.originalEvent.touches[0].pageX;
+            })
+            .bind('touchmove', function (e) {
+                _y = e.originalEvent.touches[0].pageX;
+                if (y - _y > 20) $(this).css('left', '-100%');
+            });
+        $menuList.bind('touchstart', function () {
             $(this).children('.sub-menu').stop().slideToggle()
                 .parent().siblings()
                 .children('.sub-menu').slideUp();
         });
+        $menuList.each(function () {
+            $(this).children('a').attr('data-href', function () {
+                return $(this).attr('href');
+            });
+        });
+        removeLink();
+        $window.bind('resize', removeLink);
+        function removeLink() {
+            if (navigator.appVersion.match('iPhone') || navigator.appVersion.match('Android')) {
+                $menuList.each(function () {
+                    if ($(this).children('.sub-menu').length)
+                        $(this).children('a').attr('href', 'javascript:;');
+                });
+            } else {
+                $menuList.children('a').attr('href', function() {
+                    return $(this).attr('data-href');
+                })
+            }
+        }
     })();
 
     (function(){

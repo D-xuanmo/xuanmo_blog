@@ -59,7 +59,7 @@
             <!-- 标签结束 -->
             <!-- 作者简介开始 -->
             <div class="article-about-author">
-                <?php echo get_avatar( get_the_author_email(), '60' );?>
+                <?php echo get_avatar( get_the_author_email(), '300' );?>
                 <h2>作者专栏：<?php the_author(); ?></h2>
                 <!-- 作者名字 -->
                 <p><?php echo get_option('xm_options')['author_des']; ?></p>

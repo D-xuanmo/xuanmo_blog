@@ -462,6 +462,9 @@ div.footer-link a:hover{
     background: #5fcfed;
     color: #fff;
 }
+.main.page{
+    padding-top: 70px;
+}
 /*页尾*/
 footer {
     box-sizing: border-box;

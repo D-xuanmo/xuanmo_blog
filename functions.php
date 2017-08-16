@@ -386,14 +386,4 @@ function appthemes_add_quicktags() {
 }
 add_action('admin_print_footer_scripts', 'appthemes_add_quicktags');
 
-/*
- ****************************************
- * 添加html转义功能           
- ****************************************
- */
-function add_my_media_button(){
-    echo '<a href="javascript:;" id="insert-my-media" class="button html-transform">html转义</a>';
-    wp_enqueue_script('media_button', get_template_directory_uri() . '/inc/js/set.js', array('jquery'), '1.0', true);
-}
-add_action('media_buttons', 'add_my_media_button');
 ?>
