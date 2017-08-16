@@ -1,14 +1,14 @@
 <?php
 /*
  ****************************************
- * 彻底关闭自动更新                         
+ * 彻底关闭自动更新
  ****************************************
  */
 add_filter('automatic_updater_disabled', '__return_true');
 
 /*
  ****************************************
- * 七牛缓存gravatar头像                              
+ * 七牛缓存gravatar头像
  ****************************************
  */
 function dw_get_avatar($avatar) {
@@ -19,7 +19,7 @@ add_filter('get_avatar', 'dw_get_avatar', 10, 3);
 
 /*
  ****************************************
- * 删除谷歌字体                           
+ * 删除谷歌字体
  ****************************************
  */
 if (!function_exists('remove_wp_open_sans')) :
@@ -40,28 +40,28 @@ add_action('init', 'remove_open_sans');
 
 /*
  ****************************************
- * 注册菜单                              
+ * 注册菜单
  ****************************************
  */
 register_nav_menus();
 
 /*
  ****************************************
- * 后台添加主题添加设置菜单                 
+ * 后台添加主题添加设置菜单
  ****************************************
  */
 require get_template_directory() . '/inc/xm_theme_options.php';
 
 /*
  ****************************************
- * 添加特色头像                           
+ * 添加特色头像
  ****************************************
  */
 add_theme_support('post-thumbnails');
 
 /*
  ****************************************
- * 设置摘要字数                           
+ * 设置摘要字数
  ****************************************
  */
 function get_post_excerpt($post, $excerpt_length) {
@@ -80,7 +80,7 @@ function get_post_excerpt($post, $excerpt_length) {
 
 /*
  ****************************************
- * 侧边栏获取评论                         
+ * 侧边栏获取评论
  ****************************************
  */
 function get_recent_comments(){
@@ -107,7 +107,7 @@ function get_recent_comments(){
 
 /*
  ****************************************
- * 邮件回复功能                       
+ * 邮件回复功能
  ****************************************
  */
 function ludou_comment_mail_notify($comment_id, $comment_status) {
@@ -144,7 +144,7 @@ add_action('wp_set_comment_status', 'ludou_comment_mail_notify', 20, 2);
 
 /*
  ****************************************
- * 设置文章列表翻页                        
+ * 设置文章列表翻页
  ****************************************
  */
 function wp_pagenavi() {
@@ -179,7 +179,7 @@ add_action('pre_get_posts', 'custom_posts_per_page');
 
 /*
  ****************************************
- * 面包屑导航                             
+ * 面包屑导航
  ****************************************
  */
 function dimox_breadcrumbs() {
@@ -285,7 +285,7 @@ function dimox_breadcrumbs() {
 
 /*
  ****************************************
- * 获取文章阅读量                         
+ * 获取文章阅读量
  ****************************************
  */
 function getPostViews($postID) {
@@ -314,7 +314,7 @@ function setPostViews($postID) {
 
 /*
  ****************************************
- * 解决php添加分斜杠问题                   
+ * 解决php添加分斜杠问题
  ****************************************
  */
 if (get_magic_quotes_gpc()) {
@@ -332,7 +332,7 @@ if (get_magic_quotes_gpc()) {
 
 /*
  ****************************************
- * 点赞功能                   
+ * 点赞功能
  ****************************************
  */
 add_action('wp_ajax_nopriv_bigfa_like', 'bigfa_like');
@@ -360,7 +360,7 @@ function bigfa_like()
 
 /*
  ****************************************
- * 发文增加按钮                
+ * 发文增加按钮
  ****************************************
  */
 function add_editor_buttons($buttons) {
@@ -371,7 +371,7 @@ add_filter("mce_buttons_3", "add_editor_buttons");
 
 /*
  ****************************************
- * 添加自定义编辑器按钮            
+ * 添加自定义编辑器按钮
  ****************************************
  */
 function appthemes_add_quicktags() {
@@ -386,4 +386,40 @@ function appthemes_add_quicktags() {
 }
 add_action('admin_print_footer_scripts', 'appthemes_add_quicktags');
 
+
+/*
+ ****************************************
+ * 自定义表情路径和名称
+ ****************************************
+ */
+function custom_smilies_src($src, $img){
+    return get_bloginfo('template_directory').'/images/smilies/' . $img;
+}
+add_filter('smilies_src', 'custom_smilies_src', 10, 2);
+if ( !isset( $wpsmiliestrans ) ) {
+    $wpsmiliestrans = array(
+    '/流汗'   => 'icon_question.gif',
+    '/色'     => 'icon_razz.gif',
+    '/难过'   => 'icon_sad.gif',
+    '/闭嘴'   => 'icon_evil.gif',
+    '/吐舌头' => 'icon_exclaim.gif',
+    '/微笑'   => 'icon_smile.gif',
+    '/可爱'   => 'icon_redface.gif',
+    '/kiss'  => 'icon_biggrin.gif',
+    '/惊讶'   => 'icon_surprised.gif',
+    '/饥饿'   => 'icon_eek.gif',
+    '/晕'     => 'icon_confused.gif',
+    '/酷'     => 'icon_cool.gif',
+    '/坏笑'   => 'icon_lol.gif',
+    '/发怒'   => 'icon_mad.gif',
+    '/憨笑'   => 'icon_twisted.gif',
+    '/萌萌哒' => 'icon_rolleyes.gif',
+    '/吃东西' => 'icon_wink.gif',
+    '/色咪咪' => 'icon_idea.gif',
+    '/囧'     => 'icon_arrow.gif',
+    '/害羞'   => 'icon_neutral.gif',
+    '/流泪'   => 'icon_cry.gif',
+    '/你懂的' => 'icon_mrgreen.gif'
+    );
+}
 ?>
