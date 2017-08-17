@@ -386,14 +386,24 @@ function appthemes_add_quicktags() {
 }
 add_action('admin_print_footer_scripts', 'appthemes_add_quicktags');
 
+/*
+ ****************************************
+ * 添加一个验证码
+ ****************************************
+ */
+function my_fields($fields) {
+	$fields['img-code'] = '<p class="comment-form-img-code">' . '<label for="img-code">' . __('验证码 * ') . '</label> ' . '<input id="img-code" name="img-code" type="text" value="" size="30" /><canvas width="120" height="28" class="canvas-img-code"></canvas><span class="tab-img-code">换一张</span></p>';
+	return $fields;
+}
+add_filter('comment_form_default_fields', 'my_fields');
 
 /*
  ****************************************
- * 自定义表情路径和名称 
+ * 自定义表情路径和名称
  ****************************************
  */
 function custom_smilies_src($src, $img){
-    return get_bloginfo('template_directory').'/images/smilies/' . $img;
+    return get_bloginfo('template_directory') . '/images/smilies/' . $img;
 }
 add_filter('smilies_src', 'custom_smilies_src', 10, 2);
 if ( !isset( $wpsmiliestrans ) ) {
@@ -422,4 +432,11 @@ if ( !isset( $wpsmiliestrans ) ) {
     '/你懂的' => 'icon_mrgreen.gif'
     );
 }
+function add_my_tips() {
+	require get_template_directory() . '/inc/smiley.php';
+}
+// 在默认字段（前面说的姓名、邮箱和网址）的下面添加字段
+add_filter('comment_form_top', 'add_my_tips');
+// 在已登录下面添加字段（因为用户登录后，是没有默认上面三个字段的），所以要使用这个钩子插入内容
+add_filter('title_reply_to', 'add_my_tips');
 ?>

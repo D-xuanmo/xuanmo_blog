@@ -242,6 +242,13 @@ p.mark a{
 #respond form > p{
     padding: 5px 0;
 }
+#respond form > .smiley{
+    margin-top: 10px;
+}
+#respond form > .smiley a{
+    display: inline-block;
+    margin-bottom: 10px;
+}
 #respond form textarea{
     box-sizing: border-box;
     resize: none;
@@ -274,10 +281,19 @@ p.mark a{
     position: relative;
     padding-top: 40px;
 }
+#comments .url{
+    color: #06c0ef;
+}
 #comments ol.comment-list li{
     margin-top: 10px;
-    border: 1px solid #ccc;
     border-radius: 5px;
+}
+#comments ol.comment-list .comment-body{
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+}
+#comments ol.comment-list .comment-body:hover .reply a{
+    display: block;
 }
 /*评论作者*/
 #comments ol.comment-list li .comment-author img{
@@ -302,13 +318,15 @@ p.mark a{
 }
 /*回复按钮*/
 #comments ol.comment-list .reply a{
-    display: block;
-    width: 60px;
-    margin-bottom: 5px;
-    padding: 8px 15px;
-    border: 1px solid #ccc;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 2px 10px;
+    background: #1fd0ff;
     border-radius: 5px;
     text-align: center;
+    color: #fff;
 }
 #comments ol.comment-list .reply a:hover{
     border-color: #27c5d5;
@@ -316,7 +334,21 @@ p.mark a{
 /*子回复*/
 #comments ol.comment-list li.comment,
 #comments ol.comment-list ol.children{
-    padding: 10px;
+    padding: 10px 0 10px 20px
+}
+#respond .comment-form-comment label{
+    display: none;
+}
+.canvas-img-code{
+    vertical-align: bottom;
+    margin: 0 0 1px -121px;
+    border-radius: 0 5px 5px 0;
+    background: #fff;
+}
+.tab-img-code{
+    vertical-align: sub;
+    margin-left: 10px;
+    cursor: pointer;
 }
 /*图片放大*/
 div.cover{

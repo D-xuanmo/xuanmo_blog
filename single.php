@@ -79,7 +79,6 @@
                 </p>
             </div>
             <!-- 作者简介结束 -->
-            <?php include(TEMPLATEPATH . '/smiley.php'); ?>
             <?php comments_template(); ?>
             <div class="tab-article clearfix">
                 <div class="fl tab-left">

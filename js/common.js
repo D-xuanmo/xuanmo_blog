@@ -67,7 +67,7 @@ $(function(){
             $menuList = $('ul.menu > li'),
             y = 0,
             _y = 0;
-       
+
         $('.icon-menu-list2').bind('touchstart', function () {
             $nav.css('left', 0);
         });
@@ -187,15 +187,48 @@ $(function(){
     });
 
     // 输入表情
-    $('p.smiley')
-        .insertBefore($('p.comment-form-comment'))
-        .children().click(function() {
-            var str = $(this).attr('title');
-            $('#comment').val(function() {
-                return $(this).val() + ' ' + str + ' ';
-            });
+    $('p.smiley').children().click(function() {
+        var str = $(this).attr('title');
+        $('#comment').val(function() {
+            return $(this).val() + ' ' + str + ' ';
         });
+    });
 
-    // 删除评论框
-    $('#respond form p.comment-form-comment label').remove();
+    var canvas = document.querySelector('.canvas-img-code');
+    if( canvas ) {
+        var ctx = canvas.getContext('2d'),
+            $submit = $('#submit');
+        // 禁止提交按钮
+        console.log($submit);
+        $submit.prop('disabled', true).css('backgroundColor', '#b5b5b5');
+        var nResult = result();
+        // 验证码功能
+        $('#img-code').keyup(function() {
+            if( Number($(this).val()) == nResult ) {
+                $(this).css('borderColor', '#7e7e7e');
+                $submit.prop('disabled', false).css('backgroundColor', '#16c0f8');
+            } else {
+                $(this).css('borderColor', '#f00');
+                $submit.prop('disabled', true).css('backgroundColor', '#b5b5b5');
+            }
+        });
+        // 换一张验证码
+        $('.tab-img-code').click(function() {
+            nResult = result();
+            $('#img-code').val('');
+            $submit.prop('disabled', true).css('backgroundColor', '#b5b5b5');
+        });
+        function result() {
+            var nRandom1 = Math.floor(Math.random() * 10 + 5),
+                nRandom2 = Math.floor(Math.random() * 5),
+                nRandomResult = Math.floor(Math.random() * 3),
+                aOperator = ['+', '-', '*'],
+                nProcess = nRandom1 + aOperator[nRandomResult] + nRandom2;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.font = '20px microsoft yahei';
+            ctx.fillStyle = '#333';
+            ctx.fillText(nRandom1 + ' ' + aOperator[nRandomResult] + ' ' + nRandom2 + ' = ?', 10, 23);
+            return eval(nProcess);
+        }
+    }
 });
