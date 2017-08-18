@@ -121,6 +121,15 @@ p.description{
 .font-size-16{
     font-size: 16px;
 }
+.text-left{
+    text-align: left;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
 /*微信图片*/
 a.icon-wechat{
     position: relative;

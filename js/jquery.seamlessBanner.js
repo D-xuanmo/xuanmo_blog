@@ -4,13 +4,15 @@
             $bannerList = this.children(),
             $bannerBtnWrap = options.bannerBtnWrap || this.siblings('.banner-btn-wrap'),
             $arrowLeftBtn = options.arrowLeftBtn || this.siblings('.banner-arrow-left'),
-            $arrowRightBtn = options.arrowRightBtn || this.siblings('.banner-arrow-right');
+            $arrowRightBtn = options.arrowRightBtn || this.siblings('.banner-arrow-right'),
             bAutoBanner = options.autoBanner,
             nTime = options.time || 5000,
             nTransition = options.transition || 1000,
             nWindowWidth = window.innerWidth,
             n = 1,
-            oTimer = null;
+            oTimer = null,
+            x = 0,
+            _x = 0;
         if( $bannerList.length > 1 ){
             // 生成banner按钮
             $bannerList.each(function(i){

@@ -238,16 +238,69 @@ p.mark a{
     background: #49cc5b;
 }
 
+/* 表情显示 */
+.expression-wrap{
+    position: relative;
+}
+.expression-wrap .first-img{
+    // 禁止复制
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 50px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+.expression-wrap .expression-hide-wrap{
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 0;
+    z-index: 9;
+    width: 50%;
+    height: 250px;
+    border: 1px solid #ccc;
+    border-radius: 0 5px 5px 5px;
+    background: #fff;
+}
+.expression-wrap .expression-tab{
+    border-bottom: 1px solid #ccc;
+}
+.expression-wrap .expression-tab li{
+    float: left;
+    padding: 10px;
+    cursor: pointer;
+}
+.expression-wrap .expression-tab li.on{
+    background: #4cc6fa;
+    color: #fff;
+}
+.expression-wrap .expression-img{
+    overflow-y: scroll;
+    height: 208px;
+}
+.expression-wrap .expression-img a{
+    float: left;
+    margin: 9px;
+    padding: 20px;
+    border-radius: 5px;
+    background: #ebebeb;
+}
+img.wp-smiley, img.emoji{
+    width: auto !important;
+    height: auto !important;
+    max-height: none !important;
+}
+
 /*评论区域表单*/
 #respond form > p{
     padding: 5px 0;
-}
-#respond form > .smiley{
-    margin-top: 10px;
-}
-#respond form > .smiley a{
-    display: inline-block;
-    margin-bottom: 10px;
 }
 #respond form textarea{
     box-sizing: border-box;

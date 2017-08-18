@@ -337,8 +337,7 @@ if (get_magic_quotes_gpc()) {
  */
 add_action('wp_ajax_nopriv_bigfa_like', 'bigfa_like');
 add_action('wp_ajax_bigfa_like', 'bigfa_like');
-function bigfa_like()
-{
+function bigfa_like() {
     global $wpdb, $post;
     $id = $_POST["um_id"];
     $action = $_POST["um_action"];
@@ -360,7 +359,7 @@ function bigfa_like()
 
 /*
  ****************************************
- * 发文增加按钮
+ * 丰富发文按钮功能
  ****************************************
  */
 function add_editor_buttons($buttons) {
@@ -408,35 +407,115 @@ function custom_smilies_src($src, $img){
 add_filter('smilies_src', 'custom_smilies_src', 10, 2);
 if ( !isset( $wpsmiliestrans ) ) {
     $wpsmiliestrans = array(
-    '/流汗'   => 'icon_question.gif',
-    '/色'     => 'icon_razz.gif',
-    '/难过'   => 'icon_sad.gif',
-    '/闭嘴'   => 'icon_evil.gif',
-    '/吐舌头' => 'icon_exclaim.gif',
-    '/微笑'   => 'icon_smile.gif',
-    '/可爱'   => 'icon_redface.gif',
-    '/kiss'  => 'icon_biggrin.gif',
-    '/惊讶'   => 'icon_surprised.gif',
-    '/饥饿'   => 'icon_eek.gif',
-    '/晕'     => 'icon_confused.gif',
-    '/酷'     => 'icon_cool.gif',
-    '/坏笑'   => 'icon_lol.gif',
-    '/发怒'   => 'icon_mad.gif',
-    '/憨笑'   => 'icon_twisted.gif',
-    '/萌萌哒' => 'icon_rolleyes.gif',
-    '/吃东西' => 'icon_wink.gif',
-    '/色咪咪' => 'icon_idea.gif',
-    '/囧'     => 'icon_arrow.gif',
-    '/害羞'   => 'icon_neutral.gif',
-    '/流泪'   => 'icon_cry.gif',
-    '/你懂的' => 'icon_mrgreen.gif'
+        "/weixiao"     => "weixiao.gif",
+        "/nanguo"      => "nanguo.gif",
+        "/qiudale"     => "qiudale.gif",
+        "/penxue"      => "penxue.gif",
+        "/piezui"      => "piezui.gif",
+        "/aoman"       => "aoman.gif",
+        "/baiyan"      => "baiyan.gif",
+        "/bishi"       => "bishi.gif",
+        "/bizui"       => "bizui.gif",
+        "/cahan"       => "cahan.gif",
+        "/ciya"        => "ciya.gif",
+        "/dabing"      => "dabing.gif",
+        "/daku"        => "daku.gif",
+        "/deyi"        => "deyi.gif",
+        "/doge"        => "doge.gif",
+        "/fadai"       => "fadai.gif",
+        "/fanu"        => "fanu.gif",
+        "/fendou"      => "fendou.gif",
+        "/ganga"       => "ganga.gif",
+        "/guzhang"     => "guzhang.gif",
+        "/haixiu"      => "haixiu.gif",
+        "/hanxiao"     => "hanxiao.gif",
+        "/haqian"      => "haqian.gif",
+        "/huaixiao"    => "huaixiao.gif",
+        "/jie"         => "jie.gif",
+        "/jingkong"    => "jingkong.gif",
+        "/jingxi"      => "jingxi.gif",
+        "/jingya"      => "jingya.gif",
+        "/keai"        => "keai.gif",
+        "/kelian"      => "kelian.gif",
+        "/koubi"       => "koubi.gif",
+        "/ku"          => "ku.gif",
+        "/kuaikule"    => "kuaikule.gif",
+        "/kulou"       => "kulou.gif",
+        "/kun"         => "kun.gif",
+        "/leiben"      => "leiben.gif",
+        "/lenghan"     => "lenghan.gif",
+        "/liuhan"      => "liuhan.gif",
+        "/liulei"      => "liulei.gif",
+        "/qiaoda"      => "qiaoda.gif",
+        "/qinqin"      => "qinqin.gif",
+        "/saorao"      => "saorao.gif",
+        "/se"          => "se.gif",
+        "/shuai"       => "shuai.gif",
+        "/shui"        => "shui.gif",
+        "/tiaopi"      => "tiaopi.gif",
+        "/touxiao"     => "touxiao.gif",
+        "/tu"          => "tu.gif",
+        "/tuosai"      => "tuosai.gif",
+        "/weiqu"       => "weiqu.gif",
+        "/wozuimei"    => "wozuimei.gif",
+        "/wunai"       => "wunai.gif",
+        "/xia"         => "xia.gif",
+        "/xiaojiujie"  => "xiaojiujie.gif",
+        "/xiaoku"      => "xiaoku.gif",
+        "/xieyanxiao"  => "xieyanxiao.gif",
+        "/xu"          => "xu.gif",
+        "/yinxian"     => "yinxian.gif",
+        "/yiwen"       => "yiwen.gif",
+        "/zuohengheng" => "zuohengheng.gif",
+        "/youhengheng" => "youhengheng.gif",
+        "/yun"         => "yun.gif",
+        "/zaijian"     => "zaijian.gif",
+        "/zhayanjian"  => "zhayanjian.gif",
+        "/zhemo"       => "zhemo.gif",
+        "/zhouma"      => "zhouma.gif",
+        "/zhuakuang"   => "zhuakuang.gif",
+        '/流汗'         => 'icon_question.gif',
+        '/色'           => 'icon_razz.gif',
+        '/难过'         => 'icon_sad.gif',
+        '/闭嘴'         => 'icon_evil.gif',
+        '/吐舌头'       => 'icon_exclaim.gif',
+        '/微笑'         => 'icon_smile.gif',
+        '/可爱'         => 'icon_redface.gif',
+        '/kiss'        => 'icon_biggrin.gif',
+        '/惊讶'         => 'icon_surprised.gif',
+        '/饥饿'         => 'icon_eek.gif',
+        '/晕'           => 'icon_confused.gif',
+        '/酷'           => 'icon_cool.gif',
+        '/坏笑'         => 'icon_lol.gif',
+        '/发怒'         => 'icon_mad.gif',
+        '/憨笑'         => 'icon_twisted.gif',
+        '/萌萌哒'       => 'icon_rolleyes.gif',
+        '/吃东西'       => 'icon_wink.gif',
+        '/色咪咪'       => 'icon_idea.gif',
+        '/囧'          => 'icon_arrow.gif',
+        '/害羞'        => 'icon_neutral.gif',
+        '/流泪'        => 'icon_cry.gif',
+        '/你懂的'      => 'icon_mrgreen.gif'
     );
 }
 function add_my_tips() {
-	require get_template_directory() . '/inc/smiley.php';
+	echo '
+        <div class="expression-wrap">
+            <span class="hide express-url">'
+            . get_bloginfo('template_directory')
+            . '/expression.php</span>
+            <p class="first-img">=^_^=</p>
+            <div class="expression-hide-wrap text-center">
+                <img src="'
+                . get_bloginfo('template_directory')
+                . '/images/smilies/yangtuo.gif" style="margin-top: 80px; vertical-align: bottom;">
+                <span>表情加载中...</span>
+            </div>
+        </div>
+    ';
 }
 // 在默认字段（前面说的姓名、邮箱和网址）的下面添加字段
-add_filter('comment_form_top', 'add_my_tips');
+add_filter('comment_form_before_fields', 'add_my_tips');
 // 在已登录下面添加字段（因为用户登录后，是没有默认上面三个字段的），所以要使用这个钩子插入内容
-add_filter('title_reply_to', 'add_my_tips');
+add_filter('comment_form_logged_in_after', 'add_my_tips');
 ?>

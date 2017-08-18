@@ -1,4 +1,6 @@
 jQuery(function() {
+    var imgurl,
+        targetfield;
     jQuery('input[type="button"]').click(function() {
         targetfield = jQuery(this).siblings('input');
         tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
