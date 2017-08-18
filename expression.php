@@ -207,6 +207,81 @@
             <a href="javascript:;" title="抓狂" data-title="/zhuakuang">
                 <img src="' . $url . '/images/smilies/zhuakuang.gif" alt="抓狂" width="30" />
             </a>
+            <a href="javascript:;" title="爱你" data-title="/aini">
+                <img src="' . $url . '/images/smilies/aini.gif" alt="爱你" width="30" />
+            </a>
+            <a href="javascript:;" title="抱拳" data-title="/baoquan">
+                <img src="' . $url . '/images/smilies/baoquan.gif" alt="抱拳" width="30" />
+            </a>
+            <a href="javascript:;" title="勾引" data-title="/gouyin">
+                <img src="' . $url . '/images/smilies/gouyin.gif" alt="勾引" width="30" />
+            </a>
+            <a href="javascript:;" title="强" data-title="/qiang">
+                <img src="' . $url . '/images/smilies/qiang.gif" alt="强" width="30" />
+            </a>
+            <a href="javascript:;" title="OK" data-title="/OK">
+                <img src="' . $url . '/images/smilies/OK.gif" alt="OK" width="30" />
+            </a>
+            <a href="javascript:;" title="握手" data-title="/woshou">
+                <img src="' . $url . '/images/smilies/woshou.gif" alt="握手" width="30" />
+            </a>
+            <a href="javascript:;" title="拳头" data-title="/quantou">
+                <img src="' . $url . '/images/smilies/quantou.gif" alt="拳头" width="30" />
+            </a>
+            <a href="javascript:;" title="胜利" data-title="/shengli">
+                <img src="' . $url . '/images/smilies/shengli.gif" alt="胜利" width="30" />
+            </a>
+            <a href="javascript:;" title="爱心" data-title="/aixin">
+                <img src="' . $url . '/images/smilies/aixin.gif" alt="爱心" width="30" />
+            </a>
+            <a href="javascript:;" title="棒棒糖" data-title="/bangbangtang">
+                <img src="' . $url . '/images/smilies/bangbangtang.gif" alt="棒棒糖" width="30" />
+            </a>
+            <a href="javascript:;" title="爆筋" data-title="/baojin">
+                <img src="' . $url . '/images/smilies/baojin.gif" alt="爆筋" width="30" />
+            </a>
+            <a href="javascript:;" title="菜刀" data-title="/caidao">
+                <img src="' . $url . '/images/smilies/caidao.gif" alt="菜刀" width="30" />
+            </a>
+            <a href="javascript:;" title="篮球" data-title="/lanqiu">
+                <img src="' . $url . '/images/smilies/lanqiu.gif" alt="篮球" width="30" />
+            </a>
+            <a href="javascript:;" title="吃" data-title="/chi">
+                <img src="' . $url . '/images/smilies/chi.gif" alt="吃" width="30" />
+            </a>
+            <a href="javascript:;" title="蛋" data-title="/dan">
+                <img src="' . $url . '/images/smilies/dan.gif" alt="蛋" width="30" />
+            </a>
+            <a href="javascript:;" title="好棒" data-title="/haobang">
+                <img src="' . $url . '/images/smilies/haobang.gif" alt="好棒" width="30" />
+            </a>
+            <a href="javascript:;" title="喝彩" data-title="/hecai">
+                <img src="' . $url . '/images/smilies/hecai.gif" alt="喝彩" width="30" />
+            </a>
+            <a href="javascript:;" title="河蟹" data-title="/hexie">
+                <img src="' . $url . '/images/smilies/hexie.gif" alt="河蟹" width="30" />
+            </a>
+            <a href="javascript:;" title="菊花" data-title="/juhua">
+                <img src="' . $url . '/images/smilies/juhua.gif" alt="菊花" width="30" />
+            </a>
+            <a href="javascript:;" title="啤酒" data-title="/pijiu">
+                <img src="' . $url . '/images/smilies/pijiu.gif" alt="啤酒" width="30" />
+            </a>
+            <a href="javascript:;" title="手枪" data-title="/shouqiang">
+                <img src="' . $url . '/images/smilies/shouqiang.gif" alt="手枪" width="30" />
+            </a>
+            <a href="javascript:;" title="小样儿" data-title="/xiaoyanger">
+                <img src="' . $url . '/images/smilies/xiaoyanger.gif" alt="小样儿" width="30" />
+            </a>
+            <a href="javascript:;" title="西瓜" data-title="/xigua">
+                <img src="' . $url . '/images/smilies/xigua.gif" alt="西瓜" width="30" />
+            </a>
+            <a href="javascript:;" title="羊驼" data-title="/yangtuo">
+                <img src="' . $url . '/images/smilies/yangtuo.gif" alt="羊驼" width="30" />
+            </a>
+            <a href="javascript:;" title="幽灵" data-title="/youling">
+                <img src="' . $url . '/images/smilies/youling.gif" alt="幽灵" width="30" />
+            </a>
         </div>
         <div class="expression-img hide">
             <a href="javascript:;" title="流汗" data-title="/流汗">

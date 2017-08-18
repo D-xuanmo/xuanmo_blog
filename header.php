@@ -22,8 +22,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
     <title>
         <?php bloginfo('name'); ?>
-        | 
-        <?php 
+        |
+        <?php
         if (is_single()) {
             the_title();
         } else if (is_category()) {
@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
     <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.1.4.min.js"></script>
     <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
-    <?php 
+    <?php
     $templateUrl = get_template_directory_uri();
     if(is_home()) {
         echo '
@@ -132,6 +132,7 @@
                 <a href="javascript:;" class="pc-none iconfont icon-menu-list2"></a>
             </div>
             <nav class="fl clearfix">
+                <i class="iconfont icon-menu-left"></i>
                 <?php wp_nav_menu( array( 'depth' => 0) ); ?>
             </nav>
         </div>

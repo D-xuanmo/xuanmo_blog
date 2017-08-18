@@ -316,6 +316,27 @@ ul.menu > li ul.sub-menu li:hover {
 ul.menu > li:hover ul.sub-menu {
     transform: scale(1);
 }
+/*首页箭头动画*/
+nav .icon-menu-left {
+    position: absolute;
+    z-index: 9;
+    top: 50%;
+    right: 20px;
+    margin-top: -17px;
+    font-size: 30px;
+    color: #10abd4;
+    animation: arrow_move_left .5s infinite alternate;
+}
+@-webkit-keyframes arrow_move_left{
+    to{
+        right: 40px;
+    }
+}
+@keyframes arrow_move_left{
+    to{
+        right: 40px;
+    }
+}
 /*联系我*/
 .contact {
     min-width: 22%;
