@@ -180,7 +180,10 @@ div.first-screen i.icon-menu-up {
     padding: 10px 20px;
 }
 .main article div.con p{
-    height: 75px;
+    line-height: 24px;
+}
+.main article .article-more {
+    color: #5fcfed;
 }
 .main article .article-title a {
     display: block;
@@ -193,10 +196,4 @@ div.first-screen i.icon-menu-up {
 .main article .article-content {
     text-indent: 16px;
     color: #999;
-}
-.main article .article-more {
-    display: block;
-    margin-top: 20px;
-    text-align: right;
-    color: #5fcfed;
 }

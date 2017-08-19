@@ -64,18 +64,18 @@ add_theme_support('post-thumbnails');
  * 设置摘要字数
  ****************************************
  */
-function get_post_excerpt($post, $excerpt_length) {
+function get_post_excerpt($post, $excerpt_length, $str) {
     if (!$post) $post = get_post();
     $post_excerpt = $post->post_excerpt;
     if ($post_excerpt == '') {
         $post_content = $post->post_content;
         $post_content = do_shortcode($post_content);
         $post_content = wp_strip_all_tags($post_content);
-        $post_excerpt = mb_strimwidth($post_content, 0, $excerpt_length, '...', 'utf-8');
+        $post_excerpt = mb_strimwidth($post_content, 0, $excerpt_length, '', 'utf-8');
     }
     $post_excerpt = wp_strip_all_tags($post_excerpt);
     $post_excerpt = trim(preg_replace("/[\n\r\t ]+/", ' ', $post_excerpt), ' ');
-    return $post_excerpt;
+    return $post_excerpt . $str;
 }
 
 /*
@@ -84,7 +84,7 @@ function get_post_excerpt($post, $excerpt_length) {
  ****************************************
  */
 function get_recent_comments(){
-		// 不显示pingback的type=comment,不显示自己的,user_id=0.(此两个参数可有可无)
+	// 不显示pingback的type=comment,不显示自己的,user_id=0.(此两个参数可有可无)
     $comments = get_comments(array('number' => 10, 'status' => 'approve', 'type' => 'comment', 'user_id' => 0));
     $output = '';
     foreach ($comments as $comment) {
@@ -101,7 +101,7 @@ function get_recent_comments(){
         $output .= get_permalink($comment->comment_post_ID) . '" title="查看 ' . get_post($comment->comment_post_ID)->post_title . '">';
         $output .= $short_comment_content . '...</a></p></li>';
     }
-		//输出
+	//输出
     echo $output;
 }
 
@@ -539,8 +539,6 @@ function add_my_tips() {
         </div>
     ';
 }
-// 在默认字段（前面说的姓名、邮箱和网址）的下面添加字段
 add_filter('comment_form_before_fields', 'add_my_tips');
-// 在已登录下面添加字段（因为用户登录后，是没有默认上面三个字段的），所以要使用这个钩子插入内容
 add_filter('comment_form_logged_in_after', 'add_my_tips');
 ?>

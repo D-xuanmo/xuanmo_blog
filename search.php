@@ -37,8 +37,9 @@
                         </span>
                     </div>
                     <!-- 摘要 -->
-                    <?php the_excerpt(); ?>
-                    <a href="<?php the_permalink(); ?>" class="article-more">阅&nbsp;读</a>
+                    <p class="summary">
+                        <?php echo get_post_excerpt('', 160, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>'); ?>
+                    </p>
                 </div>
             </article>
         <?php endwhile; else: ?>

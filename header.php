@@ -20,21 +20,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
-    <title>
-        <?php bloginfo('name'); ?>
-        |
-        <?php
-        if (is_single()) {
-            the_title();
-        } else if (is_category()) {
-            echo get_category(get_query_var('cat'))->name;
+    <?php
+        // 根据不同页面设置不同的标题、关键词、描述
+        $title = get_bloginfo('name');
+        $keywords = wp_get_post_tags($post->ID);
+        if ( is_single() ) {
+            for ($i=0; $i < count($keywords); $i++) {
+                $key[$i] = $keywords[$i]->name;
+            }
+            $currentTitle = get_the_title();
+            $key = implode(',', $key);
+            $description = get_post_excerpt('', 200, '');
+        } else if( is_category() ) {
+            $currentTitle = get_category(get_query_var('cat'))->name;
+            $key = get_option('xm_options')['keywords'];
+            $description = get_option('xm_options')['description'];
         } else {
-            bloginfo('description');
+            $currentTitle = get_bloginfo('description');
+            $key = get_option('xm_options')['keywords'];
+            $description = get_option('xm_options')['description'];
         }
-        ?>
-    </title>
-    <meta name="keywords" content="<?php echo get_option('xm_options')['keywords']; ?>">
-    <meta name="description" content="<?php echo get_option('xm_options')['description']; ?>" >
+    ?>
+    <title><?php echo $title . ' | ' . $currentTitle; ?></title>
+    <meta name="keywords" content="<?php echo $key; ?>">
+    <meta name="description" content="<?php echo $description; ?>" >
     <?php wp_head(); ?>
     <link rel="icon" href="<?php echo get_option('xm_options')['favicon']; ?>">
     <link rel="stylesheet" href="https://www.xuanmo.xin/iconfont.css">

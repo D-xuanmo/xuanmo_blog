@@ -72,7 +72,7 @@ section article div.con {
     padding: 5px;
     text-indent: 16px;
 }
-.right article .more {
-    text-align: right;
+.right article .article-more {
+    display: inline;
     color: #5fcfed;
 }
