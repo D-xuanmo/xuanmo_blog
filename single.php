@@ -25,6 +25,7 @@
             </div>
             <p class="like">
                     <a href="javascript:;" data-action="ding" data-id="<?php the_ID(); ?>" class="link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
+                    <span class="hide blog-url"><?php bloginfo('url'); ?>/wp-admin/admin-ajax.php</span>
                     <i class="iconfont icon-thumbs-up2"></i>赞
                     <span class="count">
                         <?php
@@ -80,27 +81,27 @@
             </div>
             <!-- 作者简介结束 -->
             <?php comments_template(); ?>
-            <div class="tab-article clearfix">
-                <div class="fl tab-left">
+            <div class="tab-article">
+                <div class="tab-left">
                     <p>
                         <!-- 上一篇： -->
                         <a href="javascript:;">
                             <?php if (get_previous_post($categoryIDS)) {
                                 previous_post_link('上一篇：%link','%title',true);
                             } else {
-                                echo "没有了，已经是最新文章";
+                                echo "已经是最新文章！";
                             } ?>
                         </a>
                     </p>
                 </div>
-                <div class="tab-right fr">
+                <div class="tab-right">
                     <p>
                         <!-- 下一篇： -->
                         <a href="javascript:;">
                             <?php if (get_next_post($categoryIDS)) {
                                 next_post_link('下一篇：%link','%title',true);
                             } else {
-                                echo "没有了，已经是最后文章";
+                                echo "已经是最后一篇！";
                             } ?>
                         </a>
                     </p>
@@ -136,29 +137,6 @@
         $('#qrcode .icon-close1').click(function(e){
             e.stopPropagation();
             $qrcode.css('display','none');
-        });
-
-        // 点赞提交
-        $('.link-btn').click(function() {
-            if ($(this).hasClass('done')) {
-                alert('^_^您已赞过此文章了');
-            } else {
-                var $this = $(this);
-                $this.addClass('done');
-                document.cookie = 'bigfa_ding_' + $(this).data('id') + '=' + $(this).data('id');
-                $.ajax({
-                    url: '<?php bloginfo('url'); ?>/wp-admin/admin-ajax.php',
-                    type: 'POST',
-                    data: {
-                        action: "bigfa_like",
-                        um_id: $(this).data("id"),
-                        um_action: $(this).data('action')
-                    },
-                    success: function(data) {
-                        $this.children('.count').text(data);
-                    }
-                });
-            }
         });
     });
 </script>

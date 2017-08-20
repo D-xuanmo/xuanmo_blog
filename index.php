@@ -46,8 +46,9 @@
                         <!-- 阅读数 -->
                         <span class="iconfont icon-eye-open ccc"><?php echo getPostViews(get_the_ID()); ?></span>
                         <!-- 点赞 -->
-                        <span href="javascript:;" data-action="ding" data-id="<?php the_ID(); ?>" class="cur ccc favorite<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
+                        <span data-action="ding" data-id="<?php the_ID(); ?>" class="cur ccc link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
                             <span class="iconfont icon-thumbs-up2"></span>
+                            <span class="hide blog-url"><?php bloginfo('url'); ?>/wp-admin/admin-ajax.php</span>
                             <span class="count">
                                 <?php
                                     if( get_post_meta($post->ID,'bigfa_ding',true) ){
@@ -98,8 +99,9 @@
                         <!-- 阅读数 -->
                         <span class="iconfont icon-eye-open ccc"><?php echo getPostViews(get_the_ID()); ?></span>
                         <!-- 点赞 -->
-                        <span href="javascript:;" data-action="ding" data-id="<?php the_ID(); ?>" class="cur ccc favorite<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
+                        <span data-action="ding" data-id="<?php the_ID(); ?>" class="cur ccc link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
                             <span class="iconfont icon-thumbs-up2"></span>
+                            <span class="hide blog-url"><?php bloginfo('url'); ?>/wp-admin/admin-ajax.php</span>
                             <span class="count">
                                 <?php
                                     if( get_post_meta($post->ID,'bigfa_ding',true) ){
@@ -150,8 +152,9 @@
                         <!-- 阅读数 -->
                         <span class="iconfont icon-eye-open ccc"><?php echo getPostViews(get_the_ID()); ?></span>
                         <!-- 点赞 -->
-                        <span href="javascript:;" data-action="ding" data-id="<?php the_ID(); ?>" class="cur ccc favorite<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
+                        <span data-action="ding" data-id="<?php the_ID(); ?>" class="cur ccc link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>">
                             <span class="iconfont icon-thumbs-up2"></span>
+                            <span class="hide blog-url"><?php bloginfo('url'); ?>/wp-admin/admin-ajax.php</span>
                             <span class="count">
                                 <?php
                                     if( get_post_meta($post->ID,'bigfa_ding',true) ){
