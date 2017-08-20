@@ -29,7 +29,7 @@
 		            <div class="comment_content" id="comment-<?php comment_ID(); ?>">
 		                <div class="comment_text">
 		                    <?php if ($comment->comment_approved == '0') : ?>
-		                        <span>你的评论正在审核，稍后会显示出来！</span><br />
+		                        <span>您的评论正在审核，稍后会显示出来！</span><br />
 		                    <?php endif; ?>
 		                    <?php comment_text(); ?>
 		                    <div class="reply">
