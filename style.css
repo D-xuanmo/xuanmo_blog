@@ -318,6 +318,7 @@ ul.menu > li:hover ul.sub-menu {
 }
 /*首页箭头动画*/
 nav .icon-menu-left {
+    display: none;
     position: absolute;
     z-index: 9;
     top: 50%;

@@ -314,7 +314,7 @@ function setPostViews($postID) {
 
 /*
  ****************************************
- * 解决php添加分斜杠问题
+ * 解决php添加分号斜杠问题
  ****************************************
  */
 if (get_magic_quotes_gpc()) {
@@ -541,4 +541,37 @@ function add_my_tips() {
 }
 add_filter('comment_form_before_fields', 'add_my_tips');
 add_filter('comment_form_logged_in_after', 'add_my_tips');
+
+/*
+ ****************************************
+ * 获取访客VIP样式
+ ****************************************
+ */
+function get_author_class($comment_author_email, $comment_author_url) {
+    global $wpdb;
+    $adminEmail = get_bloginfo('admin_email');
+    $author_count = count($wpdb->get_results(
+    "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email =        '$comment_author_email' "));
+    if($comment_author_email == $adminEmail)
+        echo '<a href="javascript:;" class="icon-vip vip7" title="评论超人就是你！"></a><a href="javascript:;" class="icon-vip icon-admin"></a>';
+    $linkurls = $wpdb->get_results("SELECT link_url FROM $wpdb->links WHERE link_url = '$comment_author_url'");
+    if($author_count >= 1 && $author_count < 5 && $comment_author_email != $adminEmail)
+        echo '<a href="javascript:;" class="icon-vip vip1" title="评论达人 LV.1"></a>';
+    else if($author_count >= 5 && $author_count < 20 && $comment_author_email != $adminEmail)
+        echo '<a href="javascript:;" class="icon-vip vip2" title="评论达人 LV.2"></a>';
+    else if($author_count >= 20 && $author_count < 30 && $comment_author_email != $adminEmail)
+        echo '<a href="javascript:;" class="icon-vip vip3" title="评论达人 LV.3"></a>';
+    else if($author_count >= 30 && $author_count < 50 && $comment_author_email != $adminEmail)
+        echo '<a href="javascript:;" class="icon-vip vip4" title="评论达人 LV.4"></a>';
+    else if($author_count >= 50 && $author_count < 80 && $comment_author_email != $adminEmail)
+        echo '<a href="javascript:;" class="icon-vip vip5" title="评论达人 LV.5"></a>';
+    else if($author_count >= 80 && $author_coun < 200 && $comment_author_email != $adminEmail)
+        echo '<a href="javascript:;" class="icon-vip vip6" title="评论达人 LV.6"></a>';
+    else if($author_count >= 200 && $comment_author_email != $adminEmail)
+        echo '<a href="javascript:;" class="icon-vip vip7" title="评论达人 LV.7"></a>';
+    foreach ($linkurls as $linkurl) {
+        if ($linkurl->link_url == $comment_author_url )
+        echo '<a class="vp" target="_blank" href="/links/" title="隔壁邻居的哦！">隔壁邻居的哦！</a>';
+    }
+}
 ?>

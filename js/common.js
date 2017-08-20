@@ -175,6 +175,29 @@ $(function(){
         });
     })();
 
+    // 点赞提交
+    $('.link-btn').click(function() {
+        if ($(this).hasClass('done')) {
+            alert('^_^您已赞过此文章了');
+        } else {
+            var $this = $(this);
+            $this.addClass('done');
+            document.cookie = 'bigfa_ding_' + $(this).data('id') + '=' + $(this).data('id');
+            $.ajax({
+                url: $(this).children('.blog-url').text(),
+                type: 'POST',
+                data: {
+                    action: "bigfa_like",
+                    um_id: $(this).data("id"),
+                    um_action: $(this).data('action')
+                },
+                success: function(data) {
+                    $this.children('.count').text(data);
+                }
+            });
+        }
+    });
+
     // 文章页微信显示与关闭
     $('.article-about-author .share-btn a:nth-of-type(3)').click(function(){
         // 微信盒子显示
@@ -251,7 +274,7 @@ $(function(){
             bMark = !bMark;
         });
 
-        $('body').bind('click', '.first-img', function() {
+        $('body').bind('click', function() {
             $('.expression-hide-wrap').hide();
             bMark = !bMark;
         });

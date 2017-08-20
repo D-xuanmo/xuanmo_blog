@@ -102,6 +102,9 @@
     ul.menu > li ul.sub-menu li{
         line-height: 40px;
     }
+    nav .icon-menu-left{
+        display: block;
+    }
     form.search .search-box{
         width: 90%;
     }
@@ -139,11 +142,11 @@
     .main article div.con{
         padding: 10px;
     }
-    #respond form p label{
+    .comment-respond form p label{
         text-align: left;
     }
-    #respond form input[type="text"],
-    #respond form input[type="submit"]{
+    .comment-respond form input[type="text"],
+    .comment-respond form input[type="submit"]{
         width: 100%;
     }
     .mobile-banner{
@@ -161,7 +164,7 @@
     }
     .main article .article-img img,
     .right article a img{
-    	width: auto;
+    	width: 100%;
         height: auto !important;
     	max-width: 100%;
     	border-radius: 10px 10px 0 0;
@@ -194,65 +197,3 @@
         display: none;
     }
 }
-/*手持设备横屏*/
-/* @media (orientation:landscape) and (max-width:720px){
-    .mobile-banner{
-        display: none;
-    }
-    header{
-        padding: 0;
-    }
-    div.head{
-        max-width: 96%;
-    }
-    div.head strong{
-        margin: 25px 10px 0 0;
-    } */
-    /*手机端菜单按钮*/
-    /* .contact .mobile-hide{
-        display: inline-block;
-    }
-    .contact .pc-none{
-        display: none;
-    }
-    nav {
-        opacity: 1;
-        position: static;
-        width: 100%;
-        margin-top: 0;
-        background: none;
-        transform: translateX(0);
-    }
-    nav ul.menu{
-        height: 40px;
-        text-align: justify;
-    }
-    nav ul.menu:after{
-        content: "";
-        display: inline-block;
-        width: 100%;
-    }
-    nav ul.menu > li {
-        display: inline-block;
-        position: relative;
-        line-height: 40px;
-        padding-bottom: 10px;
-    }
-    nav ul.menu > li ul.sub-menu {
-        position: absolute;
-        top: 40px;
-        left: 50%;
-        width: 150px;
-        margin-left: -75px;
-        padding: 0;
-        background: rgba(40, 40, 40, 0.6);
-        transform: scale(1);
-        transition: 0s;
-    }
-    nav ul.menu > li ul.sub-menu.bg282828{
-        background: rgba(40, 40, 40, 0.6);
-    }
-    .main{
-        padding-top: 80px;
-    }
-} */
