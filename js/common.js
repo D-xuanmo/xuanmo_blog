@@ -275,8 +275,28 @@ $(function(){
         });
 
         $('body').bind('click', function() {
-            $('.expression-hide-wrap').hide();
-            bMark = !bMark;
+            if( bMark == false ) $('.expression-hide-wrap').hide();
+            bMark = true;
+        });
+
+        // 添加图片
+        $('.comment-pic-btn').click(function() {
+            $("#comment").val(function() {
+                return $(this).val() + ' <img src="' + prompt('请输入图片地址') + '" alt="' + prompt('请输入图片描述') + '"> ';
+            });
+        });
+
+        // 显示代码按钮
+        $('.comment-code-btn-wrap').click(function() {
+            $(this).children('p').slideToggle();
+        });
+
+        $('.comment-code-btn-wrap .comment-code-btn').click(function(e) {
+            e.stopPropagation();
+            var $this = $(this);
+            $("#comment").val(function() {
+                return $(this).val() + ' <pre class="line-numbers language-' + $this.text() + '"><code class="language-' + $this.text() + '"></code></pre>';
+            });
         });
     })();
 });

@@ -525,11 +525,25 @@ if ( !isset( $wpsmiliestrans ) ) {
 }
 function add_my_tips() {
 	echo '
-        <div class="expression-wrap">
+        <div class="expression-wrap clearfix">
             <span class="hide express-url">'
             . get_bloginfo('template_directory')
             . '/expression.php</span>
-            <p class="first-img">=^_^=</p>
+            <div class="fl first-img comment-icon">
+                <i class="iconfont icon-grin"></i>表情
+            </div>
+            <div class="fl comment-icon comment-pic-btn">
+                <i class="iconfont icon-picture2"></i>贴图
+            </div>
+            <div class="fl comment-icon comment-code-btn-wrap">
+                <i class="iconfont icon-code"></i>代码
+                <p>
+                    <a href="javascript:;" class="btn comment-code-btn">html</a>
+                    <a href="javascript:;" class="btn comment-code-btn">css</a>
+                    <a href="javascript:;" class="btn comment-code-btn">JavaScript</a>
+                    <a href="javascript:;" class="btn comment-code-btn">php</a>
+                </p>
+            </div>
             <div class="expression-hide-wrap text-center">
                 <img src="'
                 . get_bloginfo('template_directory')
@@ -553,7 +567,7 @@ function get_author_class($comment_author_email, $comment_author_url) {
     $author_count = count($wpdb->get_results(
     "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email =        '$comment_author_email' "));
     if($comment_author_email == $adminEmail)
-        echo '<a href="javascript:;" class="icon-vip vip7" title="评论超人就是你！"></a><a href="javascript:;" class="icon-vip icon-admin"></a>';
+        echo '<a href="javascript:;" class="icon-vip vip7" title="博主"></a><a href="javascript:;" class="icon-vip icon-admin"></a>';
     $linkurls = $wpdb->get_results("SELECT link_url FROM $wpdb->links WHERE link_url = '$comment_author_url'");
     if($author_count >= 1 && $author_count < 5 && $comment_author_email != $adminEmail)
         echo '<a href="javascript:;" class="icon-vip vip1" title="评论达人 LV.1"></a>';

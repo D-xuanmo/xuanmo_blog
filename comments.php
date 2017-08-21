@@ -13,18 +13,20 @@
 		    <li class="comment" id="li-comment-<?php comment_ID(); ?>">
 		        <div class="comment-body">
 		            <div class="comment-author">
-		                <?php if (function_exists('get_avatar') && get_option('show_avatars')) echo get_avatar($comment, 80); ?>
 		                <?php
-							printf(__('<cite class="fn">%s</cite>'), get_comment_author_link());
-							get_author_class(
-								$comment->comment_author_email,
-								$comment->comment_author_url,
-								$comment->user_id
-							);
+							if (function_exists('get_avatar') && get_option('show_avatars'))
+								echo get_avatar($comment, 80);
+								// 获取评论者的url
+								$comment_author_url
+									= ($comment->comment_author_url)
+									? $comment->comment_author_url
+									: 'javascript:;';
 						?>
-		                <div class="comment-meta commentmetadata">
-		                    发表于：<?php echo get_comment_time('Y-m-d H:i'); ?>
-		                </div>
+						<a href="<?php echo $comment_author_url; ?>" class="comment-author-url" target="_blank">
+							<?php echo $comment->comment_author; ?>
+						</a>
+		                <?php get_author_class($comment->comment_author_email, $comment->comment_author_url, $comment->user_id); ?>
+		                <div class="comment-meta commentmetadata">发表于：<?php echo get_comment_time('Y-m-d H:i'); ?></div>
 		            </div>
 		            <div class="comment_content" id="comment-<?php comment_ID(); ?>">
 		                <div class="comment_text">
@@ -58,18 +60,18 @@
 	</ul>
 	<!-- 评论导航 -->
 	<?php if ( have_comments() ) : ?>
-	<?php if ( ! comments_open() ) : ?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'twentyfourteen' ); ?></p>
-	<?php endif; ?>
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-	<div id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-		<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'twentyfourteen' ); ?></h3>
-		<div class="comment-page-btn">
-			<?php previous_comments_link( __( '上一页', 'twentyfourteen' ) ); ?>
-			<?php next_comments_link( __( '下一页', 'twentyfourteen' ) ); ?>
+		<?php if ( ! comments_open() ) : ?>
+			<p class="no-comments"><?php _e( 'Comments are closed.', 'twentyfourteen' ); ?></p>
+		<?php endif; ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+		<div id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+			<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'twentyfourteen' ); ?></h3>
+			<div class="comment-page-btn">
+				<?php previous_comments_link( __( '上一页', 'twentyfourteen' ) ); ?>
+				<?php next_comments_link( __( '下一页', 'twentyfourteen' ) ); ?>
+			</div>
 		</div>
-	</div>
-	<!-- #comment-nav-below -->
-	<?php endif; // Check for comment navigation. ?>
+		<!-- #comment-nav-below -->
+		<?php endif; // Check for comment navigation. ?>
 	<?php endif; // have_comments() ?>
 </div>

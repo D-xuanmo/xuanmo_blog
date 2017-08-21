@@ -237,25 +237,33 @@ p.mark a{
 .article-about-author .share-btn a:nth-of-type(5){
     background: #49cc5b;
 }
-
 /* 表情显示 */
 .expression-wrap{
     position: relative;
 }
-.expression-wrap .first-img{
-    // 禁止复制
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    width: 50px;
-    height: 25px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    line-height: 25px;
+.expression-wrap .comment-icon{
+    margin-right: 10px;
     cursor: pointer;
+}
+.expression-wrap .comment-code-btn-wrap{
+    position: relative;
+}
+.expression-wrap .comment-code-btn-wrap p{
+    display: none;
+    margin: 10px 0 10px -118px;
+    padding: 6px 10px;
+    background: #eee;
+}
+.expression-wrap .comment-code-btn-wrap .comment-code-btn{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #e8e8e8;
+    background: #f8f8f8;
+    color: #4cc6fa;
+}
+.expression-wrap .comment-icon .iconfont{
+    margin-right: 3px;
+    font-size: 18px;
 }
 .expression-wrap .expression-hide-wrap{
     display: none;
@@ -345,11 +353,11 @@ img.wp-smiley, img.emoji{
     position: relative;
     border-bottom: 1px solid #e0e0e0;
 }
-.comments-area .comment-list .comment-body:hover .reply{
+.comments-area .comment-body:hover .reply{
     display: block;
 }
 /*评论作者*/
-.comments-area .comment-list li .comment-author .avatar{
+.comments-area .comment-author .avatar{
     float: left;
     width: 40px;
     height: 40px;
@@ -357,19 +365,18 @@ img.wp-smiley, img.emoji{
     border-radius: 10px;
     transition: .5s;
 }
-.comments-area .comment-list li .comment-author cite{
+.comments-area .comment-author .comment-author-url{
     font-size: 18px;
     font-weight: 600;
 }
 .comments-area .comment-list .comment-body:hover .avatar{
     border-radius: 50%;
 }
-/*评论时间*/
-.comments-area .comment-list li .comment-meta a{
-    font-size: 12px;
-}
 /*评论内容*/
-.comments-area .comment-list li p{
+.comments-area .comment_text img{
+    max-width: 70%;
+}
+.comments-area .comment_text p{
     padding: 20px 0;
     font-size: 18px;
 }
