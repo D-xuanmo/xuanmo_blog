@@ -110,6 +110,11 @@
     }
     ?>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/mobile.css">
+    <?php
+    $xm_options = get_option('xm_options');
+    if (!empty($xm_options['home_css'])) echo '<style>' . $xm_options['home_css'] . '</style>';
+    if (!empty($xm_options['all_css'])) echo '<style>' . $xm_options['all_css'] . '</style>';
+    ?>
 </head>
 <body>
     <!-- header start -->

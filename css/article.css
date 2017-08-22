@@ -33,6 +33,11 @@ article .content {
     box-sizing: border-box;
     padding: 10px 0;
 }
+article .demo-show-wrap{
+    padding: 10px;
+    border-radius: 5px;
+    background: #f8f8f8;
+}
 article .content img{
     max-width: 100%;
 }
@@ -110,7 +115,7 @@ article .share a:nth-of-type(3){
 article .share a:nth-of-type(4){
     background-position: 0 0;
 }
-article .share a:nth-of-type(    5){
+article .share a:nth-of-type(5){
 background-position: 0 -291px;
 }
 article .share a:hover{

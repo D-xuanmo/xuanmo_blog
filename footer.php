@@ -23,8 +23,7 @@
                         <span>七牛云</span>
                     </a>
                     <a href="https://verify.nic.xin/xinDetail/xinAuthInfoDetail?domainName=xuanmo.xin" target="_blank">
-                        <!-- <img src="https://verify.nic.xin/api/domain/showCreditLogo.do?logoToken=8684925de81ba07468c5842304116843" alt="" /> -->
-                        <img src="https://img.alicdn.com/tps/TB1.fDdNpXXXXajXpXXXXXXXXXX-96-42.png" alt="" />
+                        <img src="https://www.xuanmo.xin/images/xin.png" alt="" />
                     </a>
                 </div>
             </div>
