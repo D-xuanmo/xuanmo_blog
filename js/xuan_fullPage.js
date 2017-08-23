@@ -9,7 +9,7 @@
         this.btnList = null;
         this.differ = 1;
         this.dire = 1;
-        this.nIndex = element.attr('data-index'),
+        this.nIndex = element.attr('data-index');
         this.pageBtnWrap = options.pageBtnWrap;
         this.beforeFunction = options.beforeFunction;
         this.callback = options.callback;
@@ -29,7 +29,7 @@
                 || (function() { $this.after('<ul class="ui-btn-wrap"></ul>'); return $('.ui-btn-wrap'); }());
 
             // 生成滚动按钮
-            this.pageList.each(function(i) {
+            this.pageList.each(function() {
                 This.pageBtnWrap.append('<li></li>');
             });
 
@@ -48,8 +48,7 @@
         scrollFn: function( $this ) {
             var This = this,
                 y = 0,
-                _y = 0
-                touch = null,
+                _y = 0;
 
             // pc端滚动
             // DOMMouseScroll 火狐浏览器滚动事件
@@ -87,7 +86,7 @@
                 _y = e.originalEvent.touches[0].pageY;
 
                 // 判断滑动方向
-                dire = y - _y > 0 ? 1 : 0;
+                var dire = y - _y > 0 ? 1 : 0;
                 if( dire ) {
                     if( ++This.nIndex > This.maxIndex ) {
                         This.nIndex = This.maxIndex;

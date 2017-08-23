@@ -28,8 +28,6 @@ if (!function_exists('remove_wp_open_sans')) :
         wp_register_style('open-sans', false);
     }
     add_action('wp_enqueue_scripts', 'remove_wp_open_sans');
-        // Uncomment below to remove from admin
-        // add_action('admin_enqueue_scripts', 'remove_wp_open_sans');
 endif;
 function remove_open_sans() {
     wp_deregister_style('open-sans');
@@ -137,9 +135,9 @@ function ludou_comment_mail_notify($comment_id, $comment_status) {
             @wp_mail($to, $subject, $message, $message_headers);
     }
 }
-	// 编辑和管理员的回复直接发送提醒邮件，因为编辑和管理员的评论不需要审核
+// 编辑和管理员的回复直接发送提醒邮件，因为编辑和管理员的评论不需要审核
 add_action('comment_post', 'ludou_comment_mail_notify', 20, 2);
-	// 普通访客发表的评论，等博主审核后再发送提醒邮件
+// 普通访客发表的评论，等博主审核后再发送提醒邮件
 add_action('wp_set_comment_status', 'ludou_comment_mail_notify', 20, 2);
 
 /*
@@ -149,7 +147,7 @@ add_action('wp_set_comment_status', 'ludou_comment_mail_notify', 20, 2);
  */
 function wp_pagenavi() {
     global $wp_query, $wp_rewrite;
-        //判断当前页面
+    //判断当前页面
     $wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
     $pagination = array(
         'base' => @add_query_arg('paged', '%#%'),
@@ -474,7 +472,6 @@ if ( !isset( $wpsmiliestrans ) ) {
         "/zhemo"       => "zhemo.gif",
         "/zhouma"      => "zhouma.gif",
         "/zhuakuang"   => "zhuakuang.gif",
-        '/流汗'         => 'icon_question.gif',
         "/aini"        => "aini.gif",
         "/baoquan"     => "baoquan.gif",
         "/gouyin"      => "gouyin.gif",
@@ -520,6 +517,7 @@ if ( !isset( $wpsmiliestrans ) ) {
         '/囧'          => 'icon_arrow.gif',
         '/害羞'        => 'icon_neutral.gif',
         '/流泪'        => 'icon_cry.gif',
+        '/流汗'        => 'icon_question.gif',
         '/你懂的'      => 'icon_mrgreen.gif'
     );
 }
@@ -569,9 +567,9 @@ function get_author_class($comment_author_email, $comment_author_url) {
     if($comment_author_email == $adminEmail)
         echo '<a href="javascript:;" class="icon-vip vip7" title="博主"></a><a href="javascript:;" class="icon-vip icon-admin"></a>';
     $linkurls = $wpdb->get_results("SELECT link_url FROM $wpdb->links WHERE link_url = '$comment_author_url'");
-    if($author_count >= 1 && $author_count < 5 && $comment_author_email != $adminEmail)
+    if($author_count >= 1 && $author_count < 10 && $comment_author_email != $adminEmail)
         echo '<a href="javascript:;" class="icon-vip vip1" title="评论达人 LV.1"></a>';
-    else if($author_count >= 5 && $author_count < 20 && $comment_author_email != $adminEmail)
+    else if($author_count >= 10 && $author_count < 20 && $comment_author_email != $adminEmail)
         echo '<a href="javascript:;" class="icon-vip vip2" title="评论达人 LV.2"></a>';
     else if($author_count >= 20 && $author_count < 30 && $comment_author_email != $adminEmail)
         echo '<a href="javascript:;" class="icon-vip vip3" title="评论达人 LV.3"></a>';
