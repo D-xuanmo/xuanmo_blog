@@ -49,6 +49,52 @@
                             <input type="text" id="title" name="title" value="<?php echo $a_options['title']; ?>">
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="clearfix">
+                            <label class="fl left-wrap">设置说明：</label>
+                            <div class="fr right-wrap">
+                                <img src="<?php bloginfo('template_url'); ?>/images/home_set.png" alt="">
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label class="fl left-wrap" for="cat-id-1">首页第二个栏目分类ID：</label>
+                            <div class="fr right-wrap">
+                                <input type="text" id="cat-id-1" name="cat-id-1" value="<?php echo $a_options['home_column'][0]['cat_id']; ?>">
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label class="fl left-wrap" for="cat-title-1">首页第二个栏目标题：</label>
+                            <div class="fr right-wrap">
+                                <input type="text" id="cat-title-1" name="cat-title-1" value="<?php echo $a_options['home_column'][0]['cat_title']; ?>">
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label class="fl left-wrap" for="cat-sub-title-1">首页第二个栏目副标题：</label>
+                            <div class="fr right-wrap">
+                                <input type="text" id="cat-sub-title-1" name="cat-sub-title-1" value="<?php echo $a_options['home_column'][0]['cat_sub_title']; ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="clearfix">
+                            <label class="fl left-wrap" for="cat-id-2">首页第三个栏目分类ID：</label>
+                            <div class="fr right-wrap">
+                                <input type="text" id="cat-id-2" name="cat-id-2" value="<?php echo $a_options['home_column'][1]['cat_id']; ?>">
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label class="fl left-wrap" for="cat-title-2">首页第三个栏目标题：</label>
+                            <div class="fr right-wrap">
+                                <input type="text" id="cat-title-2" name="cat-title-2" value="<?php echo $a_options['home_column'][1]['cat_title']; ?>">
+                            </div>
+                        </div>
+                        <div class="clearfix">
+                            <label class="fl left-wrap" for="cat-sub-title-2">首页第三个栏目副标题：</label>
+                            <div class="fr right-wrap">
+                                <input type="text" id="cat-sub-title-2" name="cat-sub-title-2" value="<?php echo $a_options['home_column'][1]['cat_sub_title']; ?>">
+                            </div>
+                        </div>
+                    </div>
                     <div class="row clearfix">
                         <label for="footer-copyright" class="fl left-wrap">底部版权文字：</label>
                         <div class="fr right-wrap">
@@ -266,37 +312,49 @@
 	function themeoptions_update() {
 		// 数据提交
         $options = array(
-            'title'              => $_POST['title'],
-            'favicon'            => $_POST['favicon-img'],
-            'footer_copyright'   => $_POST['footer-copyright'],
-            'footer_text'        => $_POST['footer-txt'],
-            'home_css'           => $_POST['home-css'],
-            'all_css'            => $_POST['all-css'],
-            'footer_js'          => $_POST['footer-js'],
+            'title'                   => $_POST['title'],
+            'favicon'              => $_POST['favicon-img'],
+            'footer_copyright' => $_POST['footer-copyright'],
+            'footer_text'         => $_POST['footer-txt'],
+            'home_css'          => $_POST['home-css'],
+            'all_css'               => $_POST['all-css'],
+            'footer_js'            => $_POST['footer-js'],
             'keywords'           => $_POST['keywords'],
-            'description'        => $_POST['description'],
+            'description'         => $_POST['description'],
             'author_des'         => $_POST['author-des'],
-            'email'              => $_POST['email'],
-            'qq_url'             => $_POST['qq-url'],
-            'github_url'         => $_POST['github-url'],
-            'sina_url'           => $_POST['sina-url'],
-            'wechat_num'         => $_POST['wechat-num'],
-            'wechat_img'         => $_POST['wechat-img'],
-            'link'               => $_POST['link'],
-            'home_banner'        => array(
+            'email'                 => $_POST['email'],
+            'qq_url'                => $_POST['qq-url'],
+            'github_url'           => $_POST['github-url'],
+            'sina_url'              => $_POST['sina-url'],
+            'wechat_num'       => $_POST['wechat-num'],
+            'wechat_img'        => $_POST['wechat-img'],
+            'link'                    => $_POST['link'],
+            'home_column'     => array(
                 array(
-                    'big_img'    => $_POST['banner-img'],
-                    'img_title'  => $_POST['banner-img-title'],
-                    'cn_title_0' => $_POST['banner-cn-title-0'],
-                    'cn_title_1' => $_POST['banner-cn-title-1'],
-                    'en_title_0' => $_POST['banner-en-title-0'],
-                    'en_title_1' => $_POST['banner-en-title-1']
+                    'cat_id'                  => $_POST['cat-id-1'],
+                    'cat_title'                => $_POST['cat-title-1'],
+                    'cat_sub_title'         => $_POST['cat-sub-title-1']
+                ),
+                array(
+                    'cat_id'                  => $_POST['cat-id-2'],
+                    'cat_title'                => $_POST['cat-title-2'],
+                    'cat_sub_title'         => $_POST['cat-sub-title-2']
+                ),
+            ),
+            'home_banner'      => array(
+                array(
+                    'big_img'      => $_POST['banner-img'],
+                    'img_title'     => $_POST['banner-img-title'],
+                    'cn_title_0'    => $_POST['banner-cn-title-0'],
+                    'cn_title_1'     => $_POST['banner-cn-title-1'],
+                    'en_title_0'    => $_POST['banner-en-title-0'],
+                    'en_title_1'     => $_POST['banner-en-title-1']
                 )
             ),
-            'mobile_banner' => array(
-                'img_0' => $_POST['banner-img-0'],
-                'img_1' => $_POST['banner-img-1'],
-                'img_2' => $_POST['banner-img-2']
+            'mobile_banner'      => array(
+                'img_0'              => $_POST['banner-img-0'],
+                'img_1'              => $_POST['banner-img-1'],
+                'img_2'              => $_POST['banner-img-2']
             )
         );
         update_option('xm_options', stripslashes_deep($options));

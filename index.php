@@ -1,22 +1,25 @@
-<?php get_header(); ?>
+<?php
+    get_header();
+    $xm_options = get_option('xm_options');
+?>
 <!-- 首屏 start -->
-<div class="first-screen mobile-hide" style="background-image: url(<?php echo get_option('xm_options')['home_banner'][0]['big_img']; ?>);">
+<div class="first-screen mobile-hide" style="background-image: url(<?php echo $xm_options['home_banner'][0]['big_img']; ?>);">
     <div class="txt">
-        <p class="move-left"><?php echo get_option('xm_options')['home_banner'][0]['cn_title_0']; ?></p>
-        <p class="move-left"><?php echo get_option('xm_options')['home_banner'][0]['cn_title_1']; ?></p>
+        <p class="move-left"><?php echo $xm_options['home_banner'][0]['cn_title_0']; ?></p>
+        <p class="move-left"><?php echo $xm_options['home_banner'][0]['cn_title_1']; ?></p>
         <h1>
-            <span class="img-title" style="background-image: url(<?php echo get_option('xm_options')['home_banner'][0]['img_title']; ?>);"></span>
-            <i class="hide"><?php echo get_option('xm_options')['title']; ?></i>
+            <span class="img-title" style="background-image: url(<?php echo $xm_options['home_banner'][0]['img_title']; ?>);"></span>
+            <i class="hide"><?php echo $xm_options['title']; ?></i>
         </h1>
-        <p class="move-right"><?php echo get_option('xm_options')['home_banner'][0]['en_title_0']; ?></p>
-        <p class="move-right"><?php echo get_option('xm_options')['home_banner'][0]['en_title_1']; ?></p>
+        <p class="move-right"><?php echo $xm_options['home_banner'][0]['en_title_0']; ?></p>
+        <p class="move-right"><?php echo $xm_options['home_banner'][0]['en_title_1']; ?></p>
     </div>
     <i class="iconfont icon-menu-up"></i>
 </div>
 <div class="mobile-banner pc-none">
     <ul class="roll-banner clearfix">
         <?php
-            $arr_img = get_option('xm_options')['mobile_banner'];
+            $arr_img = $xm_options['mobile_banner'];
             foreach($arr_img as $value) {
                 if($value) echo '<li><img src="' . $value . '" alt=""></li>';
             };
@@ -75,15 +78,15 @@
     <!-- 案例展示 -->
     <div class="wrap clearfix">
         <div class="demo-title">
-            <h2>Case show</h2>
-            <h4>最新案例展示</h4>
-            <a href="<?php bloginfo('home'); ?>/?cat=8" class="more"><i></i>more</a>
+            <h2><?php echo $xm_options['home_column'][0]['cat_title']; ?></h2>
+            <h4><?php echo $xm_options['home_column'][0]['cat_sub_title']; ?></h4>
+            <a href="<?php bloginfo('home'); ?>/?cat=<?php echo $xm_options['home_column'][0]['cat_id']; ?>" class="more"><i></i>more</a>
         </div>
         <div class="clearfix">
             <?php
                 $args=array(
-                    'cat' => 8,   // 分类ID
-                    'posts_per_page' => 6, // 显示篇数
+                    'cat' => intval($xm_options['home_column'][0]['cat_id']),   // 分类ID
+                    'posts_per_page' => 9, // 显示篇数
                 );
                 query_posts($args);
                 if(have_posts()) : while (have_posts()) : the_post();
@@ -128,15 +131,15 @@
     <!-- 我的笔记 -->
     <div class="wrap clearfix">
         <div class="demo-title">
-            <h2>Note</h2>
-            <h4>最新笔记</h4>
-            <a href="<?php bloginfo('home'); ?>/?cat=1" class="more"><i></i>more</a>
+            <h2><?php echo $xm_options['home_column'][1]['cat_title']; ?></h2>
+            <h4><?php echo $xm_options['home_column'][1]['cat_sub_title']; ?></h4>
+            <a href="<?php bloginfo('home'); ?>/?cat=<?php echo $xm_options['home_column'][1]['cat_id']; ?>" class="more"><i></i>more</a>
         </div>
         <div class="clearfix">
             <?php
                 $args=array(
-                    'cat' => 1,   // 分类ID
-                    'posts_per_page' => 6, // 显示篇数
+                    'cat' => intval($xm_options['home_column'][1]['cat_id']),   // 分类ID
+                    'posts_per_page' => 9, // 显示篇数
                 );
                 query_posts($args);
                 if(have_posts()) : while (have_posts()) : the_post();
