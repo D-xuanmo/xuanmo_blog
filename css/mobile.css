@@ -178,6 +178,9 @@
     div.footer-link a{
         width: calc(100% / 3 - 12px);
     }
+    img.wp-smiley{
+        width: 25px !important;
+    }
     footer .footer-left,
     footer .footer-left h2,
     footer .footer-left .introduce,

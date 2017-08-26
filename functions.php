@@ -90,14 +90,16 @@ function get_recent_comments(){
 			//去除评论内容中的标签
         $comment_content = strip_tags($comment->comment_content);
 			//评论可能很长,所以考虑截断评论内容,只显示10个字
-        $short_comment_content = trim(mb_substr($comment_content, 0, 10, "UTF-8"));
-			//先获取头像 get_avatar( $comment->comment_author_email, 50 )
-        $output .= '<li class="aside-com-img" class="clearfix"><p>' . get_avatar($comment->comment_author_email, 50) . '</p> ';
-			//获取作者
-        $output .= '<strong class="aside-content">' . $comment->comment_author . ':</strong><p><a href="';
-			//评论内容和链接
-        $output .= get_permalink($comment->comment_post_ID) . '" title="查看 ' . get_post($comment->comment_post_ID)->post_title . '">';
-        $output .= $short_comment_content . '...</a></p></li>';
+        // $short_comment_content = trim(mb_substr($comment_content, 0, 10, "UTF-8"));
+        $output .= '
+            <li class="aside-com-img" class="clearfix"><a href="'
+            . get_permalink($comment->comment_post_ID) . '" title="查看 '
+            . get_post($comment->comment_post_ID)->post_title . '">'
+            . get_avatar($comment->comment_author_email, 50)
+            . '<p><strong class="aside-com-author">' . $comment->comment_author
+            . ':</strong></p><p class="aside-com-content">'
+            . $comment_content . '</p></a></li>
+        ';
     }
 	//输出
     echo $output;
