@@ -416,6 +416,9 @@ aside .aside-com-img .aside-com-content{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+aside .aside-com-img .aside-com-content img{
+    display: none !important;
+}
 aside .aside-com-img .aside-com-author{
     line-height: 30px;
 }
