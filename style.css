@@ -53,6 +53,11 @@ input[type="button"],
 input[type="submit"]{
     cursor: pointer;
 }
+
+textarea {
+    resize: vertical;
+}
+
 img{
     vertical-align: top;
     border: none;

@@ -24,7 +24,6 @@
         position: relative;
         overflow: hidden;
         width: 95%;
-        height: 320px;
         margin: 80px auto 0;
     }
     .mobile-banner .roll-banner li{
@@ -148,9 +147,6 @@
     .comment-respond form input[type="text"],
     .comment-respond form input[type="submit"]{
         width: 100%;
-    }
-    .mobile-banner{
-        height: 200px;
     }
     /*文章变成一栏*/
     .main .mobile-article-lg,

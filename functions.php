@@ -363,7 +363,7 @@ function bigfa_like() {
  ****************************************
  */
 function add_editor_buttons($buttons) {
-    $buttons = ['fontselect', 'fontsizeselect', 'copy', 'paste', 'cut', 'backcolor'];
+    $buttons = array('fontselect', 'fontsizeselect', 'copy', 'paste', 'cut', 'backcolor');
     return $buttons;
 }
 add_filter("mce_buttons_3", "add_editor_buttons");
