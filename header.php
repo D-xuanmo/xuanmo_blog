@@ -52,12 +52,15 @@
     <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
     <?php
     $templateUrl = get_template_directory_uri();
+    $xm_options = get_option('xm_options');
+    if (!empty($xm_options['home_css'])) $home_css = '<style>' . $xm_options['home_css'] . '</style>';
     if(is_home()) {
         echo '
             <link rel="stylesheet" href="' . $templateUrl . '/css/index.css">
             <style>
                 ul.menu > li ul.sub-menu{ background: rgba(210, 210, 210, 0.6); }
             </style>
+            ' . $home_css . '
             <script src="' . $templateUrl . '/js/jquery.seamlessBanner.min.js"></script>
             <script>
                 $(function() {
@@ -112,8 +115,6 @@
     ?>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/mobile.css">
     <?php
-    $xm_options = get_option('xm_options');
-    if (!empty($xm_options['home_css'])) echo '<style>' . $xm_options['home_css'] . '</style>';
     if (!empty($xm_options['all_css'])) echo '<style>' . $xm_options['all_css'] . '</style>';
     ?>
 </head>

@@ -54,6 +54,7 @@
                             <label class="fl left-wrap">设置说明：</label>
                             <div class="fr right-wrap">
                                 <img src="<?php bloginfo('template_url'); ?>/images/home_set.png" alt="">
+                                <p>ID是分类目录的<span class="highlighted">tag_ID</span>号，在<span class="highlighted">文章 -> 分类目录</span>这个菜单下，这里面的分类目录链接会有这个参数</p>
                             </div>
                         </div>
                         <div class="clearfix">
@@ -110,13 +111,17 @@
                 </div>
                 <!-- 内容二 SEO -->
                 <div class="content-wrap content2">
-                    <div class="row">
-                        <label for="keywords">首页关键词(keywords)：</label>
-                        <textarea id="keywords" name="keywords" rows="8" cols="100"><?php echo $a_options['keywords'] ?></textarea>
+                    <div class="row clearfix">
+                        <label for="keywords" class="fl left-wrap">首页关键词(keywords)：</label>
+                        <div class="fr right-wrap">
+                            <textarea id="keywords" name="keywords" rows="8" cols="100"><?php echo $a_options['keywords'] ?></textarea>
+                        </div>
                     </div>
-                    <div class="row">
-                        <label for="description">首页描述(description)：</label>
-                        <textarea id="description" name="description" rows="8" cols="100"><?php echo $a_options['description'] ?></textarea>
+                    <div class="row clearfix">
+                        <label for="description class="fl left-wrap"">首页描述(description)：</label>
+                        <div class="fr right-wrap">
+                            <textarea id="description" name="description" rows="8" cols="100"><?php echo $a_options['description'] ?></textarea>
+                        </div>
                     </div>
                 </div>
                 <!-- 内容三 首页 -->
@@ -295,7 +300,7 @@
                         </div>
                     </div>
                     <div class="row clearfix">
-                        <label class="fl left-wrap" for="footer-js">底部公用js：</label>
+                        <label class="fl left-wrap" for="footer-js">页面公用js：</label>
                         <div class="fr right-wrap">
                             <textarea id="footer-js" name="footer-js" rows="8" cols="100"><?php echo $a_options['footer_js']; ?></textarea>
                         </div>

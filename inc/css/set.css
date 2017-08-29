@@ -13,6 +13,10 @@
 .margin-top-15{
     margin-top: 15px;
 }
+.highlighted{
+    background: #d4d4d4;
+    color: #d8296d;
+}
 input,
 textarea{
     vertical-align: middle;
