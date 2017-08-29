@@ -58,6 +58,7 @@
         echo '
             <link rel="stylesheet" href="' . $templateUrl . '/css/index.css">
             <style>
+                .hide-header{ display: none; }
                 ul.menu > li ul.sub-menu{ background: rgba(210, 210, 210, 0.6); }
             </style>
             ' . $home_css . '
@@ -96,10 +97,10 @@
     } else if(is_page()) {
         echo '
             <link rel="stylesheet" href="' . $templateUrl . '/css/index.css">
+            <link rel="stylesheet" href="' . $templateUrl . '/css/article.css">
             <style>
+                body{ background: #fff; }
                 header { background: rgba(40, 40, 40, 0.7); }
-                .mobile-article-lg a{ display: inline-block; padding: 0 5px; }
-                .mobile-article-lg a img{ display: block; width: 32px; height: 32px; margin: 3px auto; border-radius: 8px; }
                 section{ background: #fff; }
                 section h2{ margin: 20px 0; padding-left: 10px; background: #f5f5f5; border-left: 5px solid #0cf; font-size: 18px; line-height: 40px; color: #292929; }
             </style>
@@ -120,6 +121,7 @@
 </head>
 <body>
     <!-- header start -->
+    <div class="hide-header"></div>
     <header>
         <!-- 搜索栏 -->
         <form id="searchform" class="search" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="get">

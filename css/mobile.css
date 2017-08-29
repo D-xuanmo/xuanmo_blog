@@ -57,6 +57,9 @@
     }
 }
 @media (max-width:900px){
+    .hide-header{
+        height: 50px;
+    }
     div.head strong,
     .contact{
         margin-top: 15px;

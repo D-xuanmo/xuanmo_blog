@@ -346,6 +346,9 @@ img.wp-smiley, img.emoji{
     position: relative;
     padding-top: 40px;
 }
+.comment-list{
+    margin-top: 50px;
+}
 .comments-area .url{
     color: #06c0ef;
 }
@@ -409,7 +412,7 @@ img.wp-smiley, img.emoji{
 }
 /*子回复*/
 .comments-area .comment-list li.comment{
-    padding: 10px 0 10px 20px
+    padding: 10px 0;
 }
 .comments-area .comment-list .children{
     padding: 10px 0 10px 40px

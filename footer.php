@@ -1,5 +1,5 @@
     <div class="wrap footer-link">
-        <?php echo get_option('xm_options')['link']; ?>
+        <?php if( !is_page() ) echo get_option('xm_options')['link']; ?>
     </div>
     <!-- footer start -->
     <footer>
