@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <section class="main page">
-    <div class="wrap clearfix">
-        <p style="text-indent: 30px;">
+    <div class="wrap article-wrap clearfix">
+        <p class="margin-bottom-20" style="text-indent: 30px;">
             <?php the_tags(); ?>
         </p>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

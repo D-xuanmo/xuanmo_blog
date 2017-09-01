@@ -52,6 +52,9 @@ $(function(){
         scrollAnimate($('.main article , .right article'));
         function scrollAnimate(obj) {
             var y;
+            obj.each(function () {
+                if ($window.scrollTop() > $(this).offset().top - $window.height() / 2) $(this).addClass('on');
+            });
             $window.on('scroll', function () {
                 y = $(this).scrollTop();
                 obj.each(function () {
@@ -78,7 +81,7 @@ $(function(){
                 _y = e.originalEvent.touches[0].pageX;
                 if (y - _y > 20) $(this).css('left', '-100%');
             });
-        $menuList.bind('touchstart', function () {
+        $menuList.bind('click', function () {
             $(this).children('.sub-menu').stop().slideToggle()
                 .parent().siblings()
                 .children('.sub-menu').slideUp();

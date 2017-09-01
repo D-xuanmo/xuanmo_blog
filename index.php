@@ -17,7 +17,7 @@
     <i class="iconfont icon-menu-up"></i>
 </div>
 <div class="mobile-banner pc-none">
-    <ul class="roll-banner clearfix">
+    <ul class="roll-banner clearfix" style="width: 500%;">
         <?php
             $arr_img = $xm_options['mobile_banner'];
             foreach($arr_img as $value) {
@@ -35,8 +35,8 @@
             <h2>Article</h2>
             <h4>最新文章</h4>
         </div>
-        <div class="article-box new-article-wrap clearfix">
-            <?php $posts = query_posts($query_string . '&orderby=date&showposts=6'); ?>
+        <div class="article-wrap article-box new-article-wrap clearfix">
+            <?php $posts = query_posts($query_string . '&orderby=date&showposts=' . $xm_options['home_column']['home_article_num']); ?>
             <?php if(have_posts()) : while (have_posts()) : the_post(); ?>
             <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">
                 <a href="<?php the_permalink(); ?>" class="article-img"><?php the_post_thumbnail(); ?></a>
@@ -76,13 +76,13 @@
         </div>
     </div>
     <!-- 案例展示 -->
-    <div class="wrap clearfix">
+    <div class="wrap margin-top-20 clearfix">
         <div class="demo-title">
             <h2><?php echo $xm_options['home_column'][0]['cat_title']; ?></h2>
             <h4><?php echo $xm_options['home_column'][0]['cat_sub_title']; ?></h4>
             <a href="<?php bloginfo('home'); ?>/?cat=<?php echo $xm_options['home_column'][0]['cat_id']; ?>" class="more"><i></i>more</a>
         </div>
-        <div class="clearfix">
+        <div class="article-wrap clearfix">
             <?php
                 $args=array(
                     'cat' => intval($xm_options['home_column'][0]['cat_id']),   // 分类ID
@@ -129,13 +129,13 @@
         </div>
     </div>
     <!-- 我的笔记 -->
-    <div class="wrap clearfix">
+    <div class="wrap margin-top-20 clearfix">
         <div class="demo-title">
             <h2><?php echo $xm_options['home_column'][1]['cat_title']; ?></h2>
             <h4><?php echo $xm_options['home_column'][1]['cat_sub_title']; ?></h4>
             <a href="<?php bloginfo('home'); ?>/?cat=<?php echo $xm_options['home_column'][1]['cat_id']; ?>" class="more"><i></i>more</a>
         </div>
-        <div class="clearfix">
+        <div class="article-wrap clearfix">
             <?php
                 $args=array(
                     'cat' => intval($xm_options['home_column'][1]['cat_id']),   // 分类ID

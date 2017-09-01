@@ -15,7 +15,7 @@
         width: 100%;
     }
     .right-article article{
-        width: calc(100% / 3 - 35px);
+        margin-bottom: 20px;
         padding-bottom: 15px;
     }
     /*手机端轮播*/
@@ -24,7 +24,7 @@
         position: relative;
         overflow: hidden;
         width: 95%;
-        margin: 80px auto 0;
+        margin: 120px auto 0;
     }
     .mobile-banner .roll-banner li{
         float: left;
@@ -55,10 +55,16 @@
     .mobile-banner .plugin-banner-btn li.on{
         background: #0cf;
     }
+    .single article{
+        width: 100%;
+    }
 }
 @media (max-width:900px){
     .hide-header{
-        height: 50px;
+        height: 80px;
+    }
+    .wrap{
+        width: 98%;
     }
     div.head strong,
     .contact{
@@ -77,6 +83,7 @@
         transition: .7s;
     }
     nav .menu{
+        overflow-y: scroll;
         width: 90%;
         height: 100%;
         background: rgba(255, 255, 255, 0.9);
@@ -110,6 +117,9 @@
     form.search .search-box{
         width: 90%;
     }
+    .mobile-banner{
+        margin-top: 80px;
+    }
     .main div.wrap{
         margin-top: 0;
     }
@@ -117,14 +127,18 @@
         display: inline-block;
     }
     /*文章变成双栏*/
-    .main .mobile-article-lg,
-    section .mobile-article-lg{
-        width: calc(100% / 2 - 35px);
+    .main .article-wrap .mobile-article-lg,
+    section .right-article .mobile-article-lg{
+        width: 48%;
+        margin: 0 0 30px;
         padding-bottom: 15px;
+    }
+    .main .article-wrap .mobile-article-lg:nth-of-type(2n+1),
+    section .right-article .mobile-article-lg:nth-of-type(2n+1){
+        margin-right: 4%;
     }
     section .right{
         float: none;
-        width: 90%;
         margin: 0 auto;
     }
     .single-article{
@@ -152,9 +166,9 @@
         width: 100%;
     }
     /*文章变成一栏*/
-    .main .mobile-article-lg,
-    section .mobile-article-lg{
-        width: calc(100% / 1 - 35px);
+    .main .article-wrap .mobile-article-lg,
+    section .right-article .mobile-article-lg{
+        width: 100%;
         height: auto;
     }
     .main article div.con p,

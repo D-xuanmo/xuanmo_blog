@@ -115,6 +115,7 @@ div.first-screen i.icon-menu-up {
     background: #f1f1f1;
 }
 .main .demo-title {
+    margin-bottom: 20px;
     text-align: center;
 }
 .main .demo-title h2 {
@@ -151,14 +152,17 @@ div.first-screen i.icon-menu-up {
     position: relative;
     top: 0;
     left: 0;
-    width: calc(100% / 3 - 30px);
+    width: 31%;
     height: 400px;
-    margin: 30px 15px 0;
+    margin-bottom: 30px;
     padding-bottom: 20px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 3px 5px #ccc;
     transition: .7s;
+}
+.main article:nth-of-type(3n-1){
+    margin: 0 3% 30px;
 }
 .main article .article-img {
     display: block;

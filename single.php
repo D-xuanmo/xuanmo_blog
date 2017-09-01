@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section>
+<section class="single">
     <div class="wrap clearfix">
         <?php  while(have_posts()) : the_post(); ?>
         <?php setPostViews(get_the_ID());//记录阅读 ?>

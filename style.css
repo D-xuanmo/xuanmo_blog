@@ -133,6 +133,13 @@ a:hover {
     cursor: pointer;
 }
 
+.margin-top-20{
+    margin-top: 20px;
+}
+
+.margin-bottom-20{
+    margin-bottom: 20px;
+}
 
 /*颜色*/
 
@@ -689,9 +696,7 @@ div.icon-backtop {
     cursor: pointer;
 }
 
-
 /*article滚动显示*/
-
 .main article, .right article {
     opacity: 0;
     transform: translateY(-20px);

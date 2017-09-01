@@ -4,8 +4,8 @@
     $search_query =& new WP_Query("s=$s & showposts=-1");
 ?>
 <section class="main page">
-    <div class="wrap clearfix">
-        <p style="text-indent: 30px;">
+    <div class="wrap article-wrap clearfix">
+        <p class="margin-bottom-20" style="text-indent: 30px;">
             <?php
                 global $wp_query;
                 echo '与 <strong>' . $s . '</strong> 相关的文章共搜到 ' . $wp_query->found_posts . ' 篇文章';

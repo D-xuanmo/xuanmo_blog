@@ -380,6 +380,7 @@ function appthemes_add_quicktags() {
         for( var i = 0, length = aLanguage.length; i < length; i++ ) {
             QTags.addButton(aLanguage[i], aLanguage[i], '\n<pre class="line-numbers language-' + aLanguage[i] + '"><code class="language-' + aLanguage[i] + '">\n', '\n</code></pre>\n');
         }
+        QTags.addButton('c-code', 'c-code', '<span class="code">', '</span>');
     </script>
 <?php
 }

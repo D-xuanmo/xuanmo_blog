@@ -49,6 +49,12 @@
                             <input type="text" id="title" name="title" value="<?php echo $a_options['title']; ?>">
                         </div>
                     </div>
+                    <div class="row clearfix">
+                        <label class="fl left-wrap" for="home-article-num">首页最新文章篇数：</label>
+                        <div class="fr right-wrap">
+                            <input type="text" id="home-article-num" name="home-article-num" value="<?php echo empty($a_options['home_column']['home_article_num']) ? 6 : $a_options['home_column']['home_article_num']; ?>">
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="clearfix">
                             <label class="fl left-wrap">设置说明：</label>
@@ -66,13 +72,13 @@
                         <div class="clearfix">
                             <label class="fl left-wrap" for="cat-title-1">首页第二个栏目标题：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="cat-title-1" name="cat-title-1" value="<?php echo $a_options['home_column'][0]['cat_title']; ?>">
+                                <input type="text" id="cat-title-1" name="cat-title-1" value="<?php echo empty($a_options['home_column'][0]['cat_title']) ? 'Case show' : $a_options['home_column'][0]['cat_title'];?>">
                             </div>
                         </div>
                         <div class="clearfix">
                             <label class="fl left-wrap" for="cat-sub-title-1">首页第二个栏目副标题：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="cat-sub-title-1" name="cat-sub-title-1" value="<?php echo $a_options['home_column'][0]['cat_sub_title']; ?>">
+                                <input type="text" id="cat-sub-title-1" name="cat-sub-title-1" value="<?php echo empty($a_options['home_column'][0]['cat_sub_title']) ? '最新案例展示' : $a_options['home_column'][0]['cat_sub_title'];?>">
                             </div>
                         </div>
                     </div>
@@ -86,13 +92,13 @@
                         <div class="clearfix">
                             <label class="fl left-wrap" for="cat-title-2">首页第三个栏目标题：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="cat-title-2" name="cat-title-2" value="<?php echo $a_options['home_column'][1]['cat_title']; ?>">
+                                <input type="text" id="cat-title-2" name="cat-title-2" value="<?php echo empty($a_options['home_column'][1]['cat_title']) ? 'Note' : $a_options['home_column'][1]['cat_title'];?>">
                             </div>
                         </div>
                         <div class="clearfix">
                             <label class="fl left-wrap" for="cat-sub-title-2">首页第三个栏目副标题：</label>
                             <div class="fr right-wrap">
-                                <input type="text" id="cat-sub-title-2" name="cat-sub-title-2" value="<?php echo $a_options['home_column'][1]['cat_sub_title']; ?>">
+                                <input type="text" id="cat-sub-title-2" name="cat-sub-title-2" value="<?php echo empty($a_options['home_column'][1]['cat_sub_title']) ? '最新笔记' : $a_options['home_column'][1]['cat_sub_title'];?>">
                             </div>
                         </div>
                     </div>
@@ -335,6 +341,7 @@
             'wechat_img'        => $_POST['wechat-img'],
             'link'                    => $_POST['link'],
             'home_column'     => array(
+                'home_article_num'     => $_POST['home-article-num'],
                 array(
                     'cat_id'                  => $_POST['cat-id-1'],
                     'cat_title'                => $_POST['cat-title-1'],

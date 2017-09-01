@@ -76,11 +76,6 @@
     } else if(is_category() ) {
         echo '
             <link rel="stylesheet" href="' . $templateUrl . '/css/list.css">
-            <script>
-                $(function() {
-                    $(".mobile-article-lg:eq(0), .mobile-article-lg:eq(1), .mobile-article-lg:eq(2)").addClass("on");
-                });
-            </script>
         ';
     } else if(is_search() || is_author() || is_tag() || is_404()) {
         echo '
@@ -88,11 +83,6 @@
             <style>
                 header { background: rgba(40, 40, 40, 0.7); }
             </style>
-            <script>
-                $(function() {
-                    $(".mobile-article-lg:eq(0), .mobile-article-lg:eq(1), .mobile-article-lg:eq(2)").addClass("on");
-                });
-            </script>
         ';
     } else if(is_page()) {
         echo '
