@@ -22,9 +22,15 @@
                         <img src="<?php bloginfo('template_url'); ?>/images/qiniuyun.png" width="50" alt="" />
                         <span>七牛云</span>
                     </a>
-                    <a href="https://verify.nic.xin/xinDetail/xinAuthInfoDetail?domainName=xuanmo.xin" target="_blank">
-                        <img src="https://www.xuanmo.xin/images/xin.png" alt="" />
-                    </a>
+                    <?php
+                        if(strpos(home_url(), 'xuanmo.xin')) {
+                            echo '
+                                <a href="https://verify.nic.xin/xinDetail/xinAuthInfoDetail?domainName=xuanmo.xin" target="_blank">
+                                    <img src="https://www.xuanmo.xin/images/xin.png" alt="" />
+                                </a>
+                            ';
+                        }
+                    ?>
                 </div>
             </div>
             <div class="copyright-wrap clearfix">

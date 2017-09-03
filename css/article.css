@@ -125,8 +125,8 @@ article .tab-article .tab-left,
 article .tab-article .tab-right {
     margin-top: 10px;
 }
-article .tab-article .tab-righ    t {
-text-align: right;
+article .tab-article .tab-right {
+    text-align: right;
 }
 /*微信二维码生成*/
 #qrcode{

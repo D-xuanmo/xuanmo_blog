@@ -26,6 +26,15 @@
 				<input type="hidden" name="update_themeoptions" value="true" >
                 <!-- 内容一 基本 -->
                 <div class="content-wrap content1">
+                    <div class="row clearfix">
+                        <label class="fl left-wrap" for="aside-count">侧边栏统计功能：</label>
+                        <div class="fr right-wrap">
+                            <label for="aside-count-on">开</label>
+                            <input type="radio" id="aside-count-on" name="aside-count" value="on" <?php if($a_options['aside_count'] == 'on') echo 'checked'; ?>>
+                            <label for="aside-count-off">关</label>
+                            <input type="radio" id="aside-count-off" name="aside-count" value="off" <?php if($a_options['aside_count'] == 'off' || $a_options['aside_count'] == '') echo 'checked'; ?>>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="">窗口小图标：</label>
@@ -55,6 +64,49 @@
                             <input type="text" id="home-article-num" name="home-article-num" value="<?php echo empty($a_options['home_column']['home_article_num']) ? 6 : $a_options['home_column']['home_article_num']; ?>">
                         </div>
                     </div>
+                    <div class="row clearfix">
+                        <label class="fl left-wrap" for="cat-article-num">列表页文章显示篇数：</label>
+                        <div class="fr right-wrap">
+                            <input type="text" id="cat-article-num" name="cat-article-num" value="<?php echo empty($a_options['cat_article_num']) ? 9 : $a_options['cat_article_num']; ?>">
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <label class="fl left-wrap" for="page-article-num">作者、搜索结果、标签页显示篇数：</label>
+                        <div class="fr right-wrap">
+                            <input type="text" id="page-article-num" name="page-article-num" value="<?php echo empty($a_options['page_article_num']) ? 12 : $a_options['page_article_num']; ?>">
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <label for="footer-copyright" class="fl left-wrap">底部版权文字：</label>
+                        <div class="fr right-wrap">
+                            <textarea id="footer-copyright" name="footer-copyright" rows="5" cols="100"><?php echo $a_options['footer_copyright']; ?></textarea>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <label for="footer-txt" class="fl left-wrap">网站底部一句话：</label>
+                        <div class="fr right-wrap">
+                            <textarea id="footer-txt" name="footer-txt" rows="8" cols="100"><?php echo $a_options['footer_text'] ?></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- 内容二 SEO -->
+                <div class="content-wrap content2">
+                    <div class="row clearfix">
+                        <label for="keywords" class="fl left-wrap">首页关键词(keywords)：</label>
+                        <div class="fr right-wrap">
+                            <textarea id="keywords" name="keywords" rows="8" cols="100"><?php echo $a_options['keywords'] ?></textarea>
+                        </div>
+                    </div>
+                    <div class="row clearfix">
+                        <label for="description class="fl left-wrap"">首页描述(description)：</label>
+                        <div class="fr right-wrap">
+                            <textarea id="description" name="description" rows="8" cols="100"><?php echo $a_options['description'] ?></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!-- 内容三 首页 -->
+                <div class="content-wrap content3">
+                    <h3>首页栏目设置</h3>
                     <div class="row">
                         <div class="clearfix">
                             <label class="fl left-wrap">设置说明：</label>
@@ -102,37 +154,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row clearfix">
-                        <label for="footer-copyright" class="fl left-wrap">底部版权文字：</label>
-                        <div class="fr right-wrap">
-                            <textarea id="footer-copyright" name="footer-copyright" rows="5" cols="100"><?php echo $a_options['footer_copyright']; ?></textarea>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <label for="footer-txt" class="fl left-wrap">网站底部一句话：</label>
-                        <div class="fr right-wrap">
-                            <textarea id="footer-txt" name="footer-txt" rows="8" cols="100"><?php echo $a_options['footer_text'] ?></textarea>
-                        </div>
-                    </div>
-                </div>
-                <!-- 内容二 SEO -->
-                <div class="content-wrap content2">
-                    <div class="row clearfix">
-                        <label for="keywords" class="fl left-wrap">首页关键词(keywords)：</label>
-                        <div class="fr right-wrap">
-                            <textarea id="keywords" name="keywords" rows="8" cols="100"><?php echo $a_options['keywords'] ?></textarea>
-                        </div>
-                    </div>
-                    <div class="row clearfix">
-                        <label for="description class="fl left-wrap"">首页描述(description)：</label>
-                        <div class="fr right-wrap">
-                            <textarea id="description" name="description" rows="8" cols="100"><?php echo $a_options['description'] ?></textarea>
-                        </div>
-                    </div>
-                </div>
-                <!-- 内容三 首页 -->
-                <div class="content-wrap content3">
-                    <h3 class="">banner图片设置</h3>
+                    <h3>banner图片设置</h3>
                     <div class="row">
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="">banner图片设置：</label>
@@ -323,6 +345,7 @@
 	function themeoptions_update() {
 		// 数据提交
         $options = array(
+            'aside_count'       => $_POST['aside-count'],
             'title'                   => $_POST['title'],
             'favicon'              => $_POST['favicon-img'],
             'footer_copyright' => $_POST['footer-copyright'],
@@ -340,6 +363,8 @@
             'wechat_num'       => $_POST['wechat-num'],
             'wechat_img'        => $_POST['wechat-img'],
             'link'                    => $_POST['link'],
+            'cat_article_num'   => $_POST['cat-article-num'],
+            'page_article_num'   => $_POST['page-article-num'],
             'home_column'     => array(
                 'home_article_num'     => $_POST['home-article-num'],
                 array(

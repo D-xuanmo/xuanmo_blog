@@ -171,9 +171,8 @@ function wp_pagenavi() {
 }
 
 function custom_posts_per_page($query) {
-    if (is_home()) $query->set('posts_per_page', 5);
-    if (is_category()) $query->set('posts_per_page', 9);
-    if (is_author() || is_tag() || is_search()) $query->set('posts_per_page', 12);
+    if (is_category()) $query->set('posts_per_page', get_option('xm_options')['cat_article_num']);
+    if (is_author() || is_tag() || is_search()) $query->set('posts_per_page', get_option('xm_options')['page_article_num']);
 }
 add_action('pre_get_posts', 'custom_posts_per_page');
 

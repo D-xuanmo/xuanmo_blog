@@ -8,27 +8,29 @@ section .right {
     width: 73%;
     box-sizing: border-box;
 }
-section article {
-    box-sizing: border-box;
-}
-section article div.con {
-    padding: 5px;
-}
 .right article {
+    box-sizing: border-box;
     float: left;
     position: relative;
-    /*width: calc(100% / 3 - 20px);*/
     width: 32%;
     height: 400px;
     margin-bottom: 15px;
     border: 1px solid #efefef;
     border-radius: 5px;
+    background: #fff;
     transition: .7s;
 }
-.right article:nth-of-type(2),
-.right article:nth-of-type(5),
-.right article:nth-of-type(8){
+.right article:nth-of-type(3n-1){
     margin: 0 1.7% 15px;
+}
+.right article .con {
+    padding: 5px;
+}
+.right article .con .ar-title {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .right article i {
     position: absolute;

@@ -604,6 +604,11 @@ aside.tag-cloud a {
     color: #404040;
 }
 
+aside.count .count-list{
+    float: left;
+    width: 49%;
+}
+
 
 /*友情链接*/
 
