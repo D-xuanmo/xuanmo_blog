@@ -28,6 +28,7 @@
         ?>
     </ul>
 </aside>
+<!-- 近期评论 -->
 <aside>
   <ul class="aside-comment">
     <li class="aside-header">
@@ -36,6 +37,7 @@
     <?php get_recent_comments(); ?>
   </ul>
 </aside>
+<!-- 标签云 -->
 <aside class="tag-cloud">
     <div class="aside-conment">
         <div class="aside-header">
@@ -44,6 +46,7 @@
         <?php wp_tag_cloud('smallest=10&largest=20&number=20'); ?>
     </div>
 </aside>
+<!-- 网站统计 -->
 <?php if(get_option('xm_options')['aside_count'] == 'on') { ?>
 <aside class="count">
     <div class="aside-conment">
@@ -59,6 +62,12 @@
             </li>
             <li class="fl count-list">
                 分类：<?php echo $count_categories = wp_count_terms('category') . '个'; ?>
+            </li>
+            <li class="fr count-list">
+                标签：<?php echo $count_tags = wp_count_terms('post_tag') . '个'; ?>
+            </li>
+            <li class="fl count-list">
+                页面：<?php $count_pages = wp_count_posts('page'); echo $page_posts = $count_pages->publish . '个'; ?>
             </li>
             <li class="fr count-list">
                 最后更新：<?php $last = $wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')"); $last = date('Y-n-j', strtotime($last[0]->MAX_m)); echo $last; ?>

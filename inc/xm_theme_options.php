@@ -35,6 +35,19 @@
                             <input type="radio" id="aside-count-off" name="aside-count" value="off" <?php if($a_options['aside_count'] == 'off' || $a_options['aside_count'] == '') echo 'checked'; ?>>
                         </div>
                     </div>
+                    <div class="row clearfix">
+                        <label class="fl left-wrap" for="aside-count">评论区vip等级样式：</label>
+                        <div class="fr right-wrap">
+                            <label for="vip-style-1" class="vip-style" style="display: inline-block; width: 18px; height: 18px; background: url(<?php bloginfo('template_url'); ?>/images/vip.png) -35px -51px;"></label>
+                            <input type="radio" id="vip-style-1" name="vip-style" value="vip-style-1" <?php if($a_options['vip_style'] == 'vip-style-1' || $a_options['vip_style'] == '') echo 'checked'; ?>>
+
+                            <label for="vip-style-2" class="vip-style" style="display: inline-block; width: 15px; height: 15px; background: url(<?php bloginfo('template_url'); ?>/images/vip.png) -147px -70px;"></label>
+                            <input type="radio" id="vip-style-2" name="vip-style" value="vip-style-2" <?php if($a_options['vip_style'] == 'vip-style-2') echo 'checked'; ?>>
+
+                            <label for="vip-style-3" class="vip-style" style="display: inline-block; width: 42px; height: 15px; background: url(<?php bloginfo('template_url'); ?>/images/vip.png) -2px -2px;"></label>
+                            <input type="radio" id="vip-style-3" name="vip-style" value="vip-style-3" <?php if($a_options['vip_style'] == 'vip-style-3') echo 'checked'; ?>>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="margin-top-15 clearfix">
                             <label class="fl left-wrap" for="">窗口小图标：</label>
@@ -364,8 +377,9 @@
             'wechat_img'        => $_POST['wechat-img'],
             'link'                    => $_POST['link'],
             'cat_article_num'   => $_POST['cat-article-num'],
-            'page_article_num'   => $_POST['page-article-num'],
-            'home_column'     => array(
+            'page_article_num' => $_POST['page-article-num'],
+            'vip_style'             => $_POST['vip-style'],
+            'home_column'      => array(
                 'home_article_num'     => $_POST['home-article-num'],
                 array(
                     'cat_id'                  => $_POST['cat-id-1'],

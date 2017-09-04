@@ -374,7 +374,8 @@ img.wp-smiley, img.emoji{
     animation-duration: 1s;
 }
 .comments-area .comment-author .comment-author-url{
-    font-size: 18px;
+    vertical-align: super;
+    font-size: 20px;
     font-weight: 600;
 }
 .comments-area .comment-list .comment-body:hover .avatar{
@@ -423,41 +424,99 @@ img.wp-smiley, img.emoji{
 /*等级图标*/
 .comments-area .comment-list .icon-vip{
     display: inline-block;
-    width: 44px;
-    height: 15px;
-    margin-left: 8px;
     background-image: url(../images/vip.png);
-    background-position-Y: -2px;
     transition: .5s;
 }
-.comments-area .comment-list .icon-vip.vip1{
+/*vip图标样式1*/
+.comments-area .comment-list .vip-style-1{
+    width: 18px;
+    height: 18px;
+    background-position-Y: -51px;
+}
+.comments-area .comment-list .vip-style-1.vip1{
+    background-position-X: -35px;
+}
+.comments-area .comment-list .vip-style-1.vip2{
+    background-position-X: -68px;
+}
+.comments-area .comment-list .vip-style-1.vip3{
+    background-position-X: -104px;
+}
+.comments-area .comment-list .vip-style-1.vip4{
+    background-position-X: -138px;
+}
+.comments-area .comment-list .vip-style-1.vip5{
+    background-position-X: -172px;
+}
+.comments-area .comment-list .vip-style-1.vip6{
+    background-position-X: -206px;
+}
+.comments-area .comment-list .vip-style-1.vip7{
+    background-position-X: -241px;
+}
+/*vip图标样式2*/
+.comments-area .comment-list .vip-style-2{
+    width: 17px;
+    height: 17px;
+    background-position-X: -147px;
+}
+.comments-area .comment-list .vip-style-2.vip1{
+    background-position-Y: -70px;
+}
+.comments-area .comment-list .vip-style-2.vip2{
+    background-position-Y: -95px;
+}
+.comments-area .comment-list .vip-style-2.vip3{
+    background-position-Y: -120px;
+}
+.comments-area .comment-list .vip-style-2.vip4{
+    background-position-Y: -145px;
+}
+.comments-area .comment-list .vip-style-2.vip5{
+    background-position-Y: -170px;
+}
+.comments-area .comment-list .vip-style-2.vip6{
+    background-position-Y: -195px;
+}
+.comments-area .comment-list .vip-style-2.vip7{
+    background-position-Y: -220px;
+}
+/*vip图标样式3*/
+.comments-area .comment-list .vip-style-3{
+    width: 42px;
+    height: 18px;
+    background-position-X: -147px;
+}
+.comments-area .comment-list .vip-style-3.vip1{
     background-position-X: -2px;
 }
-.comments-area .comment-list .icon-vip.vip2{
+.comments-area .comment-list .vip-style-3.vip2{
     background-position-X: -64px;
 }
-.comments-area .comment-list .icon-vip.vip3{
+.comments-area .comment-list .vip-style-3.vip3{
     background-position-X: -145px;
 }
-.comments-area .comment-list .icon-vip.vip4{
+.comments-area .comment-list .vip-style-3.vip4{
     background-position-X: -228px;
 }
-.comments-area .comment-list .icon-vip.vip5{
+.comments-area .comment-list .vip-style-3.vip5{
     background-position-X: -332px;
 }
-.comments-area .comment-list .icon-vip.vip6{
+.comments-area .comment-list .vip-style-3.vip6{
     background-position-X: -442px;
 }
-.comments-area .comment-list .icon-vip.vip7{
+.comments-area .comment-list .vip-style-3.vip7{
     background-position-X: -612px;
 }
-.comments-area .comment-list .icon-vip.icon-admin{
-    width: 15px;
-    height: 15px;
-    background-position-X: -494px;
-}
-.comments-area .comment-list .icon-vip:hover{
+.comments-area .comment-list .vip-style-3:hover{
     background-position-Y: -23px;
+}
+/*博主*/
+.comments-area .comment-list .icon-vip.icon-admin{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background-position: -171px -70px;
 }
 /*验证码*/
 .canvas-img-code{
