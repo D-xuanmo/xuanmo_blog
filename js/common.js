@@ -4,8 +4,13 @@ $(function(){
 
     (function(){
         var $comment = $('#comments ol.comment-list li');
-        var $respond = $('#respond .comment-form-comment');
-        var arrImg = ['<img src="https://www.xuanmo.xin/bg1.jpg">', '<img src="https://www.xuanmo.xin/bg2.jpg">', '<img src="https://www.xuanmo.xin/bg3.jpg">', '<img src="https://www.xuanmo.xin/bg4.jpg">', '<img src="https://www.xuanmo.xin/bg5.jpg">'];
+        var arrImg = [
+          '<img src="https://www.xuanmo.xin/bg1.jpg">',
+          '<img src="https://www.xuanmo.xin/bg2.jpg">',
+          '<img src="https://www.xuanmo.xin/bg3.jpg">',
+          '<img src="https://www.xuanmo.xin/bg4.jpg">',
+          '<img src="https://www.xuanmo.xin/bg5.jpg">'
+        ];
         var random = 0;
         // 删除head里的style
         $('head style[media="screen"], head style[media="print"]').remove();
@@ -112,7 +117,6 @@ $(function(){
         var $scroll;
         var $backTop = $('div.icon-backtop');
         $window.on('scroll' , function(){
-            var $this = $(this);
             $scroll = $(this).scrollTop();
             if( $scroll > 300 ){
                 $header.addClass('on');
@@ -131,7 +135,6 @@ $(function(){
 
     // 放大图片预览
     (function(){
-        var $content = $('.content');
         var $img , i = 0;
         $('.content img').each(function(n){
             $(this).click(function(){
