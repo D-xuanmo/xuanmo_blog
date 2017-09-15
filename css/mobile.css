@@ -1,215 +1,207 @@
-@media (max-width:1100px){
-    .mobile-hide{
-        display: none !important;
-    }
-    header {
-        background: rgba(40, 40, 40, 0.6);
-    }
-    nav {
-        width: 70%;
-    }
-    .contact{
-        min-width: auto;
-    }
-    section .right{
-        width: 100%;
-    }
-    .right-article article{
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-    }
-    /*手机端轮播*/
-    .mobile-banner{
-        display: block;
-        position: relative;
-        overflow: hidden;
-        width: 95%;
-        margin: 120px auto 0;
-    }
-    .mobile-banner .roll-banner li{
-        float: left;
-        height: 100%;
-    }
-    .mobile-banner .roll-banner li img{
-        width: 100%;
-        height: 100%;
-    }
-    .mobile-banner .plugin-banner-btn{
-        position: absolute;
-        bottom: 10px;
-        left: 50%;
-        padding: 3px 5px;
-        background: rgba(222, 222, 222, 0.7);
-        border-radius: 15px;
-        line-height: 10px;
-    }
-    .mobile-banner .plugin-banner-btn li{
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        margin: 0 3px;
-        background: #fff;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    .mobile-banner .plugin-banner-btn li.on{
-        background: #0cf;
-    }
-    .single article{
-        width: 100%;
-    }
+@media (max-width:1100px) {
+  .mobile-hide {
+    display: none !important;
+  }
+  header {
+    background: rgba(40, 40, 40, 0.6);
+  }
+  nav {
+    width: 70%;
+  }
+  .contact {
+    min-width: auto;
+  }
+  section .right {
+    width: 100%;
+  }
+  .right-article article {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+  }
+  /*手机端轮播*/
+  .mobile-banner {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+    margin: 120px auto 0;
+  }
+  .mobile-banner .roll-banner li {
+    float: left;
+    height: 100%;
+  }
+  .mobile-banner .roll-banner li img {
+    width: 100%;
+    height: 100%;
+  }
+  .mobile-banner .plugin-banner-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    padding: 3px 5px;
+    background: rgba(222, 222, 222, 0.7);
+    border-radius: 15px;
+    line-height: 10px;
+  }
+  .mobile-banner .plugin-banner-btn li {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .mobile-banner .plugin-banner-btn li.on {
+    background: #0cf;
+  }
+  .single article {
+    width: 100%;
+  }
 }
-@media (max-width:900px){
-    .hide-header{
-        height: 80px;
-    }
-    .wrap{
-        width: 98%;
-    }
-    div.head strong,
-    .contact{
-        margin-top: 15px;
-        padding: 0;
-    }
-    nav{
-        position: fixed;
-        top: 0;
-        left: -100%;
-        z-index: 9999;
-        width: 100%;
-        height: 100%;
-        margin-top: 0;
-        background: rgba(255, 255, 255, 0.7);
-        transition: .7s;
-    }
-    nav .menu{
-        overflow-y: scroll;
-        width: 90%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.9);
-    }
-    nav ul.menu > li{
-        box-sizing: border-box;
-        width: 100%;
-        padding-top: 15px;
-        text-indent: 28px;
-    }
-    nav ul.menu > li a{
-        color: #333;
-    }
-    ul.menu > li ul.sub-menu{
-        display: none;
-        box-sizing: border-box;
-        position: static;
-        width: 100%;
-        margin: 0;
-        padding: 0 20px;
-        background: none !important;
-        transition: 0s;
-        transform: scale(1);
-    }
-    ul.menu > li ul.sub-menu li{
-        line-height: 40px;
-    }
-    nav .icon-menu-left{
-        display: block;
-    }
-    form.search .search-box{
-        width: 90%;
-    }
-    .mobile-banner{
-        margin-top: 80px;
-    }
-    .main div.wrap{
-        margin-top: 0;
-    }
-    .contact .pc-none{
-        display: inline-block;
-    }
-    /*文章变成双栏*/
-    .main .article-wrap .mobile-article-lg,
-    section .right-article .mobile-article-lg{
-        width: 48%;
-        margin: 0 0 30px;
-        padding-bottom: 15px;
-    }
-    .main .article-wrap .mobile-article-lg:nth-of-type(2n+1),
-    section .right-article .mobile-article-lg:nth-of-type(2n+1){
-        margin-right: 4%;
-    }
-    section .right{
-        float: none;
-        margin: 0 auto;
-    }
-    .single-article{
-        width: 100%;
-    }
-    div.footer-link a{
-        width: calc(100% / 4 - 12px);
-    }
-    footer .footer-left  h2{
-        border: none;
-    }
+
+@media (max-width:900px) {
+  .hide-header {
+    height: 80px;
+  }
+  .wrap {
+    width: 98%;
+  }
+  div.head strong, .contact {
+    margin-top: 15px;
+    padding: 0;
+  }
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.7);
+    transition: .7s;
+  }
+  nav .menu {
+    overflow-y: scroll;
+    width: 90%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+  }
+  nav ul.menu>li {
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 15px;
+    text-indent: 28px;
+  }
+  nav ul.menu>li a {
+    color: #333;
+  }
+  ul.menu>li ul.sub-menu {
+    display: none;
+    box-sizing: border-box;
+    position: static;
+    width: 100%;
+    margin: 0;
+    padding: 0 20px;
+    background: none !important;
+    transition: 0s;
+    transform: scale(1);
+  }
+  ul.menu>li ul.sub-menu li {
+    line-height: 40px;
+  }
+  nav .icon-menu-left {
+    display: block;
+  }
+  form.search .search-box {
+    width: 90%;
+  }
+  .mobile-banner {
+    margin-top: 80px;
+  }
+  .main div.wrap {
+    margin-top: 0;
+  }
+  .contact .pc-none {
+    display: inline-block;
+  }
+  /*文章变成双栏*/
+  .main .article-wrap .mobile-article-lg, section .right-article .mobile-article-lg {
+    width: 48%;
+    margin: 0 0 30px;
+    padding-bottom: 15px;
+  }
+  .main .article-wrap .mobile-article-lg:nth-of-type(2n+1), section .right-article .mobile-article-lg:nth-of-type(2n+1) {
+    margin-right: 4%;
+  }
+  section .right {
+    float: none;
+    margin: 0 auto;
+  }
+  .single-article {
+    width: 100%;
+  }
+  div.footer-link a {
+    width: calc(100% / 4 - 12px);
+  }
+  footer .footer-left h2 {
+    border: none;
+  }
 }
-@media (max-width:680px){
-    .contact .mobile-hide{
-        display: none;
-    }
-    .main article div.con{
-        padding: 10px;
-    }
-    .comment-respond form p label{
-        text-align: left;
-    }
-    .comment-respond form input[type="text"],
-    .comment-respond form input[type="submit"]{
-        width: 100%;
-    }
-    /*文章变成一栏*/
-    .main .article-wrap .mobile-article-lg,
-    section .right-article .mobile-article-lg{
-        width: 100%;
-        height: auto;
-    }
-    .main article div.con p,
-    .right article p{
-        height: auto;
-    }
-    .main article .article-img img,
-    .right article a img{
-    	width: 100%;
-        height: auto !important;
-    	max-width: 100%;
-    	border-radius: 10px 10px 0 0;
-    }
-    footer > div .introduce,
-    footer > div .link{
-        float: none;
-        width: 100%;
-        margin: 20px 0;
-    }
-    div.footer-link a{
-        width: calc(100% / 3 - 12px);
-    }
-    img.wp-smiley{
-        width: 25px !important;
-    }
-    footer .footer-left,
-    footer .footer-left h2,
-    footer .footer-left .introduce,
-    footer .footer-right{
-        float: none;
-        width: 100%;
-    }
-    footer .footer-right{
-        text-align: left;
-    }
+
+@media (max-width:680px) {
+  .contact .mobile-hide {
+    display: none;
+  }
+  .main article div.con {
+    padding: 10px;
+  }
+  .comment-respond form p label {
+    text-align: left;
+  }
+  .comment-respond form input[type="text"], .comment-respond form input[type="submit"] {
+    width: 100%;
+  }
+  /*文章变成一栏*/
+  .main .article-wrap .mobile-article-lg, section .right-article .mobile-article-lg {
+    width: 100%;
+    height: auto;
+  }
+  .main article div.con p, .right article p {
+    height: auto;
+  }
+  .main article .article-img img, .right article a img {
+    width: 100%;
+    height: auto !important;
+    max-width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+  footer>div .introduce, footer>div .link {
+    float: none;
+    width: 100%;
+    margin: 20px 0;
+  }
+  div.footer-link a {
+    width: calc(100% / 3 - 12px);
+  }
+  img.wp-smiley {
+    width: 25px !important;
+  }
+  footer .footer-left, footer .footer-left h2, footer .footer-left .introduce, footer .footer-right {
+    float: none;
+    width: 100%;
+  }
+  footer .footer-right {
+    text-align: left;
+  }
 }
-@media(max-width: 320px){
-    div.head{
-        max-width: 95%;
-    }
-    div.footer-link a{
-        display: none;
-    }
+
+@media(max-width: 320px) {
+  div.head {
+    max-width: 95%;
+  }
+  div.footer-link a {
+    display: none;
+  }
 }

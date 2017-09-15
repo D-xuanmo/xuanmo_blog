@@ -606,10 +606,11 @@ aside.tag-cloud a {
   color: #404040;
 }
 
-aside.count .count-list.fl{
+aside.count .count-list.fl {
   width: 40%;
 }
-aside.count .count-list.fr{
+
+aside.count .count-list.fr {
   width: 58%;
 }
 
