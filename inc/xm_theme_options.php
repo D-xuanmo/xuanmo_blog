@@ -73,6 +73,29 @@ function themeoptions_page() {
             >
           </div>
         </div>
+				<div class="row">
+          <div class="margin-top-15 clearfix">
+            <label class="fl left-wrap" for="">后台登录logo：</label>
+            <div class="fr right-wrap">
+              <input
+                type="text"
+                class="url-inp"
+                name="login-logo"
+                id="login-logo"
+                value="<?php echo $a_options['login_logo']; ?>"
+              >
+              <input type="button" name="img-upload" value="选择文件">
+            </div>
+          </div>
+          <div class="margin-top-15 clearfix">
+            <div class="fl left-wrap">
+              后台登录图标预览：
+            </div>
+            <div class="fr right-wrap">
+              <img src="<?php echo $a_options['login_logo']; ?>" class="preview-img" style="max-width: 100px;" alt="">
+            </div>
+          </div>
+        </div>
         <div class="row">
           <div class="margin-top-15 clearfix">
             <label class="fl left-wrap" for="">窗口小图标：</label>
@@ -92,7 +115,7 @@ function themeoptions_page() {
               窗口小图标预览：
             </div>
             <div class="fr right-wrap">
-              <img src="<?php echo $a_options['favicon']; ?>" class="preview-img" alt="">
+              <img src="<?php echo $a_options['favicon']; ?>" class="preview-img" style="max-width: 100px;" alt="">
             </div>
           </div>
         </div>
@@ -360,6 +383,12 @@ function themeoptions_page() {
       <!-- 内容五 自定义代码 -->
       <div class="content-wrap content5">
         <div class="row clearfix">
+          <label class="fl left-wrap" for="login-css">后台登录页面css：</label>
+          <div class="fr right-wrap">
+            <textarea id="login-css" name="login-css" rows="8" cols="100"><?php echo $a_options['login_css']; ?></textarea>
+          </div>
+        </div>
+        <div class="row clearfix">
           <label class="fl left-wrap" for="home-css">首页自定义css：</label>
           <div class="fr right-wrap">
             <textarea id="home-css" name="home-css" rows="8" cols="100"><?php echo $a_options['home_css']; ?></textarea>
@@ -389,11 +418,13 @@ function themeoptions_page() {
 	function themeoptions_update() {
 		// 数据提交
     $options = array(
+      'login_logo'          => $_POST['login-logo'],
       'aside_count'         => $_POST['aside-count'],
       'title'               => $_POST['title'],
       'favicon'             => $_POST['favicon-img'],
       'footer_copyright'    => $_POST['footer-copyright'],
       'footer_text'         => $_POST['footer-txt'],
+      'login_css'           => $_POST['login-css'],
       'home_css'            => $_POST['home-css'],
       'all_css'             => $_POST['all-css'],
       'footer_js'           => $_POST['footer-js'],

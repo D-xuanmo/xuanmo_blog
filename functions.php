@@ -649,4 +649,30 @@ function get_author_class($comment_author_email, $comment_author_url)
     }
   }
 }
+
+/*
+ ****************************************
+ * 自定义登录页面的LOGO链接为首页链接,LOGO提示为网站名称
+ ****************************************
+ */
+add_filter('login_headerurl', create_function(false,"return get_bloginfo('url');"));
+add_filter('login_headertitle', create_function(false,"return get_bloginfo('name');"));
+
+/*
+ ****************************************
+ * 自定义登录页面的LOGO图片
+ ****************************************
+ */
+function my_custom_login_logo() {
+  echo '
+    <style>
+    .login h1 a {
+      background-image:url("' . get_option('xm_options')['login_logo'] . '");
+      border-radius: 50%;
+    }
+    ' . get_option('xm_options')['login_css'] . '
+    </style>
+  ';
+}
+add_action('login_head', 'my_custom_login_logo');
 ?>
