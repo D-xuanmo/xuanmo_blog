@@ -100,7 +100,9 @@ function get_recent_comments()
     // $short_comment_content = trim(mb_substr($comment_content, 0, 10, "UTF-8"));
     $output .= '
       <li class="aside-com-img" class="clearfix"><a href="'
-      . get_permalink($comment->comment_post_ID) . '" title="查看 '
+      . get_permalink($comment->comment_post_ID) . '#'
+      . $comment->comment_ID
+      . '" title="查看 '
       . get_post($comment->comment_post_ID)->post_title . '">'
       . get_avatar($comment->comment_author_email, 50)
       . '<p><strong class="aside-com-author">' . $comment->comment_author
@@ -675,4 +677,44 @@ function my_custom_login_logo() {
   ';
 }
 add_action('login_head', 'my_custom_login_logo');
+
+/*
+ ****************************************
+ * 获取到的IP转换成实际地址
+ ****************************************
+ */
+require get_template_directory() . '/ip2c/ip2c.php';
+
+/*
+ ****************************************
+ * 判断是什么系统和浏览器留言
+ ****************************************
+ */
+function get_browser_name($str)
+{
+  if (strpos($str, 'Chrome')) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/chrome_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (strpos($str, 'Safari')) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/safari_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (strpos($str, 'Firefox')) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/firefox_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (strpos($str, 'Trident')) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/ie_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (strpos($str, 'Opera')) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/opera_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (strpos($str, 'Quark')) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/quark_logo.png" width="20" style="vertical-align: baseline;">';
+  }
+}
+
+function get_system_name($str)
+{
+  if (strpos($str, 'Windows')) {
+    echo '<img src="'. get_bloginfo('template_directory') .'/images/windows_logo.png" width="18" style="vertical-align: baseline;">';
+  } elseif (strpos($str, 'Mac')) {
+    echo '<img src="'. get_bloginfo('template_directory') .'/images/mac_logo.png" width="18" style="vertical-align: baseline;">';
+  } elseif (strpos($str, 'Android')) {
+    echo '<img src="'. get_bloginfo('template_directory') .'/images/android_logo.png" width="18" style="vertical-align: baseline;">';
+  }
+}
 ?>

@@ -435,10 +435,30 @@ img.wp-smiley, img.emoji {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.comments-area .comment-body:hover .reply {
+.comments-area .comment-body .comment-author-header {
+  height: 30px;
+}
+
+.comments-area .comment-btn {
+  display: none;
+}
+
+.comments-area .comment-btn a {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 2px 10px;
+  border-radius: 5px;
+  background: #22c5f1;
+  color: #fff;
+}
+
+.comments-area .comment-body:hover .comment-btn{
   display: block;
 }
 
+.comments-area .comment-body:hover .user-information {
+  display: inline;
+}
 
 /*评论作者*/
 
@@ -465,7 +485,6 @@ img.wp-smiley, img.emoji {
   transform-origin: center bottom;
 }
 
-
 /*评论内容*/
 
 .comments-area .comment_text img {
@@ -476,31 +495,6 @@ img.wp-smiley, img.emoji {
   padding: 20px 0;
   font-size: 18px;
 }
-
-
-/*回复按钮*/
-
-.comments-area .comment-list .reply {
-  display: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: center;
-}
-
-.comments-area .comment-list .reply a {
-  display: inline-block;
-  margin-left: 5px;
-  padding: 2px 10px;
-  border-radius: 5px;
-  background: #1fd0ff;
-  color: #fff;
-}
-
-.comments-area .comment-list .reply a:hover {
-  border-color: #27c5d5;
-}
-
 
 /*子回复*/
 

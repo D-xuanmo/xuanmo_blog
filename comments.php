@@ -11,33 +11,34 @@
       $GLOBALS['comment'] = $comment;
 	?>
     <li class="comment" id="li-comment-<?php comment_ID(); ?>">
+			<a href="javascript:;" name="<?php echo $comment->comment_ID ;?>"></a>
       <div class="comment-body">
         <div class="comment-author">
-	        <?php
-						if (function_exists('get_avatar') && get_option('show_avatars'))
-							echo get_avatar($comment, 80);
-							// 获取评论者的url
-							$comment_author_url
-								= ($comment->comment_author_url)
-								? $comment->comment_author_url
-								: 'javascript:;';
-					?>
-					<a href="<?php echo $comment_author_url; ?>" class="comment-author-url" target="_blank">
-						<?php echo $comment->comment_author; ?>
-					</a>
-	        <?php get_author_class($comment->comment_author_email, $comment->comment_author_url, $comment->user_id); ?>
-	        <div class="comment-meta commentmetadata">
-						发表于：<?php echo get_comment_time('Y-m-d H:i'); ?>
-					</div>
-        </div>
-        <div class="comment_content" id="comment-<?php comment_ID(); ?>">
-          <div class="comment_text">
-            <?php if ($comment->comment_approved == '0') : ?>
-                <span>您的评论正在审核，稍后会显示出来！</span><br />
-            <?php endif; ?>
-            <?php comment_text(); ?>
-            <div class="reply">
-	            <?php
+					<div class="comment-author-header clearfix">
+						<?php
+							if (function_exists('get_avatar') && get_option('show_avatars'))
+								echo get_avatar($comment, 80);
+								// 获取评论者的url
+								$comment_author_url
+									= ($comment->comment_author_url)
+									? $comment->comment_author_url
+									: 'javascript:;';
+						?>
+						<a href="<?php echo $comment_author_url; ?>" class="comment-author-url" target="_blank">
+							<?php echo $comment->comment_author; ?>
+						</a>
+		        <?php get_author_class($comment->comment_author_email, $comment->comment_author_url, $comment->user_id); ?>
+						<span class="hide user-information">
+							<?php get_system_name($comment->comment_agent); ?>
+						</span>
+						<span class="hide user-information">
+							<?php get_browser_name($comment->comment_agent); ?>
+						</span>
+						<span class="hide user-information">
+							<?php echo convertip(get_comment_author_IP()); ?>
+						</span>
+						<p class="fr comment-btn">
+							<?php
 								comment_reply_link(
 									array_merge(
 										$args,
@@ -49,8 +50,19 @@
 									)
 								);
 							?>
-	            <?php edit_comment_link('修改'); ?>
-            </div>
+							<?php edit_comment_link('修改'); ?>
+						</p>
+					</div>
+	        <div class="comment-meta commentmetadata">
+						发表于：<?php echo get_comment_time('Y-m-d H:i'); ?>
+					</div>
+        </div>
+        <div class="comment_content" id="comment-<?php comment_ID(); ?>">
+          <div class="comment_text">
+            <?php if ($comment->comment_approved == '0') : ?>
+                <span>您的评论正在审核，稍后会显示出来！</span><br />
+            <?php endif; ?>
+            <?php comment_text(); ?>
           </div>
         </div>
       </div>
