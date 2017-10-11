@@ -717,4 +717,18 @@ function get_system_name($str)
     echo '<img src="'. get_bloginfo('template_directory') .'/images/android_logo.png" width="18" style="vertical-align: baseline;">';
   }
 }
+
+/*
+ ****************************************
+ * 评论区@功能
+ ****************************************
+ */
+function comment_add_at( $comment_text, $comment = '') {
+  if( $comment->comment_parent > 0) {
+    $comment_text = '@<a href="#comment-' . $comment->comment_parent . '" style="color: #16C0F8;">'.get_comment_author( $comment->comment_parent ) . '</a> ' . $comment_text;
+  }
+
+  return $comment_text;
+}
+add_filter( 'comment_text' , 'comment_add_at', 20, 2);
 ?>
