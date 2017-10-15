@@ -312,4 +312,11 @@ $(function() {
       });
     });
   })();
+
+  (function () {
+    $('.new-article .cur').click(function () {
+      $(this).addClass('on').siblings().removeClass('on');
+      $('.list-article-title').eq($(this).index()).show().siblings().hide();
+    });
+  })();
 });

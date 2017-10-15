@@ -97,7 +97,6 @@ function get_recent_comments()
     //去除评论内容中的标签
     $comment_content = strip_tags($comment->comment_content);
     //评论可能很长,所以考虑截断评论内容,只显示10个字
-    // $short_comment_content = trim(mb_substr($comment_content, 0, 10, "UTF-8"));
     $output .= '
       <li class="aside-com-img" class="clearfix"><a href="'
       . get_permalink($comment->comment_post_ID) . '#'

@@ -1,7 +1,5 @@
 <?php
   get_header();
-  // 検索结果用
-  $search_query =& new WP_Query("s=$s & showposts=-1");
 ?>
 <section class="main page">
   <div class="wrap article-wrap clearfix">
