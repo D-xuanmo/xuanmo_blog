@@ -130,17 +130,26 @@ function ludou_comment_mail_notify($comment_id, $comment_status)
     // 邮件接收者email
     $to = trim($parent_comment->comment_author_email);
     // 邮件标题
-    $subject = '您在[' . get_option("blogname") . ']的留言有了新的回复';
+    $subject = '您在[' . get_option("blogname") . ']的留言有了新的回复!';
     // 邮件内容，自行修改，支持HTML
     $message = '
-    <p>Hi, ' . $parent_comment->comment_author . '</p>
-    <p>您之前在《' . get_the_title($comment->comment_post_ID) . '》的留言：<br />'
-      . $parent_comment->comment_content . '</p>
-    <p>' . $comment->comment_author . ' 给您回复:<br />'
-      . $comment->comment_content . '<br /><br /></p>
-    <p>您可以 <a href="' . htmlspecialchars(get_comment_link($comment->comment_parent)) . '">点此查看回复完整內容</a></p>
-    <p>欢迎再度光临 <a href="' . home_url() . '">' . get_option('blogname') . '</a></p>
-    <p>（此邮件由系统自动发送，请勿回复）</p>';
+      <div style="width:90%; margin:10px auto 0; border:1px solid #eee; border-radius:8px; font-size:12px; font-family:PingFangSC,Microsoft Yahei; color:#111;">
+        <div style="width:100%; height:60px; border-radius:6px 6px 0 0; background:#eee; color:#333;">
+          <p style="margin:0 0 0 30px; line-height:60px;"> 您在 <a style="text-decoration:none; color:#2ebef3; font-weight:600;" href="' . get_option('home') . '">' . get_option('blogname') . '  </a> 的留言有新回复啦！</p>
+        </div>
+        <div style="width:90%; margin:0 auto">
+          <p><strong>' . $parent_comment->comment_author . '</strong> 您好!</p>
+          <p>您在 [' . get_option('blogname') . '] 的文章<strong style="color:#2ebef3;">《' . get_the_title($comment->comment_post_ID) . '》</strong>上发表的评论有新回复啦，快来看看吧 ^_^:</p>
+          <p>这是你的评论:</p>
+          <p style="margin: 15px 0; padding: 20px; border-radius: 5px; background-color: #eee;">' . $parent_comment->comment_content . '</p>
+          <p><strong>' . trim($comment->comment_author) . '</strong> 给你的回复是:<br />
+          <p style="margin: 15px 0; padding: 20px; border-radius: 5px; background-color: #eee;">'. trim($comment->comment_content) . '</p>
+          <p>您也可移步到文章<a style="text-decoration:none; color:#2ebef3" href="' . htmlspecialchars(get_comment_link($comment->comment_parent)) . '"> 《'. get_the_title($comment->comment_post_ID) .'》 </a>查看完整回复内容</p>
+          <p style="padding-bottom: 10px; border-bottom: 1px dashed #ccc;">欢迎再次光临 <a style="text-decoration:none; color:#2ebef3" href="' . get_option('home') . '">' . get_option('blogname') . '</a></p>
+          <p>(此邮件由系统自动发出, 请勿回复。)</p>
+          <p style="text-align: right;">如果您想更深入的和博主交流的话，欢迎回复哦^-^</p>
+        </div>
+      </div>';
     $message_headers = "Content-Type: text/html; charset=\"" . get_option('blog_charset') . "\"\n";
     // 不用给不填email的评论者和管理员发提醒邮件
     if ($to != '' && $to != get_bloginfo('admin_email')) {

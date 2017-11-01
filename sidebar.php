@@ -49,13 +49,16 @@
             while( $query_posts->have_posts() ) {
               $query_posts->the_post();
           ?>
-            <li>
+            <li class="clearfix">
               <a
                 href="<?php the_permalink(); ?>"
                 title="<?php the_title_attribute(); ?>"
+                class="fl"
+                style="width: 74%"
               >
                 <?php the_title();?>
               </a>
+              <i class="fr iconfont icon-eye-open"><?php echo getPostViews(get_the_ID()); ?></i>
             </li>
             <?php } wp_reset_query();?>
         </ul>

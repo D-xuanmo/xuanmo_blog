@@ -553,6 +553,10 @@ aside ul li a {
   height: 100%;
 }
 
+aside ul li .iconfont {
+  color: #ccc;
+}
+
 aside ul .aside-com-img img {
   float: left;
   margin-right: 5px;
