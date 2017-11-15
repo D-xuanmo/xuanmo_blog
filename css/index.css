@@ -197,14 +197,15 @@ div.first-screen i.icon-menu-up {
 }
 
 .main article .article-img {
+  overflow: hidden;
   display: block;
   margin-bottom: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 .main article .article-img img {
-  width: 100%;
+  max-width: 100%;
   height: 200px;
-  border-radius: 10px 10px 0 0;
 }
 
 .main article:hover {

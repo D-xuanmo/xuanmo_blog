@@ -6,11 +6,11 @@ $(function() {
   (function() {
     var $comment = $('#comments ol.comment-list li');
     var arrImg = [
-      '<img src="https://www.xuanmo.xin/bg1.jpg">',
-      '<img src="https://www.xuanmo.xin/bg2.jpg">',
-      '<img src="https://www.xuanmo.xin/bg3.jpg">',
-      '<img src="https://www.xuanmo.xin/bg4.jpg">',
-      '<img src="https://www.xuanmo.xin/bg5.jpg">'
+      'https://www.xuanmo.xin/bg1.jpg',
+      'https://www.xuanmo.xin/bg2.jpg',
+      'https://www.xuanmo.xin/bg3.jpg',
+      'https://www.xuanmo.xin/bg4.jpg',
+      'https://www.xuanmo.xin/bg5.jpg'
     ];
     var random = 0;
     // 删除head里的style
@@ -20,8 +20,8 @@ $(function() {
     $('article .article-img').each(function() {
       random = Math.floor(Math.random() * arrImg.length);
       var $thisImg = $(this).children('img');
-      if ($thisImg.length == 0) {
-        $(this).append(arrImg[random]);
+      if ($thisImg.attr('src') == '') {
+        $thisImg.attr('src', arrImg[random]);
       } else if (Number($thisImg.attr('height')) < 150) {
         $thisImg.css({
           'height': $thisImg.attr('height'),
@@ -54,22 +54,33 @@ $(function() {
   })();
 
   // 滚动显示
-  (function() {
-    scrollAnimate($('.main article , .right article'));
-
-    function scrollAnimate(obj) {
-      var y;
-      obj.each(function() {
-        if ($window.scrollTop() > $(this).offset().top - $window.height() / 2) $(this).addClass('on');
+  scrollAnimate({
+    obj: $('.main article , .right article')
+  });
+  function scrollAnimate(options) {
+    var y = 0;
+    options.obj.each(function () {
+      var $this = $(this);
+      if ($(window).scrollTop() > $(this).offset().top - $(window).height() / 2 - $(this).height()) {
+        setTimeout(function () {
+          $this.addClass('on');
+        }, 0);
+      }
+    });
+    $(window).bind('scroll', function () {
+      y = $(this).scrollTop();
+      options.obj.each(function () {
+        if (y > $(this).offset().top - $(window).height() / 2 - $(this).height() / 2) {
+          $(this).addClass('on');
+          if (options.mode == 'transition') {
+            $(this).bind('webkitTransitionEnd transitionend', function () {
+              options.callback && options.callback($(this));
+            });
+          }
+        }
       });
-      $window.on('scroll', function() {
-        y = $(this).scrollTop();
-        obj.each(function() {
-          if (y > $(this).offset().top - $window.height() / 2) $(this).addClass('on');
-        });
-      });
-    }
-  })();
+    });
+  }
 
   // 手机端显示导航菜单
   (function() {

@@ -39,10 +39,10 @@
           <?php
             $post_num = 10; // 设置调用条数
             $args = array(
-            "meta_key" => "post_views_count",
-            "orderby" => "meta_value_num",
-            "order" => "DESC",
-            "posts_per_page" => $post_num
+              "meta_key" => "post_views_count",
+              "orderby" => "meta_value_num",
+              "order" => "DESC",
+              "posts_per_page" => $post_num
             );
             $query_posts = new WP_Query();
             $query_posts->query($args);

@@ -39,7 +39,9 @@
       <?php $posts = query_posts($query_string . '&orderby=date&showposts=' . $xm_options['home_column']['home_article_num']); ?>
       <?php if(have_posts()) : while (have_posts()) : the_post(); ?>
       <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">
-        <a href="<?php the_permalink(); ?>" class="article-img"><?php the_post_thumbnail(); ?></a>
+        <a href="<?php the_permalink(); ?>" class="article-img">
+          <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'Full' )[0]; ?>" class="black" alt="">
+        </a>
         <div class="con">
           <h2 class="article-title">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
@@ -98,9 +100,13 @@
         if(have_posts()) : while (have_posts()) : the_post();
       ?>
       <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">
-        <a href="<?php the_permalink(); ?>" class="article-img"><?php the_post_thumbnail(); ?></a>
+        <a href="<?php the_permalink(); ?>" class="article-img">
+          <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'Full' )[0]; ?>" class="black" alt="">
+        </a>
         <div class="con">
-          <h2 class="article-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+          <h2 class="article-title">
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+          </h2>
           <div class="time">
             <time class="ccc"><?php the_time('Y-m-d H:i'); ?></time>
             <!-- 评论数 -->
@@ -151,7 +157,9 @@
         if(have_posts()) : while (have_posts()) : the_post();
       ?>
       <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">
-        <a href="<?php the_permalink(); ?>" class="article-img"><?php the_post_thumbnail(); ?></a>
+        <a href="<?php the_permalink(); ?>" class="article-img">
+          <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'Full' )[0]; ?>" class="black" alt="">
+        </a>
         <div class="con">
           <h2 class="article-title">
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>

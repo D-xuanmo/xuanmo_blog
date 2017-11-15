@@ -13,7 +13,7 @@
           <i class="line-bottom"></i>
           <i class="line-left"></i>
           <a href="<?php the_permalink(); ?>" class="article-img">
-            <?php the_post_thumbnail(); ?>
+            <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'Full' )[0]; ?>" class="black" alt="">
           </a>
           <div class="con">
             <h2 class="font-size-16">
