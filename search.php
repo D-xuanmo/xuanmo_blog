@@ -11,7 +11,9 @@
     </p>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">
-      <a href="<?php the_permalink(); ?>" class="article-img"><?php the_post_thumbnail(); ?></a>
+      <a href="<?php the_permalink(); ?>" class="article-img">
+        <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'Full' )[0]; ?>" class="black" alt="">
+      </a>
       <div class="con">
         <h2 class="font-size-16 article-title">
           <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
