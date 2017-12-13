@@ -46,7 +46,7 @@
   <meta name="description" content="<?php echo $description; ?>" >
   <?php wp_head(); ?>
   <link rel="icon" href="<?php echo get_option('xm_options')['favicon']; ?>">
-  <link rel="stylesheet" href="https://www.xuanmo.xin/iconfont.css">
+  <link rel="stylesheet" href="https://upyun.xuanmo.xin/iconfont.css">
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
   <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.1.4.min.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>

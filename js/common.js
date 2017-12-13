@@ -6,11 +6,11 @@ $(function() {
   (function() {
     var $comment = $('#comments ol.comment-list li');
     var arrImg = [
-      'https://www.xuanmo.xin/bg1.jpg',
-      'https://www.xuanmo.xin/bg2.jpg',
-      'https://www.xuanmo.xin/bg3.jpg',
-      'https://www.xuanmo.xin/bg4.jpg',
-      'https://www.xuanmo.xin/bg5.jpg'
+      'https://upyun.xuanmo.xin/blog/bg1.jpg',
+      'https://upyun.xuanmo.xin/blog/bg2.jpg',
+      'https://upyun.xuanmo.xin/blog/bg3.jpg',
+      'https://upyun.xuanmo.xin/blog/bg4.jpg',
+      'https://upyun.xuanmo.xin/blog/bg5.jpg'
     ];
     var random = 0;
     // 删除head里的style

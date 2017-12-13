@@ -18,9 +18,8 @@
             <img src="<?php bloginfo('template_url'); ?>/images/aliyun.png" width="50" alt="" />
             <span>阿里云</span>
           </a>
-          <a href="https://portal.qiniu.com/signup?code=3lga7p37qtkcy">
-            <img src="<?php bloginfo('template_url'); ?>/images/qiniuyun.png" width="50" alt="" />
-            <span>七牛云</span>
+          <a href="https://console.upyun.com/register/?invite=BylFlCEWG">
+            <img src="https://upyun.xuanmo.xin/upyun.png" width="60" alt="" />
           </a>
           <?php
             if(strpos(home_url(), 'xuanmo.xin')) {
