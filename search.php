@@ -6,7 +6,7 @@
     <p class="margin-bottom-20" style="text-indent: 30px;">
       <?php
         global $wp_query;
-        echo '与 <strong>' . $s . '</strong> 相关的文章共搜到 ' . $wp_query->found_posts . ' 篇文章';
+        echo '与 "<strong style="color:#03A9F4;">' . $s . '</strong>" 相关的文章共搜到 ' . $wp_query->found_posts . ' 篇文章';
       ?>
     </p>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

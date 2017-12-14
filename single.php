@@ -15,9 +15,9 @@
         <span>发布于</span>
         <time><?php the_time('Y-m-d H:i'); ?></time>
         <span>分类:</span>
-        <a href="#"><?php foreach((get_the_category()) as $category) { echo $category->cat_name; } ?></a>
-        <span class="iconfont icon-comment1"><?php echo get_comments_number(); ?></span>
-        <span class="iconfont icon-eye-open"><?php echo getPostViews(get_the_ID()); ?></span>
+        <p class="inline-block"><?php foreach((get_the_category()) as $category) { echo $category->cat_name; } ?></p>
+        <span class="iconfont icon-comment1" style="font-size: 18px;"><?php echo get_comments_number(); ?></span>
+        <span class="iconfont icon-fire"><?php echo getPostViews(get_the_ID()); ?></span>
         <?php edit_post_link(); ?>
       </div>
       <div class="content">
@@ -31,7 +31,7 @@
           class="link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>"
         >
           <span class="hide blog-url"><?php bloginfo('url'); ?>/wp-admin/admin-ajax.php</span>
-          <i class="iconfont icon-thumbs-up2"></i>赞
+          <i class="iconfont icon-thumbs-up1" style="font-size: 18px;"></i> 赞
           <span class="count">
             <?php
               if( get_post_meta($post->ID, 'bigfa_ding', true) ){
@@ -91,7 +91,7 @@
         <p><?php echo get_option('xm_options')['author_des']; ?></p>
         <p class="share-btn">
           <a href="<?php bloginfo('home') ;?>">
-            <i class="iconfont icon-home2"></i>博客
+            <i class="iconfont icon-home4"></i>博客
           </a>
           <a href="<?php echo get_option('xm_options')['qq_url']; ?>" target="_blank">
             <i class="iconfont icon-qq"></i>QQ

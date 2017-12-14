@@ -62,7 +62,7 @@
         ul.menu > li ul.sub-menu{ background: rgba(210, 210, 210, 0.6); }
       </style>
       ' . $home_css . '
-      <script src="' . $templateUrl . '/js/jquery.seamlessBanner.min.js"></script>
+      <script src="//upyun.xuanmo.xin/js/jquery.seamlessBanner.min.js"></script>
       <script>
         $(function() {
           $(".roll-banner").seamlessBanner({
