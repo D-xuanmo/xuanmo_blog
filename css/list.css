@@ -81,7 +81,6 @@ section .right {
 
 .right article a {
   overflow: hidden;
-  display: block;
   border-radius: 5px 5px 0 0;
 }
 

@@ -14,16 +14,17 @@
         <div class="time">
           <time class="ccc"><?php the_time('Y-m-d H:i'); ?></time>
           <!-- 评论数 -->
-          <span class="iconfont icon-comment1 ccc"><?php echo get_comments_number(); ?></span>
+          <span class="iconfont icon-comment1 ccc"></span><?php echo get_comments_number(); ?>
           <!-- 阅读数 -->
-          <span class="iconfont icon-eye-open ccc"><?php echo getPostViews(get_the_ID()); ?></span>
+          <span class="iconfont icon-fire ccc"></span><?php echo getPostViews(get_the_ID()); ?>
           <!-- 点赞 -->
-          <span
+          <a
+            href="javascript:void(0);"
             data-action="ding"
             data-id="<?php the_ID(); ?>"
             class="cur ccc link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>"
           >
-            <span class="iconfont icon-thumbs-up2"></span>
+            <span class="iconfont icon-thumbs-up1"></span>
             <span class="hide blog-url"><?php bloginfo('url'); ?>/wp-admin/admin-ajax.php</span>
             <span class="count">
                 <?php
@@ -34,7 +35,7 @@
                     }
                 ?>
             </span>
-          </span>
+          </a>
         </div>
         <!-- 摘要 -->
         <p class="summary">
