@@ -466,10 +466,15 @@ img.wp-smiley, img.emoji {
 
 .comments-area .comment-author .avatar {
   float: left;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin-right: 15px;
   border-radius: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
 }

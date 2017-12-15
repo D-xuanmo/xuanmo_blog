@@ -92,17 +92,23 @@ function get_recent_comments()
   // 不显示pingback的type=comment,不显示自己的,user_id=0.(此两个参数可有可无)
   $comments = get_comments(array('number' => 10, 'status' => 'approve', 'type' => 'comment', 'user_id' => 0));
   $output = '';
+
   foreach ($comments as $comment) {
     $random = mt_rand(1, 10);
+    $color = '#' . mb_substr( md5(strtolower($comment->comment_author_email)), 0, 6 ,'UTF8');
+    $author = mb_substr( $comment->comment_author, 0, 1 ,'UTF8');
     //去除评论内容中的标签
     $comment_content = strip_tags($comment->comment_content);
+    $avatar_pic = get_option('xm_options')['text_pic'] == 'off'
+                ? get_avatar($comment->comment_author_email, 50)
+                : '<span class="avatar" style="background-color:' . $color . ';">' . $author . '</span>';
     $output .= '
       <li class="aside-com-img" class="clearfix"><a href="'
       . get_permalink($comment->comment_post_ID) . '#'
       . $comment->comment_ID
       . '" title="查看 '
       . get_post($comment->comment_post_ID)->post_title . '">'
-      . get_avatar($comment->comment_author_email, 50)
+      . $avatar_pic
       . '<p><strong class="aside-com-author">' . $comment->comment_author
       . ':</strong></p><p class="aside-com-content">'
       . $comment_content . '</p></a></li>

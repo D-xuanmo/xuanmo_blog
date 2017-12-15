@@ -6,6 +6,9 @@
     </div>
     <div class="fr right">
       <div class="right-article clearfix">
+        <div class="breadcrumbs">
+          <i class="iconfont icon-home2"></i><?php if (function_exists('dimox_breadcrumbs')) dimox_breadcrumbs(); ?>
+        </div>
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
         <article class="mobile-article-lg article-list">
           <i class="line-top"></i>

@@ -11,6 +11,16 @@ section .right {
   box-sizing: border-box;
 }
 
+.right .breadcrumbs{
+  margin-bottom: 20px;
+  padding: 0 0 5px 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.right .breadcrumbs .icon-home2{
+  font-size: 20px;
+}
+
 .right article {
   box-sizing: border-box;
   float: left;

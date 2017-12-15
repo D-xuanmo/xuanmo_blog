@@ -2,7 +2,7 @@
 <section class="main page">
   <div class="wrap article-wrap clearfix">
     <p class="margin-bottom-20" style="text-indent: 30px;">
-      <?php the_author(); ?>发布的文章：
+      <?php the_author(); ?> 发布的文章：
     </p>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">

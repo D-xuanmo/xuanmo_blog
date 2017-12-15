@@ -27,7 +27,7 @@ function themeoptions_page() {
       <!-- 内容一 基本 -->
       <div class="content-wrap content1">
         <div class="row clearfix">
-          <label class="fl left-wrap" for="aside-count">侧边栏统计功能：</label>
+          <label class="fl left-wrap">侧边栏统计功能：</label>
           <div class="fr right-wrap">
             <label for="aside-count-on">开</label>
             <input
@@ -45,8 +45,27 @@ function themeoptions_page() {
             >
           </div>
         </div>
+				<div class="row clearfix">
+          <label class="fl left-wrap">是否开启文字头像：</label>
+          <div class="fr right-wrap">
+            <label for="text-pic-on">开</label>
+            <input
+              type="radio"
+              id="text-pic-on"
+              name="text-pic"
+              value="on" <?php if($a_options['text_pic'] == 'on') echo 'checked'; ?>
+            >
+            <label for="text-pic-off">关</label>
+            <input
+              type="radio"
+              id="text-pic-off"
+              name="text-pic"
+              value="off" <?php if($a_options['text_pic'] == 'off' || $a_options['text_pic'] == '') echo 'checked'; ?>
+            >
+          </div>
+        </div>
         <div class="row clearfix">
-          <label class="fl left-wrap" for="aside-count">评论区vip等级样式：</label>
+          <label class="fl left-wrap">评论区vip等级样式：</label>
           <div class="fr right-wrap">
             <label for="vip-style-1" class="vip-style" style="display: inline-block; width: 18px; height: 18px; background: url(<?php bloginfo('template_url'); ?>/images/vip.png) -35px -51px;"></label>
             <input
@@ -420,6 +439,7 @@ function themeoptions_page() {
     $options = array(
       'login_logo'          => $_POST['login-logo'],
       'aside_count'         => $_POST['aside-count'],
+      'text_pic'            => $_POST['text-pic'],
       'title'               => $_POST['title'],
       'favicon'             => $_POST['favicon-img'],
       'footer_copyright'    => $_POST['footer-copyright'],

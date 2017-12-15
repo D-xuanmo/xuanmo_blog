@@ -557,9 +557,17 @@ aside ul li .iconfont {
   color: #ccc;
 }
 
-aside ul .aside-com-img img {
+aside ul .aside-com-img .avatar {
   float: left;
+  width: 50px;
+  height: 50px;
   margin-right: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
   transition: .5s;
 }
 
@@ -577,7 +585,7 @@ aside .aside-com-img .aside-com-author {
   line-height: 30px;
 }
 
-aside ul .aside-com-img:hover img {
+aside ul .aside-com-img:hover .avatar {
   border-radius: 10px;
   transform: rotate(360deg);
 }

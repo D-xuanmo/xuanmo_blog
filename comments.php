@@ -16,13 +16,23 @@
         <div class="comment-author">
 					<div class="comment-author-header clearfix">
 						<?php
-							if (function_exists('get_avatar') && get_option('show_avatars'))
+							// 设置头像
+							if (get_option('xm_options')['text_pic'] == 'off') {
 								echo get_avatar($comment, 80);
-								// 获取评论者的url
-								$comment_author_url
-									= ($comment->comment_author_url)
-									? $comment->comment_author_url
-									: 'javascript:;';
+							} else {
+								if ($comment->comment_author_email == get_bloginfo('admin_email')) {
+									echo get_avatar($comment, 80);
+								} else {
+									$color = '#' . mb_substr( md5(strtolower($comment->comment_author_email)), 0, 6 ,'UTF8');
+			            $author = mb_substr( $comment->comment_author, 0, 1 ,'UTF8');
+			            echo '<span class="avatar" style="background-color:' . $color . ';">' . $author . '</span>';
+								}
+							}
+							// 获取评论者的url
+							$comment_author_url
+								= ($comment->comment_author_url)
+								? $comment->comment_author_url
+								: 'javascript:;';
 						?>
 						<a href="<?php echo $comment_author_url; ?>" class="comment-author-url" target="_blank">
 							<?php echo $comment->comment_author; ?>
