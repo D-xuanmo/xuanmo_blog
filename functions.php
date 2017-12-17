@@ -576,8 +576,10 @@ function add_my_tips()
       <div class="fl first-img comment-icon">
         <i class="iconfont icon-grin"></i>表情
       </div>
-      <div class="fl comment-icon comment-pic-btn">
+      <div class="fl comment-icon comment-pic-btn upload-img">
+        <span class="hide path">'. get_bloginfo('template_directory') .'</span>
         <i class="iconfont icon-picture2"></i>贴图
+        <input type="file" id="comments-upload-img" class="" name="file" accept="image/png,image/gif,image/jpeg">
       </div>
       <div class="fl comment-icon comment-code-btn-wrap">
         <i class="iconfont icon-code"></i>代码
@@ -595,6 +597,7 @@ function add_my_tips()
         <span>表情加载中...</span>
       </div>
     </div>
+    <script src="https://upyun.xuanmo.xin/js/ajax.js"></script>
   ';
 }
 add_filter('comment_form_before_fields', 'add_my_tips');
@@ -744,4 +747,82 @@ function comment_add_at( $comment_text, $comment = '') {
   return $comment_text;
 }
 add_filter( 'comment_text' , 'comment_add_at', 20, 2);
+
+/*
+ ****************************************
+ * 解决4.9页面模板不能正常使用
+ ****************************************
+ */
+function wp_42573_fix_template_caching( WP_Screen $current_screen ) {
+	// Only flush the file cache with each request to post list table, edit post screen, or theme editor.
+	if ( ! in_array( $current_screen->base, array( 'post', 'edit', 'theme-editor' ), true ) ) {
+		return;
+	}
+	$theme = wp_get_theme();
+	if ( ! $theme ) {
+		return;
+	}
+	$cache_hash = md5( $theme->get_theme_root() . '/' . $theme->get_stylesheet() );
+	$label = sanitize_key( 'files_' . $cache_hash . '-' . $theme->get( 'Version' ) );
+	$transient_key = substr( $label, 0, 29 ) . md5( $label );
+	delete_transient( $transient_key );
+}
+add_action( 'current_screen', 'wp_42573_fix_template_caching' );
+
+/*
+ ****************************************
+ * 获取自定义字段
+ ****************************************
+ */
+function create_api_posts_meta_field() {
+  // 获取自定义字段
+  register_rest_field( 'post', 'post_meta_field', array(
+      'get_callback'    => 'get_post_meta_for_api',
+      'schema'          => null,
+    )
+  );
+
+  // 获取文章评论数
+  register_rest_field( 'post', 'comments_views', array(
+      'get_callback'    => 'post_comments_views',
+      'schema'          => null,
+    )
+  );
+
+  // 获取摘要
+  register_rest_field( 'post', 'summary', array(
+      'get_callback'    => 'get_summary',
+      'schema'          => null,
+    )
+  );
+
+  // 获取总文章
+  register_rest_field( 'post', 'total_article', array(
+      'get_callback'    => 'get_total_article',
+      'schema'          => null,
+    )
+  );
+}
+
+function get_post_meta_for_api( $object ) {
+  $post_id = $object['id'];
+  return get_post_meta( $post_id );
+}
+
+function post_comments_views() {
+  return get_comments_number();
+}
+
+function get_summary() {
+  return get_post_excerpt('', 160, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>');
+}
+
+function get_total_article() {
+  $count_posts = wp_count_posts()->publish;
+  return
+    $count_posts / 3 > 3
+    ? intval($count_posts / 3 + 1)
+    : intval($count_posts / 3);
+}
+add_action( 'rest_api_init', 'create_api_posts_meta_field' );
 ?>

@@ -134,7 +134,7 @@ div.first-screen i.icon-menu-up {
 .main {
   box-sizing: border-box;
   width: 100%;
-  padding: 20px 10px 60px;
+  padding: 20px 10px 0;
   background: #f1f1f1;
 }
 
@@ -236,4 +236,19 @@ div.first-screen i.icon-menu-up {
 .main article .article-content {
   text-indent: 16px;
   color: #999;
+}
+
+.main .more-btn{
+  margin: 20px auto;
+  text-align: center;
+}
+
+.main .more-btn .text{
+  width: 150px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  background: #5fcfed;
+  color: #fff;
+  cursor: pointer;
 }
