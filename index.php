@@ -29,6 +29,16 @@
 </div>
 <!-- 首屏 end -->
 <section class="main home">
+  <?php
+    /* 获取所有置顶文章 */
+    $sticky = get_option( 'sticky_posts' );
+    if (count($sticky) > 0) {
+    /* 对这些文章排序, 日期最新的在最上 */
+    rsort( $sticky );
+    $sticky = array_slice( $sticky, 0, 6 );
+    /* 输出这些文章 */
+    query_posts( array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1 ) );
+  ?>
   <!-- 置顶文章 -->
   <div class="wrap clearfix">
     <div class="demo-title">
@@ -36,16 +46,7 @@
       <h4>置顶文章</h4>
     </div>
     <div class="article-wrap article-box new-article-wrap clearfix">
-      <?php
-        /* 获取所有置顶文章 */
-        $sticky = get_option( 'sticky_posts' );
-        /* 对这些文章排序, 日期最新的在最上 */
-        rsort( $sticky ); /* 获取5篇文章 */
-        $sticky = array_slice( $sticky, 0, 5 );
-        /* 输出这些文章 */
-        query_posts( array( 'post__in' => $sticky, 'ignore_sticky_posts' => 1 ) );
-        while ( have_posts() ) : the_post();
-      ?>
+      <?php while ( have_posts() ) : the_post(); ?>
       <article id="post-<?php the_ID(); ?>" class="mobile-article-lg">
         <a href="<?php the_permalink(); ?>" class="article-img">
           <img src="<?php echo wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'Full' )[0]; ?>" class="black" alt="">
@@ -89,6 +90,7 @@
       <?php
         endwhile;
         wp_reset_query();
+      }
       ?>
     </div>
 

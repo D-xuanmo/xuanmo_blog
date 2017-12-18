@@ -63,7 +63,7 @@
             _embed: true
           },
           success: function(res) {
-            if (n == res[0].total_article) $moreBtn.unbind('click').text('--我是有底线的--');
+            if (n == res[0].total_article) $moreBtn.unbind('click').text('我是有底线的 ^_^');
             $moreBtn.show().siblings().hide();
             var sResult = '';
             var aCookie = document.cookie.split(';');
