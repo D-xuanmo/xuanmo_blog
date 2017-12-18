@@ -820,9 +820,20 @@ function get_summary() {
 function get_total_article() {
   $count_posts = wp_count_posts()->publish;
   return
-    $count_posts / 3 > 3
+    $count_posts / 3 > intval($count_posts / 3)
     ? intval($count_posts / 3 + 1)
     : intval($count_posts / 3);
 }
 add_action( 'rest_api_init', 'create_api_posts_meta_field' );
+
+/*
+ ****************************************
+ * 非管理员上传图片
+ ****************************************
+ */
+function comments_embed_img($comment) {
+  $comment = preg_replace('/\[img\]((http|https):\/\/\S*)\[\/img\]/','<img src="$1" />', $comment);
+  return $comment;
+}
+add_action('comment_text', 'comments_embed_img');
 ?>

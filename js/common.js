@@ -305,26 +305,27 @@ $(function() {
     });
 
     // 添加图片
-      var data = new FormData();
-      $('#comments-upload-img').change(function() {
-        var path = $(this).siblings('.path').text();
-        if ($(this).get(0).files[0].size / 1024 > 1024) {
-          alert('请上传小于1024Kb的图片！');
-        } else {
-          data.append('file', $(this).get(0).files[0]);
-          ajax({
-            url: path + '/xm_upload.php',
-            type: 'POST',
-            dataType: 'json',
-            data: data,
-            success: function(res) {
-              $('#comment').val(function() {
-                return $(this).val() + '<img src="' + path + '/images/comments/' + res.name + '">';
-              });
-            }
-          });
-        }
-      });
+    var data = new FormData();
+    $('#comments-upload-img').change(function() {
+      var path = $(this).siblings('.path').text();
+      if ($(this).get(0).files[0].size / 1024 > 1024) {
+        alert('请上传小于1024Kb的图片！');
+      } else {
+        data.append('file', $(this).get(0).files[0]);
+        ajax({
+          url: path + '/xm_upload.php',
+          type: 'POST',
+          dataType: 'json',
+          data: data,
+          success: function(res) {
+            $('#comment').val(function() {
+              return $(this).val() + '[img]' + path + '/images/comments/' + res.name + '[/img]';
+            });
+          }
+        });
+      }
+    });
+    
     // 显示代码按钮
     $('.comment-code-btn-wrap').click(function() {
       $(this).children('p').slideToggle();

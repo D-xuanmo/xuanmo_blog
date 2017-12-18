@@ -37,15 +37,13 @@
         </ul>
         <ul class="list-article-title hide">
           <?php
-            $post_num = 10; // 设置调用条数
             $args = array(
               "meta_key" => "post_views_count",
               "orderby" => "meta_value_num",
               "order" => "DESC",
-              "posts_per_page" => $post_num
+              "posts_per_page" => 10
             );
-            $query_posts = new WP_Query();
-            $query_posts->query($args);
+            $query_posts = new WP_Query($args);
             while( $query_posts->have_posts() ) {
               $query_posts->the_post();
           ?>

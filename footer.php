@@ -79,7 +79,29 @@
     });
   </script>
   <?php
-    }
+  } else if (is_single()) {
+  ?>
+  <script>
+    $(function() {
+      // 文章二维码
+      var $qrcode = $('#qrcode');
+      var oQRCode = new QRCode(document.getElementById('qrcode') , {
+        'width' : 150,
+        'height' : 150
+      });
+      oQRCode.makeCode( $('#article-link').text() );
+      $('#qrcode img').after($('#qrcode i'));
+      $('.wechat').click(function(){
+        $qrcode.css('display','block');
+      });
+      $('#qrcode .icon-close1').click(function(e){
+        e.stopPropagation();
+        $qrcode.css('display','none');
+      });
+    });
+  </script>
+  <?php
+  }
     $js_code = get_option('xm_options')['footer_js'];
     if (!empty($js_code)) echo '<script>' . $js_code . '</script>';
   ?>
