@@ -168,6 +168,10 @@
     width: 100%;
     height: auto;
   }
+  .main .article-wrap .mobile-article-lg:first-of-type, section .right-article .mobile-article-lg:first-of-type{
+    opacity: 1;
+    transform: translateY(0);
+  }
   .main article div.con p, .right article p {
     height: auto;
   }

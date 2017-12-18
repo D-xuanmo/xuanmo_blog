@@ -192,54 +192,6 @@ function themeoptions_page() {
       </div>
       <!-- 内容三 首页 -->
       <div class="content-wrap content3">
-        <h3>首页栏目设置</h3>
-        <div class="row">
-          <div class="clearfix">
-            <label class="fl left-wrap">设置说明：</label>
-            <div class="fr right-wrap">
-              <img src="<?php bloginfo('template_url'); ?>/images/home_set.png" alt="">
-              <p>ID是分类目录的<span class="highlighted">tag_ID</span>号，在<span class="highlighted">文章 -> 分类目录</span>这个菜单下，这里面的分类目录链接会有这个参数</p>
-            </div>
-          </div>
-          <div class="clearfix">
-            <label class="fl left-wrap" for="cat-id-1">首页第二个栏目分类ID：</label>
-            <div class="fr right-wrap">
-              <input type="text" id="cat-id-1" name="cat-id-1" value="<?php echo $a_options['home_column'][0]['cat_id']; ?>">
-            </div>
-          </div>
-          <div class="clearfix">
-            <label class="fl left-wrap" for="cat-title-1">首页第二个栏目标题：</label>
-            <div class="fr right-wrap">
-              <input type="text" id="cat-title-1" name="cat-title-1" value="<?php echo empty($a_options['home_column'][0]['cat_title']) ? 'Case show' : $a_options['home_column'][0]['cat_title'];?>">
-            </div>
-          </div>
-          <div class="clearfix">
-            <label class="fl left-wrap" for="cat-sub-title-1">首页第二个栏目副标题：</label>
-            <div class="fr right-wrap">
-              <input type="text" id="cat-sub-title-1" name="cat-sub-title-1" value="<?php echo empty($a_options['home_column'][0]['cat_sub_title']) ? '最新案例展示' : $a_options['home_column'][0]['cat_sub_title'];?>">
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="clearfix">
-            <label class="fl left-wrap" for="cat-id-2">首页第三个栏目分类ID：</label>
-            <div class="fr right-wrap">
-              <input type="text" id="cat-id-2" name="cat-id-2" value="<?php echo $a_options['home_column'][1]['cat_id']; ?>">
-            </div>
-          </div>
-          <div class="clearfix">
-            <label class="fl left-wrap" for="cat-title-2">首页第三个栏目标题：</label>
-            <div class="fr right-wrap">
-              <input type="text" id="cat-title-2" name="cat-title-2" value="<?php echo empty($a_options['home_column'][1]['cat_title']) ? 'Note' : $a_options['home_column'][1]['cat_title'];?>">
-            </div>
-          </div>
-          <div class="clearfix">
-            <label class="fl left-wrap" for="cat-sub-title-2">首页第三个栏目副标题：</label>
-            <div class="fr right-wrap">
-              <input type="text" id="cat-sub-title-2" name="cat-sub-title-2" value="<?php echo empty($a_options['home_column'][1]['cat_sub_title']) ? '最新笔记' : $a_options['home_column'][1]['cat_sub_title'];?>">
-            </div>
-          </div>
-        </div>
         <h3>banner图片设置</h3>
         <div class="row">
           <div class="margin-top-15 clearfix">
