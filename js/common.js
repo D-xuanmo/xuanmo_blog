@@ -37,19 +37,24 @@ $(function() {
   // 搜索框动画
   (function() {
     var bMark = true;
-    $('.search-txt').blur(function(e) {
+    $('.search-txt')
+      .click(function(e) {
+        e.stopPropagation();
+      })
+      .blur(function(e) {
+        e.stopPropagation();
+        $(this).val('');
+        $header.css('top', '-120px');
+        bMark = true;
+      });
+    $('.contact .icon-search').click(function(e) {
       e.stopPropagation();
-      $(this).val('');
-      $header.css('top', '-120px');
-      bMark = !bMark;
-    });
-    $('.contact .icon-search').click(function() {
       bMark ? $header.css('top', '0') : $header.css('top', '-120px');
       bMark = !bMark;
     });
-    $('form .icon-close1').click(function() {
+    $('form .icon-close1, body').click(function() {
       $header.css('top', '-120px');
-      bMark = !bMark;
+      bMark = true;
     });
   })();
 
@@ -132,12 +137,12 @@ $(function() {
     var $backTop = $('div.icon-backtop');
     $window.on('scroll', function() {
       $scroll = $(this).scrollTop();
-      if ($scroll > 300) {
-        $header.addClass('on');
+      if ($scroll > 100) {
+        // $header.addClass('on');
         $('ul.sub-menu', $header).addClass('bg282828');
         $backTop.css('right', '30px');
       } else if ($scroll < 300) {
-        $header.removeClass('on');
+        // $header.removeClass('on');
         $('ul.sub-menu', $header).removeClass('bg282828');
         $backTop.css('right', '-50px');
       }
@@ -146,6 +151,13 @@ $(function() {
       $('html,body').animate({
         scrollTop: 0
       }, 800);
+    });
+    $(window).bind('onmousewheel mousewheel DOMMouseScroll', function(e) {
+      // 判断滚动的方向
+      var differ = e.originalEvent.detail
+                  ? ( e.originalEvent.detail > 0 ? 1 : 0 )
+                  : ( e.originalEvent.wheelDelta > 0 ? 0 : 1 );
+      differ ? $header.removeClass('on') : $header.addClass('on');
     });
   })();
 
@@ -325,7 +337,7 @@ $(function() {
         });
       }
     });
-    
+
     // 显示代码按钮
     $('.comment-code-btn-wrap').click(function() {
       $(this).children('p').slideToggle();

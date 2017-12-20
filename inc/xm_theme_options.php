@@ -7,9 +7,9 @@ if ( $_POST['update_themeoptions'] == 'true' ) { themeoptions_update(); }
 function themeoptions_page() {
   // 获取提交的数据
   $a_options = get_option('xm_options');
-  // //加载上传图片的js(wp自带)
+  //加载上传图片的js(wp自带)
   wp_enqueue_script('thickbox');
-  // //加载css(wp自带)
+  //加载css(wp自带)
   wp_enqueue_style('thickbox');
 ?>
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/inc/css/set.css">

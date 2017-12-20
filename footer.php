@@ -46,6 +46,14 @@
   ?>
   <script>
     $(function() {
+      // 移动端轮播
+      $(".roll-banner").seamlessBanner({
+        autoBanner: false,
+        bannerBtnWrap: $(".plugin-banner-btn"),
+        transition: 700
+      });
+
+      // 滚动加载
       var nPage = 1,
           $moreBtn = $('.more-btn .text');
       getMoreArticle(nPage);
@@ -98,6 +106,23 @@
         e.stopPropagation();
         $qrcode.css('display','none');
       });
+
+      ajaxComments();
+      function ajaxComments() {
+        var sLoadingUrl = '<?php bloginfo('template_url'); ?>/images/loading.svg';
+        $('.comment-page-btn a').click(function() {
+          $('.comment-list').addClass('on');
+          $.ajax({
+            url: $(this).attr('href'),
+            success: function(res) {
+              $('.comment-list').removeClass('on').html($(res).find('.comment-list').html());
+              $('.comment-page-btn').html($(res).find('.comment-page-btn').html());
+              ajaxComments();
+            }
+          });
+          return false;
+        });
+      }
     });
   </script>
   <?php

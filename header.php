@@ -60,18 +60,10 @@
       <style>
         .hide-header{ display: none; }
         ul.menu > li ul.sub-menu{ background: rgba(210, 210, 210, 0.6); }
+        .time .iconfont{ margin: 0 2px 0 5px; }
       </style>
       ' . $home_css . '
       <script src="//upyun.xuanmo.xin/js/jquery.seamlessBanner.min.js"></script>
-      <script>
-        $(function() {
-          $(".roll-banner").seamlessBanner({
-            autoBanner: false,
-            bannerBtnWrap: $(".plugin-banner-btn"),
-            transition: 700
-          });
-        });
-      </script>
     ';
   } else if(is_category() ) {
     echo '
