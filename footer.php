@@ -23,13 +23,13 @@
             <img src="https://upyun.xuanmo.xin/upyun.png" width="60" alt="" />
           </a>
           <?php
-            if(strpos(home_url(), 'xuanmo.xin')) {
+            // if(strpos(home_url(), 'xuanmo.xin')) {
               echo '
                 <a href="https://verify.nic.xin/xinDetail/xinAuthInfoDetail?domainName=xuanmo.xin" target="_blank">
                   <img src="https://www.xuanmo.xin/images/xin.png" alt="" />
                 </a>
               ';
-            }
+            // }
           ?>
         </div>
       </div>

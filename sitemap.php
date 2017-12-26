@@ -59,10 +59,8 @@ Template Name: 站点地图
     查看博客首页: <strong><a href="<?php bloginfo('url'); ?>/"><?php bloginfo('name'); ?></a></strong>
   </div>
   <center>
-    <div style="font-size: 12px; text-algin: center;">
-      <strong>
-        <a href="http://www.dedewp.com/sitemap.xml" target="_blank">Baidu-SiteMap</a>
-      </strong>
+    <div style="margin-top: 30px;font-size: 12px; text-algin: center;">
+      <strong>Baidu-SiteMap</strong>
       Latest Update:
       <?php
         $last = $wpdb->get_results("SELECT MAX(post_modified) AS MAX_m FROM $wpdb->posts WHERE (post_type = 'post' OR post_type = 'page') AND (post_status = 'publish' OR post_status = 'private')");

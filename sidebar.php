@@ -56,9 +56,12 @@
               >
                 <?php the_title();?>
               </a>
-              <i class="fr iconfont icon-eye-open"><?php echo getPostViews(get_the_ID()); ?></i>
+              <i class="fr iconfont icon-fire"><?php echo getPostViews(get_the_ID()); ?></i>
             </li>
-            <?php } wp_reset_query();?>
+          <?php
+            }
+          wp_reset_query();
+          ?>
         </ul>
       </div>
     </div>

@@ -145,6 +145,10 @@
   div.footer-link a {
     width: calc(100% / 4 - 12px);
   }
+  footer .footer-left,
+  footer .footer-right{
+    width: 50%;
+  }
   footer .footer-left h2 {
     border: none;
   }

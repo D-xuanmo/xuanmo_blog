@@ -21,7 +21,7 @@
 								echo get_avatar($comment, 80);
 							} else {
 								if ($comment->comment_author_email == get_bloginfo('admin_email')) {
-									echo get_avatar($comment, 80);
+									echo '<img src="' . get_option("xm_options")["admin_logo"] . '" class="avatar" width="80" height="80" alt="">';
 								} else {
 									$color = '#' . mb_substr( md5(strtolower($comment->comment_author_email)), 0, 6 ,'UTF8');
 			            $author = mb_substr( $comment->comment_author, 0, 1 ,'UTF8');

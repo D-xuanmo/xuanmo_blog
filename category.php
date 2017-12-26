@@ -31,25 +31,10 @@
               <!-- 阅读数 -->
               <span class="iconfont icon-fire ccc"></span><?php echo getPostViews(get_the_ID()); ?>
               <!-- 点赞 -->
-              <a
-                href="javascript:void(0);"
-                data-action="ding"
-                data-id="<?php the_ID(); ?>"
-                class="cur ccc link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>"
-              >
-                <span class="hide blog-url"><?php bloginfo('url'); ?>/wp-admin/admin-ajax.php</span>
-                <span class="iconfont icon-thumbs-up1"></span>
-                <span class="count">
-                  <?php
-                    if( get_post_meta($post->ID,'bigfa_ding',true) ){
-                      echo get_post_meta($post->ID,'bigfa_ding',true);
-                    } else {
-                      echo '0';
-                    }
-                  ?>
-                </span>
-              </div>
-            </a>
+              <!-- 点赞 -->
+              <span class="iconfont icon-thumbs-up1"></span><?php echo get_post_meta($post->ID,'bigfa_ding',true) ? get_post_meta($post->ID,'bigfa_ding',true) : 0;
+              ?>
+            </div>
             <!-- 摘要 -->
             <p class="summary">
               <?php echo get_post_excerpt('', 160, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>'); ?>

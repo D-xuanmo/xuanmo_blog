@@ -643,7 +643,7 @@ function get_author_class($comment_author_email, $comment_author_url)
   "SELECT comment_ID as author_count FROM $wpdb->comments WHERE comment_author_email =        '$comment_author_email' "
   ));
   if ($comment_author_email == $adminEmail) {
-    echo '<a href="javascript:;" class="' . $styleClass . ' icon-vip vip7" title="博主"></a><a href="javascript:;" title="博主" class="icon-vip icon-admin"></a>';
+    echo '<span class="' . $styleClass . ' icon-vip vip7" title="博主"></span><span title="博主" class="icon-vip icon-admin"></span>';
   }
   $linkurls = $wpdb->get_results("SELECT link_url FROM $wpdb->links WHERE link_url = '$comment_author_url'");
   if ($author_count >= 1 && $author_count < 10 && $comment_author_email != $adminEmail) {
@@ -708,17 +708,19 @@ require get_template_directory() . '/ip2c/ip2c.php';
  */
 function get_browser_name($str)
 {
-  if (strpos($str, 'Chrome')) {
-    echo '<img src="'. get_bloginfo('template_directory') . '/images/chrome_logo.png" width="20" style="vertical-align: baseline;">';
-  } elseif (strpos($str, 'Safari')) {
-    echo '<img src="'. get_bloginfo('template_directory') . '/images/safari_logo.png" width="20" style="vertical-align: baseline;">';
-  } elseif (strpos($str, 'Firefox')) {
-    echo '<img src="'. get_bloginfo('template_directory') . '/images/firefox_logo.png" width="20" style="vertical-align: baseline;">';
-  } elseif (strpos($str, 'Trident')) {
-    echo '<img src="'. get_bloginfo('template_directory') . '/images/ie_logo.png" width="20" style="vertical-align: baseline;">';
-  } elseif (strpos($str, 'Opera')) {
+  if (preg_match('/QQBrowser/', $str)) {
+   echo '<img src="'. get_bloginfo('template_directory') . '/images/QQBrowser.png" width="20" style="vertical-align: baseline;">';
+  } elseif (preg_match('/OPR/', $str)) {
     echo '<img src="'. get_bloginfo('template_directory') . '/images/opera_logo.png" width="20" style="vertical-align: baseline;">';
-  } elseif (strpos($str, 'Quark')) {
+  } elseif (preg_match('/Chrome/', $str)) {
+   echo '<img src="'. get_bloginfo('template_directory') . '/images/chrome_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (preg_match('/Safari/', $str)) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/safari_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (preg_match('/Firefox/', $str)) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/firefox_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (preg_match('/Trident/', $str)) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/ie_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (preg_match('/Quark/', $str)) {
     echo '<img src="'. get_bloginfo('template_directory') . '/images/quark_logo.png" width="20" style="vertical-align: baseline;">';
   }
 }

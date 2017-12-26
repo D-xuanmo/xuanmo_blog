@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <section class="single">
   <div class="wrap clearfix">
-    <?php  while(have_posts()) : the_post(); ?>
-    <?php setPostViews(get_the_ID());//记录阅读 ?>
+    <?php while(have_posts()) : the_post(); ?>
+    <?php setPostViews(get_the_ID()); //记录阅读 ?>
     <span id="article-link" class="hide"><?php the_permalink(); ?></span>
     <article class="fl single-article">
       <div class="breadcrumbs">
@@ -85,7 +85,7 @@
       <!-- 标签结束 -->
       <!-- 作者简介开始 -->
       <div class="article-about-author">
-        <?php echo get_avatar( get_the_author_email(), '300' );?>
+        <img src="<?php echo get_option('xm_options')['admin_logo']; ?>" alt="">
         <h2>作者专栏：<?php the_author(); ?></h2>
         <!-- 作者名字 -->
         <p><?php echo get_option('xm_options')['author_des']; ?></p>
@@ -115,29 +115,25 @@
       <!-- 作者简介结束 -->
       <?php comments_template(); ?>
       <div class="tab-article">
+        <!-- 上一篇 -->
         <div class="tab-left">
-          <p>
-            <!-- 上一篇： -->
-            <a href="javascript:;">
-              <?php if (get_previous_post($categoryIDS)) {
-                previous_post_link('上一篇：%link','%title',true);
-              } else {
-                echo "已经是最新文章！";
-              } ?>
-            </a>
-          </p>
+          <?php
+            if (get_next_post($categoryIDS)) {
+              next_post_link('上一篇：%link', '%title', false);
+            } else {
+              echo "已经是最新文章！";
+            }
+          ?>
         </div>
+        <!-- 下一篇 -->
         <div class="tab-right">
-          <p>
-            <!-- 下一篇： -->
-            <a href="javascript:;">
-              <?php if (get_next_post($categoryIDS)) {
-                next_post_link('下一篇：%link','%title',true);
-              } else {
-                echo "已经是最后一篇！";
-              } ?>
-            </a>
-          </p>
+          <?php
+            if (get_previous_post($categoryIDS)) {
+              previous_post_link('下一篇：%link', '%title', false);
+            } else {
+              echo "已经是最后一篇！";
+            }
+          ?>
         </div>
       </div>
     </article>

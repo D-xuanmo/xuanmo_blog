@@ -91,6 +91,28 @@ function themeoptions_page() {
               value="vip-style-3" <?php if($a_options['vip_style'] == 'vip-style-3') echo 'checked'; ?>
             >
           </div>
+        </div><div class="row">
+          <div class="margin-top-15 clearfix">
+            <label class="fl left-wrap" for="">管理员前台logo：</label>
+            <div class="fr right-wrap">
+              <input
+                type="text"
+                class="url-inp"
+                name="admin-logo"
+                id="admin-logo"
+                value="<?php echo $a_options['admin_logo']; ?>"
+              >
+              <input type="button" name="img-upload" value="选择文件">
+            </div>
+          </div>
+          <div class="margin-top-15 clearfix">
+            <div class="fl left-wrap">
+              管理员前台logo预览：
+            </div>
+            <div class="fr right-wrap">
+              <img src="<?php echo $a_options['admin_logo']; ?>" class="preview-img" style="max-width: 100px;" alt="">
+            </div>
+          </div>
         </div>
 				<div class="row">
           <div class="margin-top-15 clearfix">
@@ -390,6 +412,7 @@ function themeoptions_page() {
 		// 数据提交
     $options = array(
       'login_logo'          => $_POST['login-logo'],
+      'admin_logo'          => $_POST['admin-logo'],
       'aside_count'         => $_POST['aside-count'],
       'text_pic'            => $_POST['text-pic'],
       'title'               => $_POST['title'],
