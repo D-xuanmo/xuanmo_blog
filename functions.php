@@ -378,13 +378,17 @@ function add_editor_buttons($buttons)
   $buttons = array('fontselect', 'fontsizeselect', 'copy', 'paste', 'cut', 'backcolor');
   return $buttons;
 }
-add_filter("mce_buttons_3", "add_editor_buttons");
+// add_filter("mce_buttons_3", "add_editor_buttons");
 
 /*
  ****************************************
  * 添加自定义编辑器按钮
  ****************************************
  */
+function add_my_media_button()
+{
+ echo '<a href="javascript:;" id="html-transform" class="button">html尖括号转义</a>';
+}
 function appthemes_add_quicktags()
 {
 ?>
@@ -394,9 +398,73 @@ function appthemes_add_quicktags()
       QTags.addButton(aLanguage[i], aLanguage[i], '\n<pre class="line-numbers language-' + aLanguage[i] + '"><code class="language-' + aLanguage[i] + '">\n', '\n</code></pre>\n');
     }
     QTags.addButton('c-code', 'c-code', '<span class="code">', '</span>');
+    // 添加html转换容器
+    jQuery(function() {
+      jQuery('#html-transform').click(function() {
+        jQuery('body').append(
+          '<div id="xm-transform">'
+          + '<textarea name="name" rows="15" cols="100"></textarea>'
+          + '<span id="xm-transfom-btn">转换</span>'
+          + '<span id="xm-copy-btn">复制</span>'
+          + '</div>'
+        );
+        jQuery('#xm-transform')
+          .css({
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 99999,
+            width: '100%',
+            height: '100%',
+            background: 'rgba(255,255,255,0.7)'
+          })
+          .children('textarea').css({
+            resize: 'none',
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: '60%',
+            height: '300px',
+            transform: 'translate(-50%, -50%)'
+          })
+          .siblings('span').css({
+            position: 'absolute',
+            top: '90%',
+            left: '50%',
+            width: '100px',
+            height: '40px',
+            borderRadius: '5px',
+            background: '#2196F3',
+            textAlign: 'center',
+            lineHeight: '40px',
+            color: '#fff',
+            cursor: 'pointer'
+          });
+        jQuery('textarea').click(function(e) { e.stopPropagation(); });
+        jQuery('#xm-transfom-btn')
+          .css('transform', 'translateX(-115%)')
+          .click(function(e) {
+            e.stopPropagation();
+            jQuery(this).siblings('textarea').val(function() {
+              return jQuery(this).val().replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            });
+          });
+        jQuery('#xm-copy-btn').click(function(e) {
+          e.stopPropagation();
+          jQuery(this).siblings('textarea')[0].select();
+          if (document.execCommand('Copy')) {
+            jQuery(this).text('复制成功');
+          }
+        });
+        jQuery('#xm-transform').click(function() {
+          jQuery(this).remove();
+        });
+      });
+    });
   </script>
 <?php
 }
+add_action('media_buttons', 'add_my_media_button');
 add_action('admin_print_footer_scripts', 'appthemes_add_quicktags');
 
 /*
@@ -827,9 +895,10 @@ function xm_set_post_link($id)
   $count_key = 'xm_post_link';
   $count = get_post_meta($id, $count_key, true);
   if ($count == '') {
+
     delete_post_meta($id, $count_key);
     add_post_meta($id, $count_key, array(
-      'very_good' => get_post_meta($id, 'bigfa_ding', true),
+      'very_good' => 0,
       'good'      => 0,
       'commonly'  => 0,
       'bad'       => 0,
