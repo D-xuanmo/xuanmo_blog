@@ -86,7 +86,6 @@
           <span class="block">鄙视</span>
         </a>
       </div>
-      <?php endwhile; ?>
       <div class="share margin-top-20">
         分享到：
         <a
@@ -128,33 +127,34 @@
       <!-- 标签结束 -->
       <!-- 作者简介开始 -->
       <div class="article-about-author">
-        <img src="<?php echo get_option('xm_options')['admin_logo']; ?>" alt="">
+        <?php echo get_simple_local_avatar(get_the_author_meta('ID')); ?>
         <h2>作者专栏：<?php the_author(); ?></h2>
         <!-- 作者名字 -->
-        <p><?php echo get_option('xm_options')['author_des']; ?></p>
+        <p><?php echo get_the_author_meta('description'); ?></p>
         <p class="share-btn">
-          <a href="<?php bloginfo('home') ;?>">
+          <a href="<?php echo get_the_author_meta('user_url'); ?>">
             <i class="iconfont icon-home4"></i>博客
           </a>
-          <a href="<?php echo get_option('xm_options')['qq_url']; ?>" target="_blank">
+          <a href="<?php echo get_the_author_meta('qq'); ?>" target="_blank">
             <i class="iconfont icon-qq"></i>QQ
           </a>
           <a href="javascript:;">
             <i class="iconfont icon-wechat"></i>微信
             <span class="wechat-num">
-              微信号：<?php echo get_option('xm_options')['wechat_num']; ?>
-              <img src="<?php echo get_option('xm_options')['wechat_img']; ?>" width="100%" alt="<?php the_author(); ?>微信" />
+              微信号：<?php echo get_the_author_meta('wechat_num'); ?>
+              <img src="<?php echo get_the_author_meta('wechat_img'); ?>" width="100%" alt="微信" />
               <i class="iconfont icon-close1"></i>
             </span>
           </a>
-          <a href="<?php echo get_option('xm_options')['sina_url']; ?>" target="_blank">
+          <a href="<?php echo get_the_author_meta('sina_url'); ?>" target="_blank">
             <i class="iconfont icon-sina"></i>微博
           </a>
-          <a href="mailto:<?php echo get_option('xm_options')['email']; ?>?subject=Hello <?php echo bloginfo('name'); ?>">
+          <a href="mailto:<?php echo get_the_author_meta('user_email'); ?>?subject=Hello <?php echo get_the_author_meta('display_name'); ?>">
             <i class="iconfont icon-email2"></i>邮箱
           </a>
         </p>
       </div>
+      <?php endwhile; ?>
       <!-- 作者简介结束 -->
       <?php comments_template(); ?>
       <div class="tab-article">

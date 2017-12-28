@@ -55,6 +55,13 @@ require get_template_directory() . '/inc/xm_theme_options.php';
 
 /*
  ****************************************
+ * 后台设置用户头像
+ ****************************************
+ */
+require get_template_directory() . '/inc/author-avatars.php';
+
+/*
+ ****************************************
  * 添加特色头像
  ****************************************
  */
@@ -751,6 +758,8 @@ function get_browser_name($str)
 {
   if (preg_match('/QQBrowser/', $str)) {
    echo '<img src="'. get_bloginfo('template_directory') . '/images/QQBrowser.png" width="20" style="vertical-align: baseline;">';
+ } elseif (preg_match('/Edge/', $str)) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/ie_logo.png" width="20" style="vertical-align: baseline;">';
   } elseif (preg_match('/OPR/', $str)) {
     echo '<img src="'. get_bloginfo('template_directory') . '/images/opera_logo.png" width="20" style="vertical-align: baseline;">';
   } elseif (preg_match('/Chrome/', $str)) {
@@ -797,7 +806,6 @@ add_filter( 'comment_text' , 'comment_add_at', 20, 2);
  ****************************************
  */
 function wp_42573_fix_template_caching( WP_Screen $current_screen ) {
-	// Only flush the file cache with each request to post list table, edit post screen, or theme editor.
 	if ( ! in_array( $current_screen->base, array( 'post', 'edit', 'theme-editor' ), true ) ) {
 		return;
 	}
@@ -915,5 +923,23 @@ function xm_post_link()
   update_post_meta($id, $count_key, array_merge($count, array($key => $count[$key] + 1)));
   echo $count[$key] + 1;
   die();
+}
+
+/*
+ ****************************************
+ * 给用户资料增加自定义字段
+ ****************************************
+ */
+add_filter('user_contactmethods', 'xm_user_contact');
+function xm_user_contact($user_contactmethods){
+  unset($user_contactmethods['aim']);
+  unset($user_contactmethods['yim']);
+  unset($user_contactmethods['jabber']);
+  $user_contactmethods['qq'] = 'QQ链接';
+  $user_contactmethods['github_url'] = 'GitHub';
+  $user_contactmethods['wechat_num'] = '微信号';
+  $user_contactmethods['wechat_img'] = '微信二维码链接';
+  $user_contactmethods['sina_url'] = '新浪微博';
+  return $user_contactmethods;
 }
 ?>

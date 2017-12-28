@@ -120,15 +120,15 @@
       <!-- 联系我 -->
       <div class="fr contact">
         <a href="javascript:;" class="iconfont icon-search"></a>
-        <a href="<?php echo get_option('xm_options')['github_url']; ?>" class="mobile-hide iconfont icon-github1" target="_blank"></a>
-        <a href="<?php echo get_option('xm_options')['qq_url']; ?>" class="mobile-hide iconfont icon-qq" target="_blank"></a>
+        <a href="<?php echo get_the_author_meta('github_url', 1); ?>" class="mobile-hide iconfont icon-github1" target="_blank"></a>
+        <a href="<?php echo get_the_author_meta('qq', 1); ?>" class="mobile-hide iconfont icon-qq" target="_blank"></a>
         <a href="javascript:;" class="mobile-hide iconfont icon-wechat">
           <span>
-            <img src="<?php echo get_option('xm_options')['wechat_img']; ?>" alt="扫一扫 加博主微信" />
+            <img src="<?php echo get_the_author_meta('wechat_img', 1); ?>" alt="扫一扫 加博主微信" />
           </span>
         </a>
-        <a href="<?php echo get_option('xm_options')['sina_url']; ?>" class="mobile-hide iconfont icon-sina" target="_blank"></a>
-        <a href="mailto:<?php echo get_option('xm_options')['email']; ?>?subject=Hello <?php echo bloginfo('name'); ?>" class="mobile-hide iconfont icon-email2"></a>
+        <a href="<?php echo get_the_author_meta('sina_url', 1); ?>" class="mobile-hide iconfont icon-sina" target="_blank"></a>
+        <a href="mailto:<?php echo get_the_author_meta('user_email', 1); ?>?subject=Hello <?php echo get_the_author_meta('display_name', 1); ?>" class="mobile-hide iconfont icon-email2"></a>
         <a href="javascript:;" class="pc-none iconfont icon-menu-list2"></a>
       </div>
       <nav class="fl clearfix">

@@ -20,8 +20,8 @@
 							if (get_option('xm_options')['text_pic'] == 'off') {
 								echo get_avatar($comment, 80);
 							} else {
-								if ($comment->comment_author_email == get_bloginfo('admin_email')) {
-									echo '<img src="' . get_option("xm_options")["admin_logo"] . '" class="avatar" width="80" height="80" alt="">';
+								if ($comment->comment_author_email == get_the_author_meta('user_email', $comment->user_id)) {
+									echo get_simple_local_avatar($comment->user_id);
 								} else {
 									$color = '#' . mb_substr( md5(strtolower($comment->comment_author_email)), 0, 6 ,'UTF8');
 			            $author = mb_substr( $comment->comment_author, 0, 1 ,'UTF8');
@@ -30,8 +30,8 @@
 							}
 							// 获取评论者的url
 							$comment_author_url
-								= ($comment->comment_author_url)
-								? $comment->comment_author_url
+								= get_the_author_meta('user_url', $comment->user_id)
+								? get_the_author_meta('user_url', $comment->user_id)
 								: 'javascript:;';
 						?>
 						<a href="<?php echo $comment_author_url; ?>" class="comment-author-url" target="_blank">

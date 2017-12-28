@@ -91,28 +91,6 @@ function themeoptions_page() {
               value="vip-style-3" <?php if($a_options['vip_style'] == 'vip-style-3') echo 'checked'; ?>
             >
           </div>
-        </div><div class="row">
-          <div class="margin-top-15 clearfix">
-            <label class="fl left-wrap" for="">管理员前台logo：</label>
-            <div class="fr right-wrap">
-              <input
-                type="text"
-                class="url-inp"
-                name="admin-logo"
-                id="admin-logo"
-                value="<?php echo $a_options['admin_logo']; ?>"
-              >
-              <input type="button" name="img-upload" value="选择文件">
-            </div>
-          </div>
-          <div class="margin-top-15 clearfix">
-            <div class="fl left-wrap">
-              管理员前台logo预览：
-            </div>
-            <div class="fr right-wrap">
-              <img src="<?php echo $a_options['admin_logo']; ?>" class="preview-img" style="max-width: 100px;" alt="">
-            </div>
-          </div>
         </div>
 				<div class="row">
           <div class="margin-top-15 clearfix">
@@ -164,12 +142,6 @@ function themeoptions_page() {
           <label class="fl left-wrap" for="title">h1标题（这个标题为网站的主标题）：</label>
           <div class="fr right-wrap">
             <input type="text" id="title" name="title" value="<?php echo $a_options['title']; ?>">
-          </div>
-        </div>
-        <div class="row clearfix">
-          <label class="fl left-wrap" for="home-article-num">首页最新文章篇数：</label>
-          <div class="fr right-wrap">
-            <input type="text" id="home-article-num" name="home-article-num" value="<?php echo empty($a_options['home_column']['home_article_num']) ? 6 : $a_options['home_column']['home_article_num']; ?>">
           </div>
         </div>
         <div class="row clearfix">
@@ -301,75 +273,10 @@ function themeoptions_page() {
       </div>
       <!-- 内容四 社交 -->
       <div class="content-wrap content4">
-        <div class="row">
-          <div class="margin-top-15 clearfix">
-            <label class="fl left-wrap" for="author-des">作者简介（文章详情页用）：</label>
-            <div class="fr right-wrap">
-              <textarea rows="5" cols="100" id="author-des" name="author-des"><?php echo $a_options['author_des']; ?></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="margin-top-15 clearfix">
-            <label class="fl left-wrap" for="email">电子邮箱：</label>
-            <div class="fr right-wrap">
-              <textarea rows="5" cols="100" id="email" name="email"><?php echo $a_options['email']; ?></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="margin-top-15 clearfix">
-            <label class="fl left-wrap" for="qq-url">QQ链接：</label>
-            <div class="fr right-wrap">
-              <textarea rows="5" cols="100" id="qq-url" name="qq-url"><?php echo $a_options['qq_url']; ?></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="margin-top-15 clearfix">
-            <label class="fl left-wrap" for="github-url">Github链接：</label>
-            <div class="fr right-wrap">
-              <textarea rows="5" cols="100" id="github-url" name="github-url"><?php echo $a_options['github_url']; ?></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="margin-top-15 clearfix">
-            <label class="fl left-wrap" for="sina-url">新浪微博链接：</label>
-            <div class="fr right-wrap">
-              <textarea rows="5" cols="100" id="sina-url" name="sina-url"><?php echo $a_options['sina_url']; ?></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="margin-top-15 clearfix">
-            <label class="fl left-wrap" for="wechat-num">微信号：</label>
-            <div class="fr right-wrap">
-              <textarea rows="5" cols="100" id="wechat-num" name="wechat-num"><?php echo $a_options['wechat_num']; ?></textarea>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="margin-top-15 clearfix">
-            <label class="fl left-wrap" for="">微信二维码图片：</label>
-            <div class="fr right-wrap">
-              <input type="text" class="url-inp" name="wechat-img" id="wechat-img" value="<?php echo $a_options['wechat_img']; ?>">
-              <input type="button" name="img-upload" value="选择文件">
-            </div>
-          </div>
-          <div class="margin-top-15 clearfix">
-            <div class="fl left-wrap">
-              微信二维码图片预览：
-            </div>
-            <div class="fr right-wrap">
-              <img src="<?php echo $a_options['wechat_img']; ?>" class="preview-img" width="300" alt="">
-            </div>
-          </div>
-        </div>
         <div class="row clearfix">
           <label class="fl left-wrap" for="link">友情链接：</label>
           <div class="fr right-wrap">
-            <textarea id="link" name="link" rows="8" cols="100"><?php echo $a_options['link']; ?></textarea>
+            <textarea id="link" name="link" rows="15" cols="100"><?php echo $a_options['link']; ?></textarea>
           </div>
         </div>
       </div>
@@ -412,7 +319,6 @@ function themeoptions_page() {
 		// 数据提交
     $options = array(
       'login_logo'          => $_POST['login-logo'],
-      'admin_logo'          => $_POST['admin-logo'],
       'aside_count'         => $_POST['aside-count'],
       'text_pic'            => $_POST['text-pic'],
       'title'               => $_POST['title'],
@@ -425,19 +331,11 @@ function themeoptions_page() {
       'footer_js'           => $_POST['footer-js'],
       'keywords'            => $_POST['keywords'],
       'description'         => $_POST['description'],
-      'author_des'          => $_POST['author-des'],
-      'email'               => $_POST['email'],
-      'qq_url'              => $_POST['qq-url'],
-      'github_url'          => $_POST['github-url'],
-      'sina_url'            => $_POST['sina-url'],
-      'wechat_num'          => $_POST['wechat-num'],
-      'wechat_img'          => $_POST['wechat-img'],
       'link'                => $_POST['link'],
       'cat_article_num'     => $_POST['cat-article-num'],
       'page_article_num'    => $_POST['page-article-num'],
       'vip_style'           => $_POST['vip-style'],
       'home_column'         => array(
-        'home_article_num'  => $_POST['home-article-num'],
         array(
           'cat_id'          => $_POST['cat-id-1'],
           'cat_title'       => $_POST['cat-title-1'],

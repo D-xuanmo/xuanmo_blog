@@ -26,7 +26,7 @@ section .right {
   float: left;
   position: relative;
   width: 32%;
-  height: 400px;
+  height: 370px;
   margin-bottom: 15px;
   border: 1px solid #efefef;
   border-radius: 5px;
@@ -89,7 +89,6 @@ section .right {
 }
 
 .right article p {
-  height: 80px;
   padding: 5px;
   text-indent: 16px;
 }
