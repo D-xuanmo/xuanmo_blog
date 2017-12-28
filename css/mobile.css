@@ -185,6 +185,15 @@
     max-width: 100%;
     border-radius: 10px 10px 0 0;
   }
+  .article-about-author .share-btn{
+    display: none;
+  }
+  img.wp-smiley {
+    width: 25px !important;
+  }
+  .link-wrap .link img{
+    width: 30px;
+  }
   .comments-area .comment-body .user-information{
     display: none !important;
   }
@@ -195,9 +204,6 @@
   }
   div.footer-link a {
     width: calc(100% / 3 - 12px);
-  }
-  img.wp-smiley {
-    width: 25px !important;
   }
   footer .footer-left, footer .footer-left h2, footer .footer-left .introduce, footer .footer-right {
     float: none;

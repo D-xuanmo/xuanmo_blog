@@ -370,33 +370,6 @@ if (get_magic_quotes_gpc()) {
 
 /*
  ****************************************
- * 点赞功能
- ****************************************
- */
-add_action('wp_ajax_nopriv_bigfa_like', 'bigfa_like');
-add_action('wp_ajax_bigfa_like', 'bigfa_like');
-function bigfa_like()
-{
-  global $wpdb, $post;
-  $id = $_POST["um_id"];
-  $action = $_POST["um_action"];
-  if ($action == 'ding') {
-    $bigfa_raters = get_post_meta($id, 'bigfa_ding', true);
-    $expire = time() + 99999999;
-    $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false;
-    setcookie('bigfa_ding_' . $id, $id, $expire, '/', $domain, false);
-    if (!$bigfa_raters || !is_numeric($bigfa_raters)) {
-      update_post_meta($id, 'bigfa_ding', 1);
-    } else {
-      update_post_meta($id, 'bigfa_ding', ($bigfa_raters + 1));
-    }
-    echo get_post_meta($id, 'bigfa_ding', true);
-  }
-  die;
-}
-
-/*
- ****************************************
  * 丰富发文按钮功能
  ****************************************
  */
@@ -786,7 +759,7 @@ function create_api_posts_meta_field() {
 
   // 获取文章评论数
   register_rest_field( 'post', 'comments_views', array(
-      'get_callback'    => 'post_comments_views',
+      'get_callback'    => function () { return get_comments_number(); },
       'schema'          => null,
     )
   );
@@ -804,15 +777,18 @@ function create_api_posts_meta_field() {
       'schema'          => null,
     )
   );
+
+  // 获取点赞数
+  register_rest_field( 'post', 'xm_link', array(
+      'get_callback'    => function($obj) { return get_post_meta($obj['id'], 'xm_post_link', true); },
+      'schema'          => null,
+    )
+  );
 }
 
 function get_post_meta_for_api( $object ) {
   $post_id = $object['id'];
   return get_post_meta( $post_id );
-}
-
-function post_comments_views() {
-  return get_comments_number();
 }
 
 function get_summary() {
@@ -838,4 +814,63 @@ function comments_embed_img($comment) {
   return $comment;
 }
 add_action('comment_text', 'comments_embed_img');
+
+/*
+ ****************************************
+ * 点赞功能
+ ****************************************
+ */
+add_action('wp_ajax_bigfa_like', 'bigfa_like');
+add_action('wp_ajax_nopriv_bigfa_like', 'bigfa_like');
+function bigfa_like()
+{
+  $id = $_POST["um_id"];
+  $action = $_POST["um_action"];
+  if ($action == 'ding') {
+    $bigfa_raters = get_post_meta($id, 'bigfa_ding', true);
+    $expire = time() + 99999999;
+    $domain = ($_SERVER['HTTP_HOST'] != 'localhost') ? $_SERVER['HTTP_HOST'] : false;
+    setcookie('bigfa_ding_' . $id, $id, $expire, '/', $domain, false);
+    if (!$bigfa_raters || !is_numeric($bigfa_raters)) {
+      update_post_meta($id, 'bigfa_ding', 1);
+    } else {
+      update_post_meta($id, 'bigfa_ding', ($bigfa_raters + 1));
+    }
+    echo get_post_meta($id, 'bigfa_ding', true);
+  }
+  die();
+}
+
+/*
+ ****************************************
+ * 设置文章喜爱度
+ ****************************************
+ */
+add_action( 'wp_ajax_xm_post_link', 'xm_post_link' );
+add_action( 'wp_ajax_nopriv_xm_post_link', 'xm_post_link' );
+function xm_set_post_link($id)
+{
+  $count_key = 'xm_post_link';
+  $count = get_post_meta($id, $count_key, true);
+  if ($count == '') {
+    delete_post_meta($id, $count_key);
+    add_post_meta($id, $count_key, array(
+      'very_good' => get_post_meta($id, 'bigfa_ding', true),
+      'good'      => 0,
+      'commonly'  => 0,
+      'bad'       => 0,
+      'very_bad'  => 0
+    ));
+  }
+}
+function xm_post_link()
+{
+  $count_key = 'xm_post_link';
+  $id = $_POST['post_id'];
+  $key = $_POST['post_key'];
+  $count = get_post_meta($id, $count_key, true);
+  update_post_meta($id, $count_key, array_merge($count, array($key => $count[$key] + 1)));
+  echo $count[$key] + 1;
+  die();
+}
 ?>

@@ -91,7 +91,7 @@ article .content .case-show {
   color: #fff;
 }
 
-article .like {
+/*article .like {
   margin: 20px 0;
   text-align: center;
 }
@@ -106,6 +106,18 @@ article .like a {
 
 article .like a, article .like a span {
   font-size: 16px;
+}*/
+
+.link-wrap{
+  margin: 50px 0;
+}
+
+.link-wrap .link{
+  margin: 0 10px;
+}
+
+.link-wrap .link .people{
+  font-size: 12px;
 }
 
 article .share {

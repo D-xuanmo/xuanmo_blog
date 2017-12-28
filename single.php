@@ -2,7 +2,8 @@
 <section class="single">
   <div class="wrap clearfix">
     <?php while(have_posts()) : the_post(); ?>
-    <?php setPostViews(get_the_ID()); //记录阅读 ?>
+    <?php setPostViews(get_the_ID()); ?>
+    <?php xm_set_post_link(get_the_ID()); ?>
     <span id="article-link" class="hide"><?php the_permalink(); ?></span>
     <article class="fl single-article">
       <div class="breadcrumbs">
@@ -23,28 +24,70 @@
       <div class="content">
         <?php the_content(); ?>
       </div>
-      <div class="like">
+      <div class="link-wrap text-center<?php if(isset($_COOKIE['post_link_' . $post->ID])) echo ' active'; ?>">
         <a
           href="javascript:;"
-          data-action="ding"
+          class="inline-block link"
           data-id="<?php the_ID(); ?>"
-          class="link-btn<?php if(isset($_COOKIE['bigfa_ding_'.$post->ID])) echo ' done';?>"
+          data-key='very_good'
         >
-          <span class="hide blog-url"><?php bloginfo('url'); ?>/wp-admin/admin-ajax.php</span>
-          <i class="iconfont icon-thumbs-up1" style="font-size: 18px;"></i> 赞
-          <span class="count">
-            <?php
-              if( get_post_meta($post->ID, 'bigfa_ding', true) ){
-                echo get_post_meta($post->ID, 'bigfa_ding', true);
-              } else {
-                echo '0';
-              }
-            ?>
+          <span class="block people">
+            <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['very_good']; ?></i>人
           </span>
+          <img src="<?php bloginfo('template_url'); ?>/images/smilies/guzhang.gif" alt="">
+          <span class="block">鼓掌</span>
+        </a>
+        <a
+          href="javascript:;"
+          class="inline-block link"
+          data-id="<?php the_ID(); ?>"
+          data-key='good'
+        >
+          <span class="block people">
+            <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['good']; ?></i>人
+          </span>
+          <img src="<?php bloginfo('template_url'); ?>/images/smilies/koubi.gif" alt="">
+          <span class="block">呵呵</span>
+        </a>
+        <a
+          href="javascript:;"
+          class="inline-block link"
+          data-id="<?php the_ID(); ?>"
+          data-key='commonly'
+        >
+          <span class="block people">
+            <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['commonly']; ?></i>人
+          </span>
+          <img src="<?php bloginfo('template_url'); ?>/images/smilies/wunai.gif" alt="">
+          <span class="block">无奈</span>
+        </a>
+        <a
+          href="javascript:;"
+          class="inline-block link"
+          data-id="<?php the_ID(); ?>"
+          data-key='bad'
+        >
+          <span class="block people">
+            <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['bad']; ?></i>人
+          </span>
+          <img src="<?php bloginfo('template_url'); ?>/images/smilies/xia.gif" alt="">
+          <span class="block">惊恐</span>
+        </a>
+        <a
+          href="javascript:;"
+          class="inline-block link"
+          data-id="<?php the_ID(); ?>"
+          data-key='very_bad'
+        >
+          <span class="block people">
+            <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['very_bad']; ?></i>人
+          </span>
+          <img src="<?php bloginfo('template_url'); ?>/images/smilies/bishi.gif" alt="">
+          <span class="block">鄙视</span>
         </a>
       </div>
       <?php endwhile; ?>
-      <div class="share">
+      <div class="share margin-top-20">
         分享到：
         <a
           href="http://connect.qq.com/widget/shareqq/index.html?url=<?php echo home_url('/'); ?>%3Fp%3D<?php the_ID(); ?>&title=【<?php the_title(); ?> | <?php bloginfo('name'); ?>】&summary="

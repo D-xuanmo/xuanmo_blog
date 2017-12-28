@@ -23,13 +23,13 @@
             <img src="https://upyun.xuanmo.xin/upyun.png" width="60" alt="" />
           </a>
           <?php
-            // if(strpos(home_url(), 'xuanmo.xin')) {
+            if(strpos(home_url(), 'xuanmo.xin')) {
               echo '
                 <a href="https://verify.nic.xin/xinDetail/xinAuthInfoDetail?domainName=xuanmo.xin" target="_blank">
                   <img src="https://www.xuanmo.xin/images/xin.png" alt="" />
                 </a>
               ';
-            // }
+            }
           ?>
         </div>
       </div>
@@ -75,7 +75,7 @@
             $moreBtn.show().siblings().hide();
             var sResult = '';
             res.forEach(function (val) {
-              sResult += '<article id="post-' + val.id + '" class="mobile-article-lg on"><a href="' + val.link + '" class="article-img"><img src="' + (val._embedded["wp:featuredmedia"] ? val._embedded["wp:featuredmedia"][0].source_url : 'https://upyun.xuanmo.xin/blog/bg4.jpg') + '" class="black" alt=""></a><div class="con"><h2 class="article-title"><a href="' + val.link + '">' + val.title.rendered + '</a></h2><div class="time"><time class="ccc">' + val.date.replace('T', ' ') + '</time><span class="iconfont icon-comment1 ccc"></span>' + val.comments_views + '<span class="iconfont icon-fire ccc"></span>' + val.post_meta_field.post_views_count + '<span class="iconfont icon-thumbs-up1"></span>' + (val.post_meta_field.bigfa_ding ? val.post_meta_field.bigfa_ding : 0) + '</div><p class="summary">' + val.summary + '</p></div></article>';
+              sResult += '<article id="post-' + val.id + '" class="mobile-article-lg on"><a href="' + val.link + '" class="article-img"><img src="' + (val._embedded["wp:featuredmedia"] ? val._embedded["wp:featuredmedia"][0].source_url : 'https://upyun.xuanmo.xin/blog/bg4.jpg') + '" class="black" alt=""></a><div class="con"><h2 class="article-title"><a href="' + val.link + '">' + val.title.rendered + '</a></h2><div class="time"><time class="ccc">' + val.date.replace('T', ' ') + '</time><span class="iconfont icon-comment1 ccc"></span>' + val.comments_views + '<span class="iconfont icon-fire ccc"></span>' + val.post_meta_field.post_views_count + '<span class="iconfont icon-thumbs-up1"></span>' + (val.xm_link ? val.xm_link.very_good : 0) + '</div><p class="summary">' + val.summary + '</p></div></article>';
             });
             $('#total-article').append(sResult);
           },
@@ -107,9 +107,34 @@
         $qrcode.css('display','none');
       });
 
+      // 文章点赞
+      $('.link-wrap .link').click(function() {
+        if ($('.link-wrap').hasClass('active')) {
+          alert('您已经发表意见了！');
+        } else {
+          var $this = $(this);
+          var d = new Date();
+          d.setHours(d.getHours() + (24 * 30));
+          document.cookie = 'post_link_' + $this.data('id') + '=active; expires=' + d.toGMTString();
+          $('.link-wrap').addClass('active');
+          $.ajax({
+            url: '<?php echo admin_url("admin-ajax.php"); ?>',
+            type: 'POST',
+            data: {
+              action: 'xm_post_link',
+              post_id: $this.data('id'),
+              post_key: $this.data('key'),
+            },
+            success: function(res) {
+              $this.find('.people-num').text(res);
+            }
+          });
+        }
+      });
+
+      // 评论翻页
       ajaxComments();
       function ajaxComments() {
-        var sLoadingUrl = '<?php bloginfo('template_url'); ?>/images/loading.svg';
         $('.comment-page-btn a').click(function() {
           $('.comment-list').addClass('on');
           $.ajax({

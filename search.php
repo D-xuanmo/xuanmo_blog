@@ -25,8 +25,7 @@
           <!-- 阅读数 -->
           <span class="iconfont icon-fire ccc"></span><?php echo getPostViews(get_the_ID()); ?>
           <!-- 点赞 -->
-          <span class="iconfont icon-thumbs-up1"></span><?php echo get_post_meta($post->ID,'bigfa_ding',true) ? get_post_meta($post->ID,'bigfa_ding',true) : 0;
-          ?>
+          <span class="iconfont icon-thumbs-up1"></span><?php echo get_post_meta(get_the_ID(), 'xm_post_link', true)['very_good']; ?>
         </div>
         <!-- 摘要 -->
         <p class="summary">

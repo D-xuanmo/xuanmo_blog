@@ -15,7 +15,7 @@ article, aside, dialog, footer, header, section, footer, nav, figure, menu {
   display: block;
 }
 
-body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, blockquote {
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, blockquote {
   margin: 0;
   padding: 0;
 }
@@ -152,6 +152,7 @@ a:hover {
 .margin-top-10 {
   margin-top: 10px;
 }
+
 .margin-top-20 {
   margin-top: 20px;
 }
