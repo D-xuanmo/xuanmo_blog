@@ -21,18 +21,19 @@
 								echo get_avatar($comment, 80);
 							} else {
 								if ($comment->comment_author_email == get_the_author_meta('user_email', $comment->user_id)) {
+									$comment_author_url = get_the_author_meta('user_url', $comment->user_id);
 									echo get_simple_local_avatar($comment->user_id);
 								} else {
+									// 获取评论者的url
+									$comment_author_url
+										= $comment->comment_author_url
+										? $comment->comment_author_url
+										: 'javascript:;';
 									$color = '#' . mb_substr( md5(strtolower($comment->comment_author_email)), 0, 6 ,'UTF8');
 			            $author = mb_substr( $comment->comment_author, 0, 1 ,'UTF8');
 			            echo '<span class="avatar" style="background-color:' . $color . ';">' . $author . '</span>';
 								}
 							}
-							// 获取评论者的url
-							$comment_author_url
-								= get_the_author_meta('user_url', $comment->user_id)
-								? get_the_author_meta('user_url', $comment->user_id)
-								: 'javascript:;';
 						?>
 						<a href="<?php echo $comment_author_url; ?>" class="comment-author-url" target="_blank">
 							<?php echo $comment->comment_author; ?>
