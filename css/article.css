@@ -48,7 +48,7 @@ article .demo-show-wrap {
   background: #f8f8f8;
 }
 
-article .content img {
+article .content img:not(.wp-smiley) {
   max-width: 100%;
   margin-top: 20px;
   box-shadow: 0 0 10px #d2d2d2;
@@ -90,23 +90,6 @@ article .content .case-show {
   text-align: center;
   color: #fff;
 }
-
-/*article .like {
-  margin: 20px 0;
-  text-align: center;
-}
-
-article .like a {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #27c5d5;
-  border-radius: 5px;
-  color: #fff;
-}
-
-article .like a, article .like a span {
-  font-size: 16px;
-}*/
 
 .link-wrap{
   margin: 50px 0;
@@ -534,11 +517,6 @@ img.wp-smiley, img.emoji {
 }
 
 /*评论内容*/
-
-.comments-area .comment_text img {
-  max-width: 40%;
-}
-
 .comments-area .comment_text p {
   padding: 20px 0;
   font-size: 18px;
@@ -807,6 +785,92 @@ img.wp-smiley, img.emoji {
   cursor: pointer;
 }
 
+/* 文章评论区添加图片 */
+.img-upload-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.77);
+}
+
+.img-upload-wrap .icon-close1{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+}
+
+.img-upload-wrap .upload-img{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 40%;
+  padding: 10px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.img-upload-wrap .progress{
+  width: 60%;
+}
+
+.img-upload-wrap .progress .current-progress{
+  width: 0;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #0ae;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent);
+}
+
+.img-upload-wrap .upload-img p{
+  font-weight: lighter;
+  color: #b0b0b0;
+}
+
+.img-upload-wrap .inp-file{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  border: 2px dashed #ccc;
+  line-height: 46px;
+}
+
+.img-upload-wrap .inp-file input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.img-upload-wrap .inp-file .iconfont{
+  font-size: 20px;
+}
+
+.img-upload-wrap .result-img{
+  display: block;
+  max-width: 100%;
+  max-height: 200px;
+  margin: 10px auto 0;
+}
+
+.img-upload-wrap button{
+  display: block;
+  width: 100px;
+  height: 40px;
+  margin: 15px auto;
+  border: 0;
+  border-radius: 5px;
+  background: #0ae;
+  color: #fff;
+}
 
 /*评论头像抖动*/
 

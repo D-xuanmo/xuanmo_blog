@@ -293,28 +293,6 @@ $(function() {
       });
     });
 
-    // 添加图片
-    var data = new FormData();
-    $('#comments-upload-img').change(function() {
-      var path = $(this).siblings('.path').text();
-      if ($(this).get(0).files[0].size / 1024 > 1024) {
-        alert('请上传小于1024Kb的图片！');
-      } else {
-        data.append('file', $(this).get(0).files[0]);
-        ajax({
-          url: path + '/xm_upload.php',
-          type: 'POST',
-          dataType: 'json',
-          data: data,
-          success: function(res) {
-            $('#comment').val(function() {
-              return $(this).val() + '[img]' + path + '/images/comments/' + res.name + '[/img]';
-            });
-          }
-        });
-      }
-    });
-
     // 显示代码按钮
     $('.comment-code-btn-wrap').click(function() {
       $(this).children('p').slideToggle();
@@ -326,6 +304,70 @@ $(function() {
       $("#comment").val(function() {
         return $(this).val() + ' <pre class="line-numbers language-' + $this.text() + '"><code class="language-' + $this.text() + '"></code></pre>';
       });
+    });
+  })();
+
+  // 添加图片
+  (function(){
+    var fileData = new FormData();
+    var $currentProgress = $('.img-upload-wrap .current-progress'),
+        $currentText = $('.img-upload-wrap .current-text'),
+        $uploadWrap = $('.img-upload-wrap'),
+        $resultImg = $('.img-upload-wrap .result-img');
+
+    // 显示上传图片窗口
+    $('.expression-wrap .upload-img').click(function() {
+      $uploadWrap.show();
+      $('body').addClass('o-hide');
+    });
+
+    // 关闭上传图片窗口
+    $('.img-upload-wrap .icon-close1').click(function(e) {
+      e.stopPropagation();
+      $uploadWrap.hide();
+      $('body').removeClass('o-hide');
+      $currentProgress.width('0px');
+      $resultImg.attr('src', '');
+      $currentText.text('');
+      $('#comments-upload-img').val('');
+    });
+
+    // 上传图片
+    $('#comments-upload-img').change(function() {
+      var path = $(this).siblings('.path').text();
+      var $this = $(this);
+      if ($this.get(0).files[0].size / 1024 > 2048) {
+        alert('请上传小于2M的图片！');
+      } else {
+        $this.siblings('p').html('已选择' + $this.val());
+        fileData.append('file', $this.get(0).files[0]);
+        fileData.append('post', $('.post-id').text());
+        ajax({
+          url: path + '/xm_upload.php',
+          type: 'POST',
+          dataType: 'json',
+          data: fileData,
+          progress: function(current, total) {
+            $currentProgress.css('width', current / total * 100 + '%');
+            $currentText.text(Math.floor(current / total * 100) + '%');
+          },
+          success: function(res) {
+            $this.val('').siblings('p').html('<i class="iconfont icon-upimg"></i> 点击添加图片');
+            $resultImg.attr('src', path + '/images/comments/' + $('.post-id').text() + '/' + res.name);
+            $('.img-upload-wrap button').unbind('click').click(function(e) {
+              e.stopPropagation();
+              $currentProgress.width('0px');
+              $resultImg.attr('src', '');
+              $currentText.text('');
+              $uploadWrap.hide();
+              $('body').removeClass('o-hide');
+              $('#comment').val(function() {
+                return ' [img]' + res.path + '[/img] ' + $(this).val();
+              });
+            });
+          }
+        });
+      }
     });
   })();
 

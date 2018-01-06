@@ -8,18 +8,6 @@ add_filter('automatic_updater_disabled', '__return_true');
 
 /*
  ****************************************
- * 七牛缓存gravatar头像
- ****************************************
- */
-function dw_get_avatar($avatar)
-{
-  $avatar = str_replace(array("www.gravatar.com", "0.gravatar.com", "1.gravatar.com", "2.gravatar.com"), "gravatar.xuanmomo.com", $avatar);
-  return $avatar;
-}
-add_filter('get_avatar', 'dw_get_avatar', 10, 3);
-
-/*
- ****************************************
  * 删除谷歌字体
  ****************************************
  */
@@ -106,7 +94,7 @@ function get_recent_comments()
     $author = mb_substr( $comment->comment_author, 0, 1 ,'UTF8');
     //去除评论内容中的标签
     $comment_content = strip_tags($comment->comment_content);
-    $avatar_pic = get_option('xm_options')['text_pic'] == 'off'
+    $avatar_pic = (get_option('xm_options')['text_pic'] === 'off')
                 ? get_avatar($comment->comment_author_email, 50)
                 : '<span class="avatar" style="background-color:' . $color . ';">' . $author . '</span>';
     $output .= '
@@ -377,18 +365,6 @@ if (get_magic_quotes_gpc()) {
 
 /*
  ****************************************
- * 丰富发文按钮功能
- ****************************************
- */
-function add_editor_buttons($buttons)
-{
-  $buttons = array('fontselect', 'fontsizeselect', 'copy', 'paste', 'cut', 'backcolor');
-  return $buttons;
-}
-// add_filter("mce_buttons_3", "add_editor_buttons");
-
-/*
- ****************************************
  * 添加自定义编辑器按钮
  ****************************************
  */
@@ -625,9 +601,7 @@ function add_my_tips()
         <i class="iconfont icon-grin"></i>表情
       </div>
       <div class="fl comment-icon comment-pic-btn upload-img">
-        <span class="hide path">'. get_bloginfo('template_directory') .'</span>
         <i class="iconfont icon-picture2"></i>贴图
-        <input type="file" id="comments-upload-img" class="" name="file" accept="image/png,image/gif,image/jpeg">
       </div>
       <div class="fl comment-icon comment-code-btn-wrap">
         <i class="iconfont icon-code"></i>代码
@@ -886,7 +860,7 @@ add_action( 'rest_api_init', 'create_api_posts_meta_field' );
  ****************************************
  */
 function comments_embed_img($comment) {
-  $comment = preg_replace('/\[img\]((http|https):\/\/\S*)\[\/img\]/','<img src="$1" />', $comment);
+  $comment = preg_replace('/(\[img\](\S+)\[\/img\])+/','<img src="$2" style="max-width: 40%; max-height: 250px;" />', $comment);
   return $comment;
 }
 add_action('comment_text', 'comments_embed_img');

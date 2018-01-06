@@ -2,6 +2,28 @@
     wp_reset_query();
     if( is_home() ) echo '<div class="wrap footer-link">' . get_option('xm_options')['link'] . '</div>';
   ?>
+  <!-- 评论区上传图片 -->
+  <div class="hide img-upload-wrap">
+    <div class="upload-img">
+      <i class="iconfont icon-close1"></i>
+      <p class="text-center font-size-20">插入图片</p>
+      <div class="upload-progress">
+        <p class="inline-block">上传进度：</p>
+        <div class="inline-block progress">
+          <div class="current-progress"></div>
+        </div>
+        <div class="inline-block current-text"></div>
+      </div>
+      <div class="inp-file margin-top-20 text-center">
+        <span class="hide post-id"><?php echo get_the_ID(); ?></span>
+        <span class="hide path"><?php echo get_bloginfo('template_directory'); ?></span>
+        <input type="file" id="comments-upload-img" name="file" accept="image/png,image/gif,image/jpeg">
+        <p><i class="iconfont icon-upimg"></i> 点击添加图片</p>
+      </div>
+      <img src="" alt="" class="result-img">
+      <button>插入图片</button>
+    </div>
+  </div>
   <!-- footer start -->
   <footer>
     <div class="wrap">

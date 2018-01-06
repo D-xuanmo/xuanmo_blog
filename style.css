@@ -41,7 +41,7 @@ html {
 
 body {
   overflow-x: hidden;
-  font: 14px "Consolas", Microsoft Yahei;
+  font: 14px "PingFangSC-Regular", Microsoft Yahei;
   background: #f1f1f1;
 }
 
@@ -54,7 +54,6 @@ input {
   -webkit-appearance: none;
   border: none;
   box-sizing: border-box;
-  font-family: "Consolas", Microsoft Yahei;
 }
 
 input[type="button"], input[type="submit"] {
@@ -187,6 +186,10 @@ p.description {
   font-size: 16px;
 }
 
+.font-size-20 {
+  font-size: 20px;
+}
+
 .text-left {
   text-align: left;
 }
@@ -197,6 +200,10 @@ p.description {
 
 .text-right {
   text-align: right;
+}
+
+.o-hide{
+  overflow: hidden;
 }
 
 

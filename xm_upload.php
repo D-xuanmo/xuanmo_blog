@@ -8,9 +8,10 @@
   chmod(__FILE__, 0777);
 
   // 在根目录下增加tmp目录的路径
-  $addFilePath = DIR_ROOT . "/images/comments/";
+  $currentPath = "/images/comments/" . $_POST["post"] . "/";
+  $addFilePath = DIR_ROOT . $currentPath;
 
-  if(!is_dir($addFilePath)) mkdir($addFilePath, 0700);
+  if(!is_dir($addFilePath)) mkdir($addFilePath, 0700, true);
 
   // 上传文件大小
   $fileSize = filesize($_FILES["file"]["tmp_name"]);
@@ -29,10 +30,9 @@
     "name"  => urlencode($fileName),
     "size"  => ceil($fileSize / 1024) . "Kb",
     "type"  => urlencode($_FILES["file"]["type"]),
-    "path"  => urlencode($addFilePath . $fileName),
+    "path"  => str_replace("/" . pathinfo(__FILE__)["basename"], $currentPath . $fileName, $_SERVER["PHP_SELF"]),
     "code"  => 2
   );
-
   echo urldecode(json_encode($result));
 
 ?>

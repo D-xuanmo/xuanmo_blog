@@ -54,7 +54,7 @@ section .right {
   width: 3px;
   height: 3px;
   background: transparent;
-  transition: 1s;
+  transition: .5s;
 }
 
 .right article i.line-top, .right article iline-left {

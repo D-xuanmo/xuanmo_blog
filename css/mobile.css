@@ -142,6 +142,15 @@
   .single-article {
     width: 100%;
   }
+  .link-wrap .link{
+    margin: 0 5px;
+  }
+  .img-upload-wrap .progress{
+    width: 55%;
+  }
+  .img-upload-wrap .upload-img{
+    width: 90%;
+  }
   div.footer-link a {
     width: calc(100% / 4 - 12px);
   }
