@@ -60,21 +60,10 @@ add_theme_support('post-thumbnails');
  * 设置摘要字数
  ****************************************
  */
-function get_post_excerpt($post, $excerpt_length, $str)
+function get_post_excerpt($excerpt_length, $str)
 {
-  if (!$post) {
-    $post = get_post();
-  }
-  $post_excerpt = $post->post_excerpt;
-  if ($post_excerpt == '') {
-    $post_content = $post->post_content;
-    $post_content = do_shortcode($post_content);
-    $post_content = wp_strip_all_tags($post_content);
-    $post_excerpt = mb_strimwidth($post_content, 0, $excerpt_length, '', 'utf-8');
-  }
-  $post_excerpt = wp_strip_all_tags($post_excerpt);
-  $post_excerpt = trim(preg_replace("/[\n\r\t ]+/", ' ', $post_excerpt), ' ');
-  return $post_excerpt . $str;
+  $post_content = wp_strip_all_tags(get_post()->post_content, true);
+  return mb_strimwidth($post_content, 0, $excerpt_length, '', 'utf-8') . $str;
 }
 
 /*
@@ -619,7 +608,6 @@ function add_my_tips()
         <span>表情加载中...</span>
       </div>
     </div>
-    <script src="https://upyun.xuanmo.xin/js/ajax.js"></script>
   ';
 }
 add_filter('comment_form_before_fields', 'add_my_tips');
@@ -732,7 +720,9 @@ function get_browser_name($str)
 {
   if (preg_match('/QQBrowser/', $str)) {
    echo '<img src="'. get_bloginfo('template_directory') . '/images/QQBrowser.png" width="20" style="vertical-align: baseline;">';
- } elseif (preg_match('/Edge/', $str)) {
+ } elseif (preg_match('/MetaSr/', $str)) {
+    echo '<img src="'. get_bloginfo('template_directory') . '/images/sougou_logo.png" width="20" style="vertical-align: baseline;">';
+  } elseif (preg_match('/Edge/', $str)) {
     echo '<img src="'. get_bloginfo('template_directory') . '/images/ie_logo.png" width="20" style="vertical-align: baseline;">';
   } elseif (preg_match('/OPR/', $str)) {
     echo '<img src="'. get_bloginfo('template_directory') . '/images/opera_logo.png" width="20" style="vertical-align: baseline;">';
@@ -842,7 +832,7 @@ function get_post_meta_for_api( $object ) {
 }
 
 function get_summary() {
-  return get_post_excerpt('', 160, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>');
+  return get_post_excerpt(160, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>');
 }
 
 function get_total_article() {

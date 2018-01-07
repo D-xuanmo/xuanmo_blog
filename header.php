@@ -25,12 +25,14 @@
     $title = get_bloginfo('name');
     $keywords = wp_get_post_tags($post->ID);
     if ( is_single() ) {
-      for ($i=0; $i < count($keywords); $i++) {
-        $key[$i] = $keywords[$i]->name;
+      if ($keywords) {
+        for ($i=0; $i < count($keywords); $i++) {
+          $key[$i] = $keywords[$i]->name;
+        }
+        $key = implode(',', $key);
       }
       $currentTitle = get_the_title();
-      $key = implode(',', $key);
-      $description = get_post_excerpt('', 200, '');
+      $description = get_post_excerpt(200, '');
     } else if( is_category() ) {
       $currentTitle = get_category(get_query_var('cat'))->name;
       $key = get_option('xm_options')['keywords'];
@@ -80,6 +82,7 @@
     echo '
       <link rel="stylesheet" href="' . $templateUrl . '/css/index.css">
       <link rel="stylesheet" href="' . $templateUrl . '/css/article.css">
+      <script src="https://upyun.xuanmo.xin/js/ajax.min.js"></script>
       <style>
         body{ background: #fff; }
         header { background: rgba(40, 40, 40, 0.7); }
@@ -93,6 +96,7 @@
       <link rel="stylesheet" href="' . $templateUrl . '/css/prism.css">
       <script src="' . $templateUrl . '/js/qrcode.js"></script>
       <script src="' . $templateUrl . '/js/prism.js"></script>
+      <script src="https://upyun.xuanmo.xin/js/ajax.min.js"></script>
     ';
   }
   ?>

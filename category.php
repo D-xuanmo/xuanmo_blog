@@ -35,7 +35,8 @@
             </div>
             <!-- 摘要 -->
             <p class="summary">
-              <?php echo get_post_excerpt('', 160, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>'); ?>
+              <?php echo get_post_excerpt(160, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>'); ?>
+              <?php //echo get_the_excerpt(); ?>
             </p>
           </div>
         </article>
