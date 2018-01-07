@@ -12,9 +12,11 @@
 * 修改文章评论验证码功能
 * 代码高亮免插件
 * 表情免除插件
-# 后台部分设置截图
-![](https://www.xuanmo.xin/wp-content/uploads/2017/08/QQ20170904-204818.png)
+# 详细设置说明链接
+https://www.xuanmo.xin/2269.html
+# 后台设置截图
+![](https://upyun.xuanmo.xin/blog/20180107213256451100.png)
 
-![](https://www.xuanmo.xin/wp-content/uploads/2017/08/QQ20170815-013150.png)
+![](https://upyun.xuanmo.xin/blog/20180107213257278088.png)
 
-![](https://www.xuanmo.xin/wp-content/uploads/2017/08/QQ20170904-005440.png)
+![](https://upyun.xuanmo.xin/blog/20180107213257164248.png)
