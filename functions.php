@@ -60,10 +60,10 @@ add_theme_support('post-thumbnails');
  * 设置摘要字数
  ****************************************
  */
-function get_post_excerpt($excerpt_length, $str)
+function get_post_excerpt($length, $str)
 {
   $post_content = wp_strip_all_tags(get_post()->post_content, true);
-  return mb_strimwidth($post_content, 0, $excerpt_length, '', 'utf-8') . $str;
+  return wp_trim_words($post_content, $length, $str);
 }
 
 /*
@@ -832,7 +832,7 @@ function get_post_meta_for_api( $object ) {
 }
 
 function get_summary() {
-  return get_post_excerpt(160, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>');
+  return get_post_excerpt(100, ' <a href="' . get_the_permalink() . '" class="article-more">MORE...</a>');
 }
 
 function get_total_article() {
