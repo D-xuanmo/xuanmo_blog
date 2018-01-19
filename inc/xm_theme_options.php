@@ -282,6 +282,12 @@ function themeoptions_page() {
       </div>
       <!-- 内容五 自定义代码 -->
       <div class="content-wrap content5">
+				<div class="row clearfix">
+					<label class="fl left-wrap" for="all-head">自定义head标签：</label>
+					<div class="fr right-wrap">
+						<textarea id="all-head" name="all-head" rows="8" cols="100"><?php echo $a_options['all_head']; ?></textarea>
+					</div>
+				</div>
         <div class="row clearfix">
           <label class="fl left-wrap" for="login-css">后台登录页面css：</label>
           <div class="fr right-wrap">
@@ -292,6 +298,12 @@ function themeoptions_page() {
           <label class="fl left-wrap" for="home-css">首页自定义css：</label>
           <div class="fr right-wrap">
             <textarea id="home-css" name="home-css" rows="8" cols="100"><?php echo $a_options['home_css']; ?></textarea>
+          </div>
+        </div>
+        <div class="row clearfix">
+          <label class="fl left-wrap" for="single-css">文章页自定义css：</label>
+          <div class="fr right-wrap">
+            <textarea id="single-css" name="single-css" rows="8" cols="100"><?php echo $a_options['single_css']; ?></textarea>
           </div>
         </div>
         <div class="row clearfix">
@@ -326,7 +338,9 @@ function themeoptions_page() {
       'footer_copyright'    => $_POST['footer-copyright'],
       'footer_text'         => $_POST['footer-txt'],
       'login_css'           => $_POST['login-css'],
+      'all_head'            => $_POST['all-head'],
       'home_css'            => $_POST['home-css'],
+      'single_css'          => $_POST['single-css'],
       'all_css'             => $_POST['all-css'],
       'footer_js'           => $_POST['footer-js'],
       'keywords'            => $_POST['keywords'],

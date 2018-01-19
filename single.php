@@ -34,8 +34,8 @@
           <span class="block people">
             <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['very_good']; ?></i>人
           </span>
-          <img src="<?php bloginfo('template_url'); ?>/images/smilies/guzhang.gif" alt="">
-          <span class="block">鼓掌</span>
+          <img src="<?php bloginfo('template_url'); ?>/images/like_love.png" width="50" class="margin-top-10" alt="">
+          <span class="block margin-top-10">Love</span>
         </a>
         <a
           href="javascript:;"
@@ -46,8 +46,8 @@
           <span class="block people">
             <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['good']; ?></i>人
           </span>
-          <img src="<?php bloginfo('template_url'); ?>/images/smilies/koubi.gif" alt="">
-          <span class="block">呵呵</span>
+          <img src="<?php bloginfo('template_url'); ?>/images/like_haha.png" width="50" class="margin-top-10" alt="">
+          <span class="block margin-top-10">Haha</span>
         </a>
         <a
           href="javascript:;"
@@ -58,8 +58,8 @@
           <span class="block people">
             <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['commonly']; ?></i>人
           </span>
-          <img src="<?php bloginfo('template_url'); ?>/images/smilies/wunai.gif" alt="">
-          <span class="block">无奈</span>
+          <img src="<?php bloginfo('template_url'); ?>/images/like_wow.png" width="50" class="margin-top-10" alt="">
+          <span class="block margin-top-10">Wow</span>
         </a>
         <a
           href="javascript:;"
@@ -70,8 +70,8 @@
           <span class="block people">
             <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['bad']; ?></i>人
           </span>
-          <img src="<?php bloginfo('template_url'); ?>/images/smilies/xia.gif" alt="">
-          <span class="block">惊恐</span>
+          <img src="<?php bloginfo('template_url'); ?>/images/like_sad.png" width="50" class="margin-top-10" alt="">
+          <span class="block margin-top-10">Sad</span>
         </a>
         <a
           href="javascript:;"
@@ -82,8 +82,8 @@
           <span class="block people">
             <i class="people-num"><?php echo get_post_meta($post->ID, 'xm_post_link', true)['very_bad']; ?></i>人
           </span>
-          <img src="<?php bloginfo('template_url'); ?>/images/smilies/bishi.gif" alt="">
-          <span class="block">鄙视</span>
+          <img src="<?php bloginfo('template_url'); ?>/images/link_angry.png" width="50" class="margin-top-10" alt="">
+          <span class="block margin-top-10">Angry</span>
         </a>
       </div>
       <div class="share margin-top-20">

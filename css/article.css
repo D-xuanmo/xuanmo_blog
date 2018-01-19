@@ -54,16 +54,6 @@ article .content img:not(.wp-smiley) {
   box-shadow: 0 0 10px #d2d2d2;
 }
 
-article .content h2 {
-  margin: 20px 0;
-  padding-left: 10px;
-  background: #f5f5f5;
-  border-left: 5px solid #0cf;
-  font-size: 18px;
-  line-height: 40px;
-  color: #292929;
-}
-
 article .content .download {
   display: block;
   width: 150px;

@@ -33,7 +33,7 @@
           <div class="fl introduce"><?php echo get_option('xm_options')['footer_text']; ?></div>
         </div>
         <div class="fr footer-right">
-          <a href="http//cn.wordpress.org/">
+          <a href="http://cn.wordpress.org">
             <img src="<?php bloginfo('template_url'); ?>/images/wordpress-logo.png" width="50" alt="" />
             <span>WordPress</span>
           </a>

@@ -47,18 +47,19 @@
   <meta name="keywords" content="<?php echo $key; ?>">
   <meta name="description" content="<?php echo $description; ?>" >
   <?php wp_head(); ?>
+  <?php if (!empty(get_option('xm_options')['all_head'])) echo get_option('xm_options')['all_head']; ?>
   <link rel="icon" href="<?php echo get_option('xm_options')['favicon']; ?>">
   <link rel="stylesheet" href="https://upyun.xuanmo.xin/iconfont.css">
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
-  <script src="<?php bloginfo('template_url'); ?>/js/jquery-2.1.4.min.js"></script>
+  <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
   <script src="<?php bloginfo('template_url'); ?>/js/common.js"></script>
   <?php
   $templateUrl = get_template_directory_uri();
   $xm_options = get_option('xm_options');
   if (!empty($xm_options['home_css'])) $home_css = '<style>' . $xm_options['home_css'] . '</style>';
+  if (!empty($xm_options['single_css'])) $single_css = '<style>' . $xm_options['single_css'] . '</style>';
   if(is_home()) {
-    echo '
-      <link rel="stylesheet" href="' . $templateUrl . '/css/index.css">
+    echo '<link rel="stylesheet" href="' . $templateUrl . '/css/index.css">
       <style>
         .hide-header{ display: none; }
         ul.menu > li ul.sub-menu{ background: rgba(210, 210, 210, 0.6); }
@@ -91,7 +92,7 @@
       </style>
     ';
   } else if(is_single()) {
-    echo '
+    echo $single_css . '
       <link rel="stylesheet" href="' . $templateUrl . '/css/article.css">
       <link rel="stylesheet" href="' . $templateUrl . '/css/prism.css">
       <script src="' . $templateUrl . '/js/qrcode.js"></script>
