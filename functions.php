@@ -441,15 +441,22 @@ add_action('admin_print_footer_scripts', 'appthemes_add_quicktags');
 
 /*
  ****************************************
- * 添加一个验证码
+ * 替换默认表单元素，增加验证码
  ****************************************
  */
-function my_fields($fields)
+function xm_fields($fields)
 {
-  $fields['img-code'] = '<p class="comment-form-img-code">' . '<label for="img-code">' . __('验证码 * ') . '</label> ' . '<input id="img-code" name="img-code" type="text" value="" size="30" /><canvas width="120" height="28" class="canvas-img-code"></canvas><span class="tab-img-code">换一张</span></p>';
+  $fields['author'] = '<p class="comment-inp comment-form-author"><label for="author" class="iconfont icon-user"></label><input id="author" name="author" type="text" placeholder="昵称" value=""/><span class="required">*</span></p>';
+
+  $fields['email'] = '<p class="comment-inp comment-form-email"><label for="email"  class="iconfont icon-email2"></label><input id="email" name="email" type="text" placeholder="电子邮箱" value=""/><span class="required">*</span></p>';
+
+  $fields['url'] = '<p class="comment-inp comment-form-url"><label for="url" class="iconfont icon-link"></label>' . '<input id="url" name="url" type="text" placeholder="网址（选填）" value=""/></p>';
+
+  $fields['img-code'] = '<p class="comment-inp comment-form-img-code">' . '<label for="img-code" class="iconfont icon-pen3"></label>' . '<input id="img-code" name="img-code" type="text" placeholder="验证码" value=""/><span class="required">*</span><canvas width="120" height="30" class="canvas-img-code"></canvas></p>';
+
   return $fields;
 }
-add_filter('comment_form_default_fields', 'my_fields');
+add_filter('comment_form_default_fields', 'xm_fields');
 
 /*
  ****************************************

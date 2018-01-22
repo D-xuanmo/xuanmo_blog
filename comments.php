@@ -3,7 +3,9 @@
 ?>
 <div id="comments" class="comments-area">
 	<!-- 评论输入框 -->
-	<?php comment_form(); ?>
+	<?php
+		$args['comment_field'] = '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>';
+		comment_form($args); ?>
 	<!-- 评论列表 -->
 	<ul class="comment-list">
 	<?php

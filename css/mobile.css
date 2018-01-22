@@ -166,6 +166,15 @@
   }
 }
 
+@media screen and (max-width:820px) {
+  #commentform input[type="text"]{
+    width: 70%;
+  }
+  .canvas-img-code{
+    float: right;
+  }
+}
+
 @media screen and (max-width:680px) {
   .contact .mobile-hide {
     display: none;

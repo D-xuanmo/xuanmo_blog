@@ -20,9 +20,8 @@ $(function() {
     $('article .article-img').each(function() {
       random = Math.floor(Math.random() * arrImg.length);
       var $thisImg = $(this).children('img');
-      if ($thisImg.attr('src') == '') {
-        $thisImg.attr('src', arrImg[random]);
-      } else if (Number($thisImg.attr('height')) < 150) {
+      if ($thisImg.attr('src') == '') $thisImg.attr('src', arrImg[random]);
+      if (Number($thisImg.attr('height')) < 150) {
         $thisImg.css({
           'height': $thisImg.attr('height'),
           'vertical-align': 'middle'
@@ -241,7 +240,7 @@ $(function() {
         }
       });
       // 换一张验证码
-      $('.tab-img-code').click(function() {
+      $(canvas).click(function() {
         nResult = result();
         $('#img-code').val('');
         $submit.prop('disabled', true).css('backgroundColor', '#b5b5b5');

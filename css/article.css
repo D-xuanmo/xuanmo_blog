@@ -276,11 +276,10 @@ p.mark a {
   background: #49cc5b;
 }
 
-
 /* 表情显示 */
-
 .expression-wrap {
   position: relative;
+  margin: 8px 0;
 }
 
 .expression-wrap .comment-icon {
@@ -328,17 +327,17 @@ p.mark a {
 .expression-wrap .expression-hide-wrap {
   display: none;
   position: absolute;
-  top: 35px;
+  top: 30px;
   left: 0;
   z-index: 9;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 0 5px 5px 5px;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
   background: #fff;
 }
 
 .expression-wrap .expression-tab {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 .expression-wrap .expression-tab li {
@@ -374,41 +373,67 @@ img.wp-smiley, img.emoji {
 
 
 /*评论区域表单*/
-
-.comment-respond form>p {
-  padding: 5px 0;
+#commentform .comment-inp{
+  margin: 10px 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
 }
-
-.comment-respond form textarea {
+#commentform textarea {
   box-sizing: border-box;
   width: 100%;
   padding: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid #e2e2e2;
   border-radius: 5px;
 }
 
-.comment-respond form p label {
+#commentform .comment-inp label {
   display: inline-block;
-  width: 100px;
-  text-align: right;
+  width: 40px;
+  height: 30px;
+  background: #eaeaea;
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
   color: #9a9a9a;
   cursor: pointer;
 }
-
-.comment-respond form input[type="text"] {
+#commentform .comment-inp .required{
+  float: right;
+  width: 30px;
   height: 30px;
-  padding-left: 5px;
-  border: 1px solid #7e7e7e;
-  border-radius: 5px;
+  color: #f00;
+  text-align: center;
+  line-height: 30px;
 }
 
-.comment-respond form input[type="submit"] {
+#commentform input[type="text"] {
+  width: 90%;
+  height: 30px;
+  padding-left: 5px;
+  border-radius: 5px;
+  vertical-align: bottom;
+}
+
+#commentform input[type="submit"] {
   padding: 10px 15px;
   background: #16c0f8;
   border-radius: 5px;
   color: #fff;
 }
 
+.canvas-img-code {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: -120px;
+  border-radius: 0 5px 5px 0;
+  background: #fff;
+}
+
+.tab-img-code {
+  vertical-align: sub;
+  margin-left: 10px;
+  cursor: pointer;
+}
 
 /*评论区域评论列表*/
 
@@ -659,23 +684,6 @@ img.wp-smiley, img.emoji {
   margin-left: 5px;
   background-position: -171px -70px;
 }
-
-
-/*验证码*/
-
-.canvas-img-code {
-  vertical-align: bottom;
-  margin: 0 0 1px -121px;
-  border-radius: 0 5px 5px 0;
-  background: #fff;
-}
-
-.tab-img-code {
-  vertical-align: sub;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
 
 /*评论区翻页按钮*/
 
