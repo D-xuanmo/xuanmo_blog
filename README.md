@@ -13,7 +13,7 @@
 * 代码高亮免插件
 * 表情免除插件
 ## 详细设置说明链接
-[https://www.xuanmo.xin/#/single/2269](https://www.xuanmo.xin/#/single/2269)
+[http://blog.xuanmo.xin](http://blog.xuanmo.xin)
 ## 后台设置截图
 ![](https://upyun.xuanmo.xin/blog/20180107213256451100.png)
 
